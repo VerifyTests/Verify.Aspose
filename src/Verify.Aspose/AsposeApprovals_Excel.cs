@@ -1,7 +1,6 @@
-﻿using System.IO;
-using System.Runtime.ExceptionServices;
-using ApprovalTests.Core.Exceptions;
-using ApprovalTests.Namers;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using Aspose.Cells;
 using Aspose.Cells.Drawing;
 using Aspose.Cells.Rendering;
@@ -9,16 +8,14 @@ using VerifyXunit;
 
 public static partial class AsposeApprovals
 {
-    public static void VerifyExcel(this VerifyBase verifyBase,string path)
+    public static async Task VerifyExcel(this VerifyBase verifyBase,string path)
     {
         Guard.AgainstNullOrEmpty(path, nameof(path));
-        using (var document = new Workbook(path))
-        {
-            await VerifyWord(verifyBase, document);
-        }
+        using var document = new Workbook(path);
+        await VerifyWord(verifyBase, document);
     }
 
-    public static void VerifyExcel(this VerifyBase verifyBase,Stream stream)
+    public static async Task VerifyExcel(this VerifyBase verifyBase,Stream stream)
     {
         Guard.AgainstNull(stream, nameof(stream));
         using var document = new Workbook(stream);
@@ -30,20 +27,21 @@ public static partial class AsposeApprovals
         ImageType = ImageType.Png
     };
 
-    static void VerifyWord(this VerifyBase verifyBase, Workbook document)
+    static Task VerifyWord(this VerifyBase verifyBase, Workbook document)
     {
-        for (var sheetIndex = 0; sheetIndex < document.Worksheets.Count; sheetIndex++)
+        return verifyBase.Verify(GetStreams(document));
+    }
+
+    static IEnumerable<MemoryStream> GetStreams(Workbook document)
+    {
+        foreach (var worksheet in document.Worksheets)
         {
-            var worksheet = document.Worksheets[sheetIndex];
             var sheetRender = new SheetRender(worksheet, excelOptions);
             for (var pageIndex = 0; pageIndex < sheetRender.PageCount; pageIndex++)
             {
-                var pageNumber = pageIndex + 1;
-                var sheetNumber = sheetIndex + 1;
-
-                using var outputStream = new MemoryStream();
+                var outputStream = new MemoryStream();
                 sheetRender.ToImage(pageIndex, outputStream);
-                VerifyBinary(outputStream, ref exception);
+                yield return outputStream;
             }
         }
     }

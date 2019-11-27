@@ -4,12 +4,12 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="XunitContext" Version="1.5.1" />
-    <PackageReference Include="Verify.Xunit" Version="1.0.0-beta.13" />
+    <PackageReference Include="Verify.Xunit" Version="1.0.0-beta.17" />
     <PackageReference Include="Aspose.Pdf" Version="19.11.0" />
     <PackageReference Include="Aspose.Cells" Version="19.11.0" />
     <PackageReference Include="Aspose.Words" Version="19.11.0" />
     <PackageReference Include="Aspose.Slides.NET" Version="19.10.0" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.32" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19554-01" PrivateAssets="All" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.33" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 </Project>
