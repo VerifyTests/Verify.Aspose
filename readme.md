@@ -45,9 +45,9 @@ public async Task VerifyPdf()
 <sup>[snippet source](/src/Tests/Samples.cs#L9-L15) / [anchor](#snippet-verifypdf)</sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyPdf_01.approved.png](/src/Tests/Samples.VerifyPdf_01.approved.png):
+Result: [Samples.VerifyPdf_01.verified.png](/src/Tests/Samples.VerifyPdf_01.verified.png):
 
-<img src="/src/Tests/Samples.VerifyPdf_01.approved.png" width="200px">
+<img src="/src/Tests/Samples.VerifyPdf_01.verified.png" width="200px">
 
 
 ### Excel
@@ -61,12 +61,12 @@ public async Task VerifyExcel()
     await this.VerifyExcel("sample.xlsx");
 }
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L25-L31) / [anchor](#snippet-verifyexcel)</sup>
+<sup>[snippet source](/src/Tests/Samples.cs#L27-L33) / [anchor](#snippet-verifyexcel)</sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyExcel_01.01.approved.png](/src/Tests/Samples.VerifyExcel_01.01.approved.png):
+Result: [Samples.VerifyExcel_01.01.verified.png](/src/Tests/Samples.VerifyExcel_01.01.verified.png):
 
-<img src="/src/Tests/Samples.VerifyExcel_01.01.approved.png" width="200px">
+<img src="/src/Tests/Samples.VerifyExcel_01.01.verified.png" width="200px">
 
 
 ### Word
@@ -80,12 +80,12 @@ public async Task VerifyWord()
     await this.VerifyWord("sample.docx");
 }
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L33-L39) / [anchor](#snippet-verifyword)</sup>
+<sup>[snippet source](/src/Tests/Samples.cs#L35-L41) / [anchor](#snippet-verifyword)</sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyWord_01.approved.png](/src/Tests/Samples.VerifyWord_01.approved.png):
+Result: [Samples.VerifyWord_01.verified.png](/src/Tests/Samples.VerifyWord_01.verified.png):
 
-<img src="/src/Tests/Samples.VerifyWord_01.approved.png" width="200px">
+<img src="/src/Tests/Samples.VerifyWord_01.verified.png" width="200px">
 
 
 ### PowerPoint
@@ -99,10 +99,10 @@ public async Task VerifyPowerPoint()
     await this.VerifyPowerPoint("sample.pptx");
 }
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L17-L23) / [anchor](#snippet-verifypowerpoint)</sup>
+<sup>[snippet source](/src/Tests/Samples.cs#L18-L24) / [anchor](#snippet-verifypowerpoint)</sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyPowerPoint_01.approved.svg](/src/Tests/Samples.VerifyPowerPoint_01.approved.svg):
+Result: [Samples.VerifyPowerPoint_01.verified.svg](/src/Tests/Samples.VerifyPowerPoint_01.verified.svg):
 
 
 ## File Samples
