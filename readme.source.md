@@ -18,7 +18,7 @@ toc
 
 snippet: VerifyPdf
 
-Result: [Samples.VerifyPdf_01.verified.png](/src/Tests/Samples.VerifyPdf_01.verified.png):
+Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyPdf_01.verified.png" width="200px">
 
@@ -27,7 +27,7 @@ Result: [Samples.VerifyPdf_01.verified.png](/src/Tests/Samples.VerifyPdf_01.veri
 
 snippet: VerifyExcel
 
-Result: [Samples.VerifyExcel_01.01.verified.png](/src/Tests/Samples.VerifyExcel_01.01.verified.png):
+Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyExcel_01.01.verified.png" width="200px">
 
@@ -36,7 +36,7 @@ Result: [Samples.VerifyExcel_01.01.verified.png](/src/Tests/Samples.VerifyExcel_
 
 snippet: VerifyWord
 
-Result: [Samples.VerifyWord_01.verified.png](/src/Tests/Samples.VerifyWord_01.verified.png):
+Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyWord_01.verified.png" width="200px">
 
@@ -45,7 +45,7 @@ Result: [Samples.VerifyWord_01.verified.png](/src/Tests/Samples.VerifyWord_01.ve
 
 snippet: VerifyPowerPoint
 
-Result: [Samples.VerifyPowerPoint_01.verified.svg](/src/Tests/Samples.VerifyPowerPoint_01.verified.svg):
+Result: [Samples.VerifyPowerPoint.00.verified.svg](/src/Tests/Samples.VerifyPowerPoint.00.verified.svg):
 
 
 ## File Samples

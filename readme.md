@@ -45,7 +45,7 @@ public async Task VerifyPdf()
 <sup>[snippet source](/src/Tests/Samples.cs#L9-L15) / [anchor](#snippet-verifypdf)</sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyPdf_01.verified.png](/src/Tests/Samples.VerifyPdf_01.verified.png):
+Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyPdf_01.verified.png" width="200px">
 
@@ -64,7 +64,7 @@ public async Task VerifyExcel()
 <sup>[snippet source](/src/Tests/Samples.cs#L27-L33) / [anchor](#snippet-verifyexcel)</sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyExcel_01.01.verified.png](/src/Tests/Samples.VerifyExcel_01.01.verified.png):
+Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyExcel_01.01.verified.png" width="200px">
 
@@ -83,7 +83,7 @@ public async Task VerifyWord()
 <sup>[snippet source](/src/Tests/Samples.cs#L35-L41) / [anchor](#snippet-verifyword)</sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyWord_01.verified.png](/src/Tests/Samples.VerifyWord_01.verified.png):
+Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyWord_01.verified.png" width="200px">
 
@@ -102,7 +102,7 @@ public async Task VerifyPowerPoint()
 <sup>[snippet source](/src/Tests/Samples.cs#L18-L24) / [anchor](#snippet-verifypowerpoint)</sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyPowerPoint_01.verified.svg](/src/Tests/Samples.VerifyPowerPoint_01.verified.svg):
+Result: [Samples.VerifyPowerPoint.00.verified.svg](/src/Tests/Samples.VerifyPowerPoint.00.verified.svg):
 
 
 ## File Samples
