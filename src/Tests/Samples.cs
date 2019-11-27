@@ -14,6 +14,7 @@ public class Samples :
     }
     #endregion
 
+#if DEBUG
     #region VerifyPowerPoint
     [Fact]
     public async Task VerifyPowerPoint()
@@ -21,6 +22,7 @@ public class Samples :
         await this.VerifyPowerPoint("sample.pptx");
     }
     #endregion
+#endif
 
     #region VerifyExcel
     [Fact]
