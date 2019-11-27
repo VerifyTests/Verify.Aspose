@@ -6,20 +6,20 @@ using Aspose.Cells.Drawing;
 using Aspose.Cells.Rendering;
 using VerifyXunit;
 
-public static partial class AsposeApprovals
+public static partial class VerifyAspose
 {
-    public static async Task VerifyExcel(this VerifyBase verifyBase,string path)
+    public static async Task VerifyExcel(this VerifyBase verifyBase, string path)
     {
         Guard.AgainstNullOrEmpty(path, nameof(path));
         using var document = new Workbook(path);
-        await VerifyWord(verifyBase, document);
+        await VerifyExcel(verifyBase, document);
     }
 
-    public static async Task VerifyExcel(this VerifyBase verifyBase,Stream stream)
+    public static async Task VerifyExcel(this VerifyBase verifyBase, Stream stream)
     {
         Guard.AgainstNull(stream, nameof(stream));
         using var document = new Workbook(stream);
-        await VerifyWord(verifyBase, document);
+        await VerifyExcel(verifyBase, document);
     }
 
     static ImageOrPrintOptions excelOptions = new ImageOrPrintOptions
@@ -27,9 +27,9 @@ public static partial class AsposeApprovals
         ImageType = ImageType.Png
     };
 
-    static Task VerifyWord(this VerifyBase verifyBase, Workbook document)
+    static Task VerifyExcel(this VerifyBase verifyBase, Workbook document)
     {
-        return verifyBase.Verify(GetStreams(document));
+        return verifyBase.Verify(GetStreams(document), ".png");
     }
 
     static IEnumerable<MemoryStream> GetStreams(Workbook document)

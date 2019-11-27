@@ -5,16 +5,16 @@ using Aspose.Pdf;
 using Aspose.Pdf.Devices;
 using VerifyXunit;
 
-public static partial class AsposeApprovals
+public static partial class VerifyAspose
 {
-    public static async Task VerifyPdf(this VerifyBase verifyBase,string path)
+    public static async Task VerifyPdf(this VerifyBase verifyBase, string path)
     {
         Guard.AgainstNullOrEmpty(path, nameof(path));
         using var document = new Document(path);
         await VerifyPdf(verifyBase, document);
     }
 
-    public static async Task VerifyPdf(this VerifyBase verifyBase,Stream stream)
+    public static async Task VerifyPdf(this VerifyBase verifyBase, Stream stream)
     {
         Guard.AgainstNull(stream, nameof(stream));
         using var document = new Document(stream);
@@ -25,10 +25,10 @@ public static partial class AsposeApprovals
 
     static Task VerifyPdf(this VerifyBase verifyBase, Document document)
     {
-        return verifyBase.Verify(GetStreams(document));
+        return verifyBase.Verify(GetStreams(document), ".png");
     }
 
-    private static IEnumerable<Stream> GetStreams(Document document)
+    static IEnumerable<Stream> GetStreams(Document document)
     {
         foreach (var page in document.Pages)
         {

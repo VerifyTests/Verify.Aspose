@@ -1,50 +1,42 @@
-﻿using VerifyXunit;
+﻿using System.Threading.Tasks;
+using VerifyXunit;
 using Xunit;
 using Xunit.Abstractions;
 
 public class Samples :
     VerifyBase
 {
+    #region VerifyPdf
     [Fact]
-    public void VerifyPdf()
+    public async Task VerifyPdf()
     {
-        #region VerifyPdf
-
-        AsposeApprovals.VerifyPdf("sample.pdf");
-
-        #endregion
+        await this.VerifyPdf("sample.pdf");
     }
+    #endregion
 
+    #region VerifyPowerPoint
     [Fact]
-    public void VerifyPowerPoint()
+    public async Task VerifyPowerPoint()
     {
-        #region VerifyPowerPoint
-
-        AsposeApprovals.VerifyPowerPoint("sample.pptx");
-
-        #endregion
+        await this.VerifyPowerPoint("sample.pptx");
     }
+    #endregion
 
+    #region VerifyExcel
     [Fact]
-    [Trait("Category", "Integration")]
-    public void VerifyExcel()
+    public async Task VerifyExcel()
     {
-        #region VerifyExcel
-
-        AsposeApprovals.VerifyExcel("sample.xlsx");
-
-        #endregion
+        await this.VerifyExcel("sample.xlsx");
     }
+    #endregion
 
+    #region VerifyWord
     [Fact]
-    public void VerifyWord()
+    public async Task VerifyWord()
     {
-        #region VerifyWord
-
-        AsposeApprovals.VerifyWord("sample.docx");
-
-        #endregion
+        await this.VerifyWord("sample.docx");
     }
+    #endregion
 
     public Samples(ITestOutputHelper output) :
         base(output)

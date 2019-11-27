@@ -36,9 +36,13 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
 <!-- snippet: VerifyPdf -->
 <a id='snippet-verifypdf'/></a>
 ```cs
-AsposeApprovals.VerifyPdf("sample.pdf");
+[Fact]
+public async Task VerifyPdf()
+{
+    await this.VerifyPdf("sample.pdf");
+}
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L10-L14) / [anchor](#snippet-verifypdf)</sup>
+<sup>[snippet source](/src/Tests/Samples.cs#L9-L15) / [anchor](#snippet-verifypdf)</sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyPdf_01.approved.png](/src/Tests/Samples.VerifyPdf_01.approved.png):
@@ -51,9 +55,13 @@ Result: [Samples.VerifyPdf_01.approved.png](/src/Tests/Samples.VerifyPdf_01.appr
 <!-- snippet: VerifyExcel -->
 <a id='snippet-verifyexcel'/></a>
 ```cs
-AsposeApprovals.VerifyExcel("sample.xlsx");
+[Fact]
+public async Task VerifyExcel()
+{
+    await this.VerifyExcel("sample.xlsx");
+}
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L31-L35) / [anchor](#snippet-verifyexcel)</sup>
+<sup>[snippet source](/src/Tests/Samples.cs#L25-L31) / [anchor](#snippet-verifyexcel)</sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyExcel_01.01.approved.png](/src/Tests/Samples.VerifyExcel_01.01.approved.png):
@@ -66,9 +74,13 @@ Result: [Samples.VerifyExcel_01.01.approved.png](/src/Tests/Samples.VerifyExcel_
 <!-- snippet: VerifyWord -->
 <a id='snippet-verifyword'/></a>
 ```cs
-AsposeApprovals.VerifyWord("sample.docx");
+[Fact]
+public async Task VerifyWord()
+{
+    await this.VerifyWord("sample.docx");
+}
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L41-L45) / [anchor](#snippet-verifyword)</sup>
+<sup>[snippet source](/src/Tests/Samples.cs#L33-L39) / [anchor](#snippet-verifyword)</sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyWord_01.approved.png](/src/Tests/Samples.VerifyWord_01.approved.png):
@@ -81,9 +93,13 @@ Result: [Samples.VerifyWord_01.approved.png](/src/Tests/Samples.VerifyWord_01.ap
 <!-- snippet: VerifyPowerPoint -->
 <a id='snippet-verifypowerpoint'/></a>
 ```cs
-AsposeApprovals.VerifyPowerPoint("sample.pptx");
+[Fact]
+public async Task VerifyPowerPoint()
+{
+    await this.VerifyPowerPoint("sample.pptx");
+}
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L20-L24) / [anchor](#snippet-verifypowerpoint)</sup>
+<sup>[snippet source](/src/Tests/Samples.cs#L17-L23) / [anchor](#snippet-verifypowerpoint)</sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyPowerPoint_01.approved.svg](/src/Tests/Samples.VerifyPowerPoint_01.approved.svg):
