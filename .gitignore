@@ -1,5 +1,14 @@
-# Object file
-*.o
+# Build results
+[Bb]in/
+[Oo]bj/
 
-# Ada Library Information
-*.ali
+# Visual Studio cache directory
+.vs/
+
+nugets/
+
+# ReSharper is a .NET coding add-in
+*.DotSettings.user
+
+# Approval Tests
+*.received.*
