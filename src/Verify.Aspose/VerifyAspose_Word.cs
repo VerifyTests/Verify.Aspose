@@ -23,7 +23,7 @@ public static partial class VerifyAspose
 
     static Task VerifyWord(this VerifyBase verifyBase, Document document)
     {
-        return verifyBase.Verify(GetStreams(document), ".png");
+        return verifyBase.Verify(GetStreams(document), "png");
     }
 
     static IEnumerable<Stream> GetStreams(Document document)
