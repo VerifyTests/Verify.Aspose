@@ -22,7 +22,7 @@ public static partial class VerifyAspose
 
     static Task VerifyPowerPoint(this VerifyBase verifyBase, Presentation document)
     {
-        return verifyBase.Verify(GetStreams(document), "svg");
+        return verifyBase.VerifyBinary(GetStreams(document), "svg");
     }
 
     static IEnumerable<Stream> GetStreams(Presentation document)

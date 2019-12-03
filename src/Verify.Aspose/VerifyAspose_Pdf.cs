@@ -25,7 +25,7 @@ public static partial class VerifyAspose
 
     static Task VerifyPdf(this VerifyBase verifyBase, Document document)
     {
-        return verifyBase.Verify(GetStreams(document), "png");
+        return verifyBase.VerifyBinary(GetStreams(document), "png");
     }
 
     static IEnumerable<Stream> GetStreams(Document document)

@@ -23,9 +23,7 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
     * [Excel](#excel)
     * [Word](#word)
     * [PowerPoint](#powerpoint)
-  * [File Samples](#file-samples)
-<!-- endtoc -->
-
+  * [File Samples](#file-samples)<!-- endtoc -->
 
 
 ## Usage

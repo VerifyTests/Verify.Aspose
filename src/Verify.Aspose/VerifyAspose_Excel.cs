@@ -29,7 +29,7 @@ public static partial class VerifyAspose
 
     static Task VerifyExcel(this VerifyBase verifyBase, Workbook document)
     {
-        return verifyBase.Verify(GetStreams(document), "png");
+        return verifyBase.VerifyBinary(GetStreams(document), "png");
     }
 
     static IEnumerable<MemoryStream> GetStreams(Workbook document)
