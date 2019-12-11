@@ -40,7 +40,7 @@ public async Task VerifyPdf()
     await this.VerifyPdf("sample.pdf");
 }
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L9-L15) / [anchor](#snippet-verifypdf)</sup>
+<sup><a href='/src/Tests/Samples.cs#L9-L17' title='File snippet `verifypdf` was extracted from'>snippet source</a> | <a href='#snippet-verifypdf' title='Navigate to start of snippet `verifypdf`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
@@ -59,7 +59,7 @@ public async Task VerifyExcel()
     await this.VerifyExcel("sample.xlsx");
 }
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L27-L33) / [anchor](#snippet-verifyexcel)</sup>
+<sup><a href='/src/Tests/Samples.cs#L33-L41' title='File snippet `verifyexcel` was extracted from'>snippet source</a> | <a href='#snippet-verifyexcel' title='Navigate to start of snippet `verifyexcel`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
@@ -78,7 +78,7 @@ public async Task VerifyWord()
     await this.VerifyWord("sample.docx");
 }
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L35-L41) / [anchor](#snippet-verifyword)</sup>
+<sup><a href='/src/Tests/Samples.cs#L43-L51' title='File snippet `verifyword` was extracted from'>snippet source</a> | <a href='#snippet-verifyword' title='Navigate to start of snippet `verifyword`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
@@ -97,7 +97,7 @@ public async Task VerifyPowerPoint()
     await this.VerifyPowerPoint("sample.pptx");
 }
 ```
-<sup>[snippet source](/src/Tests/Samples.cs#L18-L24) / [anchor](#snippet-verifypowerpoint)</sup>
+<sup><a href='/src/Tests/Samples.cs#L21-L29' title='File snippet `verifypowerpoint` was extracted from'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Navigate to start of snippet `verifypowerpoint`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyPowerPoint.00.verified.svg](/src/Tests/Samples.VerifyPowerPoint.00.verified.svg):
