@@ -1,32 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
+using System.Linq;
 using Aspose.Words;
 using Aspose.Words.Saving;
-using VerifyXunit;
 
 public static partial class VerifyAspose
 {
-    public static async Task VerifyWord(this VerifyBase verifyBase, string path)
+    static List<Stream> GetWordStreams(Stream stream)
     {
-        Guard.AgainstNullOrEmpty(path, nameof(path));
-        var document = new Document(path);
-        await VerifyWord(verifyBase,document);
-    }
-
-    public static async Task VerifyWord(this VerifyBase verifyBase, Stream stream)
-    {
-        Guard.AgainstNull(stream, nameof(stream));
         var document = new Document(stream);
-        await VerifyWord(verifyBase,document);
+        return GetWordStreams(document).ToList();
     }
 
-    static Task VerifyWord(this VerifyBase verifyBase, Document document)
-    {
-        return verifyBase.VerifyBinary(GetStreams(document), "png");
-    }
-
-    static IEnumerable<Stream> GetStreams(Document document)
+    static IEnumerable<Stream> GetWordStreams(Document document)
     {
         for (var pageIndex = 0; pageIndex < document.PageCount; pageIndex++)
         {

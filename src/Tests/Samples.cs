@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.IO;
+using System.Threading.Tasks;
+using Verify;
 using VerifyXunit;
 using Xunit;
 using Xunit.Abstractions;
@@ -11,7 +13,10 @@ public class Samples :
     [Fact]
     public async Task VerifyPdf()
     {
-        await this.VerifyPdf("sample.pdf");
+        await using var stream = File.OpenRead("sample.pdf");
+        var settings = new VerifySettings();
+        settings.UseExtension("pdf");
+        await Verify(stream, settings);
     }
 
     #endregion
@@ -23,7 +28,10 @@ public class Samples :
     [Fact]
     public async Task VerifyPowerPoint()
     {
-        await this.VerifyPowerPoint("sample.pptx");
+        await using var stream = File.OpenRead("sample.pptx");
+        var settings = new VerifySettings();
+        settings.UseExtension("pptx");
+        await Verify(stream, settings);
     }
 
     #endregion
@@ -35,7 +43,10 @@ public class Samples :
     [Fact]
     public async Task VerifyExcel()
     {
-        await this.VerifyExcel("sample.xlsx");
+        await using var stream = File.OpenRead("sample.xlsx");
+        var settings = new VerifySettings();
+        settings.UseExtension("xlsx");
+        await Verify(stream, settings);
     }
 
     #endregion
@@ -45,7 +56,10 @@ public class Samples :
     [Fact]
     public async Task VerifyWord()
     {
-        await this.VerifyWord("sample.docx");
+        await using var stream = File.OpenRead("sample.docx");
+        var settings = new VerifySettings();
+        settings.UseExtension("docx");
+        await Verify(stream, settings);
     }
 
     #endregion
@@ -53,5 +67,10 @@ public class Samples :
     public Samples(ITestOutputHelper output) :
         base(output)
     {
+    }
+
+    static Samples()
+    {
+        VerifyAspose.Initialize();
     }
 }

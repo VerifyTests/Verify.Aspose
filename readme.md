@@ -37,10 +37,13 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
 [Fact]
 public async Task VerifyPdf()
 {
-    await this.VerifyPdf("sample.pdf");
+    await using var stream = File.OpenRead("sample.pdf");
+    var settings = new VerifySettings();
+    settings.UseExtension("pdf");
+    await Verify(stream, settings);
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L9-L17' title='File snippet `verifypdf` was extracted from'>snippet source</a> | <a href='#snippet-verifypdf' title='Navigate to start of snippet `verifypdf`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L11-L22' title='File snippet `verifypdf` was extracted from'>snippet source</a> | <a href='#snippet-verifypdf' title='Navigate to start of snippet `verifypdf`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
@@ -56,10 +59,13 @@ Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.veri
 [Fact]
 public async Task VerifyExcel()
 {
-    await this.VerifyExcel("sample.xlsx");
+    await using var stream = File.OpenRead("sample.xlsx");
+    var settings = new VerifySettings();
+    settings.UseExtension("xlsx");
+    await Verify(stream, settings);
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L33-L41' title='File snippet `verifyexcel` was extracted from'>snippet source</a> | <a href='#snippet-verifyexcel' title='Navigate to start of snippet `verifyexcel`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L41-L52' title='File snippet `verifyexcel` was extracted from'>snippet source</a> | <a href='#snippet-verifyexcel' title='Navigate to start of snippet `verifyexcel`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
@@ -75,10 +81,13 @@ Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.
 [Fact]
 public async Task VerifyWord()
 {
-    await this.VerifyWord("sample.docx");
+    await using var stream = File.OpenRead("sample.docx");
+    var settings = new VerifySettings();
+    settings.UseExtension("docx");
+    await Verify(stream, settings);
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L43-L51' title='File snippet `verifyword` was extracted from'>snippet source</a> | <a href='#snippet-verifyword' title='Navigate to start of snippet `verifyword`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L54-L65' title='File snippet `verifyword` was extracted from'>snippet source</a> | <a href='#snippet-verifyword' title='Navigate to start of snippet `verifyword`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
@@ -94,10 +103,13 @@ Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.ve
 [Fact]
 public async Task VerifyPowerPoint()
 {
-    await this.VerifyPowerPoint("sample.pptx");
+    await using var stream = File.OpenRead("sample.pptx");
+    var settings = new VerifySettings();
+    settings.UseExtension("pptx");
+    await Verify(stream, settings);
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L21-L29' title='File snippet `verifypowerpoint` was extracted from'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Navigate to start of snippet `verifypowerpoint`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L26-L37' title='File snippet `verifypowerpoint` was extracted from'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Navigate to start of snippet `verifypowerpoint`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyPowerPoint.00.verified.svg](/src/Tests/Samples.VerifyPowerPoint.00.verified.svg):
