@@ -29,8 +29,32 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
 
 ## Usage
 
+Given a test with teh following definition:
+
+<!-- snippet: TestDefinition -->
+<a id='snippet-testdefinition'/></a>
+```cs
+public class Samples :
+    VerifyBase
+{
+    public Samples(ITestOutputHelper output) :
+        base(output)
+    {
+    }
+
+    static Samples()
+    {
+        VerifyAspose.Initialize();
+    }
+```
+<sup><a href='/src/Tests/Samples.cs#L8-L21' title='File snippet `testdefinition` was extracted from'>snippet source</a> | <a href='#snippet-testdefinition' title='Navigate to start of snippet `testdefinition`'>anchor</a></sup>
+<!-- endsnippet -->
+
 
 ### PDF
+
+
+#### Verify a file
 
 <!-- snippet: VerifyPdf -->
 <a id='snippet-verifypdf'/></a>
@@ -41,15 +65,38 @@ public Task VerifyPdf()
     return VerifyFile("sample.pdf");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L11-L19' title='File snippet `verifypdf` was extracted from'>snippet source</a> | <a href='#snippet-verifypdf' title='Navigate to start of snippet `verifypdf`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L22-L30' title='File snippet `verifypdf` was extracted from'>snippet source</a> | <a href='#snippet-verifypdf' title='Navigate to start of snippet `verifypdf`'>anchor</a></sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
+
+#### Verify a Stream
+
+<!-- snippet: VerifyPdfStream -->
+<a id='snippet-verifypdfstream'/></a>
+```cs
+[Fact]
+public Task VerifyPdfStream()
+{
+    var settings = new VerifySettings();
+    settings.UseExtension("pdf");
+    return Verify(File.OpenRead("sample.pdf"), settings);
+}
+```
+<sup><a href='/src/Tests/Samples.cs#L32-L42' title='File snippet `verifypdfstream` was extracted from'>snippet source</a> | <a href='#snippet-verifypdfstream' title='Navigate to start of snippet `verifypdfstream`'>anchor</a></sup>
+<!-- endsnippet -->
+
+
+#### Result
+
+[Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyPdf.00.verified.png" width="200px">
 
 
 ### Excel
+
+
+#### Verify a file
 
 <!-- snippet: VerifyExcel -->
 <a id='snippet-verifyexcel'/></a>
@@ -60,15 +107,38 @@ public Task VerifyExcel()
     return Verify("sample.xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L59-L67' title='File snippet `verifyexcel` was extracted from'>snippet source</a> | <a href='#snippet-verifyexcel' title='Navigate to start of snippet `verifyexcel`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L70-L78' title='File snippet `verifyexcel` was extracted from'>snippet source</a> | <a href='#snippet-verifyexcel' title='Navigate to start of snippet `verifyexcel`'>anchor</a></sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
+
+#### Verify a Stream
+
+<!-- snippet: VerifyExcelStream -->
+<a id='snippet-verifyexcelstream'/></a>
+```cs
+[Fact]
+public Task VerifyExcelStream()
+{
+    var settings = new VerifySettings();
+    settings.UseExtension("xlsx");
+    return Verify(File.OpenRead("sample.xlsx"), settings);
+}
+```
+<sup><a href='/src/Tests/Samples.cs#L80-L90' title='File snippet `verifyexcelstream` was extracted from'>snippet source</a> | <a href='#snippet-verifyexcelstream' title='Navigate to start of snippet `verifyexcelstream`'>anchor</a></sup>
+<!-- endsnippet -->
+
+
+#### Result
+
+[Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyExcel.00.verified.png" width="200px">
 
 
 ### Word
+
+
+#### Verify a file
 
 <!-- snippet: VerifyWord -->
 <a id='snippet-verifyword'/></a>
@@ -79,15 +149,38 @@ public Task VerifyWord()
     return Verify("sample.docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L81-L89' title='File snippet `verifyword` was extracted from'>snippet source</a> | <a href='#snippet-verifyword' title='Navigate to start of snippet `verifyword`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L92-L100' title='File snippet `verifyword` was extracted from'>snippet source</a> | <a href='#snippet-verifyword' title='Navigate to start of snippet `verifyword`'>anchor</a></sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
+
+#### Verify a Stream
+
+<!-- snippet: VerifyWordStream -->
+<a id='snippet-verifywordstream'/></a>
+```cs
+[Fact]
+public Task VerifyWordStream()
+{
+    var settings = new VerifySettings();
+    settings.UseExtension("docx");
+    return Verify(File.OpenRead("sample.docx"), settings);
+}
+```
+<sup><a href='/src/Tests/Samples.cs#L102-L112' title='File snippet `verifywordstream` was extracted from'>snippet source</a> | <a href='#snippet-verifywordstream' title='Navigate to start of snippet `verifywordstream`'>anchor</a></sup>
+<!-- endsnippet -->
+
+
+#### Result
+
+[Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyWord.00.verified.png" width="200px">
 
 
 ### PowerPoint
+
+
+#### Verify a file
 
 <!-- snippet: VerifyPowerPoint -->
 <a id='snippet-verifypowerpoint'/></a>
@@ -98,10 +191,30 @@ public Task VerifyPowerPoint()
     return VerifyFile("sample.pptx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L35-L43' title='File snippet `verifypowerpoint` was extracted from'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Navigate to start of snippet `verifypowerpoint`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L46-L54' title='File snippet `verifypowerpoint` was extracted from'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Navigate to start of snippet `verifypowerpoint`'>anchor</a></sup>
 <!-- endsnippet -->
 
-Result: [Samples.VerifyPowerPoint.00.verified.svg](/src/Tests/Samples.VerifyPowerPoint.00.verified.svg):
+
+#### Verify a Stream
+
+<!-- snippet: VerifyPowerPointStream -->
+<a id='snippet-verifypowerpointstream'/></a>
+```cs
+[Fact]
+public Task VerifyPowerPointStream()
+{
+    var settings = new VerifySettings();
+    settings.UseExtension("pptx");
+    return Verify(File.OpenRead("sample.pptx"), settings);
+}
+```
+<sup><a href='/src/Tests/Samples.cs#L56-L66' title='File snippet `verifypowerpointstream` was extracted from'>snippet source</a> | <a href='#snippet-verifypowerpointstream' title='Navigate to start of snippet `verifypowerpointstream`'>anchor</a></sup>
+<!-- endsnippet -->
+
+
+#### Result
+
+[Samples.VerifyPowerPoint.00.verified.svg](/src/Tests/Samples.VerifyPowerPoint.00.verified.svg):
 
 
 ## File Samples

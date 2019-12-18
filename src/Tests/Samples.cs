@@ -5,9 +5,20 @@ using VerifyXunit;
 using Xunit;
 using Xunit.Abstractions;
 
+#region TestDefinition
 public class Samples :
     VerifyBase
 {
+    public Samples(ITestOutputHelper output) :
+        base(output)
+    {
+    }
+
+    static Samples()
+    {
+        VerifyAspose.Initialize();
+    }
+    #endregion
     #region VerifyPdf
 
     [Fact]
@@ -99,14 +110,4 @@ public class Samples :
     }
 
     #endregion
-
-    public Samples(ITestOutputHelper output) :
-        base(output)
-    {
-    }
-
-    static Samples()
-    {
-        VerifyAspose.Initialize();
-    }
 }

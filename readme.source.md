@@ -14,39 +14,87 @@ toc
 
 ## Usage
 
+Given a test with teh following definition:
+
+snippet: TestDefinition
+
 
 ### PDF
 
+
+#### Verify a file
+
 snippet: VerifyPdf
 
-Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
+
+#### Verify a Stream
+
+snippet: VerifyPdfStream
+
+
+#### Result
+
+[Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyPdf.00.verified.png" width="200px">
 
 
 ### Excel
 
+
+#### Verify a file
+
 snippet: VerifyExcel
 
-Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
+
+#### Verify a Stream
+
+snippet: VerifyExcelStream
+
+
+#### Result
+
+[Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyExcel.00.verified.png" width="200px">
 
 
 ### Word
 
+
+#### Verify a file
+
 snippet: VerifyWord
 
-Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
+
+#### Verify a Stream
+
+snippet: VerifyWordStream
+
+
+#### Result
+
+[Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
 
 <img src="/src/Tests/Samples.VerifyWord.00.verified.png" width="200px">
 
 
 ### PowerPoint
 
+
+#### Verify a file
+
 snippet: VerifyPowerPoint
 
-Result: [Samples.VerifyPowerPoint.00.verified.svg](/src/Tests/Samples.VerifyPowerPoint.00.verified.svg):
+
+#### Verify a Stream
+
+snippet: VerifyPowerPointStream
+
+
+#### Result
+
+[Samples.VerifyPowerPoint.00.verified.svg](/src/Tests/Samples.VerifyPowerPoint.00.verified.svg):
 
 
 ## File Samples
