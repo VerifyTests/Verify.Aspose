@@ -21,7 +21,7 @@ snippet: VerifyPdf
 
 Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
 
-<img src="/src/Tests/Samples.VerifyPdf_01.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyPdf.00.verified.png" width="200px">
 
 
 ### Excel
@@ -30,7 +30,7 @@ snippet: VerifyExcel
 
 Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
 
-<img src="/src/Tests/Samples.VerifyExcel_01.01.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyExcel.00.verified.png" width="200px">
 
 
 ### Word
@@ -39,7 +39,7 @@ snippet: VerifyWord
 
 Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
 
-<img src="/src/Tests/Samples.VerifyWord_01.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyWord.00.verified.png" width="200px">
 
 
 ### PowerPoint

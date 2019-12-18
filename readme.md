@@ -7,7 +7,8 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # <img src="/src/icon.png" height="30px"> Verify.Aspose
 
-[![Build status](https://ci.appveyor.com/api/projects/status/7k8hh0guut2ioak2?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-Aspose) [![NuGet Status](https://img.shields.io/nuget/v/Verify.Aspose.svg)](https://www.nuget.org/packages/Verify.Aspose/)
+[![Build status](https://ci.appveyor.com/api/projects/status/7k8hh0guut2ioak2?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-Aspose)
+[![NuGet Status](https://img.shields.io/nuget/v/Verify.Aspose.svg)](https://www.nuget.org/packages/Verify.Aspose/)
 
 Extends [Verify](https://github.com/SimonCropp/Verify) to allow verification of documents via [Aspose](https://www.aspose.com/).
 
@@ -48,7 +49,7 @@ public async Task VerifyPdf()
 
 Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
 
-<img src="/src/Tests/Samples.VerifyPdf_01.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyPdf.00.verified.png" width="200px">
 
 
 ### Excel
@@ -70,7 +71,7 @@ public async Task VerifyExcel()
 
 Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
 
-<img src="/src/Tests/Samples.VerifyExcel_01.01.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyExcel.00.verified.png" width="200px">
 
 
 ### Word
@@ -92,7 +93,7 @@ public async Task VerifyWord()
 
 Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
 
-<img src="/src/Tests/Samples.VerifyWord_01.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyWord.00.verified.png" width="200px">
 
 
 ### PowerPoint
