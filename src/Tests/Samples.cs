@@ -11,12 +11,21 @@ public class Samples :
     #region VerifyPdf
 
     [Fact]
-    public async Task VerifyPdf()
+    public Task VerifyPdf()
     {
-        await using var stream = File.OpenRead("sample.pdf");
+        return VerifyFile("sample.pdf");
+    }
+
+    #endregion
+
+    #region VerifyPdfStream
+
+    [Fact]
+    public Task VerifyPdfStream()
+    {
         var settings = new VerifySettings();
         settings.UseExtension("pdf");
-        await Verify(stream, settings);
+        return Verify(File.OpenRead("sample.pdf"), settings);
     }
 
     #endregion
@@ -26,12 +35,21 @@ public class Samples :
     #region VerifyPowerPoint
 
     [Fact]
-    public async Task VerifyPowerPoint()
+    public Task VerifyPowerPoint()
     {
-        await using var stream = File.OpenRead("sample.pptx");
+        return VerifyFile("sample.pptx");
+    }
+
+    #endregion
+
+    #region VerifyPowerPointStream
+
+    [Fact]
+    public Task VerifyPowerPointStream()
+    {
         var settings = new VerifySettings();
         settings.UseExtension("pptx");
-        await Verify(stream, settings);
+        return Verify(File.OpenRead("sample.pptx"), settings);
     }
 
     #endregion
@@ -41,12 +59,21 @@ public class Samples :
     #region VerifyExcel
 
     [Fact]
-    public async Task VerifyExcel()
+    public Task VerifyExcel()
     {
-        await using var stream = File.OpenRead("sample.xlsx");
+        return Verify("sample.xlsx");
+    }
+
+    #endregion
+
+    #region VerifyExcelStream
+
+    [Fact]
+    public Task VerifyExcelStream()
+    {
         var settings = new VerifySettings();
         settings.UseExtension("xlsx");
-        await Verify(stream, settings);
+        return Verify(File.OpenRead("sample.xlsx"), settings);
     }
 
     #endregion
@@ -54,12 +81,21 @@ public class Samples :
     #region VerifyWord
 
     [Fact]
-    public async Task VerifyWord()
+    public Task VerifyWord()
     {
-        await using var stream = File.OpenRead("sample.docx");
+        return Verify("sample.docx");
+    }
+
+    #endregion
+
+    #region VerifyWordStream
+
+    [Fact]
+    public Task VerifyWordStream()
+    {
         var settings = new VerifySettings();
         settings.UseExtension("docx");
-        await Verify(stream, settings);
+        return Verify(File.OpenRead("sample.docx"), settings);
     }
 
     #endregion

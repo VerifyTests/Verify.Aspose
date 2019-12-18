@@ -36,15 +36,12 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
 <a id='snippet-verifypdf'/></a>
 ```cs
 [Fact]
-public async Task VerifyPdf()
+public Task VerifyPdf()
 {
-    await using var stream = File.OpenRead("sample.pdf");
-    var settings = new VerifySettings();
-    settings.UseExtension("pdf");
-    await Verify(stream, settings);
+    return VerifyFile("sample.pdf");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L11-L22' title='File snippet `verifypdf` was extracted from'>snippet source</a> | <a href='#snippet-verifypdf' title='Navigate to start of snippet `verifypdf`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L11-L19' title='File snippet `verifypdf` was extracted from'>snippet source</a> | <a href='#snippet-verifypdf' title='Navigate to start of snippet `verifypdf`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
@@ -58,15 +55,12 @@ Result: [Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.veri
 <a id='snippet-verifyexcel'/></a>
 ```cs
 [Fact]
-public async Task VerifyExcel()
+public Task VerifyExcel()
 {
-    await using var stream = File.OpenRead("sample.xlsx");
-    var settings = new VerifySettings();
-    settings.UseExtension("xlsx");
-    await Verify(stream, settings);
+    return Verify("sample.xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L41-L52' title='File snippet `verifyexcel` was extracted from'>snippet source</a> | <a href='#snippet-verifyexcel' title='Navigate to start of snippet `verifyexcel`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L59-L67' title='File snippet `verifyexcel` was extracted from'>snippet source</a> | <a href='#snippet-verifyexcel' title='Navigate to start of snippet `verifyexcel`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
@@ -80,15 +74,12 @@ Result: [Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.
 <a id='snippet-verifyword'/></a>
 ```cs
 [Fact]
-public async Task VerifyWord()
+public Task VerifyWord()
 {
-    await using var stream = File.OpenRead("sample.docx");
-    var settings = new VerifySettings();
-    settings.UseExtension("docx");
-    await Verify(stream, settings);
+    return Verify("sample.docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L54-L65' title='File snippet `verifyword` was extracted from'>snippet source</a> | <a href='#snippet-verifyword' title='Navigate to start of snippet `verifyword`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L81-L89' title='File snippet `verifyword` was extracted from'>snippet source</a> | <a href='#snippet-verifyword' title='Navigate to start of snippet `verifyword`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
@@ -102,15 +93,12 @@ Result: [Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.ve
 <a id='snippet-verifypowerpoint'/></a>
 ```cs
 [Fact]
-public async Task VerifyPowerPoint()
+public Task VerifyPowerPoint()
 {
-    await using var stream = File.OpenRead("sample.pptx");
-    var settings = new VerifySettings();
-    settings.UseExtension("pptx");
-    await Verify(stream, settings);
+    return VerifyFile("sample.pptx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L26-L37' title='File snippet `verifypowerpoint` was extracted from'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Navigate to start of snippet `verifypowerpoint`'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L35-L43' title='File snippet `verifypowerpoint` was extracted from'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Navigate to start of snippet `verifypowerpoint`'>anchor</a></sup>
 <!-- endsnippet -->
 
 Result: [Samples.VerifyPowerPoint.00.verified.svg](/src/Tests/Samples.VerifyPowerPoint.00.verified.svg):
