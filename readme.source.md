@@ -1,6 +1,7 @@
 # <img src="/src/icon.png" height="30px"> Verify.Aspose
 
-[![Build status](https://ci.appveyor.com/api/projects/status/7k8hh0guut2ioak2?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-Aspose) [![NuGet Status](https://img.shields.io/nuget/v/Verify.Aspose.svg?cacheSeconds=86400)](https://www.nuget.org/packages/Verify.Aspose/)
+[![Build status](https://ci.appveyor.com/api/projects/status/7k8hh0guut2ioak2?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-Aspose)
+[![NuGet Status](https://img.shields.io/nuget/v/Verify.Aspose.svg)](https://www.nuget.org/packages/Verify.Aspose/)
 
 Extends [Verify](https://github.com/SimonCropp/Verify) to allow verification of documents via [Aspose](https://www.aspose.com/).
 
