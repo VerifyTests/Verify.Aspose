@@ -19,6 +19,7 @@ public class Samples :
         VerifyAspose.Initialize();
     }
     #endregion
+
     #region VerifyPdf
 
     [Fact]
