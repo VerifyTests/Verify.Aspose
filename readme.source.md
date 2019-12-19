@@ -14,7 +14,7 @@ toc
 
 ## Usage
 
-Given a test with teh following definition:
+Given a test with the following definition:
 
 snippet: TestDefinition
 
