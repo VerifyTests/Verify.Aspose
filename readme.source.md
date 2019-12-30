@@ -12,6 +12,11 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
 toc
 
 
+## NuGet Package
+
+https://nuget.org/packages/Verify.Aspose/
+
+
 ## Usage
 
 Given a test with the following definition:

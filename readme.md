@@ -27,6 +27,11 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
   * [File Samples](#file-samples)<!-- endtoc -->
 
 
+## NuGet Package
+
+https://nuget.org/packages/Verify.Aspose/
+
+
 ## Usage
 
 Given a test with the following definition:
