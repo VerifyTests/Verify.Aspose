@@ -12,7 +12,7 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
 toc
 
 
-## NuGet Package
+## NuGet package
 
 https://nuget.org/packages/Verify.Aspose/
 
