@@ -6,19 +6,19 @@ public static partial class VerifyAspose
 {
     public static void Initialize()
     {
-        SharedVerifySettings.RegisterFileConverter("xlsx", "png", GetExcelStreams);
-        SharedVerifySettings.RegisterFileConverter("xls", "png", GetExcelStreams);
-        SharedVerifySettings.RegisterFileConverter<Workbook>("png", GetExcelStreams);
+        SharedVerifySettings.RegisterFileConverter("xlsx", "png", ConvertExcel);
+        SharedVerifySettings.RegisterFileConverter("xls", "png", ConvertExcel);
+        SharedVerifySettings.RegisterFileConverter<Workbook>("png", ConvertExcel);
 
-        SharedVerifySettings.RegisterFileConverter("pdf", "png", GetPdfStreams);
-        SharedVerifySettings.RegisterFileConverter<Aspose.Pdf.Document>("png", GetPdfStreams);
+        SharedVerifySettings.RegisterFileConverter("pdf", "png", ConvertPdf);
+        SharedVerifySettings.RegisterFileConverter<Aspose.Pdf.Document>("png", ConvertPdf);
 
-        SharedVerifySettings.RegisterFileConverter("pptx", "svg", GetPowerPointStreams);
-        SharedVerifySettings.RegisterFileConverter("ppt", "svg", GetPowerPointStreams);
-        SharedVerifySettings.RegisterFileConverter<Presentation>("svg", GetPowerPointStreams);
+        SharedVerifySettings.RegisterFileConverter("pptx", "svg", ConvertPowerPoint);
+        SharedVerifySettings.RegisterFileConverter("ppt", "svg", ConvertPowerPoint);
+        SharedVerifySettings.RegisterFileConverter<Presentation>("svg", ConvertPowerPoint);
 
-        SharedVerifySettings.RegisterFileConverter("docx", "png", GetWordStreams);
-        SharedVerifySettings.RegisterFileConverter("doc", "png", GetWordStreams);
-        SharedVerifySettings.RegisterFileConverter<Aspose.Words.Document>("png", GetWordStreams);
+        SharedVerifySettings.RegisterFileConverter("docx", "png", ConvertWord);
+        SharedVerifySettings.RegisterFileConverter("doc", "png", ConvertWord);
+        SharedVerifySettings.RegisterFileConverter<Aspose.Words.Document>("png", ConvertWord);
     }
 }

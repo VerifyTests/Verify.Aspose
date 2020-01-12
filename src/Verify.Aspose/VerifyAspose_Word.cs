@@ -3,13 +3,19 @@ using System.IO;
 using System.Linq;
 using Aspose.Words;
 using Aspose.Words.Saving;
+using Verify;
 
 public static partial class VerifyAspose
 {
-    static List<Stream> GetWordStreams(Stream stream)
+    static ConversionResult ConvertWord(Stream stream, VerifySettings settings)
     {
         var document = new Document(stream);
-        return GetWordStreams(document).ToList();
+        return ConvertWord(document, settings);
+    }
+
+    static ConversionResult ConvertWord(Document document, VerifySettings settings)
+    {
+        return new ConversionResult(null, GetWordStreams(document).ToList());
     }
 
     static IEnumerable<Stream> GetWordStreams(Document document)

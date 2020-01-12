@@ -2,13 +2,19 @@
 using System.IO;
 using System.Linq;
 using Aspose.Slides;
+using Verify;
 
 public static partial class VerifyAspose
 {
-    static List<Stream> GetPowerPointStreams(Stream stream)
+    static ConversionResult ConvertPowerPoint(Stream stream, VerifySettings settings)
     {
         using var document = new Presentation(stream);
-        return GetPowerPointStreams(document).ToList();
+        return ConvertPowerPoint(document, settings);
+    }
+
+    static ConversionResult ConvertPowerPoint(Presentation document, VerifySettings settings)
+    {
+        return new ConversionResult(null, GetPowerPointStreams(document).ToList());
     }
 
     static IEnumerable<Stream> GetPowerPointStreams(Presentation document)

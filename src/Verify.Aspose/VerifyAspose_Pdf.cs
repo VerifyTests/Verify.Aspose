@@ -3,15 +3,21 @@ using System.IO;
 using System.Linq;
 using Aspose.Pdf;
 using Aspose.Pdf.Devices;
+using Verify;
 
 public static partial class VerifyAspose
 {
     static PngDevice pngDevice = new PngDevice();
 
-    static List<Stream> GetPdfStreams(Stream stream)
+    static ConversionResult ConvertPdf(Stream stream, VerifySettings settings)
     {
         using var document = new Document(stream);
-        return GetPdfStreams(document).ToList();
+        return ConvertPdf(document, settings);
+    }
+
+    static ConversionResult ConvertPdf(Document document, VerifySettings settings)
+    {
+        return new ConversionResult(null, GetPdfStreams(document).ToList());
     }
 
     static IEnumerable<Stream> GetPdfStreams(Document document)

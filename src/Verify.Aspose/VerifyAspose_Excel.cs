@@ -4,6 +4,7 @@ using System.Linq;
 using Aspose.Cells;
 using Aspose.Cells.Drawing;
 using Aspose.Cells.Rendering;
+using Verify;
 
 public static partial class VerifyAspose
 {
@@ -12,10 +13,15 @@ public static partial class VerifyAspose
         ImageType = ImageType.Png
     };
 
-    static List<Stream> GetExcelStreams(Stream stream)
+    static ConversionResult ConvertExcel(Stream stream, VerifySettings settings)
     {
         using var document = new Workbook(stream);
-        return GetExcelStreams(document).ToList();
+        return ConvertExcel(document, settings);
+    }
+
+    static ConversionResult ConvertExcel(Workbook document, VerifySettings settings)
+    {
+        return new ConversionResult(null, GetExcelStreams(document).ToList());
     }
 
     static IEnumerable<Stream> GetExcelStreams(Workbook document)
