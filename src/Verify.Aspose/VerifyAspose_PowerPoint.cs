@@ -14,7 +14,7 @@ public static partial class VerifyAspose
 
     static ConversionResult ConvertPowerPoint(Presentation document, VerifySettings settings)
     {
-        return new ConversionResult(null, GetPowerPointStreams(document).ToList());
+        return new ConversionResult(document.DocumentProperties, GetPowerPointStreams(document).ToList());
     }
 
     static IEnumerable<Stream> GetPowerPointStreams(Presentation document)

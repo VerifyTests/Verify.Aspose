@@ -109,7 +109,7 @@ public Task VerifyPdfStream()
 [Fact]
 public Task VerifyExcel()
 {
-    return Verify("sample.xlsx");
+    return VerifyFile("sample.xlsx");
 }
 ```
 <sup><a href='/src/Tests/Samples.cs#L71-L79' title='File snippet `verifyexcel` was extracted from'>snippet source</a> | <a href='#snippet-verifyexcel' title='Navigate to start of snippet `verifyexcel`'>anchor</a></sup>
@@ -151,7 +151,7 @@ public Task VerifyExcelStream()
 [Fact]
 public Task VerifyWord()
 {
-    return Verify("sample.docx");
+    return VerifyFile("sample.docx");
 }
 ```
 <sup><a href='/src/Tests/Samples.cs#L93-L101' title='File snippet `verifyword` was extracted from'>snippet source</a> | <a href='#snippet-verifyword' title='Navigate to start of snippet `verifyword`'>anchor</a></sup>

@@ -15,7 +15,23 @@ public static partial class VerifyAspose
 
     static ConversionResult ConvertWord(Document document, VerifySettings settings)
     {
-        return new ConversionResult(null, GetWordStreams(document).ToList());
+        return new ConversionResult(GetInfo(document), GetWordStreams(document).ToList());
+    }
+
+    static object GetInfo(Document document)
+    {
+        return new
+        {
+            HasRevisions = document.HasRevisions.ToString(),
+            Properties = GetDocumentProperties(document)
+        };
+    }
+
+    static Dictionary<string, object> GetDocumentProperties(Document document)
+    {
+        return document.BuiltInDocumentProperties
+            .Where(x => x.Value.HasValue())
+            .ToDictionary(x => x.Name, x => x.Value);
     }
 
     static IEnumerable<Stream> GetWordStreams(Document document)

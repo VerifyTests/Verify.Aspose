@@ -17,7 +17,43 @@ public static partial class VerifyAspose
 
     static ConversionResult ConvertPdf(Document document, VerifySettings settings)
     {
-        return new ConversionResult(null, GetPdfStreams(document).ToList());
+        return new ConversionResult(
+            new
+            {
+                document.AllowReusePageContent,
+                document.CenterWindow,
+                document.DisplayDocTitle,
+                document.Direction,
+                document.Duplex,
+                FitWindow = document.FitWindow.ToString(),
+                HideMenubar = document.HideMenubar.ToString(),
+                HideToolBar = document.HideToolBar.ToString(),
+                HideWindowUI = document.HideWindowUI.ToString(),
+                IgnoreCorruptedObjects = document.IgnoreCorruptedObjects.ToString(),
+                Info = GetInfo(document),
+                IsEncrypted = document.IsEncrypted.ToString(),
+                IsLinearized = document.IsLinearized.ToString(),
+                IsPdfaCompliant = document.IsPdfaCompliant.ToString(),
+                IsPdfUaCompliant = document.IsPdfUaCompliant.ToString(),
+                IsXrefGapsAllowed = document.IsXrefGapsAllowed.ToString(),
+                document.NonFullScreenPageMode,
+                OptimizeSize = document.OptimizeSize.ToString(),
+                document.PageLabels,
+                document.PageLayout,
+                document.PageMode,
+                document.PdfFormat,
+                document.Version
+
+            },
+            GetPdfStreams(document).ToList());
+    }
+
+    static Dictionary<string, string> GetInfo(Document document)
+    {
+        return document.Info
+            .Where(x => x.Value.HasValue() &&
+                        !x.Key.Contains("Date"))
+            .ToDictionary(x => x.Key, x => x.Value);
     }
 
     static IEnumerable<Stream> GetPdfStreams(Document document)

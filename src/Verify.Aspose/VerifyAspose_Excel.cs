@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using Aspose.Cells;
 using Aspose.Cells.Drawing;
+using Aspose.Cells.Properties;
 using Aspose.Cells.Rendering;
 using Verify;
 
@@ -21,7 +22,27 @@ public static partial class VerifyAspose
 
     static ConversionResult ConvertExcel(Workbook document, VerifySettings settings)
     {
-        return new ConversionResult(null, GetExcelStreams(document).ToList());
+        var info = GetInfo(document);
+        return new ConversionResult(info, GetExcelStreams(document).ToList());
+    }
+
+    static object GetInfo(Workbook document)
+    {
+        return new
+        {
+            HasMacro = document.HasMacro.ToString(),
+            HasRevisions = document.HasRevisions.ToString(),
+            IsDigitallySigned = document.IsDigitallySigned.ToString(),
+            Properties = GetDocumentProperties(document)
+        };
+    }
+
+    static Dictionary<string, object> GetDocumentProperties(Workbook document)
+    {
+        return document.BuiltInDocumentProperties
+            .Cast<DocumentProperty>()
+            .Where(x => x.Value.HasValue())
+            .ToDictionary(x => x.Name, x => x.Value);
     }
 
     static IEnumerable<Stream> GetExcelStreams(Workbook document)

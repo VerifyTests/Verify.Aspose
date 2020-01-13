@@ -73,7 +73,7 @@ public class Samples :
     [Fact]
     public Task VerifyExcel()
     {
-        return Verify("sample.xlsx");
+        return VerifyFile("sample.xlsx");
     }
 
     #endregion
@@ -95,7 +95,7 @@ public class Samples :
     [Fact]
     public Task VerifyWord()
     {
-        return Verify("sample.docx");
+        return VerifyFile("sample.docx");
     }
 
     #endregion

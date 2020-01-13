@@ -1,0 +1,22 @@
+{
+  AppVersion: '16.0000',
+  NameOfApplication: 'Microsoft Office PowerPoint',
+  Company: '',
+  Manager: '',
+  PresentationFormat: 'Custom',
+  ApplicationTemplate: '',
+  Title: 'Lorem ipsum',
+  Subject: '',
+  Author: 'simon',
+  Keywords: '',
+  Comments: '',
+  Category: '',
+  CreatedTime: DateTime_1,
+  LastSavedTime: DateTime_2,
+  LastPrinted: DateTime_3,
+  LastSavedBy: 'Simon Cropp',
+  RevisionNumber: 1,
+  ContentStatus: '',
+  ContentType: '',
+  HyperlinkBase: ''
+}
