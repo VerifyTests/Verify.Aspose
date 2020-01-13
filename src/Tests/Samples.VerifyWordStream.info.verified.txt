@@ -1,7 +1,6 @@
 {
   HasRevisions: 'False',
   Properties: {
-    Bytes: 111303,
     CreateTime: DateTime_1,
     Language: 'en-US',
     TotalEditingTime: 991904

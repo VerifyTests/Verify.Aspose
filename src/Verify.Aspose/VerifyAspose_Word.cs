@@ -30,7 +30,8 @@ public static partial class VerifyAspose
     static Dictionary<string, object> GetDocumentProperties(Document document)
     {
         return document.BuiltInDocumentProperties
-            .Where(x => x.Value.HasValue())
+            .Where(x => x.Name != "Bytes" &&
+                        x.Value.HasValue())
             .ToDictionary(x => x.Name, x => x.Value);
     }
 
