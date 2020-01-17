@@ -24,7 +24,8 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
     * [Excel](#excel)
     * [Word](#word)
     * [PowerPoint](#powerpoint)
-  * [File Samples](#file-samples)<!-- endtoc -->
+  * [File Samples](#file-samples)
+  * [Security contact information](#security-contact-information)<!-- endtoc -->
 
 
 ## NuGet package
@@ -225,6 +226,11 @@ public Task VerifyPowerPointStream()
 ## File Samples
 
 http://file-examples.com/
+
+
+## Security contact information
+
+To report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Release Notes
