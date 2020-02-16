@@ -16,6 +16,8 @@ Converts documents (pdf, docx, xslx, and pptx) to png for verification.
 
 An [Aspose License](https://purchase.aspose.com/policies/license-types) is required to use this tool.
 
+Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-verify.aspose?utm_source=nuget-verify.aspose&utm_medium=referral&utm_campaign=enterprise).
+
 <!-- toc -->
 ## Contents
 
