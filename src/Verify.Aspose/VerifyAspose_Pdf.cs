@@ -45,7 +45,7 @@ public static partial class VerifyAspose
                 document.Version
 
             },
-            GetPdfStreams(document).ToList());
+            GetPdfStreams(document, settings).ToList());
     }
 
     static Dictionary<string, string> GetInfo(Document document)
@@ -56,10 +56,12 @@ public static partial class VerifyAspose
             .ToDictionary(x => x.Key, x => x.Value);
     }
 
-    static IEnumerable<Stream> GetPdfStreams(Document document)
+    static IEnumerable<Stream> GetPdfStreams(Document document, VerifySettings settings)
     {
-        foreach (var page in document.Pages)
+        var pagesToInclude = settings.GetPagesToInclude(document.Pages.Count);
+        for (var index = 0; index < pagesToInclude; index++)
         {
+            var page = document.Pages[index+1];
             var outputStream = new MemoryStream();
             pngDevice.Process(page, outputStream);
             yield return outputStream;

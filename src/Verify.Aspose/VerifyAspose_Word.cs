@@ -15,7 +15,7 @@ public static partial class VerifyAspose
 
     static ConversionResult ConvertWord(Document document, VerifySettings settings)
     {
-        return new ConversionResult(GetInfo(document), GetWordStreams(document).ToList());
+        return new ConversionResult(GetInfo(document), GetWordStreams(document, settings).ToList());
     }
 
     static object GetInfo(Document document)
@@ -35,9 +35,10 @@ public static partial class VerifyAspose
             .ToDictionary(x => x.Name, x => x.Value);
     }
 
-    static IEnumerable<Stream> GetWordStreams(Document document)
+    static IEnumerable<Stream> GetWordStreams(Document document, VerifySettings settings)
     {
-        for (var pageIndex = 0; pageIndex < document.PageCount; pageIndex++)
+        var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
+        for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)
         {
             var options = new ImageSaveOptions(SaveFormat.Png)
             {
