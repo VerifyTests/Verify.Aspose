@@ -1,4 +1,5 @@
 ﻿using System;
+using Aspose.Pdf.Devices;
 
 namespace Verify
 {
@@ -17,7 +18,29 @@ namespace Verify
             {
                 return count;
             }
-            return Math.Min(count, (int)value);
+
+            return Math.Min(count, (int) value);
+        }
+
+        public static void PdfPngDevice(this VerifySettings settings, Func<Aspose.Pdf.Page, PngDevice> func)
+        {
+            Guard.AgainstNull(settings, nameof(settings));
+            Guard.AgainstNull(func, nameof(func));
+            settings.Data["VerifyAsposePdfPngDevice"] = func;
+        }
+
+        static PngDevice defaultDevice = new PngDevice();
+
+        internal static PngDevice GetPdfPngDevice(this VerifySettings settings, Aspose.Pdf.Page page)
+        {
+            Guard.AgainstNull(settings, nameof(settings));
+            if (!settings.Data.TryGetValue("VerifyAsposePdfPngDevice", out var value))
+            {
+                return defaultDevice;
+            }
+
+            var func = (Func<Aspose.Pdf.Page, PngDevice>) value;
+            return func(page);
         }
     }
 }

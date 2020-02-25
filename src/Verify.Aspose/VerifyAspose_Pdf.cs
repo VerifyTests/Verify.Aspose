@@ -2,13 +2,10 @@
 using System.IO;
 using System.Linq;
 using Aspose.Pdf;
-using Aspose.Pdf.Devices;
 using Verify;
 
 public static partial class VerifyAspose
 {
-    static PngDevice pngDevice = new PngDevice();
-
     static ConversionResult ConvertPdf(Stream stream, VerifySettings settings)
     {
         using var document = new Document(stream);
@@ -61,8 +58,9 @@ public static partial class VerifyAspose
         var pagesToInclude = settings.GetPagesToInclude(document.Pages.Count);
         for (var index = 0; index < pagesToInclude; index++)
         {
-            var page = document.Pages[index+1];
+            var page = document.Pages[index + 1];
             var outputStream = new MemoryStream();
+            var pngDevice = settings.GetPdfPngDevice(page);
             pngDevice.Process(page, outputStream);
             yield return outputStream;
         }

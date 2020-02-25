@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
+using Aspose.Pdf.Devices;
 using Verify;
 using VerifyXunit;
 using Xunit;
@@ -29,6 +31,21 @@ public class Samples :
     }
 
     #endregion
+
+    [Fact]
+    public Task VerifyPdfResolution()
+    {
+        var resolution = new Resolution(100);
+        var settings = new VerifySettings();
+        settings.PdfPngDevice(page =>
+        {
+            var artBox = page.ArtBox;
+            var width = Convert.ToInt32(artBox.Width);
+            var height = Convert.ToInt32(artBox.Height);
+            return new PngDevice(width, height, resolution);
+        });
+        return VerifyFile("sample.pdf", settings);
+    }
 
     #region VerifyPdfStream
 
