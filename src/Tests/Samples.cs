@@ -3,19 +3,13 @@ using System.IO;
 using System.Threading.Tasks;
 using Aspose.Pdf.Devices;
 using Verify;
-using VerifyXunit;
-using Xunit;
-using Xunit.Abstractions;
+using VerifyNUnit;
+using NUnit.Framework;
 
 #region TestDefinition
-public class Samples :
-    VerifyBase
+[TestFixture]
+public class Samples
 {
-    public Samples(ITestOutputHelper output) :
-        base(output)
-    {
-    }
-
     static Samples()
     {
         VerifyAspose.Initialize();
@@ -24,15 +18,15 @@ public class Samples :
 
     #region VerifyPdf
 
-    [Fact]
+    [Test]
     public Task VerifyPdf()
     {
-        return VerifyFile("sample.pdf");
+        return Verifier.VerifyFile("sample.pdf");
     }
 
     #endregion
 
-    [Fact]
+    [Test]
     public Task VerifyPdfResolution()
     {
         var resolution = new Resolution(100);
@@ -44,17 +38,17 @@ public class Samples :
             var height = Convert.ToInt32(artBox.Height);
             return new PngDevice(width, height, resolution);
         });
-        return VerifyFile("sample.pdf", settings);
+        return Verifier.VerifyFile("sample.pdf", settings);
     }
 
     #region VerifyPdfStream
 
-    [Fact]
+    [Test]
     public Task VerifyPdfStream()
     {
         var settings = new VerifySettings();
         settings.UseExtension("pdf");
-        return Verify(File.OpenRead("sample.pdf"), settings);
+        return Verifier.Verify(File.OpenRead("sample.pdf"), settings);
     }
 
     #endregion
@@ -63,22 +57,22 @@ public class Samples :
 
     #region VerifyPowerPoint
 
-    [Fact]
+    [Test]
     public Task VerifyPowerPoint()
     {
-        return VerifyFile("sample.pptx");
+        return Verifier.VerifyFile("sample.pptx");
     }
 
     #endregion
 
     #region VerifyPowerPointStream
 
-    [Fact]
+    [Test]
     public Task VerifyPowerPointStream()
     {
         var settings = new VerifySettings();
         settings.UseExtension("pptx");
-        return Verify(File.OpenRead("sample.pptx"), settings);
+        return Verifier.Verify(File.OpenRead("sample.pptx"), settings);
     }
 
     #endregion
@@ -87,44 +81,44 @@ public class Samples :
 
     #region VerifyExcel
 
-    [Fact]
+    [Test]
     public Task VerifyExcel()
     {
-        return VerifyFile("sample.xlsx");
+        return Verifier.VerifyFile("sample.xlsx");
     }
 
     #endregion
 
     #region VerifyExcelStream
 
-    [Fact]
+    [Test]
     public Task VerifyExcelStream()
     {
         var settings = new VerifySettings();
         settings.UseExtension("xlsx");
-        return Verify(File.OpenRead("sample.xlsx"), settings);
+        return Verifier.Verify(File.OpenRead("sample.xlsx"), settings);
     }
 
     #endregion
 
     #region VerifyWord
 
-    [Fact]
+    [Test]
     public Task VerifyWord()
     {
-        return VerifyFile("sample.docx");
+        return Verifier.VerifyFile("sample.docx");
     }
 
     #endregion
 
     #region VerifyWordStream
 
-    [Fact]
+    [Test]
     public Task VerifyWordStream()
     {
         var settings = new VerifySettings();
         settings.UseExtension("docx");
-        return Verify(File.OpenRead("sample.docx"), settings);
+        return Verifier.Verify(File.OpenRead("sample.docx"), settings);
     }
 
     #endregion
