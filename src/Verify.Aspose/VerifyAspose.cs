@@ -1,24 +1,26 @@
 ﻿using Aspose.Cells;
 using Aspose.Slides;
-using Verify;
 
-public static partial class VerifyAspose
+namespace VerifyTests
 {
-    public static void Initialize()
+    public static partial class VerifyAspose
     {
-        SharedVerifySettings.RegisterFileConverter("xlsx", "png", ConvertExcel);
-        SharedVerifySettings.RegisterFileConverter("xls", "png", ConvertExcel);
-        SharedVerifySettings.RegisterFileConverter<Workbook>("png", ConvertExcel);
+        public static void Initialize()
+        {
+            VerifierSettings.RegisterFileConverter("xlsx", "png", ConvertExcel);
+            VerifierSettings.RegisterFileConverter("xls", "png", ConvertExcel);
+            VerifierSettings.RegisterFileConverter<Workbook>("png", ConvertExcel);
 
-        SharedVerifySettings.RegisterFileConverter("pdf", "png", ConvertPdf);
-        SharedVerifySettings.RegisterFileConverter<Aspose.Pdf.Document>("png", ConvertPdf);
+            VerifierSettings.RegisterFileConverter("pdf", "png", ConvertPdf);
+            VerifierSettings.RegisterFileConverter<Aspose.Pdf.Document>("png", ConvertPdf);
 
-        SharedVerifySettings.RegisterFileConverter("pptx", "svg", ConvertPowerPoint);
-        SharedVerifySettings.RegisterFileConverter("ppt", "svg", ConvertPowerPoint);
-        SharedVerifySettings.RegisterFileConverter<Presentation>("svg", ConvertPowerPoint);
+            VerifierSettings.RegisterFileConverter("pptx", "svg", ConvertPowerPoint);
+            VerifierSettings.RegisterFileConverter("ppt", "svg", ConvertPowerPoint);
+            VerifierSettings.RegisterFileConverter<Presentation>("svg", ConvertPowerPoint);
 
-        SharedVerifySettings.RegisterFileConverter("docx", "png", ConvertWord);
-        SharedVerifySettings.RegisterFileConverter("doc", "png", ConvertWord);
-        SharedVerifySettings.RegisterFileConverter<Aspose.Words.Document>("png", ConvertWord);
+            VerifierSettings.RegisterFileConverter("docx", "png", ConvertWord);
+            VerifierSettings.RegisterFileConverter("doc", "png", ConvertWord);
+            VerifierSettings.RegisterFileConverter<Aspose.Words.Document>("png", ConvertWord);
+        }
     }
 }

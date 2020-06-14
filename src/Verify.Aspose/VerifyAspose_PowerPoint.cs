@@ -2,30 +2,32 @@
 using System.IO;
 using System.Linq;
 using Aspose.Slides;
-using Verify;
 
-public static partial class VerifyAspose
+namespace VerifyTests
 {
-    static ConversionResult ConvertPowerPoint(Stream stream, VerifySettings settings)
+    public static partial class VerifyAspose
     {
-        using var document = new Presentation(stream);
-        return ConvertPowerPoint(document, settings);
-    }
-
-    static ConversionResult ConvertPowerPoint(Presentation document, VerifySettings settings)
-    {
-        return new ConversionResult(document.DocumentProperties, GetPowerPointStreams(document, settings).ToList());
-    }
-
-    static IEnumerable<Stream> GetPowerPointStreams(Presentation document, VerifySettings settings)
-    {
-        var pagesToInclude = settings.GetPagesToInclude(document.Slides.Count);
-        for (var index = 0; index < pagesToInclude; index++)
+        static ConversionResult ConvertPowerPoint(Stream stream, VerifySettings settings)
         {
-            var slide = document.Slides[index];
-            var outputStream = new MemoryStream();
-            slide.WriteAsSvg(outputStream);
-            yield return outputStream;
+            using var document = new Presentation(stream);
+            return ConvertPowerPoint(document, settings);
+        }
+
+        static ConversionResult ConvertPowerPoint(Presentation document, VerifySettings settings)
+        {
+            return new ConversionResult(document.DocumentProperties, GetPowerPointStreams(document, settings).ToList());
+        }
+
+        static IEnumerable<Stream> GetPowerPointStreams(Presentation document, VerifySettings settings)
+        {
+            var pagesToInclude = settings.GetPagesToInclude(document.Slides.Count);
+            for (var index = 0; index < pagesToInclude; index++)
+            {
+                var slide = document.Slides[index];
+                var outputStream = new MemoryStream();
+                slide.WriteAsSvg(outputStream);
+                yield return outputStream;
+            }
         }
     }
 }
