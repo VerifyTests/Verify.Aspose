@@ -54,16 +54,16 @@ namespace VerifyTests
                 .ToDictionary(x => x.Key, x => x.Value);
         }
 
-        static IEnumerable<Stream> GetPdfStreams(Document document, VerifySettings settings)
+        static IEnumerable<ConversionStream> GetPdfStreams(Document document, VerifySettings settings)
         {
             var pagesToInclude = settings.GetPagesToInclude(document.Pages.Count);
             for (var index = 0; index < pagesToInclude; index++)
             {
                 var page = document.Pages[index + 1];
-                var outputStream = new MemoryStream();
+                var stream = new MemoryStream();
                 var pngDevice = settings.GetPdfPngDevice(page);
-                pngDevice.Process(page, outputStream);
-                yield return outputStream;
+                pngDevice.Process(page, stream);
+                yield return new ConversionStream("png", stream);
             }
         }
     }

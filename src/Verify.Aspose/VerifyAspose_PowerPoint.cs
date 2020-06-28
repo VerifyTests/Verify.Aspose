@@ -18,15 +18,15 @@ namespace VerifyTests
             return new ConversionResult(document.DocumentProperties, GetPowerPointStreams(document, settings).ToList());
         }
 
-        static IEnumerable<Stream> GetPowerPointStreams(Presentation document, VerifySettings settings)
+        static IEnumerable<ConversionStream> GetPowerPointStreams(Presentation document, VerifySettings settings)
         {
             var pagesToInclude = settings.GetPagesToInclude(document.Slides.Count);
             for (var index = 0; index < pagesToInclude; index++)
             {
                 var slide = document.Slides[index];
-                var outputStream = new MemoryStream();
-                slide.WriteAsSvg(outputStream);
-                yield return outputStream;
+                var stream = new MemoryStream();
+                slide.WriteAsSvg(stream);
+                yield return new ConversionStream("svg", stream);
             }
         }
     }

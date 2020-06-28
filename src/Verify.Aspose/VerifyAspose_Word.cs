@@ -36,7 +36,7 @@ namespace VerifyTests
                 .ToDictionary(x => x.Name, x => x.Value);
         }
 
-        static IEnumerable<Stream> GetWordStreams(Document document, VerifySettings settings)
+        static IEnumerable<ConversionStream> GetWordStreams(Document document, VerifySettings settings)
         {
             var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
             for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)
@@ -45,9 +45,9 @@ namespace VerifyTests
                 {
                     PageIndex = pageIndex
                 };
-                var outputStream = new MemoryStream();
-                document.Save(outputStream, options);
-                yield return outputStream;
+                var stream = new MemoryStream();
+                document.Save(stream, options);
+                yield return new ConversionStream("png", stream);
             }
         }
     }

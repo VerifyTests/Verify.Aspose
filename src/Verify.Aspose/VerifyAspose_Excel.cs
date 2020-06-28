@@ -46,16 +46,16 @@ namespace VerifyTests
                 .ToDictionary(x => x.Name, x => x.Value);
         }
 
-        static IEnumerable<Stream> GetExcelStreams(Workbook document)
+        static IEnumerable<ConversionStream> GetExcelStreams(Workbook document)
         {
             foreach (var worksheet in document.Worksheets)
             {
                 var sheetRender = new SheetRender(worksheet, excelOptions);
                 for (var pageIndex = 0; pageIndex < sheetRender.PageCount; pageIndex++)
                 {
-                    var outputStream = new MemoryStream();
-                    sheetRender.ToImage(pageIndex, outputStream);
-                    yield return outputStream;
+                    var stream = new MemoryStream();
+                    sheetRender.ToImage(pageIndex, stream);
+                    yield return new ConversionStream("png", stream);
                 }
             }
         }
