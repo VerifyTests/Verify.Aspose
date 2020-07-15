@@ -5,7 +5,7 @@
   <ItemGroup>
     <PackageReference Include="Verify" Version="6.5.0" />
     <PackageReference Include="Aspose.Pdf" Version="20.7.0" />
-    <PackageReference Include="Aspose.Cells" Version="20.6.0" />
+    <PackageReference Include="Aspose.Cells" Version="20.7.0" />
     <PackageReference Include="Aspose.Words" Version="20.7.0" />
     <PackageReference Include="Aspose.Slides.NET" Version="20.6.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.43" PrivateAssets="All" />
