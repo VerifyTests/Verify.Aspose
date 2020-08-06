@@ -43,7 +43,7 @@ https://nuget.org/packages/Verify.Aspose/
 Given a test with the following definition:
 
 <!-- snippet: TestDefinition -->
-<a id='snippet-testdefinition'/></a>
+<a id='snippet-testdefinition'></a>
 ```cs
 [TestFixture]
 public class Samples
@@ -63,7 +63,7 @@ public class Samples
 #### Verify a file
 
 <!-- snippet: VerifyPdf -->
-<a id='snippet-verifypdf'/></a>
+<a id='snippet-verifypdf'></a>
 ```cs
 [Test]
 public Task VerifyPdf()
@@ -78,7 +78,7 @@ public Task VerifyPdf()
 #### Verify a Stream
 
 <!-- snippet: VerifyPdfStream -->
-<a id='snippet-verifypdfstream'/></a>
+<a id='snippet-verifypdfstream'></a>
 ```cs
 [Test]
 public Task VerifyPdfStream()
@@ -105,7 +105,7 @@ public Task VerifyPdfStream()
 #### Verify a file
 
 <!-- snippet: VerifyExcel -->
-<a id='snippet-verifyexcel'/></a>
+<a id='snippet-verifyexcel'></a>
 ```cs
 [Test]
 public Task VerifyExcel()
@@ -120,7 +120,7 @@ public Task VerifyExcel()
 #### Verify a Stream
 
 <!-- snippet: VerifyExcelStream -->
-<a id='snippet-verifyexcelstream'/></a>
+<a id='snippet-verifyexcelstream'></a>
 ```cs
 [Test]
 public Task VerifyExcelStream()
@@ -147,7 +147,7 @@ public Task VerifyExcelStream()
 #### Verify a file
 
 <!-- snippet: VerifyWord -->
-<a id='snippet-verifyword'/></a>
+<a id='snippet-verifyword'></a>
 ```cs
 [Test]
 public Task VerifyWord()
@@ -162,7 +162,7 @@ public Task VerifyWord()
 #### Verify a Stream
 
 <!-- snippet: VerifyWordStream -->
-<a id='snippet-verifywordstream'/></a>
+<a id='snippet-verifywordstream'></a>
 ```cs
 [Test]
 public Task VerifyWordStream()
@@ -189,7 +189,7 @@ public Task VerifyWordStream()
 #### Verify a file
 
 <!-- snippet: VerifyPowerPoint -->
-<a id='snippet-verifypowerpoint'/></a>
+<a id='snippet-verifypowerpoint'></a>
 ```cs
 [Test]
 public Task VerifyPowerPoint()
@@ -204,7 +204,7 @@ public Task VerifyPowerPoint()
 #### Verify a Stream
 
 <!-- snippet: VerifyPowerPointStream -->
-<a id='snippet-verifypowerpointstream'/></a>
+<a id='snippet-verifypowerpointstream'></a>
 ```cs
 [Test]
 public Task VerifyPowerPointStream()
