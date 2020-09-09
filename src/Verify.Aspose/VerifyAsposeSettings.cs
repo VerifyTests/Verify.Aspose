@@ -8,13 +8,13 @@ namespace VerifyTests
         public static void PagesToInclude(this VerifySettings settings, int count)
         {
             Guard.AgainstNull(settings, nameof(settings));
-            settings.Data["VerifyAsposePagesToInclude"] = count;
+            settings.Context["VerifyAsposePagesToInclude"] = count;
         }
 
         internal static int GetPagesToInclude(this VerifySettings settings, int count)
         {
             Guard.AgainstNull(settings, nameof(settings));
-            if (!settings.Data.TryGetValue("VerifyAsposePagesToInclude", out var value))
+            if (!settings.Context.TryGetValue("VerifyAsposePagesToInclude", out var value))
             {
                 return count;
             }
@@ -26,7 +26,7 @@ namespace VerifyTests
         {
             Guard.AgainstNull(settings, nameof(settings));
             Guard.AgainstNull(func, nameof(func));
-            settings.Data["VerifyAsposePdfPngDevice"] = func;
+            settings.Context["VerifyAsposePdfPngDevice"] = func;
         }
 
         static PngDevice defaultDevice = new PngDevice();
@@ -34,7 +34,7 @@ namespace VerifyTests
         internal static PngDevice GetPdfPngDevice(this VerifySettings settings, Aspose.Pdf.Page page)
         {
             Guard.AgainstNull(settings, nameof(settings));
-            if (!settings.Data.TryGetValue("VerifyAsposePdfPngDevice", out var value))
+            if (!settings.Context.TryGetValue("VerifyAsposePdfPngDevice", out var value))
             {
                 return defaultDevice;
             }
