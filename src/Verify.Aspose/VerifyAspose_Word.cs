@@ -43,7 +43,7 @@ namespace VerifyTests
             {
                 var options = new ImageSaveOptions(SaveFormat.Png)
                 {
-                    PageIndex = pageIndex
+                    PageSet = new PageSet(pageIndex)
                 };
                 var stream = new MemoryStream();
                 document.Save(stream, options);
