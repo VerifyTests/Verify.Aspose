@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Aspose.Pdf.Devices;
 
 namespace VerifyTests
@@ -11,10 +12,10 @@ namespace VerifyTests
             settings.Context["VerifyAsposePagesToInclude"] = count;
         }
 
-        internal static int GetPagesToInclude(this VerifySettings settings, int count)
+        internal static int GetPagesToInclude(this IReadOnlyDictionary<string, object> settings, int count)
         {
             Guard.AgainstNull(settings, nameof(settings));
-            if (!settings.Context.TryGetValue("VerifyAsposePagesToInclude", out var value))
+            if (!settings.TryGetValue("VerifyAsposePagesToInclude", out var value))
             {
                 return count;
             }
@@ -31,10 +32,10 @@ namespace VerifyTests
 
         static PngDevice defaultDevice = new PngDevice();
 
-        internal static PngDevice GetPdfPngDevice(this VerifySettings settings, Aspose.Pdf.Page page)
+        internal static PngDevice GetPdfPngDevice(this IReadOnlyDictionary<string, object> settings, Aspose.Pdf.Page page)
         {
             Guard.AgainstNull(settings, nameof(settings));
-            if (!settings.Context.TryGetValue("VerifyAsposePdfPngDevice", out var value))
+            if (!settings.TryGetValue("VerifyAsposePdfPngDevice", out var value))
             {
                 return defaultDevice;
             }

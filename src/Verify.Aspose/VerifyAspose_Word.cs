@@ -8,13 +8,13 @@ namespace VerifyTests
 {
     public static partial class VerifyAspose
     {
-        static ConversionResult ConvertWord(Stream stream, VerifySettings settings)
+        static ConversionResult ConvertWord(Stream stream, IReadOnlyDictionary<string, object> settings)
         {
             var document = new Document(stream);
             return ConvertWord(document, settings);
         }
 
-        static ConversionResult ConvertWord(Document document, VerifySettings settings)
+        static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings)
         {
             return new ConversionResult(GetInfo(document), GetWordStreams(document, settings).ToList());
         }
@@ -36,7 +36,7 @@ namespace VerifyTests
                 .ToDictionary(x => x.Name, x => x.Value);
         }
 
-        static IEnumerable<ConversionStream> GetWordStreams(Document document, VerifySettings settings)
+        static IEnumerable<ConversionStream> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
         {
             var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
             for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)

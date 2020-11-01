@@ -7,18 +7,18 @@ namespace VerifyTests
 {
     public static partial class VerifyAspose
     {
-        static ConversionResult ConvertPowerPoint(Stream stream, VerifySettings settings)
+        static ConversionResult ConvertPowerPoint(Stream stream, IReadOnlyDictionary<string, object> settings)
         {
             using var document = new Presentation(stream);
             return ConvertPowerPoint(document, settings);
         }
 
-        static ConversionResult ConvertPowerPoint(Presentation document, VerifySettings settings)
+        static ConversionResult ConvertPowerPoint(Presentation document, IReadOnlyDictionary<string, object> settings)
         {
             return new ConversionResult(document.DocumentProperties, GetPowerPointStreams(document, settings).ToList());
         }
 
-        static IEnumerable<ConversionStream> GetPowerPointStreams(Presentation document, VerifySettings settings)
+        static IEnumerable<ConversionStream> GetPowerPointStreams(Presentation document, IReadOnlyDictionary<string, object> settings)
         {
             var pagesToInclude = settings.GetPagesToInclude(document.Slides.Count);
             for (var index = 0; index < pagesToInclude; index++)

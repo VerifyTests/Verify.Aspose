@@ -15,13 +15,13 @@ namespace VerifyTests
             ImageType = ImageType.Png
         };
 
-        static ConversionResult ConvertExcel(Stream stream, VerifySettings settings)
+        static ConversionResult ConvertExcel(Stream stream, IReadOnlyDictionary<string, object> settings)
         {
             using var document = new Workbook(stream);
             return ConvertExcel(document, settings);
         }
 
-        static ConversionResult ConvertExcel(Workbook document, VerifySettings settings)
+        static ConversionResult ConvertExcel(Workbook document, IReadOnlyDictionary<string, object> settings)
         {
             var info = GetInfo(document);
             return new ConversionResult(info, GetExcelStreams(document).ToList());

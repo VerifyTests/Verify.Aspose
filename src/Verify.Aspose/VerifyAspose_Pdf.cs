@@ -7,13 +7,13 @@ namespace VerifyTests
 {
     public static partial class VerifyAspose
     {
-        static ConversionResult ConvertPdf(Stream stream, VerifySettings settings)
+        static ConversionResult ConvertPdf(Stream stream, IReadOnlyDictionary<string, object> settings)
         {
             using var document = new Document(stream);
             return ConvertPdf(document, settings);
         }
 
-        static ConversionResult ConvertPdf(Document document, VerifySettings settings)
+        static ConversionResult ConvertPdf(Document document, IReadOnlyDictionary<string, object> settings)
         {
             return new ConversionResult(
                 new
@@ -54,7 +54,7 @@ namespace VerifyTests
                 .ToDictionary(x => x.Key, x => x.Value);
         }
 
-        static IEnumerable<ConversionStream> GetPdfStreams(Document document, VerifySettings settings)
+        static IEnumerable<ConversionStream> GetPdfStreams(Document document, IReadOnlyDictionary<string, object> settings)
         {
             var pagesToInclude = settings.GetPagesToInclude(document.Pages.Count);
             for (var index = 0; index < pagesToInclude; index++)
