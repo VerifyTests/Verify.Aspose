@@ -12,6 +12,13 @@ namespace VerifyTests
             settings.Context["VerifyAsposePagesToInclude"] = count;
         }
 
+        public static SettingsTask PagesToInclude(this SettingsTask settings, int count)
+        {
+            Guard.AgainstNull(settings, nameof(settings));
+            settings.CurrentSettings.PagesToInclude(count);
+            return settings;
+        }
+
         internal static int GetPagesToInclude(this IReadOnlyDictionary<string, object> settings, int count)
         {
             Guard.AgainstNull(settings, nameof(settings));
@@ -28,6 +35,13 @@ namespace VerifyTests
             Guard.AgainstNull(settings, nameof(settings));
             Guard.AgainstNull(func, nameof(func));
             settings.Context["VerifyAsposePdfPngDevice"] = func;
+        }
+
+        public static SettingsTask PdfPngDevice(this SettingsTask settings, Func<Aspose.Pdf.Page, PngDevice> func)
+        {
+            Guard.AgainstNull(settings, nameof(settings));
+            settings.CurrentSettings.PdfPngDevice(func);
+            return settings;
         }
 
         static PngDevice defaultDevice = new PngDevice();
