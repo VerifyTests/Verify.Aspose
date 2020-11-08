@@ -1,8 +1,8 @@
 {
-  HasRevisions: 'False',
+  HasRevisions: False,
   Properties: {
     CreateTime: DateTime_1,
-    Language: 'en-US',
+    Language: en-US,
     TotalEditingTime: 991904
   }
 }
