@@ -76,7 +76,7 @@ public Task VerifyPdf()
 [Test]
 public Task VerifyPdfStream()
 {
-    var settings = new VerifySettings();
+    VerifySettings settings = new();
     settings.UseExtension("pdf");
     return Verifier.Verify(File.OpenRead("sample.pdf"), settings);
 }
@@ -118,7 +118,7 @@ public Task VerifyExcel()
 [Test]
 public Task VerifyExcelStream()
 {
-    var settings = new VerifySettings();
+    VerifySettings settings = new();
     settings.UseExtension("xlsx");
     return Verifier.Verify(File.OpenRead("sample.xlsx"), settings);
 }
@@ -160,7 +160,7 @@ public Task VerifyWord()
 [Test]
 public Task VerifyWordStream()
 {
-    var settings = new VerifySettings();
+    VerifySettings settings = new();
     settings.UseExtension("docx");
     return Verifier.Verify(File.OpenRead("sample.docx"), settings);
 }
@@ -202,7 +202,7 @@ public Task VerifyPowerPoint()
 [Test]
 public Task VerifyPowerPointStream()
 {
-    var settings = new VerifySettings();
+    VerifySettings settings = new();
     settings.UseExtension("pptx");
     return Verifier.Verify(File.OpenRead("sample.pptx"), settings);
 }
