@@ -30,7 +30,7 @@ public class Samples
     public Task VerifyPdfResolution()
     {
         var resolution = new Resolution(100);
-        var settings = new VerifySettings();
+        VerifySettings settings = new();
         settings.PdfPngDevice(page =>
         {
             var artBox = page.ArtBox;
@@ -46,7 +46,7 @@ public class Samples
     [Test]
     public Task VerifyPdfStream()
     {
-        var settings = new VerifySettings();
+        VerifySettings settings = new();
         settings.UseExtension("pdf");
         return Verifier.Verify(File.OpenRead("sample.pdf"), settings);
     }
@@ -70,7 +70,7 @@ public class Samples
     [Test]
     public Task VerifyPowerPointStream()
     {
-        var settings = new VerifySettings();
+        VerifySettings settings = new();
         settings.UseExtension("pptx");
         return Verifier.Verify(File.OpenRead("sample.pptx"), settings);
     }
@@ -94,7 +94,7 @@ public class Samples
     [Test]
     public Task VerifyExcelStream()
     {
-        var settings = new VerifySettings();
+        VerifySettings settings = new();
         settings.UseExtension("xlsx");
         return Verifier.Verify(File.OpenRead("sample.xlsx"), settings);
     }
@@ -116,7 +116,7 @@ public class Samples
     [Test]
     public Task VerifyWordStream()
     {
-        var settings = new VerifySettings();
+        VerifySettings settings = new();
         settings.UseExtension("docx");
         return Verifier.Verify(File.OpenRead("sample.docx"), settings);
     }
