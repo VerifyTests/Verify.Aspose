@@ -15,7 +15,7 @@ namespace VerifyTests
 
         static ConversionResult ConvertPowerPoint(Presentation document, IReadOnlyDictionary<string, object> settings)
         {
-            return new ConversionResult(document.DocumentProperties, GetPowerPointStreams(document, settings).ToList());
+            return new(document.DocumentProperties, GetPowerPointStreams(document, settings).ToList());
         }
 
         static IEnumerable<ConversionStream> GetPowerPointStreams(Presentation document, IReadOnlyDictionary<string, object> settings)
@@ -24,9 +24,9 @@ namespace VerifyTests
             for (var index = 0; index < pagesToInclude; index++)
             {
                 var slide = document.Slides[index];
-                var stream = new MemoryStream();
+                MemoryStream stream = new();
                 slide.WriteAsSvg(stream);
-                yield return new ConversionStream("svg", stream);
+                yield return new("svg", stream);
             }
         }
     }

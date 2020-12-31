@@ -44,7 +44,7 @@ namespace VerifyTests
             return settings;
         }
 
-        static PngDevice defaultDevice = new PngDevice();
+        static PngDevice defaultDevice = new();
 
         internal static PngDevice GetPdfPngDevice(this IReadOnlyDictionary<string, object> settings, Aspose.Pdf.Page page)
         {

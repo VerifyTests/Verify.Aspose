@@ -10,13 +10,13 @@ namespace VerifyTests
     {
         static ConversionResult ConvertWord(Stream stream, IReadOnlyDictionary<string, object> settings)
         {
-            var document = new Document(stream);
+            Document document = new(stream);
             return ConvertWord(document, settings);
         }
 
         static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings)
         {
-            return new ConversionResult(GetInfo(document), GetWordStreams(document, settings).ToList());
+            return new(GetInfo(document), GetWordStreams(document, settings).ToList());
         }
 
         static object GetInfo(Document document)
@@ -41,13 +41,13 @@ namespace VerifyTests
             var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
             for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)
             {
-                var options = new ImageSaveOptions(SaveFormat.Png)
+                ImageSaveOptions options = new(SaveFormat.Png)
                 {
-                    PageSet = new PageSet(pageIndex)
+                    PageSet = new(pageIndex)
                 };
-                var stream = new MemoryStream();
+                MemoryStream stream = new();
                 document.Save(stream, options);
-                yield return new ConversionStream("png", stream);
+                yield return new("png", stream);
             }
         }
     }

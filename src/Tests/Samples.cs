@@ -29,14 +29,14 @@ public class Samples
     [Test]
     public Task VerifyPdfResolution()
     {
-        var resolution = new Resolution(100);
+        Resolution resolution = new(100);
         VerifySettings settings = new();
         settings.PdfPngDevice(page =>
         {
             var artBox = page.ArtBox;
             var width = Convert.ToInt32(artBox.Width);
             var height = Convert.ToInt32(artBox.Height);
-            return new PngDevice(width, height, resolution);
+            return new(width, height, resolution);
         });
         return Verifier.VerifyFile("sample.pdf", settings);
     }

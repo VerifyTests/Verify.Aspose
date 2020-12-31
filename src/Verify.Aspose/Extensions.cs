@@ -2,7 +2,7 @@
 
 static class Extensions
 {
-    public static bool HasValue(this object input)
+    public static bool HasValue(this object? input)
     {
         if (input is ValueType)
         {

@@ -10,21 +10,21 @@ namespace VerifyTests
 {
     public static partial class VerifyAspose
     {
-        static ImageOrPrintOptions excelOptions = new ImageOrPrintOptions
+        static ImageOrPrintOptions excelOptions = new()
         {
             ImageType = ImageType.Png
         };
 
         static ConversionResult ConvertExcel(Stream stream, IReadOnlyDictionary<string, object> settings)
         {
-            using var document = new Workbook(stream);
+            using Workbook document = new(stream);
             return ConvertExcel(document, settings);
         }
 
         static ConversionResult ConvertExcel(Workbook document, IReadOnlyDictionary<string, object> settings)
         {
             var info = GetInfo(document);
-            return new ConversionResult(info, GetExcelStreams(document).ToList());
+            return new(info, GetExcelStreams(document).ToList());
         }
 
         static object GetInfo(Workbook document)
@@ -50,12 +50,12 @@ namespace VerifyTests
         {
             foreach (var worksheet in document.Worksheets)
             {
-                var sheetRender = new SheetRender(worksheet, excelOptions);
+                SheetRender sheetRender = new(worksheet, excelOptions);
                 for (var pageIndex = 0; pageIndex < sheetRender.PageCount; pageIndex++)
                 {
-                    var stream = new MemoryStream();
+                    MemoryStream stream = new();
                     sheetRender.ToImage(pageIndex, stream);
-                    yield return new ConversionStream("png", stream);
+                    yield return new("png", stream);
                 }
             }
         }

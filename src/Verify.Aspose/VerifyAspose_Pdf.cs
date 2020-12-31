@@ -10,7 +10,7 @@ namespace VerifyTests
     {
         static ConversionResult ConvertPdf(Stream stream, IReadOnlyDictionary<string, object> settings)
         {
-            using var document = new Document(stream);
+            using Document document = new(stream);
             return ConvertPdf(document, settings);
         }
 
@@ -23,7 +23,7 @@ namespace VerifyTests
             {
                 throw new Exception("The default value os 'Aspose' for Title, Subject, or Author is not allowed.");
             }
-            return new ConversionResult(
+            return new(
                 new
                 {
                     document.AllowReusePageContent,
@@ -68,10 +68,10 @@ namespace VerifyTests
             for (var index = 0; index < pagesToInclude; index++)
             {
                 var page = document.Pages[index + 1];
-                var stream = new MemoryStream();
+                MemoryStream stream = new();
                 var pngDevice = settings.GetPdfPngDevice(page);
                 pngDevice.Process(page, stream);
-                yield return new ConversionStream("png", stream);
+                yield return new("png", stream);
             }
         }
     }
