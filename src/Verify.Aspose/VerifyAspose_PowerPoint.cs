@@ -26,7 +26,10 @@ namespace VerifyTests
                 var slide = document.Slides[index];
                 MemoryStream stream = new();
                 slide.WriteAsSvg(stream);
-                yield return new("svg", stream);
+                stream.Position = 0;
+                StreamReader reader = new(stream);
+                var text = reader.ReadToEnd();
+                yield return new("svg", text);
             }
         }
     }
