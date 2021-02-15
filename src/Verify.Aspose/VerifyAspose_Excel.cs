@@ -46,7 +46,7 @@ namespace VerifyTests
                 .ToDictionary(x => x.Name, x => x.Value);
         }
 
-        static IEnumerable<ConversionStream> GetExcelStreams(Workbook document)
+        static IEnumerable<Target> GetExcelStreams(Workbook document)
         {
             foreach (var worksheet in document.Worksheets)
             {

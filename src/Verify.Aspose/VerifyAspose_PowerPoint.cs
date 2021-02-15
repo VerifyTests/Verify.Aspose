@@ -18,7 +18,7 @@ namespace VerifyTests
             return new(document.DocumentProperties, GetPowerPointStreams(document, settings).ToList());
         }
 
-        static IEnumerable<ConversionStream> GetPowerPointStreams(Presentation document, IReadOnlyDictionary<string, object> settings)
+        static IEnumerable<Target> GetPowerPointStreams(Presentation document, IReadOnlyDictionary<string, object> settings)
         {
             var pagesToInclude = settings.GetPagesToInclude(document.Slides.Count);
             for (var index = 0; index < pagesToInclude; index++)

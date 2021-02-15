@@ -36,7 +36,7 @@ namespace VerifyTests
                 .ToDictionary(x => x.Name, x => x.Value);
         }
 
-        static IEnumerable<ConversionStream> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
+        static IEnumerable<Target> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
         {
             var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
             for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)

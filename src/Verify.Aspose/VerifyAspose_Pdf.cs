@@ -62,7 +62,7 @@ namespace VerifyTests
                 .ToDictionary(x => x.Key, x => x.Value);
         }
 
-        static IEnumerable<ConversionStream> GetPdfStreams(Document document, IReadOnlyDictionary<string, object> settings)
+        static IEnumerable<Target> GetPdfStreams(Document document, IReadOnlyDictionary<string, object> settings)
         {
             var pagesToInclude = settings.GetPagesToInclude(document.Pages.Count);
             for (var index = 0; index < pagesToInclude; index++)
