@@ -76,12 +76,11 @@ public Task VerifyPdf()
 [Test]
 public Task VerifyPdfStream()
 {
-    VerifySettings settings = new();
-    settings.UseExtension("pdf");
-    return Verifier.Verify(File.OpenRead("sample.pdf"), settings);
+    return Verifier.Verify(File.OpenRead("sample.pdf"))
+        .UseExtension("pdf");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L44-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdfstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L43-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdfstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -106,7 +105,7 @@ public Task VerifyExcel()
     return Verifier.VerifyFile("sample.xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L82-L90' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcel' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L79-L87' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcel' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -118,12 +117,11 @@ public Task VerifyExcel()
 [Test]
 public Task VerifyExcelStream()
 {
-    VerifySettings settings = new();
-    settings.UseExtension("xlsx");
-    return Verifier.Verify(File.OpenRead("sample.xlsx"), settings);
+    return Verifier.Verify(File.OpenRead("sample.xlsx"))
+        .UseExtension("xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L92-L102' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcelstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L89-L98' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcelstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -148,7 +146,7 @@ public Task VerifyWord()
     return Verifier.VerifyFile("sample.docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L104-L112' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyword' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L100-L108' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyword' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -160,12 +158,11 @@ public Task VerifyWord()
 [Test]
 public Task VerifyWordStream()
 {
-    VerifySettings settings = new();
-    settings.UseExtension("docx");
-    return Verifier.Verify(File.OpenRead("sample.docx"), settings);
+    return Verifier.Verify(File.OpenRead("sample.docx"))
+        .UseExtension("docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L114-L124' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifywordstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L110-L119' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifywordstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -190,7 +187,7 @@ public Task VerifyPowerPoint()
     return Verifier.VerifyFile("sample.pptx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L58-L66' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L56-L64' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -202,12 +199,11 @@ public Task VerifyPowerPoint()
 [Test]
 public Task VerifyPowerPointStream()
 {
-    VerifySettings settings = new();
-    settings.UseExtension("pptx");
-    return Verifier.Verify(File.OpenRead("sample.pptx"), settings);
+    return Verifier.Verify(File.OpenRead("sample.pptx"))
+        .UseExtension("pptx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L68-L78' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpointstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L66-L75' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpointstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

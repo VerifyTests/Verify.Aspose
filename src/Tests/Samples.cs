@@ -29,16 +29,15 @@ public class Samples
     [Test]
     public Task VerifyPdfResolution()
     {
-        Resolution resolution = new(100);
-        VerifySettings settings = new();
-        settings.PdfPngDevice(page =>
-        {
-            var artBox = page.ArtBox;
-            var width = Convert.ToInt32(artBox.Width);
-            var height = Convert.ToInt32(artBox.Height);
-            return new(width, height, resolution);
-        });
-        return Verifier.VerifyFile("sample.pdf", settings);
+        return Verifier.VerifyFile("sample.pdf")
+            .PdfPngDevice(page =>
+            {
+                Resolution resolution = new(100);
+                var artBox = page.ArtBox;
+                var width = Convert.ToInt32(artBox.Width);
+                var height = Convert.ToInt32(artBox.Height);
+                return new(width, height, resolution);
+            });
     }
 
     #region VerifyPdfStream
@@ -46,9 +45,8 @@ public class Samples
     [Test]
     public Task VerifyPdfStream()
     {
-        VerifySettings settings = new();
-        settings.UseExtension("pdf");
-        return Verifier.Verify(File.OpenRead("sample.pdf"), settings);
+        return Verifier.Verify(File.OpenRead("sample.pdf"))
+            .UseExtension("pdf");
     }
 
     #endregion
@@ -70,9 +68,8 @@ public class Samples
     [Test]
     public Task VerifyPowerPointStream()
     {
-        VerifySettings settings = new();
-        settings.UseExtension("pptx");
-        return Verifier.Verify(File.OpenRead("sample.pptx"), settings);
+        return Verifier.Verify(File.OpenRead("sample.pptx"))
+            .UseExtension("pptx");
     }
 
     #endregion
@@ -94,9 +91,8 @@ public class Samples
     [Test]
     public Task VerifyExcelStream()
     {
-        VerifySettings settings = new();
-        settings.UseExtension("xlsx");
-        return Verifier.Verify(File.OpenRead("sample.xlsx"), settings);
+        return Verifier.Verify(File.OpenRead("sample.xlsx"))
+            .UseExtension("xlsx");
     }
 
     #endregion
@@ -116,9 +112,8 @@ public class Samples
     [Test]
     public Task VerifyWordStream()
     {
-        VerifySettings settings = new();
-        settings.UseExtension("docx");
-        return Verifier.Verify(File.OpenRead("sample.docx"), settings);
+        return Verifier.Verify(File.OpenRead("sample.docx"))
+            .UseExtension("docx");
     }
 
     #endregion
