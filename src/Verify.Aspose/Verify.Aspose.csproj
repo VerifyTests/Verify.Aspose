@@ -6,7 +6,7 @@
     <PackageReference Include="Verify" Version="11.0.0-beta.6" />
     <PackageReference Include="Aspose.Pdf" Version="21.2.0" />
     <PackageReference Include="Aspose.Cells" Version="21.2.0" />
-    <PackageReference Include="Aspose.Words" Version="21.2.0" />
+    <PackageReference Include="Aspose.Words" Version="21.3.0" />
     <PackageReference Include="Aspose.Slides.NET" Version="21.2.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.54" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
