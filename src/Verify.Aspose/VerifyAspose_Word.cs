@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using Aspose.Words;
+using Aspose.Words.Loading;
 using Aspose.Words.Saving;
 
 namespace VerifyTests
@@ -24,6 +25,7 @@ namespace VerifyTests
             return new
             {
                 HasRevisions = document.HasRevisions.ToString(),
+                DefaultLocale = (EditingLanguage)document.Styles.DefaultFont.LocaleId,
                 Properties = GetDocumentProperties(document)
             };
         }

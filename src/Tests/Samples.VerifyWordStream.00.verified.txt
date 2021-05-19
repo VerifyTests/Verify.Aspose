@@ -1,5 +1,6 @@
-{
+﻿{
   HasRevisions: False,
+  DefaultLocale: EnglishUS,
   Properties: {
     CreateTime: DateTime_1,
     Language: en-US,
