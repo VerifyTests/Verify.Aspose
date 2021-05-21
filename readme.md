@@ -9,21 +9,8 @@ Converts documents (pdf, docx, xslx, and pptx) to png for verification.
 
 An [Aspose License](https://purchase.aspose.com/policies/license-types) is required to use this tool.
 
-Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-verify?utm_source=nuget-verify&utm_medium=referral&utm_campaign=enterprise).
-
 <a href='https://dotnetfoundation.org' alt='Part of the .NET Foundation'><img src='https://raw.githubusercontent.com/VerifyTests/Verify/master/docs/dotNetFoundation.svg' height='30px'></a><br>
 Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
-
-<!-- toc -->
-## Contents
-
-  * [Usage](#usage)
-    * [PDF](#pdf)
-    * [Excel](#excel)
-    * [Word](#word)
-    * [PowerPoint](#powerpoint)
-  * [File Samples](#file-samples)
-  * [Security contact information](#security-contact-information)<!-- endToc -->
 
 
 ## NuGet package
@@ -216,10 +203,6 @@ public Task VerifyPowerPointStream()
 
 http://file-examples.com/
 
-
-## Security contact information
-
-To report a security vulnerability, use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Icon
