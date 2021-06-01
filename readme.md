@@ -103,7 +103,7 @@ public Task VerifyPdfStream()
 
 [Samples.VerifyPdf.01.verified.png](/src/Tests/Samples.VerifyPdf.01.verified.png):
 
-<img src="/src/Tests/Samples.VerifyPdf.001.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyPdf.01.verified.png" width="200px">
 
 
 ### Excel
