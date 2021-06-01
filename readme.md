@@ -73,9 +73,37 @@ public Task VerifyPdfStream()
 
 #### Result
 
-[Samples.VerifyPdf.00.verified.png](/src/Tests/Samples.VerifyPdf.00.verified.png):
+<!-- snippet: Samples.VerifyPdf.00.verified.txt -->
+<a id='snippet-Samples.VerifyPdf.00.verified.txt'></a>
+```txt
+{
+  FitWindow: False,
+  HideMenubar: False,
+  HideToolBar: False,
+  HideWindowUI: False,
+  IgnoreCorruptedObjects: True,
+  Info: {
+    Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com,
+    Creator: RAD PDF
+  },
+  IsEncrypted: False,
+  IsLinearized: False,
+  IsPdfaCompliant: False,
+  IsPdfUaCompliant: False,
+  IsXrefGapsAllowed: True,
+  OptimizeSize: False,
+  PageLabels: {},
+  PageLayout: Default,
+  PdfFormat: v_1_7,
+  Version: 1.4
+}
+```
+<sup><a href='/src/Tests/Samples.VerifyPdf.00.verified.txt#L1-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
-<img src="/src/Tests/Samples.VerifyPdf.00.verified.png" width="200px">
+[Samples.VerifyPdf.01.verified.png](/src/Tests/Samples.VerifyPdf.01.verified.png):
+
+<img src="/src/Tests/Samples.VerifyPdf.001.verified.png" width="200px">
 
 
 ### Excel
@@ -114,9 +142,28 @@ public Task VerifyExcelStream()
 
 #### Result
 
-[Samples.VerifyExcel.00.verified.png](/src/Tests/Samples.VerifyExcel.00.verified.png):
+<!-- snippet: Samples.VerifyExcel.00.verified.txt -->
+<a id='snippet-Samples.VerifyExcel.00.verified.txt'></a>
+```txt
+{
+  HasMacro: False,
+  HasRevisions: False,
+  IsDigitallySigned: False,
+  Properties: {
+    Title: The Title,
+    LastSavedBy: Simon Cropp,
+    LastSavedTime: DateTime_1,
+    NameOfApplication: Microsoft Excel,
+    Version: 16.0300
+  }
+}
+```
+<sup><a href='/src/Tests/Samples.VerifyExcel.00.verified.txt#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyExcel.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
-<img src="/src/Tests/Samples.VerifyExcel.00.verified.png" width="200px">
+[Samples.VerifyExcel.01.verified.png](/src/Tests/Samples.VerifyExcel.01.verified.png):
+
+<img src="/src/Tests/Samples.VerifyExcel.01.verified.png" width="200px">
 
 
 ### Word
@@ -155,9 +202,25 @@ public Task VerifyWordStream()
 
 #### Result
 
-[Samples.VerifyWord.00.verified.png](/src/Tests/Samples.VerifyWord.00.verified.png):
+<!-- snippet: Samples.VerifyWord.00.verified.txt -->
+<a id='snippet-Samples.VerifyWord.00.verified.txt'></a>
+```txt
+{
+  HasRevisions: False,
+  DefaultLocale: EnglishUS,
+  Properties: {
+    CreateTime: DateTime_1,
+    Language: en-US,
+    TotalEditingTime: 991904
+  }
+}
+```
+<sup><a href='/src/Tests/Samples.VerifyWord.00.verified.txt#L1-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
-<img src="/src/Tests/Samples.VerifyWord.00.verified.png" width="200px">
+[Samples.VerifyWord.01.verified.png](/src/Tests/Samples.VerifyWord.01.verified.png):
+
+<img src="/src/Tests/Samples.VerifyWord.01.verified.png" width="200px">
 
 
 ### PowerPoint
@@ -196,7 +259,36 @@ public Task VerifyPowerPointStream()
 
 #### Result
 
-[Samples.VerifyPowerPoint.00.verified.svg](/src/Tests/Samples.VerifyPowerPoint.00.verified.svg):
+<!-- snippet: Samples.VerifyPowerPoint.00.verified.txt -->
+<a id='snippet-Samples.VerifyPowerPoint.00.verified.txt'></a>
+```txt
+{
+  AppVersion: 16.0000,
+  NameOfApplication: Microsoft Office PowerPoint,
+  Company: ,
+  Manager: ,
+  PresentationFormat: Custom,
+  ApplicationTemplate: ,
+  Title: Lorem ipsum,
+  Subject: ,
+  Author: simon,
+  Keywords: ,
+  Comments: ,
+  Category: ,
+  CreatedTime: DateTime_1,
+  LastSavedTime: DateTime_2,
+  LastPrinted: DateTime_3,
+  LastSavedBy: Simon Cropp,
+  RevisionNumber: 1,
+  ContentStatus: ,
+  ContentType: ,
+  HyperlinkBase: 
+}
+```
+<sup><a href='/src/Tests/Samples.VerifyPowerPoint.00.verified.txt#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+[Samples.VerifyPowerPoint.01.verified.svg](/src/Tests/Samples.VerifyPowerPoint.01.verified.svg):
 
 
 ## File Samples
