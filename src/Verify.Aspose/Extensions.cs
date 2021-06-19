@@ -7,13 +7,13 @@ static class Extensions
         if (input is ValueType)
         {
             var obj = Activator.CreateInstance(input.GetType());
-            return !obj.Equals(input);
+            return !obj!.Equals(input);
         }
         if (input is string s)
         {
             return !string.IsNullOrEmpty(s);
         }
 
-        return !(input is null);
+        return input is not null;
     }
 }
