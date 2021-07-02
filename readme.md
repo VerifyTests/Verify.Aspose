@@ -83,8 +83,8 @@ public Task VerifyPdfStream()
   HideWindowUI: False,
   IgnoreCorruptedObjects: True,
   Info: {
-    Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com,
-    Creator: RAD PDF
+    Creator: RAD PDF,
+    Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com
   },
   IsEncrypted: False,
   IsLinearized: False,
@@ -150,10 +150,10 @@ public Task VerifyExcelStream()
   HasRevisions: False,
   IsDigitallySigned: False,
   Properties: {
-    Title: The Title,
     LastSavedBy: Simon Cropp,
     LastSavedTime: DateTime_1,
     NameOfApplication: Microsoft Excel,
+    Title: The Title,
     Version: 16.0300
   }
 }

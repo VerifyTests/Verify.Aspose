@@ -1,12 +1,12 @@
-{
+﻿{
   FitWindow: False,
   HideMenubar: False,
   HideToolBar: False,
   HideWindowUI: False,
   IgnoreCorruptedObjects: True,
   Info: {
-    Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com,
-    Creator: RAD PDF
+    Creator: RAD PDF,
+    Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com
   },
   IsEncrypted: False,
   IsLinearized: False,
