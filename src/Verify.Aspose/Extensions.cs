@@ -9,6 +9,7 @@ static class Extensions
             var obj = Activator.CreateInstance(input.GetType());
             return !obj!.Equals(input);
         }
+
         if (input is string s)
         {
             return !string.IsNullOrEmpty(s);
