@@ -6,16 +6,10 @@ using VerifyTests;
 using VerifyNUnit;
 using NUnit.Framework;
 
-#region TestDefinition
+
 [TestFixture]
 public class Samples
 {
-    static Samples()
-    {
-        VerifyAspose.Initialize();
-    }
-    #endregion
-
     #region VerifyPdf
 
     [Test]
