@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Aspose.Pdf;
@@ -21,7 +20,7 @@ namespace VerifyTests
                 info.Subject == "Aspose" ||
                 info.Author == "Aspose")
             {
-                throw new Exception("The default value os 'Aspose' for Title, Subject, or Author is not allowed.");
+                throw new("The default value of 'Aspose' for Title, Subject, or Author is not allowed.");
             }
             return new(
                 new
