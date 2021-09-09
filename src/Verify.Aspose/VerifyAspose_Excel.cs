@@ -12,12 +12,14 @@ namespace VerifyTests
     {
         static ImageOrPrintOptions excelOptions = new()
         {
-            ImageType = ImageType.Png
+            ImageType = ImageType.Png,
+            OnePagePerSheet = true,
+            OnlyArea = true
         };
 
         static ConversionResult ConvertExcel(Stream stream, IReadOnlyDictionary<string, object> settings)
         {
-            using Workbook document = new(stream);
+            using var document = new Workbook(stream);
             return ConvertExcel(document, settings);
         }
 
@@ -50,10 +52,11 @@ namespace VerifyTests
         {
             foreach (var worksheet in document.Worksheets)
             {
-                SheetRender sheetRender = new(worksheet, excelOptions);
+                var sheetRender = new SheetRender(worksheet, excelOptions);
+
                 for (var pageIndex = 0; pageIndex < sheetRender.PageCount; pageIndex++)
                 {
-                    MemoryStream stream = new();
+                    var stream = new MemoryStream();
                     sheetRender.ToImage(pageIndex, stream);
                     yield return new("png", stream);
                 }
