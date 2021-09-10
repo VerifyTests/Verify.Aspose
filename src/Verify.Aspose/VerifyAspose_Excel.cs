@@ -14,45 +14,47 @@ namespace VerifyTests
         {
             ImageType = ImageType.Png,
             OnePagePerSheet = true,
+            GridlineType = GridlineType.Hair,
             OnlyArea = true
         };
 
         static ConversionResult ConvertExcel(Stream stream, IReadOnlyDictionary<string, object> settings)
         {
-            using var document = new Workbook(stream);
-            return ConvertExcel(document, settings);
+            using var book = new Workbook(stream);
+            return ConvertExcel(book, settings);
         }
 
-        static ConversionResult ConvertExcel(Workbook document, IReadOnlyDictionary<string, object> settings)
+        static ConversionResult ConvertExcel(Workbook book, IReadOnlyDictionary<string, object> settings)
         {
-            var info = GetInfo(document);
-            return new(info, GetExcelStreams(document).ToList());
+            var info = GetInfo(book);
+            return new(info, GetExcelStreams(book).ToList());
         }
 
-        static object GetInfo(Workbook document)
+        static object GetInfo(Workbook book)
         {
             return new
             {
-                HasMacro = document.HasMacro.ToString(),
-                HasRevisions = document.HasRevisions.ToString(),
-                IsDigitallySigned = document.IsDigitallySigned.ToString(),
-                Properties = GetDocumentProperties(document)
+                HasMacro = book.HasMacro.ToString(),
+                HasRevisions = book.HasRevisions.ToString(),
+                IsDigitallySigned = book.IsDigitallySigned.ToString(),
+                Properties = GetDocumentProperties(book)
             };
         }
 
-        static Dictionary<string, object> GetDocumentProperties(Workbook document)
+        static Dictionary<string, object> GetDocumentProperties(Workbook book)
         {
-            return document.BuiltInDocumentProperties
+            return book.BuiltInDocumentProperties
                 .Cast<DocumentProperty>()
                 .Where(x => x.Value.HasValue())
                 .ToDictionary(x => x.Name, x => x.Value);
         }
 
-        static IEnumerable<Target> GetExcelStreams(Workbook document)
+        static IEnumerable<Target> GetExcelStreams(Workbook book)
         {
-            foreach (var worksheet in document.Worksheets)
+            foreach (var sheet in book.Worksheets)
             {
-                var sheetRender = new SheetRender(worksheet, excelOptions);
+                sheet.PageSetup.PrintGridlines = true;
+                var sheetRender = new SheetRender(sheet, excelOptions);
 
                 for (var pageIndex = 0; pageIndex < sheetRender.PageCount; pageIndex++)
                 {
