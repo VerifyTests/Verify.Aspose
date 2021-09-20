@@ -15,7 +15,8 @@ namespace VerifyTests
             ImageType = ImageType.Png,
             OnePagePerSheet = true,
             GridlineType = GridlineType.Hair,
-            OnlyArea = true
+            OnlyArea = true,
+            PrintingPage = PrintingPageType.IgnoreBlank
         };
 
         static ConversionResult ConvertExcel(Stream stream, IReadOnlyDictionary<string, object> settings)
