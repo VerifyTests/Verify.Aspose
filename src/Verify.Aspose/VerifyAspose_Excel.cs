@@ -54,6 +54,10 @@ namespace VerifyTests
         {
             foreach (var sheet in book.Worksheets)
             {
+                sheet.PageSetup.LeftMargin = 0;
+                sheet.PageSetup.TopMargin = 0;
+                sheet.PageSetup.RightMargin = 0;
+                sheet.PageSetup.BottomMargin = 0;
                 sheet.PageSetup.PrintGridlines = true;
                 var sheetRender = new SheetRender(sheet, excelOptions);
 
