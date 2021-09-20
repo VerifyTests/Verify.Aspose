@@ -10,7 +10,7 @@ namespace VerifyTests
 {
     public static partial class VerifyAspose
     {
-        static ImageOrPrintOptions excelOptions = new()
+        static ImageOrPrintOptions options = new()
         {
             ImageType = ImageType.Png,
             OnePagePerSheet = true,
@@ -54,17 +54,18 @@ namespace VerifyTests
         {
             foreach (var sheet in book.Worksheets)
             {
-                sheet.PageSetup.LeftMargin = 0;
-                sheet.PageSetup.TopMargin = 0;
-                sheet.PageSetup.RightMargin = 0;
-                sheet.PageSetup.BottomMargin = 0;
-                sheet.PageSetup.PrintGridlines = true;
-                var sheetRender = new SheetRender(sheet, excelOptions);
+                var setup = sheet.PageSetup;
+                setup.PrintGridlines = true;
+                setup.LeftMargin = 0;
+                setup.TopMargin = 0;
+                setup.RightMargin = 0;
+                setup.BottomMargin = 0;
+                var render = new SheetRender(sheet, options);
 
-                for (var pageIndex = 0; pageIndex < sheetRender.PageCount; pageIndex++)
+                for (var index = 0; index < render.PageCount; index++)
                 {
                     var stream = new MemoryStream();
-                    sheetRender.ToImage(pageIndex, stream);
+                    render.ToImage(index, stream);
                     yield return new("png", stream);
                 }
             }
