@@ -67,7 +67,7 @@ namespace VerifyTests
             for (var index = 0; index < pagesToInclude; index++)
             {
                 var page = document.Pages[index + 1];
-                MemoryStream stream = new();
+                var stream = new MemoryStream();
                 var pngDevice = settings.GetPdfPngDevice(page);
                 pngDevice.Process(page, stream);
                 yield return new("png", stream);
