@@ -1,6 +1,4 @@
-﻿using System;
-
-static class Extensions
+﻿static class Extensions
 {
     public static bool HasValue(this object? input)
     {

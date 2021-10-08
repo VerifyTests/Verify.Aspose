@@ -1,11 +1,7 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using Aspose.Pdf.Devices;
+﻿using Aspose.Pdf.Devices;
 using VerifyTests;
 using VerifyNUnit;
 using NUnit.Framework;
-
 
 [TestFixture]
 public class Samples
