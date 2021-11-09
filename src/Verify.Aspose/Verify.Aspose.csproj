@@ -3,10 +3,10 @@
     <TargetFrameworks>net48;net5</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Verify" Version="14.0.1" />
+    <PackageReference Include="Verify" Version="14.2.0" />
     <PackageReference Include="Aspose.Pdf" Version="21.10.1" />
-    <PackageReference Include="Aspose.Cells" Version="21.10.0" />
-    <PackageReference Include="Aspose.Words" Version="21.10.0" />
+    <PackageReference Include="Aspose.Cells" Version="21.11.0" />
+    <PackageReference Include="Aspose.Words" Version="21.11.0" />
     <PackageReference Include="Aspose.Slides.NET" Version="21.10.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.61" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
