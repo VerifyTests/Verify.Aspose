@@ -11,7 +11,7 @@ public class Samples
     [Test]
     public Task VerifyPdf()
     {
-        return Verifier.VerifyFile("sample.pdf");
+        return VerifyFile("sample.pdf");
     }
 
     #endregion
@@ -19,7 +19,7 @@ public class Samples
     [Test]
     public Task VerifyPdfResolution()
     {
-        return Verifier.VerifyFile("sample.pdf")
+        return VerifyFile("sample.pdf")
             .PdfPngDevice(page =>
             {
                 Resolution resolution = new(100);
@@ -35,7 +35,7 @@ public class Samples
     [Test]
     public Task VerifyPdfStream()
     {
-        return Verifier.Verify(File.OpenRead("sample.pdf"))
+        return Verify(File.OpenRead("sample.pdf"))
             .UseExtension("pdf");
     }
 
@@ -48,7 +48,7 @@ public class Samples
     [Test]
     public Task VerifyPowerPoint()
     {
-        return Verifier.VerifyFile("sample.pptx");
+        return VerifyFile("sample.pptx");
     }
 
     #endregion
@@ -58,7 +58,7 @@ public class Samples
     [Test]
     public Task VerifyPowerPointStream()
     {
-        return Verifier.Verify(File.OpenRead("sample.pptx"))
+        return Verify(File.OpenRead("sample.pptx"))
             .UseExtension("pptx");
     }
 
@@ -71,7 +71,7 @@ public class Samples
     [Test]
     public Task VerifyExcel()
     {
-        return Verifier.VerifyFile("sample.xlsx");
+        return VerifyFile("sample.xlsx");
     }
 
     #endregion
@@ -81,7 +81,7 @@ public class Samples
     [Test]
     public Task VerifyExcelStream()
     {
-        return Verifier.Verify(File.OpenRead("sample.xlsx"))
+        return Verify(File.OpenRead("sample.xlsx"))
             .UseExtension("xlsx");
     }
 
@@ -92,7 +92,7 @@ public class Samples
     [Test]
     public Task VerifyWord()
     {
-        return Verifier.VerifyFile("sample.docx");
+        return VerifyFile("sample.docx");
     }
 
     #endregion
@@ -102,7 +102,7 @@ public class Samples
     [Test]
     public Task VerifyWordStream()
     {
-        return Verifier.Verify(File.OpenRead("sample.docx"))
+        return Verify(File.OpenRead("sample.docx"))
             .UseExtension("docx");
     }
 
