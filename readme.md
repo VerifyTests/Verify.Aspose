@@ -52,7 +52,7 @@ public static class ModuleInitializer
 [Test]
 public Task VerifyPdf()
 {
-    return Verifier.VerifyFile("sample.pdf");
+    return VerifyFile("sample.pdf");
 }
 ```
 <sup><a href='/src/Tests/Samples.cs#L9-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdf' title='Start of snippet'>anchor</a></sup>
@@ -67,7 +67,7 @@ public Task VerifyPdf()
 [Test]
 public Task VerifyPdfStream()
 {
-    return Verifier.Verify(File.OpenRead("sample.pdf"))
+    return Verify(File.OpenRead("sample.pdf"))
         .UseExtension("pdf");
 }
 ```
@@ -121,7 +121,7 @@ public Task VerifyPdfStream()
 [Test]
 public Task VerifyExcel()
 {
-    return Verifier.VerifyFile("sample.xlsx");
+    return VerifyFile("sample.xlsx");
 }
 ```
 <sup><a href='/src/Tests/Samples.cs#L69-L77' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcel' title='Start of snippet'>anchor</a></sup>
@@ -136,7 +136,7 @@ public Task VerifyExcel()
 [Test]
 public Task VerifyExcelStream()
 {
-    return Verifier.Verify(File.OpenRead("sample.xlsx"))
+    return Verify(File.OpenRead("sample.xlsx"))
         .UseExtension("xlsx");
 }
 ```
@@ -181,7 +181,7 @@ public Task VerifyExcelStream()
 [Test]
 public Task VerifyWord()
 {
-    return Verifier.VerifyFile("sample.docx");
+    return VerifyFile("sample.docx");
 }
 ```
 <sup><a href='/src/Tests/Samples.cs#L90-L98' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyword' title='Start of snippet'>anchor</a></sup>
@@ -196,7 +196,7 @@ public Task VerifyWord()
 [Test]
 public Task VerifyWordStream()
 {
-    return Verifier.Verify(File.OpenRead("sample.docx"))
+    return Verify(File.OpenRead("sample.docx"))
         .UseExtension("docx");
 }
 ```
@@ -238,7 +238,7 @@ public Task VerifyWordStream()
 [Test]
 public Task VerifyPowerPoint()
 {
-    return Verifier.VerifyFile("sample.pptx");
+    return VerifyFile("sample.pptx");
 }
 ```
 <sup><a href='/src/Tests/Samples.cs#L46-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Start of snippet'>anchor</a></sup>
@@ -253,7 +253,7 @@ public Task VerifyPowerPoint()
 [Test]
 public Task VerifyPowerPointStream()
 {
-    return Verifier.Verify(File.OpenRead("sample.pptx"))
+    return Verify(File.OpenRead("sample.pptx"))
         .UseExtension("pptx");
 }
 ```
