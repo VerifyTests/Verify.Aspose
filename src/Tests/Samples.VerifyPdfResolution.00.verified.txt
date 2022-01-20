@@ -16,6 +16,6 @@
   OptimizeSize: False,
   PageLabels: {},
   PageLayout: Default,
-  PdfFormat: v_1_7,
+  PdfFormat: v_1_4,
   Version: 1.4
 }
