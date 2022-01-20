@@ -1,7 +1,4 @@
 ﻿using Aspose.Pdf.Devices;
-using VerifyTests;
-using VerifyNUnit;
-using NUnit.Framework;
 
 [TestFixture]
 public class Samples
@@ -22,11 +19,11 @@ public class Samples
         return VerifyFile("sample.pdf")
             .PdfPngDevice(page =>
             {
-                Resolution resolution = new(100);
+                var resolution = new Resolution(100);
                 var artBox = page.ArtBox;
                 var width = Convert.ToInt32(artBox.Width);
                 var height = Convert.ToInt32(artBox.Height);
-                return new(width, height, resolution);
+                return new PngDevice(width, height, resolution);
             });
     }
 
