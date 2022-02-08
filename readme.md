@@ -9,8 +9,6 @@ Converts documents (pdf, docx, xslx, and pptx) to png for verification.
 
 An [Aspose License](https://purchase.aspose.com/policies/license-types) is required to use this tool.
 
-<a href='https://dotnetfoundation.org' alt='Part of the .NET Foundation'><img src='https://raw.githubusercontent.com/VerifyTests/Verify/master/docs/dotNetFoundation.svg' height='30px'></a><br>
-Part of the <a href='https://dotnetfoundation.org' alt=''>.NET Foundation</a>
 
 
 ## NuGet package
