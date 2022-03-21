@@ -10,10 +10,8 @@ public static partial class VerifyAspose
         return ConvertPowerPoint(document, settings);
     }
 
-    static ConversionResult ConvertPowerPoint(Presentation document, IReadOnlyDictionary<string, object> settings)
-    {
-        return new(document.DocumentProperties, GetPowerPointStreams(document, settings).ToList());
-    }
+    static ConversionResult ConvertPowerPoint(Presentation document, IReadOnlyDictionary<string, object> settings) =>
+        new(document.DocumentProperties, GetPowerPointStreams(document, settings).ToList());
 
     static IEnumerable<Target> GetPowerPointStreams(Presentation document, IReadOnlyDictionary<string, object> settings)
     {

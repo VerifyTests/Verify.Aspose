@@ -4,10 +4,8 @@ namespace VerifyTests;
 
 public static class VerifyAsposeSettings
 {
-    public static void PagesToInclude(this VerifySettings settings, int count)
-    {
+    public static void PagesToInclude(this VerifySettings settings, int count) =>
         settings.Context["VerifyAsposePagesToInclude"] = count;
-    }
 
     public static SettingsTask PagesToInclude(this SettingsTask settings, int count)
     {
@@ -25,10 +23,8 @@ public static class VerifyAsposeSettings
         return Math.Min(count, (int) value);
     }
 
-    public static void PdfPngDevice(this VerifySettings settings, Func<Aspose.Pdf.Page, PngDevice> func)
-    {
+    public static void PdfPngDevice(this VerifySettings settings, Func<Aspose.Pdf.Page, PngDevice> func) =>
         settings.Context["VerifyAsposePdfPngDevice"] = func;
-    }
 
     public static SettingsTask PdfPngDevice(this SettingsTask settings, Func<Aspose.Pdf.Page, PngDevice> func)
     {

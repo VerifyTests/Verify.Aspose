@@ -28,24 +28,20 @@ public static partial class VerifyAspose
         return new(info, GetExcelStreams(book).ToList());
     }
 
-    static object GetInfo(Workbook book)
-    {
-        return new
+    static object GetInfo(Workbook book) =>
+        new
         {
             HasMacro = book.HasMacro.ToString(),
             HasRevisions = book.HasRevisions.ToString(),
             IsDigitallySigned = book.IsDigitallySigned.ToString(),
             Properties = GetDocumentProperties(book)
         };
-    }
 
-    static Dictionary<string, object> GetDocumentProperties(Workbook book)
-    {
-        return book.BuiltInDocumentProperties
+    static Dictionary<string, object> GetDocumentProperties(Workbook book) =>
+        book.BuiltInDocumentProperties
             .Cast<DocumentProperty>()
             .Where(x => x.Value.HasValue())
             .ToDictionary(x => x.Name, x => x.Value);
-    }
 
     static IEnumerable<Target> GetExcelStreams(Workbook book)
     {

@@ -12,28 +12,22 @@ public static partial class VerifyAspose
         return ConvertWord(document, settings);
     }
 
-    static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings)
-    {
-        return new(GetInfo(document), GetWordStreams(document, settings).ToList());
-    }
+    static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings) =>
+        new(GetInfo(document), GetWordStreams(document, settings).ToList());
 
-    static object GetInfo(Document document)
-    {
-        return new
+    static object GetInfo(Document document) =>
+        new
         {
             HasRevisions = document.HasRevisions.ToString(),
             DefaultLocale = (EditingLanguage)document.Styles.DefaultFont.LocaleId,
             Properties = GetDocumentProperties(document)
         };
-    }
 
-    static Dictionary<string, object> GetDocumentProperties(Document document)
-    {
-        return document.BuiltInDocumentProperties
+    static Dictionary<string, object> GetDocumentProperties(Document document) =>
+        document.BuiltInDocumentProperties
             .Where(x => x.Name != "Bytes" &&
                         x.Value.HasValue())
             .ToDictionary(x => x.Name, x => x.Value);
-    }
 
     static IEnumerable<Target> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
     {

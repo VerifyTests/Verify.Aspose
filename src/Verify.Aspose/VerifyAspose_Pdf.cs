@@ -50,13 +50,11 @@ public static partial class VerifyAspose
             GetPdfStreams(document, settings).ToList());
     }
 
-    static Dictionary<string, string> GetInfo(Document document)
-    {
-        return document.Info
+    static Dictionary<string, string> GetInfo(Document document) =>
+        document.Info
             .Where(x => x.Value.HasValue() &&
                         !x.Key.Contains("Date"))
             .ToDictionary(x => x.Key, x => x.Value);
-    }
 
     static IEnumerable<Target> GetPdfStreams(Document document, IReadOnlyDictionary<string, object> settings)
     {
