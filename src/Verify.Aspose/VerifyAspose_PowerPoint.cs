@@ -24,7 +24,7 @@ public static partial class VerifyAspose
             stream.Position = 0;
             StreamReader reader = new(stream);
             var text = reader.ReadToEnd();
-            yield return new("svg", text);
+            yield return new("svg", text, null);
         }
     }
 }

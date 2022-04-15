@@ -40,7 +40,7 @@ public static partial class VerifyAspose
             };
             MemoryStream stream = new();
             document.Save(stream, options);
-            yield return new("png", stream);
+            yield return new("png", stream, null);
         }
     }
 }

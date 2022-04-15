@@ -6,7 +6,7 @@ public static partial class VerifyAspose
 {
     static ConversionResult ConvertPdf(Stream stream, IReadOnlyDictionary<string, object> settings)
     {
-        using Document document = new(stream);
+        using var document = new Document(stream);
         return ConvertPdf(document, settings);
     }
 
@@ -65,7 +65,7 @@ public static partial class VerifyAspose
             var stream = new MemoryStream();
             var pngDevice = settings.GetPdfPngDevice(page);
             pngDevice.Process(page, stream);
-            yield return new("png", stream);
+            yield return new("png", stream, null);
         }
     }
 }

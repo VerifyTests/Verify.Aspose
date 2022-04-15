@@ -59,7 +59,7 @@ public static partial class VerifyAspose
             {
                 var stream = new MemoryStream();
                 render.ToImage(index, stream);
-                yield return new("png", stream);
+                yield return new("png", stream, null);
             }
         }
     }
