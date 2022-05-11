@@ -9,7 +9,7 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.3.0" PrivateAssets="all" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" PrivateAssets="all" />
     <PackageReference Include="Verify.NUnit" Version="16.7.0" />
     <ProjectReference Include="..\Verify.Aspose\Verify.Aspose.csproj" />
