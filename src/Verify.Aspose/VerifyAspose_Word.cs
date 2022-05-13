@@ -8,7 +8,7 @@ public static partial class VerifyAspose
 {
     static ConversionResult ConvertWord(Stream stream, IReadOnlyDictionary<string, object> settings)
     {
-        Document document = new(stream);
+        var document = new Document(stream);
         return ConvertWord(document, settings);
     }
 
