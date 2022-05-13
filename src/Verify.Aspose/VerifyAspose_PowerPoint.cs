@@ -19,7 +19,7 @@ public static partial class VerifyAspose
         for (var index = 0; index < pagesToInclude; index++)
         {
             var slide = document.Slides[index];
-            MemoryStream stream = new();
+            var stream = new MemoryStream();
             slide.WriteAsSvg(stream);
             stream.Position = 0;
             StreamReader reader = new(stream);
