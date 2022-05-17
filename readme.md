@@ -142,6 +142,7 @@ public Task VerifyExcelStream() =>
   HasMacro: False,
   HasRevisions: False,
   IsDigitallySigned: False,
+  Sheets: 1,
   Properties: {
     LastSavedBy: Simon Cropp,
     LastSavedTime: DateTime_1,
@@ -151,7 +152,7 @@ public Task VerifyExcelStream() =>
   }
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyExcel.00.verified.txt#L1-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyExcel.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyExcel.00.verified.txt#L1-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyExcel.00.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyExcel.01.verified.png](/src/Tests/Samples.VerifyExcel.01.verified.png):
