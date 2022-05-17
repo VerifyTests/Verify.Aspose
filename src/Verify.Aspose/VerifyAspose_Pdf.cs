@@ -23,6 +23,7 @@ public static partial class VerifyAspose
         return new(
             new
             {
+                Pages = document.Pages.Count,
                 document.AllowReusePageContent,
                 document.CenterWindow,
                 document.DisplayDocTitle,
@@ -46,7 +47,6 @@ public static partial class VerifyAspose
                 document.PageMode,
                 document.PdfFormat,
                 document.Version
-
             },
             GetPdfStreams(document, settings).ToList());
     }

@@ -1,4 +1,5 @@
 ﻿{
+  Pages: 2,
   FitWindow: False,
   HideMenubar: False,
   HideToolBar: False,

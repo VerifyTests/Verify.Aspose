@@ -34,6 +34,7 @@ public static partial class VerifyAspose
             HasMacro = book.HasMacro.ToString(),
             HasRevisions = book.HasRevisions.ToString(),
             IsDigitallySigned = book.IsDigitallySigned.ToString(),
+            Sheets = book.Worksheets.Count,
             Properties = GetDocumentProperties(book)
         };
 
