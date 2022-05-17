@@ -74,6 +74,7 @@ public Task VerifyPdfStream() =>
 <a id='snippet-Samples.VerifyPdf.00.verified.txt'></a>
 ```txt
 {
+  Pages: 2,
   FitWindow: False,
   HideMenubar: False,
   HideToolBar: False,
@@ -95,7 +96,7 @@ public Task VerifyPdfStream() =>
   Version: 1.4
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.00.verified.txt#L1-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.00.verified.txt#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.00.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf.01.verified.png](/src/Tests/Samples.VerifyPdf.01.verified.png):
