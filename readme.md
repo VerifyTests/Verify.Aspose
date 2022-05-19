@@ -275,7 +275,7 @@ public Task VerifyPowerPointStream() =>
 <sup><a href='/src/Tests/Samples.VerifyPowerPoint.00.verified.txt#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.00.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyPowerPoint.01.verified.svg](/src/Tests/Samples.VerifyPowerPoint.01.verified.svg):
+[Samples.VerifyPowerPoint.01.verified.png](/src/Tests/Samples.VerifyPowerPoint.01.verified.png):
 
 
 ## File Samples
