@@ -179,8 +179,7 @@ public Task VerifyExcelStream() =>
         },
         {
           Name: Date,
-          Width: 10.86,
-          FirstValue: Date_1
+          Width: 10.86
         }
       ]
     }
