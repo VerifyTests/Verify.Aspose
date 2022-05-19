@@ -143,7 +143,48 @@ public Task VerifyExcelStream() =>
   HasMacro: False,
   HasRevisions: False,
   IsDigitallySigned: False,
-  Sheets: 1,
+  Sheets: [
+    {
+      Name: Sheet1,
+      Columns: [
+        {
+          Name: 0.0,
+          Width: 10.86,
+          FirstValue: 1.0
+        },
+        {
+          Name: First Name,
+          Width: 10.86,
+          FirstValue: Dulce
+        },
+        {
+          Name: Last Name,
+          Width: 10.86,
+          FirstValue: Abril
+        },
+        {
+          Name: Gender,
+          Width: 10.86,
+          FirstValue: Female
+        },
+        {
+          Name: Country,
+          Width: 10.86,
+          FirstValue: United States
+        },
+        {
+          Name: Age,
+          Width: 10.86,
+          FirstValue: 32.0
+        },
+        {
+          Name: Date,
+          Width: 10.86,
+          FirstValue: 15/10/2017
+        }
+      ]
+    }
+  ],
   Properties: {
     LastSavedBy: Simon Cropp,
     LastSavedTime: DateTime_1,
@@ -153,7 +194,7 @@ public Task VerifyExcelStream() =>
   }
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyExcel.00.verified.txt#L1-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyExcel.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyExcel.00.verified.txt#L1-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyExcel.00.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyExcel.01.verified.png](/src/Tests/Samples.VerifyExcel.01.verified.png):

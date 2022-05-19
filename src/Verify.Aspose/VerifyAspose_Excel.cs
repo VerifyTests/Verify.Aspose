@@ -77,7 +77,7 @@ public static partial class VerifyAspose
         {
             var header = cells[0, column];
             var firstRow = cells[1, column];
-            yield return new(header.Value, cells.GetColumnWidth(column),firstRow.Value);
+            yield return new(header.Value, cells.GetColumnWidth(column), firstRow.Value);
         }
     }
 }

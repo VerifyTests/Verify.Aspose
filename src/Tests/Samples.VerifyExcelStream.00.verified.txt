@@ -35,17 +35,12 @@
           Name: Age,
           Width: 10.86,
           FirstValue: 32.0
-        },
-        {
-          Name: Date,
-          Width: 10.86,
-          FirstValue: Date_1
         }
       ]
     }
   ],
   Properties: {
-    LastSavedBy: Simon Cropp,
+    LastSavedBy: simon,
     LastSavedTime: DateTime_1,
     NameOfApplication: Microsoft Excel,
     Title: The Title,
