@@ -176,16 +176,12 @@ public Task VerifyExcelStream() =>
           Name: Age,
           Width: 10.86,
           FirstValue: 32.0
-        },
-        {
-          Name: Date,
-          Width: 10.86
         }
       ]
     }
   ],
   Properties: {
-    LastSavedBy: Simon Cropp,
+    LastSavedBy: simon,
     LastSavedTime: DateTime_1,
     NameOfApplication: Microsoft Excel,
     Title: The Title,
@@ -193,7 +189,7 @@ public Task VerifyExcelStream() =>
   }
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyExcel.00.verified.txt#L1-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyExcel.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyExcel.00.verified.txt#L1-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyExcel.00.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyExcel.01.verified.png](/src/Tests/Samples.VerifyExcel.01.verified.png):
