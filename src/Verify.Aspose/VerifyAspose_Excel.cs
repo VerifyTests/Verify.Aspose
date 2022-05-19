@@ -34,7 +34,7 @@ public static partial class VerifyAspose
             HasMacro = book.HasMacro.ToString(),
             HasRevisions = book.HasRevisions.ToString(),
             IsDigitallySigned = book.IsDigitallySigned.ToString(),
-            Sheets = book.Worksheets.Count,
+            Sheets = GetSheetData(book).ToList(),
             Properties = GetDocumentProperties(book)
         };
 
@@ -64,4 +64,24 @@ public static partial class VerifyAspose
             }
         }
     }
+
+    static IEnumerable<Sheet> GetSheetData(Workbook book) =>
+        book.Worksheets
+            .Select(_ => new Sheet(_.Name, GetColumns(_).ToList()));
+
+    static IEnumerable<ColumnInfo> GetColumns(Worksheet sheet)
+    {
+        var cells = sheet.Cells;
+        var lastCell = cells.LastCell;
+        for (int column = 0; column < lastCell.Column; column++)
+        {
+            var header = cells[0, column];
+            var firstRow = cells[1, column];
+            yield return new(header.Value, cells.GetColumnWidth(column),firstRow.Value);
+        }
+    }
 }
+
+record ColumnInfo(object Name, double Width, object FirstValue);
+
+record Sheet(string Name, List<ColumnInfo> Columns);

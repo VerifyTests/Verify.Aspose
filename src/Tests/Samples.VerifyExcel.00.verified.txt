@@ -2,7 +2,48 @@
   HasMacro: False,
   HasRevisions: False,
   IsDigitallySigned: False,
-  Sheets: 1,
+  Sheets: [
+    {
+      Name: Sheet1,
+      Columns: [
+        {
+          Name: 0.0,
+          Width: 10.86,
+          FirstValue: 1.0
+        },
+        {
+          Name: First Name,
+          Width: 10.86,
+          FirstValue: Dulce
+        },
+        {
+          Name: Last Name,
+          Width: 10.86,
+          FirstValue: Abril
+        },
+        {
+          Name: Gender,
+          Width: 10.86,
+          FirstValue: Female
+        },
+        {
+          Name: Country,
+          Width: 10.86,
+          FirstValue: United States
+        },
+        {
+          Name: Age,
+          Width: 10.86,
+          FirstValue: 32.0
+        },
+        {
+          Name: Date,
+          Width: 10.86,
+          FirstValue: Date_1
+        }
+      ]
+    }
+  ],
   Properties: {
     LastSavedBy: Simon Cropp,
     LastSavedTime: DateTime_1,
