@@ -4,7 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Verify" Version="16.8.1" />
-    <PackageReference Include="Aspose.Pdf" Version="22.4.0" />
+    <PackageReference Include="Aspose.Pdf" Version="22.5.0" />
     <PackageReference Include="Aspose.Cells" Version="22.5.0" />
     <PackageReference Include="Aspose.Words" Version="22.5.0" />
     <PackageReference Include="Aspose.Slides.NET" Version="22.5.0" />
