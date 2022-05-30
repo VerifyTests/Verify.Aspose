@@ -44,24 +44,33 @@ public static partial class VerifyAspose
             .Where(x => x.Value.HasValue())
             .ToDictionary(x => x.Name, x => x.Value);
 
-    static IEnumerable<Target> GetExcelStreams(Workbook book)
+    static ConversionResult ConvertSheet(Worksheet sheet, IReadOnlyDictionary<string, object> settings)
     {
-        foreach (var sheet in book.Worksheets)
-        {
-            var setup = sheet.PageSetup;
-            setup.PrintGridlines = true;
-            setup.LeftMargin = 0;
-            setup.TopMargin = 0;
-            setup.RightMargin = 0;
-            setup.BottomMargin = 0;
-            var render = new SheetRender(sheet, options);
+        var info = GetInfo(sheet);
+        return new(info, GetSheetStreams(sheet).ToList());
+    }
 
-            for (var index = 0; index < render.PageCount; index++)
-            {
-                var stream = new MemoryStream();
-                render.ToImage(index, stream);
-                yield return new("png", stream, null);
-            }
+    static object GetInfo(Worksheet sheet) =>
+        new Sheet(sheet.Name, GetColumns(sheet).ToList());
+
+    static IEnumerable<Target> GetExcelStreams(Workbook book) =>
+        book.Worksheets.SelectMany(GetSheetStreams);
+
+    static IEnumerable<Target> GetSheetStreams(Worksheet sheet)
+    {
+        var setup = sheet.PageSetup;
+        setup.PrintGridlines = true;
+        setup.LeftMargin = 0;
+        setup.TopMargin = 0;
+        setup.RightMargin = 0;
+        setup.BottomMargin = 0;
+        var render = new SheetRender(sheet, options);
+
+        for (var index = 0; index < render.PageCount; index++)
+        {
+            var stream = new MemoryStream();
+            render.ToImage(index, stream);
+            yield return new("png", stream);
         }
     }
 
@@ -73,15 +82,22 @@ public static partial class VerifyAspose
     {
         var cells = sheet.Cells;
         var lastCell = cells.LastCell;
-        for (int column = 0; column < lastCell.Column; column++)
+        if (lastCell == null)
+        {
+            yield break;
+        }
+        for (var column = 0; column <= lastCell.Column; column++)
         {
             var header = cells[0, column];
             var firstRow = cells[1, column];
-            yield return new(header.Value, cells.GetColumnWidth(column), firstRow.Value);
+            yield return new(
+                header.Value,
+                (uint)cells.GetColumnWidth(column),
+                firstRow.Value);
         }
     }
 }
 
-record ColumnInfo(object Name, double Width, object FirstValue);
+record ColumnInfo(object Name, uint Width, object FirstValue);
 
 record Sheet(string Name, List<ColumnInfo> Columns);

@@ -1,9 +1,10 @@
-{
+﻿{
   AppVersion: 16.0000,
   NameOfApplication: Microsoft Office PowerPoint,
   Company: ,
   Manager: ,
   PresentationFormat: Custom,
+  SharedDoc: false,
   ApplicationTemplate: ,
   Title: Lorem ipsum,
   Subject: ,

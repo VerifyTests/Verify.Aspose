@@ -50,7 +50,7 @@ public static class ModuleInitializer
 public Task VerifyPdf() =>
     VerifyFile("sample.pdf");
 ```
-<sup><a href='/src/Tests/Samples.cs#L6-L12' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdf' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L7-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdf' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -64,7 +64,7 @@ public Task VerifyPdfStream() =>
     Verify(File.OpenRead("sample.pdf"))
         .UseExtension("pdf");
 ```
-<sup><a href='/src/Tests/Samples.cs#L26-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdfstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L27-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdfstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -75,6 +75,9 @@ public Task VerifyPdfStream() =>
 ```txt
 {
   Pages: 2,
+  AllowReusePageContent: false,
+  CenterWindow: false,
+  DisplayDocTitle: false,
   FitWindow: False,
   HideMenubar: False,
   HideToolBar: False,
@@ -96,7 +99,7 @@ public Task VerifyPdfStream() =>
   Version: 1.4
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.00.verified.txt#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.00.verified.txt#L1-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.00.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf.01.verified.png](/src/Tests/Samples.VerifyPdf.01.verified.png):
@@ -116,7 +119,7 @@ public Task VerifyPdfStream() =>
 public Task VerifyExcel() =>
     VerifyFile("sample.xlsx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L56-L62' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcel' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L57-L63' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcel' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -130,66 +133,29 @@ public Task VerifyExcelStream() =>
     Verify(File.OpenRead("sample.xlsx"))
         .UseExtension("xlsx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L64-L71' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcelstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L100-L107' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcelstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
-#### Result
+#### Verify a WorkBook
 
-<!-- snippet: Samples.VerifyExcel.00.verified.txt -->
-<a id='snippet-Samples.VerifyExcel.00.verified.txt'></a>
-```txt
+<!-- snippet: VerifyWorkbook -->
+<a id='snippet-verifyworkbook'></a>
+```cs
+[Test]
+public Task VerifyWorkbook()
 {
-  HasMacro: False,
-  HasRevisions: False,
-  IsDigitallySigned: False,
-  Sheets: [
-    {
-      Name: Sheet1,
-      Columns: [
-        {
-          Name: 0.0,
-          Width: 10.86,
-          FirstValue: 1.0
-        },
-        {
-          Name: First Name,
-          Width: 10.86,
-          FirstValue: Dulce
-        },
-        {
-          Name: Last Name,
-          Width: 10.86,
-          FirstValue: Abril
-        },
-        {
-          Name: Gender,
-          Width: 10.86,
-          FirstValue: Female
-        },
-        {
-          Name: Country,
-          Width: 10.86,
-          FirstValue: United States
-        },
-        {
-          Name: Age,
-          Width: 10.86,
-          FirstValue: 32.0
-        }
-      ]
-    }
-  ],
-  Properties: {
-    LastSavedBy: simon,
-    LastSavedTime: DateTime_1,
-    NameOfApplication: Microsoft Excel,
-    Title: The Title,
-    Version: 16.0300
-  }
+    var book = new Workbook();
+
+    var sheet = book.Worksheets.Add("New Sheet");
+
+    var cells = sheet.Cells;
+
+    cells[0, 0].PutValue("Some Text");
+    return Verify(book);
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyExcel.00.verified.txt#L1-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyExcel.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L83-L98' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyworkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyExcel.01.verified.png](/src/Tests/Samples.VerifyExcel.01.verified.png):
@@ -209,7 +175,7 @@ public Task VerifyExcelStream() =>
 public Task VerifyWord() =>
     VerifyFile("sample.docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L73-L79' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyword' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L109-L115' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyword' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -223,7 +189,7 @@ public Task VerifyWordStream() =>
     Verify(File.OpenRead("sample.docx"))
         .UseExtension("docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L81-L88' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifywordstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L117-L124' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifywordstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -262,7 +228,7 @@ public Task VerifyWordStream() =>
 public Task VerifyPowerPoint() =>
     VerifyFile("sample.pptx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L37-L43' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L38-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -276,7 +242,7 @@ public Task VerifyPowerPointStream() =>
     Verify(File.OpenRead("sample.pptx"))
         .UseExtension("pptx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L45-L52' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpointstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L46-L53' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpointstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -291,6 +257,7 @@ public Task VerifyPowerPointStream() =>
   Company: ,
   Manager: ,
   PresentationFormat: Custom,
+  SharedDoc: false,
   ApplicationTemplate: ,
   Title: Lorem ipsum,
   Subject: ,
@@ -308,7 +275,7 @@ public Task VerifyPowerPointStream() =>
   HyperlinkBase: 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPowerPoint.00.verified.txt#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPowerPoint.00.verified.txt#L1-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.00.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPowerPoint.01.verified.png](/src/Tests/Samples.VerifyPowerPoint.01.verified.png):

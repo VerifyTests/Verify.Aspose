@@ -12,8 +12,7 @@ public static partial class VerifyAspose
         return ConvertWord(document, settings);
     }
 
-    static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings) =>
-        new(GetInfo(document), GetWordStreams(document, settings).ToList());
+    static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings) => new(GetInfo(document), GetWordStreams(document, settings).ToList());
 
     static object GetInfo(Document document) =>
         new
@@ -34,13 +33,13 @@ public static partial class VerifyAspose
         var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
         for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)
         {
-            ImageSaveOptions options = new(SaveFormat.Png)
+            var options = new ImageSaveOptions(SaveFormat.Png)
             {
                 PageSet = new(pageIndex)
             };
-            MemoryStream stream = new();
+            var stream = new MemoryStream();
             document.Save(stream, options);
-            yield return new("png", stream, null);
+            yield return new("png", stream);
         }
     }
 }

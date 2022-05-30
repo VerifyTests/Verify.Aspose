@@ -1,0 +1,9 @@
+﻿{
+  Name: New Sheet,
+  Columns: [
+    {
+      Name: Some Text,
+      Width: 8
+    }
+  ]
+}

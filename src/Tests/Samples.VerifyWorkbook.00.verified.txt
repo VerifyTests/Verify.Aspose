@@ -1,0 +1,19 @@
+﻿{
+  HasMacro: False,
+  HasRevisions: False,
+  IsDigitallySigned: False,
+  Sheets: [
+    {
+      Name: Sheet1
+    },
+    {
+      Name: New Sheet,
+      Columns: [
+        {
+          Name: Some Text,
+          Width: 8
+        }
+      ]
+    }
+  ]
+}

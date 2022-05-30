@@ -10,6 +10,7 @@ public static partial class VerifyAspose
         VerifierSettings.RegisterFileConverter("xlsx", ConvertExcel);
         VerifierSettings.RegisterFileConverter("xls", ConvertExcel);
         VerifierSettings.RegisterFileConverter<Workbook>(ConvertExcel);
+        VerifierSettings.RegisterFileConverter<Worksheet>(ConvertSheet);
 
         VerifierSettings.RegisterFileConverter("pdf", ConvertPdf);
         VerifierSettings.RegisterFileConverter<Aspose.Pdf.Document>(ConvertPdf);

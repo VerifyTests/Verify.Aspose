@@ -1,4 +1,5 @@
-﻿using Aspose.Pdf.Devices;
+﻿using Aspose.Cells;
+using Aspose.Pdf.Devices;
 
 [TestFixture]
 public class Samples
@@ -58,6 +59,41 @@ public class Samples
     [Test]
     public Task VerifyExcel() =>
         VerifyFile("sample.xlsx");
+
+    #endregion
+
+    #region VerifySheet
+
+    [Test]
+    public Task VerifySheet()
+    {
+        using var book = new Workbook();
+
+        var sheet = book.Worksheets.Add("New Sheet");
+
+        var cells = sheet.Cells;
+
+        cells[0, 0].PutValue("Some Text");
+
+        return Verify(sheet);
+    }
+
+    #endregion
+
+    #region VerifyWorkbook
+
+    [Test]
+    public Task VerifyWorkbook()
+    {
+        var book = new Workbook();
+
+        var sheet = book.Worksheets.Add("New Sheet");
+
+        var cells = sheet.Cells;
+
+        cells[0, 0].PutValue("Some Text");
+        return Verify(book);
+    }
 
     #endregion
 

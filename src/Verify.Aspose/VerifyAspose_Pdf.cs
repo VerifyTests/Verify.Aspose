@@ -66,7 +66,7 @@ public static partial class VerifyAspose
             var stream = new MemoryStream();
             var pngDevice = settings.GetPdfPngDevice(page);
             pngDevice.Process(page, stream);
-            yield return new("png", stream, null);
+            yield return new("png", stream);
         }
     }
 }
