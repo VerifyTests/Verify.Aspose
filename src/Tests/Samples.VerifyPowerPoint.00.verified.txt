@@ -4,7 +4,6 @@
   Company: ,
   Manager: ,
   PresentationFormat: Custom,
-  SharedDoc: false,
   ApplicationTemplate: ,
   Title: Lorem ipsum,
   Subject: ,

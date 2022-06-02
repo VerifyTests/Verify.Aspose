@@ -1,8 +1,5 @@
 ﻿{
   Pages: 2,
-  AllowReusePageContent: false,
-  CenterWindow: false,
-  DisplayDocTitle: false,
   FitWindow: False,
   HideMenubar: False,
   HideToolBar: False,
