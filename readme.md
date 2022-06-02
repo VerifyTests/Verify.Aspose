@@ -75,9 +75,6 @@ public Task VerifyPdfStream() =>
 ```txt
 {
   Pages: 2,
-  AllowReusePageContent: false,
-  CenterWindow: false,
-  DisplayDocTitle: false,
   FitWindow: False,
   HideMenubar: False,
   HideToolBar: False,
@@ -99,7 +96,7 @@ public Task VerifyPdfStream() =>
   Version: 1.4
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.00.verified.txt#L1-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.00.verified.txt#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.00.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf.01.verified.png](/src/Tests/Samples.VerifyPdf.01.verified.png):
@@ -257,7 +254,6 @@ public Task VerifyPowerPointStream() =>
   Company: ,
   Manager: ,
   PresentationFormat: Custom,
-  SharedDoc: false,
   ApplicationTemplate: ,
   Title: Lorem ipsum,
   Subject: ,
@@ -275,7 +271,7 @@ public Task VerifyPowerPointStream() =>
   HyperlinkBase: 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPowerPoint.00.verified.txt#L1-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPowerPoint.00.verified.txt#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.00.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPowerPoint.01.verified.png](/src/Tests/Samples.VerifyPowerPoint.01.verified.png):
