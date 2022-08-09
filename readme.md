@@ -31,7 +31,7 @@ public static class ModuleInitializer
     {
         VerifyDiffPlex.Initialize();
         VerifyAspose.Initialize();
-        VerifyImageMagick.RegisterComparers(.05);
+        VerifyImageMagick.RegisterComparers(.22);
         VerifierSettings.IgnoreMember("Width");
     }
 }
