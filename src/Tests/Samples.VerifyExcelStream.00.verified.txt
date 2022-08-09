@@ -8,37 +8,37 @@
       Columns: [
         {
           Name: 0.0,
-          Width: 10,
+          Width: 11,
           FirstValue: 1.0
         },
         {
           Name: First Name,
-          Width: 10,
+          Width: 11,
           FirstValue: Dulce
         },
         {
           Name: Last Name,
-          Width: 10,
+          Width: 11,
           FirstValue: Abril
         },
         {
           Name: Gender,
-          Width: 10,
+          Width: 11,
           FirstValue: Female
         },
         {
           Name: Country,
-          Width: 10,
+          Width: 11,
           FirstValue: United States
         },
         {
           Name: Age,
-          Width: 10,
+          Width: 11,
           FirstValue: 32.0
         },
         {
           Name: Id,
-          Width: 10,
+          Width: 11,
           FirstValue: 1562.0
         }
       ]
