@@ -32,10 +32,11 @@ public static class ModuleInitializer
         VerifyDiffPlex.Initialize();
         VerifyAspose.Initialize();
         VerifyImageMagick.RegisterComparers(.05);
+        VerifierSettings.IgnoreMember("Width");
     }
 }
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-ModuleInitializer.cs' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L1-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-ModuleInitializer.cs' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

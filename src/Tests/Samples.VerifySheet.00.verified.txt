@@ -2,8 +2,7 @@
   Name: New Sheet,
   Columns: [
     {
-      Name: Some Text,
-      Width: 8
+      Name: Some Text
     }
   ]
 }
