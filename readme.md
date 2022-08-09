@@ -29,12 +29,13 @@ public static class ModuleInitializer
     [ModuleInitializer]
     public static void Initialize()
     {
+        VerifyDiffPlex.Initialize();
         VerifyAspose.Initialize();
         VerifyImageMagick.RegisterComparers(.05);
     }
 }
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L1-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-ModuleInitializer.cs' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L1-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-ModuleInitializer.cs' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
