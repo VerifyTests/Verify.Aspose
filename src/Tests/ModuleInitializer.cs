@@ -7,7 +7,7 @@
         VerifyAspose.Initialize();
         #endregion
         VerifyDiffPlex.Initialize();
-        VerifyImageMagick.RegisterComparers(.05);
+        VerifyImageMagick.RegisterComparers(.3);
         VerifierSettings.IgnoreMember("Width");
     }
 }
