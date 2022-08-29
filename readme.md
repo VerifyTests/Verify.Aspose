@@ -21,22 +21,15 @@ https://nuget.org/packages/Verify.Aspose/
 
 ### Enable Verify.Aspose
 
-<!-- snippet: ModuleInitializer.cs -->
-<a id='snippet-ModuleInitializer.cs'></a>
+<!-- snippet: enable -->
+<a id='snippet-enable'></a>
 ```cs
-public static class ModuleInitializer
+[ModuleInitializer]
+public static void Initialize()
 {
-    [ModuleInitializer]
-    public static void Initialize()
-    {
-        VerifyDiffPlex.Initialize();
-        VerifyAspose.Initialize();
-        VerifyImageMagick.RegisterComparers(.05);
-        VerifierSettings.IgnoreMember("Width");
-    }
-}
+    VerifyAspose.Initialize();
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L1-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-ModuleInitializer.cs' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L3-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
