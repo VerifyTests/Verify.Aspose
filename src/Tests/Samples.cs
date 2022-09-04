@@ -1,5 +1,6 @@
 ﻿using Aspose.Cells;
 using Aspose.Pdf.Devices;
+using VerifyTestsAspose;
 
 [TestFixture]
 public class Samples

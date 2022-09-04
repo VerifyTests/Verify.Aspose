@@ -1,6 +1,6 @@
 ﻿using Aspose.Pdf.Devices;
 
-namespace VerifyTests;
+namespace VerifyTestsAspose;
 
 public static class VerifyAsposeSettings
 {

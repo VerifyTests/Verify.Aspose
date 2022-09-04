@@ -1,5 +1,6 @@
 ﻿using System.Drawing.Imaging;
 using Aspose.Slides;
+using VerifyTestsAspose;
 
 namespace VerifyTests;
 
