@@ -65,8 +65,8 @@ public Task VerifyPdfStream() =>
 
 #### Result
 
-<!-- snippet: Samples.VerifyPdf.00.verified.txt -->
-<a id='snippet-Samples.VerifyPdf.00.verified.txt'></a>
+<!-- snippet: Samples.VerifyPdf.verified.txt -->
+<a id='snippet-Samples.VerifyPdf.verified.txt'></a>
 ```txt
 {
   Pages: 2,
@@ -94,7 +94,7 @@ public Task VerifyPdfStream() =>
   Version: 1.4
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.00.verified.txt#L1-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf.01.verified.png](/src/Tests/Samples.VerifyPdf.01.verified.png):
@@ -190,8 +190,8 @@ public Task VerifyWordStream() =>
 
 #### Result
 
-<!-- snippet: Samples.VerifyWord.00.verified.txt -->
-<a id='snippet-Samples.VerifyWord.00.verified.txt'></a>
+<!-- snippet: Samples.VerifyWord.verified.txt -->
+<a id='snippet-Samples.VerifyWord.verified.txt'></a>
 ```txt
 {
   HasRevisions: False,
@@ -203,7 +203,7 @@ public Task VerifyWordStream() =>
   }
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyWord.00.verified.txt#L1-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyWord.01.verified.png](/src/Tests/Samples.VerifyWord.01.verified.png):
