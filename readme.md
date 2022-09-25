@@ -55,11 +55,13 @@ public Task VerifyPdf() =>
 <a id='snippet-verifypdfstream'></a>
 ```cs
 [Test]
-public Task VerifyPdfStream() =>
-    Verify(File.OpenRead("sample.pdf"))
-        .UseExtension("pdf");
+public Task VerifyPdfStream()
+{
+    var stream = new MemoryStream(File.ReadAllBytes("sample.pdf"));
+    return Verify(stream, "pdf");
+}
 ```
-<sup><a href='/src/Tests/Samples.cs#L28-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdfstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L28-L37' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdfstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -114,7 +116,7 @@ public Task VerifyPdfStream() =>
 public Task VerifyExcel() =>
     VerifyFile("sample.xlsx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L58-L64' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcel' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L62-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcel' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -124,11 +126,13 @@ public Task VerifyExcel() =>
 <a id='snippet-verifyexcelstream'></a>
 ```cs
 [Test]
-public Task VerifyExcelStream() =>
-    Verify(File.OpenRead("sample.xlsx"))
-        .UseExtension("xlsx");
+public Task VerifyExcelStream()
+{
+    var stream = new MemoryStream(File.ReadAllBytes("sample.xlsx"));
+    return Verify(stream, "xlsx");
+}
 ```
-<sup><a href='/src/Tests/Samples.cs#L101-L108' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcelstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L105-L114' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcelstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -150,7 +154,7 @@ public Task VerifyWorkbook()
     return Verify(book);
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L84-L99' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyworkbook' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L88-L103' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyworkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyExcel.01.verified.png](/src/Tests/Samples.VerifyExcel.01.verified.png):
@@ -170,7 +174,7 @@ public Task VerifyWorkbook()
 public Task VerifyWord() =>
     VerifyFile("sample.docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L110-L116' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyword' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L116-L122' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyword' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -180,11 +184,13 @@ public Task VerifyWord() =>
 <a id='snippet-verifywordstream'></a>
 ```cs
 [Test]
-public Task VerifyWordStream() =>
-    Verify(File.OpenRead("sample.docx"))
-        .UseExtension("docx");
+public Task VerifyWordStream()
+{
+    var stream = new MemoryStream(File.ReadAllBytes("sample.docx"));
+    return Verify(stream, "docx");
+}
 ```
-<sup><a href='/src/Tests/Samples.cs#L118-L125' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifywordstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L124-L133' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifywordstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -223,7 +229,7 @@ public Task VerifyWordStream() =>
 public Task VerifyPowerPoint() =>
     VerifyFile("sample.pptx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L39-L45' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L41-L47' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -233,11 +239,13 @@ public Task VerifyPowerPoint() =>
 <a id='snippet-verifypowerpointstream'></a>
 ```cs
 [Test]
-public Task VerifyPowerPointStream() =>
-    Verify(File.OpenRead("sample.pptx"))
-        .UseExtension("pptx");
+public Task VerifyPowerPointStream()
+{
+    var stream = new MemoryStream(File.ReadAllBytes("sample.pptx"));
+    return Verify(stream, "pptx");
+}
 ```
-<sup><a href='/src/Tests/Samples.cs#L47-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpointstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L49-L58' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpointstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
