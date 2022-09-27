@@ -99,9 +99,9 @@ public Task VerifyPdfStream()
 <sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyPdf.01.verified.png](/src/Tests/Samples.VerifyPdf.01.verified.png):
+[Samples.VerifyPdf#00.verified.png](/src/Tests/Samples.VerifyPdf#00.verified.png):
 
-<img src="/src/Tests/Samples.VerifyPdf.01.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyPdf#00.verified.png" width="200px">
 
 
 ### Excel
@@ -157,9 +157,9 @@ public Task VerifyWorkbook()
 <sup><a href='/src/Tests/Samples.cs#L88-L103' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyworkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyExcel.01.verified.png](/src/Tests/Samples.VerifyExcel.01.verified.png):
+[Samples.VerifyExcel#00.verified.png](/src/Tests/Samples.VerifyExcel#00.verified.png):
 
-<img src="/src/Tests/Samples.VerifyExcel.01.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyExcel#00.verified.png" width="200px">
 
 
 ### Word
@@ -212,9 +212,9 @@ public Task VerifyWordStream()
 <sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyWord.01.verified.png](/src/Tests/Samples.VerifyWord.01.verified.png):
+[Samples.VerifyWord#00.verified.png](/src/Tests/Samples.VerifyWord#00.verified.png):
 
-<img src="/src/Tests/Samples.VerifyWord.01.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyWord#00.verified.png" width="200px">
 
 
 ### PowerPoint
@@ -251,8 +251,8 @@ public Task VerifyPowerPointStream()
 
 #### Result
 
-<!-- snippet: Samples.VerifyPowerPoint.00.verified.txt -->
-<a id='snippet-Samples.VerifyPowerPoint.00.verified.txt'></a>
+<!-- snippet: Samples.VerifyPowerPoint.verified.txt -->
+<a id='snippet-Samples.VerifyPowerPoint.verified.txt'></a>
 ```txt
 {
   AppVersion: 16.0000,
@@ -278,10 +278,10 @@ public Task VerifyPowerPointStream()
   HyperlinkBase: 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPowerPoint.00.verified.txt#L1-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.00.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyPowerPoint.01.verified.png](/src/Tests/Samples.VerifyPowerPoint.01.verified.png):
+[Samples.VerifyPowerPoint#00.verified.png](/src/Tests/Samples.VerifyPowerPoint#00.verified.png):
 
 
 ## File Samples
