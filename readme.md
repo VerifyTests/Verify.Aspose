@@ -99,9 +99,9 @@ public Task VerifyPdfStream()
 <sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyPdf#00.verified.png](/src/Tests/Samples.VerifyPdf#00.verified.png):
+[Samples.VerifyPdf#00.verified.png](/src/Tests/Samples.VerifyPdf%2300.verified.png):
 
-<img src="/src/Tests/Samples.VerifyPdf#00.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyPdf%2300.verified.png" width="200px">
 
 
 ### Excel
@@ -157,9 +157,9 @@ public Task VerifyWorkbook()
 <sup><a href='/src/Tests/Samples.cs#L88-L103' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyworkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyExcel#00.verified.png](/src/Tests/Samples.VerifyExcel#00.verified.png):
+[Samples.VerifyExcel#00.verified.png](/src/Tests/Samples.VerifyExcel%2300.verified.png):
 
-<img src="/src/Tests/Samples.VerifyExcel#00.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyExcel%2300.verified.png" width="200px">
 
 
 ### Word
@@ -212,9 +212,9 @@ public Task VerifyWordStream()
 <sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyWord#00.verified.png](/src/Tests/Samples.VerifyWord#00.verified.png):
+[Samples.VerifyWord#00.verified.png](/src/Tests/Samples.VerifyWord%2300.verified.png):
 
-<img src="/src/Tests/Samples.VerifyWord#00.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyWord%2300.verified.png" width="200px">
 
 
 ### PowerPoint
@@ -281,7 +281,7 @@ public Task VerifyPowerPointStream()
 <sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyPowerPoint#00.verified.png](/src/Tests/Samples.VerifyPowerPoint#00.verified.png):
+[Samples.VerifyPowerPoint%2300.verified.png](/src/Tests/Samples.VerifyPowerPoint%2300.verified.png):
 
 
 ## File Samples
