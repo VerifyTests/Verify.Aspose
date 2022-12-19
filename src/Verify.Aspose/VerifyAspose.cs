@@ -7,6 +7,7 @@ public static partial class VerifyAspose
 {
     public static void Initialize()
     {
+        InnerVerifier.ThrowIfVerifyHasBeenRun();
         VerifierSettings.RegisterFileConverter("xlsx", ConvertExcel);
         VerifierSettings.RegisterFileConverter("xls", ConvertExcel);
         VerifierSettings.RegisterFileConverter<Workbook>(ConvertExcel);
