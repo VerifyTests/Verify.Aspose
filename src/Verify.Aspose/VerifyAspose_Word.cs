@@ -34,12 +34,12 @@ public static partial class VerifyAspose
         var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
         for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)
         {
-            var options = new ImageSaveOptions(SaveFormat.Png)
+            var saveOptions = new ImageSaveOptions(SaveFormat.Png)
             {
                 PageSet = new(pageIndex)
             };
             var stream = new MemoryStream();
-            document.Save(stream, options);
+            document.Save(stream, saveOptions);
             yield return new("png", stream);
         }
     }

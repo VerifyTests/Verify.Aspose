@@ -86,13 +86,14 @@ public static partial class VerifyAspose
         {
             yield break;
         }
+
         for (var column = 0; column <= lastCell.Column; column++)
         {
             var header = cells[0, column];
             var firstRow = cells[1, column];
             yield return new(
                 header.Value,
-                (uint)cells.GetColumnWidth(column),
+                (uint) cells.GetColumnWidth(column),
                 firstRow.Value);
         }
     }
