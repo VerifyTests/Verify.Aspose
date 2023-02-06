@@ -11,8 +11,8 @@
     [ModuleInitializer]
     public static void InitializeOther()
     {
-        VerifyDiffPlex.Initialize();
         VerifyImageMagick.RegisterComparers(.3);
+        VerifierSettings.InitializePlugins();
         VerifierSettings.IgnoreMember("Width");
     }
 }

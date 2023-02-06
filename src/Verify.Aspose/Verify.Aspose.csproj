@@ -3,7 +3,7 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Verify" Version="19.9.1" />
+    <PackageReference Include="Verify" Version="19.9.2" />
     <PackageReference Include="Aspose.Pdf" Version="23.1.0" />
     <PackageReference Include="Aspose.Cells" Version="23.1.1" />
     <PackageReference Include="Aspose.Words" Version="23.2.0" />
