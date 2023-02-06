@@ -1,0 +1,25 @@
+﻿{
+  Pages: 2,
+  AllowReusePageContent: false,
+  CenterWindow: false,
+  DisplayDocTitle: false,
+  FitWindow: False,
+  HideMenubar: False,
+  HideToolBar: False,
+  HideWindowUI: False,
+  IgnoreCorruptedObjects: True,
+  Info: {
+    Creator: RAD PDF,
+    Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com
+  },
+  IsEncrypted: False,
+  IsLinearized: False,
+  IsPdfaCompliant: False,
+  IsPdfUaCompliant: False,
+  IsXrefGapsAllowed: True,
+  OptimizeSize: False,
+  PageLabels: {},
+  PageLayout: Default,
+  PdfFormat: v_1_4,
+  Version: 1.4
+}
