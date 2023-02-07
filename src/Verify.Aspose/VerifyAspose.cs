@@ -14,6 +14,8 @@ public static partial class VerifyAspose
             throw new("Already Initialized");
         }
 
+        Initialized = true;
+
         InnerVerifier.ThrowIfVerifyHasBeenRun();
         VerifierSettings.RegisterFileConverter("xlsx", ConvertExcel);
         VerifierSettings.RegisterFileConverter("xls", ConvertExcel);
