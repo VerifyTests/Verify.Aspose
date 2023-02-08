@@ -131,4 +131,15 @@ public class Samples
     }
 
     #endregion
+
+    [Test]
+    public async Task Cell()
+    {
+        using var workbook = new Workbook();
+
+        var sheet = workbook.Worksheets[0];
+        var cell = sheet.Cells["A1"];
+        cell.PutValue("Hello World!");
+        await Verify(cell);
+    }
 }

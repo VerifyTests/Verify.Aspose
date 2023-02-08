@@ -1,0 +1,7 @@
+﻿{
+  Name: A1,
+  Row: 0,
+  Column: 0,
+  Value: Hello World!,
+  Type: IsString
+}
