@@ -1,5 +1,6 @@
 ﻿using Aspose.Words;
 using Aspose.Words.Loading;
+using Aspose.Words.Properties;
 using Aspose.Words.Saving;
 using VerifyTestsAspose;
 
@@ -25,56 +26,60 @@ public static partial class VerifyAspose
 
     static Dictionary<string, object> GetDocumentProperties(Document document) =>
         document.BuiltInDocumentProperties
-            .Where(_ =>
-            {
-                if (_.Name == "Bytes")
-                {
-                    return false;
-                }
-
-                if (_.Name == "Version")
-                {
-                    return false;
-                }
-
-                if (_.Name == "TotalEditingTime")
-                {
-                    return false;
-                }
-
-                if (_.Name == "NameOfApplication")
-                {
-                    return false;
-                }
-
-                if (!_.Value.HasValue())
-                {
-                    return false;
-                }
-
-                if (_.Name == "Template" &&
-                    (string) _.Value == "Normal.dot")
-                {
-                    return false;
-                }
-
-                if (_.Name == "TitlesOfParts")
-                {
-                    var strings = (string[]) _.Value;
-                    if (strings.Length == 0)
-                    {
-                        return false;
-                    }
-
-                    if (strings.Length == 1)
-                    {
-                        return strings[0] != "";
-                    }
-                }
-
-                return true;
-            })
+            .Where(ShouldIncludeProperty)
             .ToDictionary(_ => _.Name, _ => _.Value);
+
+    static bool ShouldIncludeProperty(DocumentProperty property)
+    {
+        var name = property.Name;
+
+        if (name == "Bytes")
+        {
+            return false;
+        }
+
+        if (name == "Version")
+        {
+            return false;
+        }
+
+        if (name == "TotalEditingTime")
+        {
+            return false;
+        }
+
+        if (name == "NameOfApplication")
+        {
+            return false;
+        }
+
+        if (!property.Value.HasValue())
+        {
+            return false;
+        }
+
+        if (name == "Template" &&
+            (string) property.Value == "Normal.dot")
+        {
+            return false;
+        }
+
+        if (name == "TitlesOfParts")
+        {
+            var strings = (string[]) property.Value;
+            if (strings.Length == 0)
+            {
+                return false;
+            }
+
+            if (strings.Length == 1)
+            {
+                return strings[0] != "";
+            }
+        }
+
+        return true;
+    }
 
     static IEnumerable<Target> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
     {
