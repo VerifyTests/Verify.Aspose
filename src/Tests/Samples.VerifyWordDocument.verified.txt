@@ -12,6 +12,5 @@
     RevisionNumber: 1
   },
   Text:
-﻿
 
 }

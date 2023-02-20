@@ -27,9 +27,28 @@ public static partial class VerifyAspose
 
     static string GetDocumentText(Document document)
     {
-        var stream = new MemoryStream();
-        document.Save(stream, new TxtSaveOptions());
-        return Encoding.UTF8.GetString(stream.ToArray());
+        var directory = GetTempDirectory();
+        try
+        {
+            var path = Path.Combine(directory, "content.md");
+            document.Save(
+                path,
+                new MarkdownSaveOptions
+                {
+                });
+            return File.ReadAllText(path);
+        }
+        finally
+        {
+            Directory.Delete(directory, true);
+        }
+    }
+
+    static string GetTempDirectory()
+    {
+        var directory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        Directory.CreateDirectory(directory);
+        return directory;
     }
 
     static Dictionary<string, object> GetDocumentProperties(Document document) =>
