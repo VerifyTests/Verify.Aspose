@@ -21,8 +21,16 @@ public static partial class VerifyAspose
         {
             HasRevisions = document.HasRevisions.ToString(),
             DefaultLocale = (EditingLanguage) document.Styles.DefaultFont.LocaleId,
-            Properties = GetDocumentProperties(document)
+            Properties = GetDocumentProperties(document),
+            Text = GetDocumentText(document)
         };
+
+    static string GetDocumentText(Document document)
+    {
+        var stream = new MemoryStream();
+        document.Save(stream, new TxtSaveOptions());
+        return Encoding.UTF8.GetString(stream.ToArray());
+    }
 
     static Dictionary<string, object> GetDocumentProperties(Document document) =>
         document.BuiltInDocumentProperties
