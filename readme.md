@@ -92,10 +92,62 @@ public Task VerifyPdfStream()
   PageLabels: {},
   PageLayout: Default,
   PdfFormat: v_1_4,
-  Version: 1.4
+  Version: 1.4,
+  Text:
+![](content.001.png)
+
+**Evaluation Only. Created with Aspose.Words. Copyright 2003-2023 Aspose Pty Ltd.**
+
+
+
+Evaluation Only. Created with Aspose.PDF. Copyright 2002-2023 Aspose Pty Ltd.
+
+A Simple PDF File
+
+This is a small demonstration .pdf file -
+
+just for use in the Virtual Mechanics tutorials. More text. And more
+
+text. And more text. And more text. And more text.
+
+And more text. And more text. And more text. And more text. And more
+
+text. And more text. Boring, zzzzz. And more text. And more text. And
+
+more text. And more text. And more text. And more text. And more text.
+
+And more text. And more text.
+
+And more text. And more text. And more text. And more text. And more
+
+text. And more text. And more text. Even more. Continued on page 2 ...
+
+
+**Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/**
+![](content.002.png)
+
+
+
+
+
+Simple PDF File 2
+
+...continued from page 1. Yet more text. And more text. And more text.
+
+And more text. And more text. And more text. And more text. And more
+
+text. Oh, how boring typing this stuff. But not as boring as watching
+
+paint dry. And more text. And more text. And more text. And more text.
+
+Boring. More, a little more text. The end, and just as well.
+
+
+**Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/**
+
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L25' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L77' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf#00.verified.png](/src/Tests/Samples.VerifyPdf%2300.verified.png):

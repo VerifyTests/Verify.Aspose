@@ -25,32 +25,6 @@ public static partial class VerifyAspose
             Text = GetDocumentText(document)
         };
 
-    static string GetDocumentText(Document document)
-    {
-        var directory = GetTempDirectory();
-        try
-        {
-            var path = Path.Combine(directory, "content.md");
-            document.Save(
-                path,
-                new MarkdownSaveOptions
-                {
-                });
-            return File.ReadAllText(path);
-        }
-        finally
-        {
-            Directory.Delete(directory, true);
-        }
-    }
-
-    static string GetTempDirectory()
-    {
-        var directory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
-        Directory.CreateDirectory(directory);
-        return directory;
-    }
-
     static Dictionary<string, object> GetDocumentProperties(Document document) =>
         document.BuiltInDocumentProperties
             .Where(ShouldIncludeProperty)

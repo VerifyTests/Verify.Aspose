@@ -1,5 +1,7 @@
 ﻿using Aspose.Cells;
 using Aspose.Slides;
+using Aspose.Words;
+using MarkdownSaveOptions = Aspose.Words.Saving.MarkdownSaveOptions;
 
 namespace VerifyTests;
 
@@ -34,6 +36,16 @@ public static partial class VerifyAspose
 
         VerifierSettings.RegisterFileConverter("docx", ConvertWord);
         VerifierSettings.RegisterFileConverter("doc", ConvertWord);
-        VerifierSettings.RegisterFileConverter<Aspose.Words.Document>(ConvertWord);
+        VerifierSettings.RegisterFileConverter<Document>(ConvertWord);
+    }
+
+    static string GetDocumentText(Document document)
+    {
+        using var directory = new TempDirectory();
+        var path = Path.Combine(directory, "content.md");
+        document.Save(
+            path,
+            new MarkdownSaveOptions());
+        return File.ReadAllText(path);
     }
 }

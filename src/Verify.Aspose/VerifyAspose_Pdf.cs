@@ -47,9 +47,18 @@ public static partial class VerifyAspose
                 document.PageLayout,
                 document.PageMode,
                 document.PdfFormat,
-                document.Version
+                document.Version,
+                Text = GetDocumentText(document)
             },
             GetPdfStreams(document, settings).ToList());
+    }
+
+    static string GetDocumentText(Document document)
+    {
+        using var stream = new MemoryStream();
+        document.Save(stream,new DocSaveOptions());
+        stream.Position = 0;
+        return GetDocumentText(new Aspose.Words.Document(stream));
     }
 
     static Dictionary<string, string> GetInfo(Document document) =>
