@@ -54,10 +54,10 @@ public static partial class VerifyAspose
 
     static Dictionary<string, string> GetInfo(Document document) =>
         document.Info
-            .Where(x => x.Value.HasValue() &&
-                        !x.Key.Contains("Date") &&
-                        !x.Value.Contains("Aspose"))
-            .ToDictionary(x => x.Key, x => x.Value);
+            .Where(_ => _.Value.HasValue() &&
+                        !_.Key.Contains("Date") &&
+                        !_.Value.Contains("Aspose"))
+            .ToDictionary(_ => _.Key, _ => _.Value);
 
     static IEnumerable<Target> GetPdfStreams(Document document, IReadOnlyDictionary<string, object> settings)
     {

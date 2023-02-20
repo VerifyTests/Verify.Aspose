@@ -1,5 +1,6 @@
 ﻿using Aspose.Cells;
 using Aspose.Pdf.Devices;
+using Aspose.Words;
 using VerifyTestsAspose;
 
 [TestFixture]
@@ -131,6 +132,13 @@ public class Samples
     }
 
     #endregion
+
+    [Test]
+    public Task VerifyWordDocument()
+    {
+        var document = new Document();
+        return Verify(document);
+    }
 
     [Test]
     public async Task Cell()

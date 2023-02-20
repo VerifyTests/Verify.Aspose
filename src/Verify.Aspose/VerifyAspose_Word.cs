@@ -19,15 +19,62 @@ public static partial class VerifyAspose
         new
         {
             HasRevisions = document.HasRevisions.ToString(),
-            DefaultLocale = (EditingLanguage)document.Styles.DefaultFont.LocaleId,
+            DefaultLocale = (EditingLanguage) document.Styles.DefaultFont.LocaleId,
             Properties = GetDocumentProperties(document)
         };
 
     static Dictionary<string, object> GetDocumentProperties(Document document) =>
         document.BuiltInDocumentProperties
-            .Where(x => x.Name != "Bytes" &&
-                        x.Value.HasValue())
-            .ToDictionary(x => x.Name, x => x.Value);
+            .Where(_ =>
+            {
+                if (_.Name == "Bytes")
+                {
+                    return false;
+                }
+
+                if (_.Name == "Version")
+                {
+                    return false;
+                }
+
+                if (_.Name == "TotalEditingTime")
+                {
+                    return false;
+                }
+
+                if (_.Name == "NameOfApplication")
+                {
+                    return false;
+                }
+
+                if (!_.Value.HasValue())
+                {
+                    return false;
+                }
+
+                if (_.Name == "Template" &&
+                    (string) _.Value == "Normal.dot")
+                {
+                    return false;
+                }
+
+                if (_.Name == "TitlesOfParts")
+                {
+                    var strings = (string[]) _.Value;
+                    if (strings.Length == 0)
+                    {
+                        return false;
+                    }
+
+                    if (strings.Length == 1)
+                    {
+                        return strings[0] != "";
+                    }
+                }
+
+                return true;
+            })
+            .ToDictionary(_ => _.Name, _ => _.Value);
 
     static IEnumerable<Target> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
     {

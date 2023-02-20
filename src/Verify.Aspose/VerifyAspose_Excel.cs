@@ -1,6 +1,5 @@
 ﻿using Aspose.Cells;
 using Aspose.Cells.Drawing;
-using Aspose.Cells.Properties;
 using Aspose.Cells.Rendering;
 
 namespace VerifyTests;
@@ -40,9 +39,8 @@ public static partial class VerifyAspose
 
     static Dictionary<string, object> GetDocumentProperties(Workbook book) =>
         book.BuiltInDocumentProperties
-            .Cast<DocumentProperty>()
-            .Where(x => x.Value.HasValue())
-            .ToDictionary(x => x.Name, x => x.Value);
+            .Where(_ => _.Value.HasValue())
+            .ToDictionary(_ => _.Name, _ => _.Value);
 
     static ConversionResult ConvertSheet(Worksheet sheet, IReadOnlyDictionary<string, object> settings)
     {
