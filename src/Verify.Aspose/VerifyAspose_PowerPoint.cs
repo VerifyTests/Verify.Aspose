@@ -23,7 +23,7 @@ public static partial class VerifyAspose
             var slide = document.Slides[index];
             using var bitmap = slide.GetThumbnail(1f, 1f);
             var stream = new MemoryStream();
-            bitmap.Save(stream, ImageFormat.Png);
+            bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
             yield return new("png", stream);
         }
     }
