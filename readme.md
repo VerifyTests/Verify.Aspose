@@ -44,7 +44,7 @@ public static void Initialize() =>
 public Task VerifyPdf() =>
     VerifyFile("sample.pdf");
 ```
-<sup><a href='/src/Tests/Samples.cs#L9-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdf' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L10-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdf' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -60,7 +60,7 @@ public Task VerifyPdfStream()
     return Verify(stream, "pdf");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L29-L38' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdfstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L30-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdfstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -167,7 +167,7 @@ Boring. More, a little more text. The end, and just as well.
 public Task VerifyExcel() =>
     VerifyFile("sample.xlsx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L63-L69' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcel' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L71-L77' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcel' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -183,7 +183,7 @@ public Task VerifyExcelStream()
     return Verify(stream, "xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L124-L133' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcelstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L132-L141' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcelstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -212,7 +212,7 @@ public Task VerifyWorkbook()
     return Verify(book);
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L89-L111' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyworkbook' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L97-L119' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyworkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyExcel.verified.png](/src/Tests/Samples.VerifyExcel.verified.png):
@@ -232,7 +232,7 @@ public Task VerifyWorkbook()
 public Task VerifyWord() =>
     VerifyFile("sample.docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L135-L141' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyword' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L143-L149' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyword' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -248,7 +248,7 @@ public Task VerifyWordStream()
     return Verify(stream, "docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L143-L152' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifywordstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L151-L160' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifywordstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -348,7 +348,7 @@ Etiam vehicula luctus fermentum. In vel metus congue, pulvinar lectus vel, ferme
 public Task VerifyPowerPoint() =>
     VerifyFile("sample.pptx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L42-L48' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L43-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -364,7 +364,7 @@ public Task VerifyPowerPointStream()
     return Verify(stream, "pptx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L50-L59' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpointstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L51-L60' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpointstream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

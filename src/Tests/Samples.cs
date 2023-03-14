@@ -1,5 +1,6 @@
 ﻿using Aspose.Cells;
 using Aspose.Pdf.Devices;
+using Aspose.Slides;
 using Aspose.Words;
 using VerifyTestsAspose;
 
@@ -57,6 +58,13 @@ public class Samples
     }
 
     #endregion
+    [Test]
+    public Task VerifyPowerPointDoc()
+    {
+        var presentation = new Presentation();
+        presentation.DocumentProperties["Key"] = "Value";
+        return Verify(presentation);
+    }
 
 #endif
 
