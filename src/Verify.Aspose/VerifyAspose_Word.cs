@@ -2,7 +2,6 @@
 using Aspose.Words.Loading;
 using Aspose.Words.Properties;
 using Aspose.Words.Saving;
-using VerifyTestsAspose;
 
 namespace VerifyTests;
 
@@ -21,12 +20,18 @@ public static partial class VerifyAspose
         {
             HasRevisions = document.HasRevisions.ToString(),
             DefaultLocale = (EditingLanguage) document.Styles.DefaultFont.LocaleId,
-            Properties = GetDocumentProperties(document),
+            Properties = GetProperties(document),
+            CustomProperties = GetCustomProperties(document),
             Text = GetDocumentText(document)
         };
 
-    static Dictionary<string, object> GetDocumentProperties(Document document) =>
+    static Dictionary<string, object> GetProperties(Document document) =>
         document.BuiltInDocumentProperties
+            .Where(ShouldIncludeProperty)
+            .ToDictionary(_ => _.Name, _ => _.Value);
+
+    static Dictionary<string, object> GetCustomProperties(Document document) =>
+        document.CustomDocumentProperties
             .Where(ShouldIncludeProperty)
             .ToDictionary(_ => _.Name, _ => _.Value);
 

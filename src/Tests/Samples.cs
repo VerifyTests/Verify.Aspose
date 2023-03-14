@@ -139,6 +139,19 @@ public class Samples
         var document = new Document();
         return Verify(document);
     }
+    [Test]
+    public Task VerifyWordDocumentWithProperties()
+    {
+        var document = new Document
+        {
+            BuiltInDocumentProperties =
+            {
+                Comments = "the comments"
+            }
+        };
+        document.CustomDocumentProperties.Add("key", "value");
+        return Verify(document);
+    }
 
     [Test]
     public async Task Cell()

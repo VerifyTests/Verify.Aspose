@@ -100,7 +100,7 @@ public Task VerifyPdfStream()
 
 
 
-Evaluation Only. Created with Aspose.PDF. Copyright 2002-2023 Aspose Pty Ltd.
+<a name="br1"></a>Evaluation Only. Created with Aspose.PDF. Copyright 2002-2023 Aspose Pty Ltd.
 
 A Simple PDF File
 
@@ -128,7 +128,7 @@ text. And more text. And more text. Even more. Continued on page 2 ...
 
 
 
-
+<a name="br2"></a> 
 
 Simple PDF File 2
 

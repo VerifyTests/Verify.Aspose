@@ -1,6 +1,5 @@
 ﻿using System.Drawing.Imaging;
 using Aspose.Slides;
-using VerifyTestsAspose;
 
 namespace VerifyTests;
 
@@ -23,7 +22,7 @@ public static partial class VerifyAspose
             var slide = document.Slides[index];
             using var bitmap = slide.GetThumbnail(1f, 1f);
             var stream = new MemoryStream();
-            bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+            bitmap.Save(stream, ImageFormat.Png);
             yield return new("png", stream);
         }
     }
