@@ -34,11 +34,17 @@ public static partial class VerifyAspose
             HasRevisions = book.HasRevisions.ToString(),
             IsDigitallySigned = book.IsDigitallySigned.ToString(),
             Sheets = GetSheetData(book).ToList(),
-            Properties = GetDocumentProperties(book)
+            Properties = GetProperties(book),
+            CustomProperties = GetCustomProperties(book)
         };
 
-    static Dictionary<string, object> GetDocumentProperties(Workbook book) =>
+    static Dictionary<string, object> GetProperties(Workbook book) =>
         book.BuiltInDocumentProperties
+            .Where(_ => _.Value.HasValue())
+            .ToDictionary(_ => _.Name, _ => _.Value);
+
+    static Dictionary<string, object> GetCustomProperties(Workbook book) =>
+        book.CustomDocumentProperties
             .Where(_ => _.Value.HasValue())
             .ToDictionary(_ => _.Name, _ => _.Value);
 
@@ -48,8 +54,8 @@ public static partial class VerifyAspose
         return new(info, GetSheetStreams(sheet).ToList());
     }
 
-    static object GetInfo(Worksheet sheet) =>
-        new Sheet(sheet.Name, GetColumns(sheet).ToList());
+    static Sheet GetInfo(Worksheet sheet) =>
+        new(sheet.Name, GetColumns(sheet).ToList(), sheet.CustomProperties.ToDictionary(_=>_.Name, _=>_.Value));
 
     static IEnumerable<Target> GetExcelStreams(Workbook book) =>
         book.Worksheets.SelectMany(GetSheetStreams);
@@ -74,7 +80,7 @@ public static partial class VerifyAspose
 
     static IEnumerable<Sheet> GetSheetData(Workbook book) =>
         book.Worksheets
-            .Select(_ => new Sheet(_.Name, GetColumns(_).ToList()));
+            .Select(GetInfo);
 
     static IEnumerable<ColumnInfo> GetColumns(Worksheet sheet)
     {
@@ -99,4 +105,4 @@ public static partial class VerifyAspose
 
 record ColumnInfo(object Name, uint Width, object FirstValue);
 
-record Sheet(string Name, List<ColumnInfo> Columns);
+record Sheet(string Name, List<ColumnInfo> Columns, Dictionary<string, string> Properties);

@@ -4,5 +4,8 @@
     {
       Name: Some Text
     }
-  ]
+  ],
+  Properties: {
+    key: value
+  }
 }

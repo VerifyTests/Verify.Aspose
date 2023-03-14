@@ -14,5 +14,11 @@
         }
       ]
     }
-  ]
+  ],
+  Properties: {
+    Comments: the comments
+  },
+  CustomProperties: {
+    key: value
+  }
 }

@@ -76,7 +76,7 @@ public class Samples
         using var book = new Workbook();
 
         var sheet = book.Worksheets.Add("New Sheet");
-
+        sheet.CustomProperties.Add("key", "value");
         var cells = sheet.Cells;
 
         cells[0, 0].PutValue("Some Text");
@@ -91,7 +91,14 @@ public class Samples
     [Test]
     public Task VerifyWorkbook()
     {
-        var book = new Workbook();
+        var book = new Workbook
+        {
+            BuiltInDocumentProperties =
+            {
+                Comments = "the comments"
+            }
+        };
+        book.CustomDocumentProperties.Add("key", "value");
 
         var sheet = book.Worksheets.Add("New Sheet");
 
@@ -102,6 +109,17 @@ public class Samples
     }
 
     #endregion
+
+    [Test]
+    public async Task Cell()
+    {
+        using var workbook = new Workbook();
+
+        var sheet = workbook.Worksheets[0];
+        var cell = sheet.Cells["A1"];
+        cell.PutValue("Hello World!");
+        await Verify(cell);
+    }
 
     #region VerifyExcelStream
 
@@ -145,16 +163,5 @@ public class Samples
         };
         document.CustomDocumentProperties.Add("key", "value");
         return Verify(document);
-    }
-
-    [Test]
-    public async Task Cell()
-    {
-        using var workbook = new Workbook();
-
-        var sheet = workbook.Worksheets[0];
-        var cell = sheet.Cells["A1"];
-        cell.PutValue("Hello World!");
-        await Verify(cell);
     }
 }
