@@ -136,12 +136,6 @@ public class Samples
     [Test]
     public Task VerifyWordDocument()
     {
-        var document = new Document();
-        return Verify(document);
-    }
-    [Test]
-    public Task VerifyWordDocumentWithProperties()
-    {
         var document = new Document
         {
             BuiltInDocumentProperties =
