@@ -1,5 +1,4 @@
 ﻿using Aspose.Pdf;
-using VerifyTestsAspose;
 
 namespace VerifyTests;
 
