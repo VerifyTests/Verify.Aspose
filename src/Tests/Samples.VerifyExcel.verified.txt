@@ -7,8 +7,8 @@
       Name: Sheet1,
       Columns: [
         {
-          Name: 0.0,
-          FirstValue: 1.0
+          Name: 0,
+          FirstValue: 1
         },
         {
           Name: First Name,
@@ -28,11 +28,11 @@
         },
         {
           Name: Age,
-          FirstValue: 32.0
+          FirstValue: 32
         },
         {
           Name: Id,
-          FirstValue: 1562.0
+          FirstValue: 1562
         }
       ]
     }
