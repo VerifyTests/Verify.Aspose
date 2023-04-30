@@ -16,7 +16,7 @@ public static partial class VerifyAspose
     static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings) => new(GetInfo(document), GetWordStreams(document, settings).ToList());
 
     static object GetInfo(Document document) =>
-        new
+        new WordInfo
         {
             HasRevisions = document.HasRevisions.ToString(),
             DefaultLocale = (EditingLanguage) document.Styles.DefaultFont.LocaleId,
