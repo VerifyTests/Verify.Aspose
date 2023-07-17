@@ -94,7 +94,7 @@ public Task VerifyPdfStream()
   PdfFormat: v_1_4,
   Version: 1.4,
   Text:
-![](content.001.png)
+![ref1]
 
 **Evaluation Only. Created with Aspose.Words. Copyright 2003-2023 Aspose Pty Ltd.**
 
@@ -124,7 +124,7 @@ text. And more text. And more text. Even more. Continued on page 2 ...
 
 
 **Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/**
-![](content.002.png)
+![ref2]
 
 
 
@@ -145,9 +145,12 @@ Boring. More, a little more text. The end, and just as well.
 
 **Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/**
 
+[ref1]: content.001.png
+[ref2]: content.002.png
+
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L77' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L80' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf#00.verified.png](/src/Tests/Samples.VerifyPdf%2300.verified.png):
