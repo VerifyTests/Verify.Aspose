@@ -23,7 +23,7 @@
   PdfFormat: v_1_4,
   Version: 1.4,
   Text:
-![](content.001.png)
+![ref1]
 
 **Evaluation Only. Created with Aspose.Words. Copyright 2003-2023 Aspose Pty Ltd.**
 
@@ -53,7 +53,7 @@ text. And more text. And more text. Even more. Continued on page 2 ...
 
 
 **Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/**
-![](content.002.png)
+![ref2]
 
 
 
@@ -73,5 +73,8 @@ Boring. More, a little more text. The end, and just as well.
 
 
 **Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/**
+
+[ref1]: content.001.png
+[ref2]: content.002.png
 
 }
