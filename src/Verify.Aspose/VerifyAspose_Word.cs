@@ -13,7 +13,7 @@ public static partial class VerifyAspose
         using var memoryStream = new MemoryStream();
         stream.CopyTo(memoryStream);
         memoryStream.Position = 0;
-        var document = new Document(stream);
+        var document = new Document(memoryStream);
         return ConvertWord(document, settings);
     }
 
