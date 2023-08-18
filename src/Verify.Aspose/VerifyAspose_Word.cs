@@ -9,6 +9,10 @@ public static partial class VerifyAspose
 {
     static ConversionResult ConvertWord(Stream stream, IReadOnlyDictionary<string, object> settings)
     {
+        //Aspose makes shitty assumptions about streams. like they are writable.
+        using var memoryStream = new MemoryStream();
+        stream.CopyTo(memoryStream);
+        memoryStream.Position = 0;
         var document = new Document(stream);
         return ConvertWord(document, settings);
     }
