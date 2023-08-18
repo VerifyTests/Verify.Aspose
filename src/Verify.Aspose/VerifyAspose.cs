@@ -20,8 +20,8 @@ public static partial class VerifyAspose
 
         InnerVerifier.ThrowIfVerifyHasBeenRun();
 
-        VerifierSettings.AddExtraSettings(_=>_.Converters.Add(new CellConverter()));
-
+        VerifierSettings.AddExtraSettings(_ => _.Converters.Add(new CellConverter()));
+        VerifierSettings.ScrubLines(_ => _.Contains("<meta name=\"generator\" content=\"Aspose"));
         VerifierSettings.RegisterFileConverter("xlsx", ConvertExcel);
         VerifierSettings.RegisterFileConverter("xls", ConvertExcel);
         VerifierSettings.RegisterFileConverter<Workbook>(ConvertExcel);
