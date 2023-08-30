@@ -17,7 +17,8 @@ public static partial class VerifyAspose
         return ConvertWord(document, settings);
     }
 
-    static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings) => new(GetInfo(document), GetWordStreams(document, settings).ToList());
+    static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings) =>
+        new(GetInfo(document), GetWordStreams(document, settings).ToList());
 
     static object GetInfo(Document document) =>
         new WordInfo
