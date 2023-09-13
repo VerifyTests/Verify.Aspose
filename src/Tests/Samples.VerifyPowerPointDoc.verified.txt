@@ -1,5 +1,5 @@
 ﻿{
-  AppVersion: 23.0700,
+  AppVersion: 23.0800,
   NameOfApplication: Aspose.Slides for .NET,
   Company: ,
   Manager: ,
