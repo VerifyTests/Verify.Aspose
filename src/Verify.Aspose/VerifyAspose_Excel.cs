@@ -68,6 +68,9 @@ public static partial class VerifyAspose
         setup.TopMargin = 0;
         setup.RightMargin = 0;
         setup.BottomMargin = 0;
+
+        var csv = ToCsv(sheet);
+        yield return new("csv", csv);
         var render = new SheetRender(sheet, options);
 
         for (var index = 0; index < render.PageCount; index++)
@@ -76,6 +79,23 @@ public static partial class VerifyAspose
             render.ToImage(index, stream);
             yield return new("png", stream);
         }
+    }
+
+    static string ToCsv(Worksheet sheet)
+    {
+        var utf8 = Encoding.UTF8;
+        var txtSaveOptions = new TxtSaveOptions
+        {
+            Encoding = utf8,
+            TrimTailingBlankCells = true
+        };
+        var book = sheet.Workbook;
+        book.Worksheets.ActiveSheetName = sheet.Name;
+        using var stream = new MemoryStream();
+        book.Save(stream, txtSaveOptions);
+        stream.Position = 0;
+        using var reader = new StreamReader(stream, utf8);
+        return reader.ReadToEnd();
     }
 
     static IEnumerable<Sheet> GetSheetData(Workbook book) =>
