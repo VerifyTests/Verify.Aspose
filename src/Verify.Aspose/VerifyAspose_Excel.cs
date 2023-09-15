@@ -23,6 +23,8 @@ public static partial class VerifyAspose
 
     static ConversionResult ConvertExcel(Workbook book, IReadOnlyDictionary<string, object> settings)
     {
+        //force dates in csv export to be consistent
+        book.Settings.Region = CountryCode.USA;
         var info = GetInfo(book);
         return new(info, GetExcelStreams(book).ToList());
     }
