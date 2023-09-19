@@ -1,4 +1,5 @@
-﻿using Aspose.Cells;
+﻿using System.Globalization;
+using Aspose.Cells;
 using Aspose.Cells.Drawing;
 using Aspose.Cells.Rendering;
 
@@ -25,6 +26,7 @@ public static partial class VerifyAspose
     {
         //force dates in csv export to be consistent
         book.Settings.Region = CountryCode.USA;
+        book.Settings.CultureInfo = CultureInfo.InvariantCulture;
         var info = GetInfo(book);
         return new(info, GetExcelStreams(book).ToList());
     }
