@@ -89,7 +89,8 @@ public static partial class VerifyAspose
         var txtSaveOptions = new TxtSaveOptions
         {
             Encoding = utf8,
-            TrimTailingBlankCells = true
+            TrimTailingBlankCells = true,
+            FormatStrategy = CellValueFormatStrategy.DisplayString
         };
         var book = sheet.Workbook;
         book.Worksheets.ActiveSheetName = sheet.Name;

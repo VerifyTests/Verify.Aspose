@@ -33,12 +33,16 @@
         {
           Name: Id,
           FirstValue: 1562
+        },
+        {
+          Name: Formula,
+          FirstValue: 1563
         }
       ]
     }
   ],
   Properties: {
-    LastSavedBy: simon,
+    LastSavedBy: Simon Cropp,
     LastSavedTime: DateTime_1,
     NameOfApplication: Microsoft Excel,
     Title: The Title,
