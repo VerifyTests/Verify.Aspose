@@ -11,8 +11,15 @@ public static partial class VerifyAspose
         return ConvertPowerPoint(document, settings);
     }
 
-    static ConversionResult ConvertPowerPoint(Presentation document, IReadOnlyDictionary<string, object> settings) =>
-        new(document.DocumentProperties, GetPowerPointStreams(document, settings).ToList());
+    static ConversionResult ConvertPowerPoint(Presentation document, IReadOnlyDictionary<string, object> settings)
+    {
+        var properties = document.DocumentProperties;
+        if (properties.NameOfApplication.Contains("Aspose"))
+        {
+            properties.NameOfApplication = null;
+        }
+        return new(properties, GetPowerPointStreams(document, settings).ToList());
+    }
 
     static IEnumerable<Target> GetPowerPointStreams(Presentation document, IReadOnlyDictionary<string, object> settings)
     {

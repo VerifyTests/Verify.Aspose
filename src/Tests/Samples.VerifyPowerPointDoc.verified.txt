@@ -1,6 +1,5 @@
 ﻿{
   AppVersion: 23.0800,
-  NameOfApplication: Aspose.Slides for .NET,
   Company: ,
   Manager: ,
   PresentationFormat: On-screen Show (4:3),
