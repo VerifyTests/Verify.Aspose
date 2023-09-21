@@ -8,6 +8,8 @@ Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of
 
 Converts documents (pdf, docx, xslx, and pptx) to png for verification.
 
+**See [Milestones](../../milestones?state=closed) for release notes.**
+
 An [Aspose License](https://purchase.aspose.com/policies/license-types) is required to use this tool.
 
 
