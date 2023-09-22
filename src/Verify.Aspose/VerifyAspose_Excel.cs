@@ -59,7 +59,9 @@ public static partial class VerifyAspose
     }
 
     static Sheet GetInfo(Worksheet sheet) =>
-        new(sheet.Name, GetColumns(sheet).ToList(), sheet.CustomProperties.ToDictionary(_=>_.Name, _=>_.Value));
+        new(sheet.Name, GetColumns(sheet).ToList(), sheet.CustomProperties
+            .Where(_ => _.Name != "AppVersion")
+            .ToDictionary(_ => _.Name, _ => _.Value));
 
     static IEnumerable<Target> GetExcelStreams(Workbook book) =>
         book.Worksheets.SelectMany(GetSheetStreams);
