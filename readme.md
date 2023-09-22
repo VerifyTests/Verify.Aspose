@@ -379,7 +379,6 @@ public Task VerifyPowerPointStream()
 <a id='snippet-Samples.VerifyPowerPoint.verified.txt'></a>
 ```txt
 {
-  AppVersion: 16.0000,
   NameOfApplication: Microsoft Office PowerPoint,
   Company: ,
   Manager: ,
@@ -402,7 +401,7 @@ public Task VerifyPowerPointStream()
   HyperlinkBase: 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L23' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPowerPoint%2300.verified.png](/src/Tests/Samples.VerifyPowerPoint%2300.verified.png):
