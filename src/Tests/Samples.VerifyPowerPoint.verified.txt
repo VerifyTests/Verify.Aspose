@@ -1,5 +1,4 @@
 ﻿{
-  AppVersion: 16.0000,
   NameOfApplication: Microsoft Office PowerPoint,
   Company: ,
   Manager: ,

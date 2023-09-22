@@ -1,5 +1,4 @@
 ﻿{
-  AppVersion: 23.0800,
   Company: ,
   Manager: ,
   PresentationFormat: On-screen Show (4:3),

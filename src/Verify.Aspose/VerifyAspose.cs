@@ -24,6 +24,7 @@ public static partial class VerifyAspose
         VerifierSettings.ScrubLines(_ => _.Contains("<meta name=\"generator\" content=\"Aspose"));
         VerifierSettings.RegisterFileConverter("xlsx", ConvertExcel);
         VerifierSettings.RegisterFileConverter("xls", ConvertExcel);
+        VerifierSettings.IgnoreMember<IDocumentProperties>(_ => _.AppVersion);
         VerifierSettings.RegisterFileConverter<Workbook>(ConvertExcel);
         VerifierSettings.RegisterFileConverter<Worksheet>(ConvertSheet);
 
