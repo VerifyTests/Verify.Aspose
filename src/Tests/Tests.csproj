@@ -13,7 +13,7 @@
     <PackageReference Include="Verify.ImageMagick" Version="3.2.2" />
     <PackageReference Include="Verify.Nunit" Version="23.0.0" />
     <ProjectReference Include="..\Verify.Aspose\Verify.Aspose.csproj" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.108" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.109" PrivateAssets="all" />
 
     <None Update="sample.*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
