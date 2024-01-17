@@ -98,7 +98,7 @@ public Task VerifyPdfStream()
   Text:
 ![ref1]
 
-**Evaluation Only. Created with Aspose.Words. Copyright 2003-2023 Aspose Pty Ltd.**
+**Evaluation Only. Created with Aspose.Words. Copyright 2003-2024 Aspose Pty Ltd.**
 
 
 
@@ -272,7 +272,7 @@ public Task VerifyWordStream()
   Text:
 ![](content.001.png)
 
-**Evaluation Only. Created with Aspose.Words. Copyright 2003-2023 Aspose Pty Ltd.**
+**Evaluation Only. Created with Aspose.Words. Copyright 2003-2024 Aspose Pty Ltd.**
 
 **Lorem ipsum** 
 
