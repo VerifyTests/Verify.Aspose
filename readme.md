@@ -40,20 +40,20 @@ public static void Initialize() =>
 #### Verify a file
 
 <!-- snippet: VerifyPdf -->
-<a id='snippet-verifypdf'></a>
+<a id='snippet-VerifyPdf'></a>
 ```cs
 [Test]
 public Task VerifyPdf() =>
     VerifyFile("sample.pdf");
 ```
-<sup><a href='/src/Tests/Samples.cs#L10-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdf' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L10-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPdf' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 #### Verify a Stream
 
 <!-- snippet: VerifyPdfStream -->
-<a id='snippet-verifypdfstream'></a>
+<a id='snippet-VerifyPdfStream'></a>
 ```cs
 [Test]
 public Task VerifyPdfStream()
@@ -62,7 +62,7 @@ public Task VerifyPdfStream()
     return Verify(stream, "pdf");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L30-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypdfstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L30-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPdfStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -166,20 +166,20 @@ Boring. More, a little more text. The end, and just as well.
 #### Verify a file
 
 <!-- snippet: VerifyExcel -->
-<a id='snippet-verifyexcel'></a>
+<a id='snippet-VerifyExcel'></a>
 ```cs
 [Test]
 public Task VerifyExcel() =>
     VerifyFile("sample.xlsx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L71-L77' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcel' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L71-L77' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcel' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 #### Verify a Stream
 
 <!-- snippet: VerifyExcelStream -->
-<a id='snippet-verifyexcelstream'></a>
+<a id='snippet-VerifyExcelStream'></a>
 ```cs
 [Test]
 public Task VerifyExcelStream()
@@ -188,14 +188,14 @@ public Task VerifyExcelStream()
     return Verify(stream, "xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L132-L141' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyexcelstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L132-L141' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 #### Verify a WorkBook
 
 <!-- snippet: VerifyWorkbook -->
-<a id='snippet-verifyworkbook'></a>
+<a id='snippet-VerifyWorkbook'></a>
 ```cs
 [Test]
 public Task VerifyWorkbook()
@@ -217,7 +217,7 @@ public Task VerifyWorkbook()
     return Verify(book);
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L97-L119' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyworkbook' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L97-L119' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWorkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyExcel.verified.png](/src/Tests/Samples.VerifyExcel.verified.png):
@@ -231,20 +231,20 @@ public Task VerifyWorkbook()
 #### Verify a file
 
 <!-- snippet: VerifyWord -->
-<a id='snippet-verifyword'></a>
+<a id='snippet-VerifyWord'></a>
 ```cs
 [Test]
 public Task VerifyWord() =>
     VerifyFile("sample.docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L143-L149' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifyword' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L143-L149' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 #### Verify a Stream
 
 <!-- snippet: VerifyWordStream -->
-<a id='snippet-verifywordstream'></a>
+<a id='snippet-VerifyWordStream'></a>
 ```cs
 [Test]
 public Task VerifyWordStream()
@@ -253,7 +253,7 @@ public Task VerifyWordStream()
     return Verify(stream, "docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L151-L160' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifywordstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L151-L160' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -346,20 +346,20 @@ Etiam vehicula luctus fermentum. In vel metus congue, pulvinar lectus vel, ferme
 #### Verify a file
 
 <!-- snippet: VerifyPowerPoint -->
-<a id='snippet-verifypowerpoint'></a>
+<a id='snippet-VerifyPowerPoint'></a>
 ```cs
 [Test]
 public Task VerifyPowerPoint() =>
     VerifyFile("sample.pptx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L43-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L43-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPowerPoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 #### Verify a Stream
 
 <!-- snippet: VerifyPowerPointStream -->
-<a id='snippet-verifypowerpointstream'></a>
+<a id='snippet-VerifyPowerPointStream'></a>
 ```cs
 [Test]
 public Task VerifyPowerPointStream()
@@ -368,7 +368,7 @@ public Task VerifyPowerPointStream()
     return Verify(stream, "pptx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L51-L60' title='Snippet source file'>snippet source</a> | <a href='#snippet-verifypowerpointstream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L51-L60' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPowerPointStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
