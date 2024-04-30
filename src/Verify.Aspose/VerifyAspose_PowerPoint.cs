@@ -1,5 +1,4 @@
-﻿using System.Drawing.Imaging;
-using Aspose.Slides;
+﻿using Aspose.Slides;
 
 namespace VerifyTests;
 
@@ -27,7 +26,7 @@ public static partial class VerifyAspose
         for (var index = 0; index < pagesToInclude; index++)
         {
             var slide = document.Slides[index];
-            using var bitmap = slide.GetThumbnail(1f, 1f);
+            using var bitmap = slide.GetImage(1f, 1f);
             var stream = new MemoryStream();
             bitmap.Save(stream, ImageFormat.Png);
             yield return new("png", stream);
