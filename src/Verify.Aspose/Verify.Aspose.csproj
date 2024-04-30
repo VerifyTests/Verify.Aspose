@@ -8,6 +8,6 @@
     <PackageReference Include="Aspose.Cells" Version="24.4.0" />
     <PackageReference Include="Aspose.Words" Version="24.4.0" />
     <PackageReference Include="Aspose.Slides.NET" Version="24.4.0" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.126" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.127" PrivateAssets="all" />
   </ItemGroup>
 </Project>
