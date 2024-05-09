@@ -7,7 +7,7 @@
     <PackageReference Include="Verify" Version="24.1.0" />
     <PackageReference Include="Aspose.Cells" Version="24.4.0" />
     <PackageReference Include="Aspose.Words" Version="24.5.0" />
-    <PackageReference Include="Aspose.Slides.NET" Version="24.4.0" />
+    <PackageReference Include="Aspose.Slides.NET" Version="24.5.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.127" PrivateAssets="all" />
   </ItemGroup>
 </Project>
