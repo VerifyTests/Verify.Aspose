@@ -14,5 +14,6 @@
         VerifyDiffPlex.Initialize();
         VerifyImageMagick.RegisterComparers(.3);
         VerifierSettings.IgnoreMember("Width");
+        VerifierSettings.ScrubLinesContaining("Created with an evaluation");
     }
 }

@@ -125,7 +125,7 @@ And more text. And more text. And more text. And more text. And more
 text. And more text. And more text. Even more. Continued on page 2 ...
 
 
-**Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/**
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License https://purchase.aspose.com/temporary-license/**
 ![ref2]
 
 
@@ -145,7 +145,7 @@ paint dry. And more text. And more text. And more text. And more text.
 Boring. More, a little more text. The end, and just as well.
 
 
-**Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/**
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License https://purchase.aspose.com/temporary-license/**
 
 [ref1]: content.001.png
 [ref2]: content.002.png
@@ -328,7 +328,7 @@ Fusce vitae vestibulum velit. Pellentesque vulputate lectus quis pellentesque co
 Etiam vehicula luctus fermentum. In vel metus congue, pulvinar lectus vel, fermentum dui. Maecenas ante orci, egestas ut aliquet sit amet, sagittis a magna. Aliquam ante quam, pellentesque ut dignissim quis, laoreet eget est. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut ullamcorper justo sapien, in cursus libero viverra eget. Vivamus auctor imperdiet urna, at pulvinar leo posuere laoreet. Suspendisse neque nisl, fringilla at iaculis scelerisque, ornare vel dolor. Ut et pulvinar nunc. Pellentesque fringilla mollis efficitur. Nullam venenatis commodo imperdiet. Morbi velit neque, semper quis lorem quis, efficitur dignissim ipsum. Ut ac lorem sed turpis imperdiet eleifend sit amet id sapien.
 
 ![](content.003.jpeg)
-**Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/**
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License https://purchase.aspose.com/temporary-license/**
 
 }
 ```
