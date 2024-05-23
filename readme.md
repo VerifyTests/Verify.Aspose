@@ -6,7 +6,7 @@
 
 Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of documents via [Aspose](https://www.aspose.com/).
 
-Converts documents (pdf, docx, xslx, and pptx) to png for verification.
+Converts documents (pdf, docx, xlsx, and pptx) to png for verification.
 
 **See [Milestones](../../milestones?state=closed) for release notes.**
 
