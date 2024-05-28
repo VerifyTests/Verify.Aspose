@@ -3,11 +3,11 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aspose.Pdf" Version="24.5.1" />
-    <PackageReference Include="Verify" Version="24.2.0" />
-    <PackageReference Include="Aspose.Cells" Version="24.5.0" />
-    <PackageReference Include="Aspose.Words" Version="24.5.0" />
-    <PackageReference Include="Aspose.Slides.NET" Version="24.5.0" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.127" PrivateAssets="all" />
+    <PackageReference Include="Aspose.Pdf" />
+    <PackageReference Include="Verify" />
+    <PackageReference Include="Aspose.Cells" />
+    <PackageReference Include="Aspose.Words" />
+    <PackageReference Include="Aspose.Slides.NET" />
+    <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
   </ItemGroup>
 </Project>
