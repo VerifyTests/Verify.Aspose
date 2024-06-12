@@ -12,8 +12,10 @@
     public static void InitializeOther()
     {
         VerifyDiffPlex.Initialize();
-        VerifyImageMagick.RegisterComparers(.3);
+        VerifyImageMagick.RegisterComparers(.01);
         VerifierSettings.IgnoreMember("Width");
-        VerifierSettings.ScrubLinesContaining("Created with an evaluation");
+        VerifierSettings.ScrubLinesContaining(
+            "Created with an evaluation",
+            "Evaluation Only");
     }
 }
