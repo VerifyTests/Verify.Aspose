@@ -101,7 +101,6 @@ public Task VerifyPdfStream()
 
 
 
-<a name="br1"></a>Evaluation Only. Created with Aspose.PDF. Copyright 2002-2024 Aspose Pty Ltd.
 
 A Simple PDF File
 
@@ -124,7 +123,6 @@ And more text. And more text. And more text. And more text. And more
 text. And more text. And more text. Even more. Continued on page 2 ...
 
 
-**Evaluation Only. Created with Aspose.Words. Copyright 2003-2024 Aspose Pty Ltd.**
 ![ref2]
 
 
@@ -144,14 +142,13 @@ paint dry. And more text. And more text. And more text. And more text.
 Boring. More, a little more text. The end, and just as well.
 
 
-**Evaluation Only. Created with Aspose.Words. Copyright 2003-2024 Aspose Pty Ltd.**
 
 [ref1]: content.001.png
 [ref2]: content.002.png
 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L79' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L76' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf#00.verified.png](/src/Tests/Samples.VerifyPdf%2300.verified.png):
@@ -326,11 +323,10 @@ Fusce vitae vestibulum velit. Pellentesque vulputate lectus quis pellentesque co
 Etiam vehicula luctus fermentum. In vel metus congue, pulvinar lectus vel, fermentum dui. Maecenas ante orci, egestas ut aliquet sit amet, sagittis a magna. Aliquam ante quam, pellentesque ut dignissim quis, laoreet eget est. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut ullamcorper justo sapien, in cursus libero viverra eget. Vivamus auctor imperdiet urna, at pulvinar leo posuere laoreet. Suspendisse neque nisl, fringilla at iaculis scelerisque, ornare vel dolor. Ut et pulvinar nunc. Pellentesque fringilla mollis efficitur. Nullam venenatis commodo imperdiet. Morbi velit neque, semper quis lorem quis, efficitur dignissim ipsum. Ut ac lorem sed turpis imperdiet eleifend sit amet id sapien.
 
 ![](content.003.jpeg)
-**Evaluation Only. Created with Aspose.Words. Copyright 2003-2024 Aspose Pty Ltd.**
 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyWord#00.verified.png](/src/Tests/Samples.VerifyWord%2300.verified.png):
