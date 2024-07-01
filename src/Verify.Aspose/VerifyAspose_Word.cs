@@ -106,4 +106,14 @@ public static partial class VerifyAspose
             yield return new("png", stream);
         }
     }
+
+    static string GetDocumentText(Document document)
+    {
+        using var directory = new TempDirectory();
+        var path = Path.Combine(directory, "content.md");
+        document.Save(
+            path,
+            new MarkdownSaveOptions());
+        return File.ReadAllText(path);
+    }
 }
