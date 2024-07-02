@@ -1,4 +1,6 @@
-﻿using Aspose.Words;
+﻿using System.IO.Compression;
+using System.Xml.Linq;
+using Aspose.Words;
 using Aspose.Words.Loading;
 using Aspose.Words.Properties;
 using Aspose.Words.Saving;
@@ -27,7 +29,7 @@ public static partial class VerifyAspose
             DefaultLocale = (EditingLanguage) document.Styles.DefaultFont.LocaleId,
             Properties = GetProperties(document),
             CustomProperties = GetCustomProperties(document),
-            Text = GetDocumentText(document)
+            Text = GetDocumentText(document),
         };
 
     static Dictionary<string, object> GetProperties(Document document) =>
@@ -94,6 +96,7 @@ public static partial class VerifyAspose
 
     static IEnumerable<Target> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
     {
+        yield return new("xml", GetStyles(document));
         var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
         for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)
         {
@@ -115,5 +118,17 @@ public static partial class VerifyAspose
             path,
             new MarkdownSaveOptions());
         return File.ReadAllText(path);
+    }
+    static string GetStyles(Document document)
+    {
+        using var memoryStream = new MemoryStream();
+        document.Save(memoryStream, SaveFormat.Dotx);
+        memoryStream.Position = 0;
+        using var archive = new ZipArchive(memoryStream);
+
+        var entry = archive.GetEntry("word/styles.xml")!;
+        using var entryStream = entry.Open();
+        var xmlDocument = XDocument.Load(entryStream);
+        return xmlDocument.ToString();
     }
 }
