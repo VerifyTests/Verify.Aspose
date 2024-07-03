@@ -96,7 +96,6 @@ public static partial class VerifyAspose
 
         return true;
     }
-
     static IEnumerable<Target> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
     {
         if (settings.GetIncludeWordStyles())
@@ -137,16 +136,22 @@ public static partial class VerifyAspose
         var entry = archive.GetEntry("word/styles.xml")!;
         using var entryStream = entry.Open();
         var xmlDocument = XDocument.Load(entryStream);
-        RemoveXmlNamespaces(xmlDocument);
-        RemoveDefaultAttributes(xmlDocument);
+        CleanupXml(xmlDocument);
         return xmlDocument.ToString();
     }
-    static void RemoveDefaultAttributes(XDocument document)
+
+
+    static Dictionary<string, string> renames = new()
     {
-        foreach (var node in document.Descendants().ToList())
+        { "b", "bold" },
+        { "bCs", "boldComplexScript" },
+    };
+    static void CleanupXml(XDocument xmlDocument)
+    {
+        foreach (var node in xmlDocument.Descendants().ToList())
         {
-            var name = node.Name.LocalName;
-            node.Name = name;
+            node.RemoveNamespaceAttributes();
+            var name = FixName(node);
 
             if (name == "name" && node.Parent?.Name == "style")
             {
@@ -159,14 +164,9 @@ public static partial class VerifyAspose
                 continue;
             }
 
-            if (name.EndsWith("Cs"))
+            if (RemoveComplexSciptIfSameAsNonComplex(node))
             {
-                var sibling = node.Parent?.Element(name[..^2]);
-                if (sibling != null && HaveSameAttributes(node, sibling))
-                {
-                    node.Remove();
-                    continue;
-                }
+                continue;
             }
 
             var attributes = node.Attributes().ToList();
@@ -179,6 +179,60 @@ public static partial class VerifyAspose
                 }
             }
         }
+    }
+
+    static string FixName(XElement node)
+    {
+        var name = node.Name.LocalName;
+        if (renames.TryGetValue(name, out var newName))
+        {
+            node.Name = newName;
+        }
+        else
+        {
+            node.Name = name;
+        }
+
+        return name;
+    }
+
+
+    static void RemoveNamespaceAttributes(this XElement node)
+    {
+        var attributes = node.NamespaceAttributes();
+
+        // Create and add new attributes with local name only for those with a namespace
+        foreach (var attribute in attributes
+                     .Where(_ => _.Name.Namespace != XNamespace.None))
+        {
+            node.Add(new XAttribute(attribute.Name.LocalName, attribute.Value));
+        }
+
+        // Remove the original attributes
+        attributes.Remove();
+    }
+
+    static List<XAttribute> NamespaceAttributes(this XElement node) =>
+        // Identify xmlns:* attributes and attributes with a namespace
+        node
+            .Attributes()
+            .Where(_ => _.IsNamespaceDeclaration ||
+                        _.Name.Namespace != XNamespace.None)
+            .ToList();
+
+    static bool RemoveComplexSciptIfSameAsNonComplex(XElement node)
+    {
+        if (node.Name.LocalName.EndsWith("ComplexScript"))
+        {
+            var sibling = node.Parent?.Element(node.Name.LocalName[..^13]);
+            if (sibling != null && HaveSameAttributes(node, sibling))
+            {
+                node.Remove();
+                return true;
+            }
+        }
+
+        return false;
     }
 
     static bool HaveSameAttributes(XElement element1, XElement element2)
@@ -206,29 +260,4 @@ public static partial class VerifyAspose
         attribute.Name == "unhideWhenUsed" && attribute.Value == "0" ||
         attribute.Name == "semiHidden" && attribute.Value == "0";
 
-    static void RemoveXmlNamespaces(XDocument document)
-    {
-        foreach (var node in document.Descendants())
-        {
-            // Remove namespace from elements
-            node.Name = node.Name.LocalName;
-
-            // Identify xmlns:* attributes and attributes with a namespace
-            var attributesToRemove = node
-                .Attributes()
-                .Where(a => a.IsNamespaceDeclaration ||
-                            a.Name.Namespace != XNamespace.None)
-                .ToList();
-
-            // Create and add new attributes with local name only for those with a namespace
-            foreach (var attribute in attributesToRemove
-                         .Where(a => a.Name.Namespace != XNamespace.None))
-            {
-                node.Add(new XAttribute(attribute.Name.LocalName, attribute.Value));
-            }
-
-            // Remove the original attributes
-            attributesToRemove.Remove();
-        }
-    }
 }
