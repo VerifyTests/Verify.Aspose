@@ -141,10 +141,28 @@ public static partial class VerifyAspose
     }
 
 
-    static Dictionary<string, string> renames = new()
+    static Dictionary<string, string> nodeRenames = new()
     {
         { "b", "bold" },
         { "bCs", "boldComplexScript" },
+        { "i", "italic" },
+        { "iCs", "italicComplexScript" },
+        { "sz", "size" },
+        { "szCs", "sizeComplexScript" },
+        { "jc", "justification" },
+        { "rFonts", "fonts" },
+        { "rPr", "run" },
+        { "pPr", "paragraph" },
+        { "rPrDefault", "runDefault" },
+        { "pPrDefault", "paragraphDefault" },
+        { "lsdException", "latentStyleException" },
+        { "bidi", "complexScriptLanguage" },
+
+
+    };
+    static Dictionary<string, string> attributeRenames = new()
+    {
+        { "styleId", "Id" },
     };
     static void CleanupXml(XDocument xmlDocument)
     {
@@ -184,7 +202,7 @@ public static partial class VerifyAspose
     static string FixName(XElement node)
     {
         var name = node.Name.LocalName;
-        if (renames.TryGetValue(name, out var newName))
+        if (nodeRenames.TryGetValue(name, out var newName))
         {
             node.Name = newName;
         }
