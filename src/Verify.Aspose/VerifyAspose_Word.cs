@@ -99,7 +99,11 @@ public static partial class VerifyAspose
 
     static IEnumerable<Target> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
     {
-        yield return new("xml", GetStyles(document));
+        if (settings.GetIncludeWordStyles())
+        {
+            yield return new("xml", GetStyles(document));
+        }
+
         var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
         for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)
         {
