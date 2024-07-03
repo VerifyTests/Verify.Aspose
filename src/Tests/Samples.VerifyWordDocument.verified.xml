@@ -1,1 +1,168 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?><w:styles xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" /><w:lang w:val="en-US" w:eastAsia="en-US" w:bidi="ar-SA" /></w:rPr></w:rPrDefault><w:pPrDefault /></w:docDefaults><w:latentStyles w:defLockedState="0" w:defUIPriority="0" w:defSemiHidden="0" w:defUnhideWhenUsed="0" w:defQFormat="0" w:count="267"><w:lsdException w:name="Normal" w:qFormat="1" /><w:lsdException w:name="heading 1" w:qFormat="1" /><w:lsdException w:name="heading 2" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" /><w:lsdException w:name="heading 3" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" /><w:lsdException w:name="heading 4" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" /><w:lsdException w:name="heading 5" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" /><w:lsdException w:name="heading 6" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" /><w:lsdException w:name="heading 7" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" /><w:lsdException w:name="heading 8" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" /><w:lsdException w:name="heading 9" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" /><w:lsdException w:name="caption" w:semiHidden="1" w:unhideWhenUsed="1" w:qFormat="1" /><w:lsdException w:name="Title" w:qFormat="1" /><w:lsdException w:name="Subtitle" w:qFormat="1" /><w:lsdException w:name="Strong" w:qFormat="1" /><w:lsdException w:name="Emphasis" w:qFormat="1" /><w:lsdException w:name="Placeholder Text" w:semiHidden="1" w:uiPriority="99" /><w:lsdException w:name="No Spacing" w:uiPriority="1" w:qFormat="1" /><w:lsdException w:name="Light Shading" w:uiPriority="60" /><w:lsdException w:name="Light List" w:uiPriority="61" /><w:lsdException w:name="Light Grid" w:uiPriority="62" /><w:lsdException w:name="Medium Shading 1" w:uiPriority="63" /><w:lsdException w:name="Medium Shading 2" w:uiPriority="64" /><w:lsdException w:name="Medium List 1" w:uiPriority="65" /><w:lsdException w:name="Medium List 2" w:uiPriority="66" /><w:lsdException w:name="Medium Grid 1" w:uiPriority="67" /><w:lsdException w:name="Medium Grid 2" w:uiPriority="68" /><w:lsdException w:name="Medium Grid 3" w:uiPriority="69" /><w:lsdException w:name="Dark List" w:uiPriority="70" /><w:lsdException w:name="Colorful Shading" w:uiPriority="71" /><w:lsdException w:name="Colorful List" w:uiPriority="72" /><w:lsdException w:name="Colorful Grid" w:uiPriority="73" /><w:lsdException w:name="Light Shading Accent 1" w:uiPriority="60" /><w:lsdException w:name="Light List Accent 1" w:uiPriority="61" /><w:lsdException w:name="Light Grid Accent 1" w:uiPriority="62" /><w:lsdException w:name="Medium Shading 1 Accent 1" w:uiPriority="63" /><w:lsdException w:name="Medium Shading 2 Accent 1" w:uiPriority="64" /><w:lsdException w:name="Medium List 1 Accent 1" w:uiPriority="65" /><w:lsdException w:name="Revision" w:semiHidden="1" w:uiPriority="99" /><w:lsdException w:name="List Paragraph" w:uiPriority="34" w:qFormat="1" /><w:lsdException w:name="Quote" w:uiPriority="29" w:qFormat="1" /><w:lsdException w:name="Intense Quote" w:uiPriority="30" w:qFormat="1" /><w:lsdException w:name="Medium List 2 Accent 1" w:uiPriority="66" /><w:lsdException w:name="Medium Grid 1 Accent 1" w:uiPriority="67" /><w:lsdException w:name="Medium Grid 2 Accent 1" w:uiPriority="68" /><w:lsdException w:name="Medium Grid 3 Accent 1" w:uiPriority="69" /><w:lsdException w:name="Dark List Accent 1" w:uiPriority="70" /><w:lsdException w:name="Colorful Shading Accent 1" w:uiPriority="71" /><w:lsdException w:name="Colorful List Accent 1" w:uiPriority="72" /><w:lsdException w:name="Colorful Grid Accent 1" w:uiPriority="73" /><w:lsdException w:name="Light Shading Accent 2" w:uiPriority="60" /><w:lsdException w:name="Light List Accent 2" w:uiPriority="61" /><w:lsdException w:name="Light Grid Accent 2" w:uiPriority="62" /><w:lsdException w:name="Medium Shading 1 Accent 2" w:uiPriority="63" /><w:lsdException w:name="Medium Shading 2 Accent 2" w:uiPriority="64" /><w:lsdException w:name="Medium List 1 Accent 2" w:uiPriority="65" /><w:lsdException w:name="Medium List 2 Accent 2" w:uiPriority="66" /><w:lsdException w:name="Medium Grid 1 Accent 2" w:uiPriority="67" /><w:lsdException w:name="Medium Grid 2 Accent 2" w:uiPriority="68" /><w:lsdException w:name="Medium Grid 3 Accent 2" w:uiPriority="69" /><w:lsdException w:name="Dark List Accent 2" w:uiPriority="70" /><w:lsdException w:name="Colorful Shading Accent 2" w:uiPriority="71" /><w:lsdException w:name="Colorful List Accent 2" w:uiPriority="72" /><w:lsdException w:name="Colorful Grid Accent 2" w:uiPriority="73" /><w:lsdException w:name="Light Shading Accent 3" w:uiPriority="60" /><w:lsdException w:name="Light List Accent 3" w:uiPriority="61" /><w:lsdException w:name="Light Grid Accent 3" w:uiPriority="62" /><w:lsdException w:name="Medium Shading 1 Accent 3" w:uiPriority="63" /><w:lsdException w:name="Medium Shading 2 Accent 3" w:uiPriority="64" /><w:lsdException w:name="Medium List 1 Accent 3" w:uiPriority="65" /><w:lsdException w:name="Medium List 2 Accent 3" w:uiPriority="66" /><w:lsdException w:name="Medium Grid 1 Accent 3" w:uiPriority="67" /><w:lsdException w:name="Medium Grid 2 Accent 3" w:uiPriority="68" /><w:lsdException w:name="Medium Grid 3 Accent 3" w:uiPriority="69" /><w:lsdException w:name="Dark List Accent 3" w:uiPriority="70" /><w:lsdException w:name="Colorful Shading Accent 3" w:uiPriority="71" /><w:lsdException w:name="Colorful List Accent 3" w:uiPriority="72" /><w:lsdException w:name="Colorful Grid Accent 3" w:uiPriority="73" /><w:lsdException w:name="Light Shading Accent 4" w:uiPriority="60" /><w:lsdException w:name="Light List Accent 4" w:uiPriority="61" /><w:lsdException w:name="Light Grid Accent 4" w:uiPriority="62" /><w:lsdException w:name="Medium Shading 1 Accent 4" w:uiPriority="63" /><w:lsdException w:name="Medium Shading 2 Accent 4" w:uiPriority="64" /><w:lsdException w:name="Medium List 1 Accent 4" w:uiPriority="65" /><w:lsdException w:name="Medium List 2 Accent 4" w:uiPriority="66" /><w:lsdException w:name="Medium Grid 1 Accent 4" w:uiPriority="67" /><w:lsdException w:name="Medium Grid 2 Accent 4" w:uiPriority="68" /><w:lsdException w:name="Medium Grid 3 Accent 4" w:uiPriority="69" /><w:lsdException w:name="Dark List Accent 4" w:uiPriority="70" /><w:lsdException w:name="Colorful Shading Accent 4" w:uiPriority="71" /><w:lsdException w:name="Colorful List Accent 4" w:uiPriority="72" /><w:lsdException w:name="Colorful Grid Accent 4" w:uiPriority="73" /><w:lsdException w:name="Light Shading Accent 5" w:uiPriority="60" /><w:lsdException w:name="Light List Accent 5" w:uiPriority="61" /><w:lsdException w:name="Light Grid Accent 5" w:uiPriority="62" /><w:lsdException w:name="Medium Shading 1 Accent 5" w:uiPriority="63" /><w:lsdException w:name="Medium Shading 2 Accent 5" w:uiPriority="64" /><w:lsdException w:name="Medium List 1 Accent 5" w:uiPriority="65" /><w:lsdException w:name="Medium List 2 Accent 5" w:uiPriority="66" /><w:lsdException w:name="Medium Grid 1 Accent 5" w:uiPriority="67" /><w:lsdException w:name="Medium Grid 2 Accent 5" w:uiPriority="68" /><w:lsdException w:name="Medium Grid 3 Accent 5" w:uiPriority="69" /><w:lsdException w:name="Dark List Accent 5" w:uiPriority="70" /><w:lsdException w:name="Colorful Shading Accent 5" w:uiPriority="71" /><w:lsdException w:name="Colorful List Accent 5" w:uiPriority="72" /><w:lsdException w:name="Colorful Grid Accent 5" w:uiPriority="73" /><w:lsdException w:name="Light Shading Accent 6" w:uiPriority="60" /><w:lsdException w:name="Light List Accent 6" w:uiPriority="61" /><w:lsdException w:name="Light Grid Accent 6" w:uiPriority="62" /><w:lsdException w:name="Medium Shading 1 Accent 6" w:uiPriority="63" /><w:lsdException w:name="Medium Shading 2 Accent 6" w:uiPriority="64" /><w:lsdException w:name="Medium List 1 Accent 6" w:uiPriority="65" /><w:lsdException w:name="Medium List 2 Accent 6" w:uiPriority="66" /><w:lsdException w:name="Medium Grid 1 Accent 6" w:uiPriority="67" /><w:lsdException w:name="Medium Grid 2 Accent 6" w:uiPriority="68" /><w:lsdException w:name="Medium Grid 3 Accent 6" w:uiPriority="69" /><w:lsdException w:name="Dark List Accent 6" w:uiPriority="70" /><w:lsdException w:name="Colorful Shading Accent 6" w:uiPriority="71" /><w:lsdException w:name="Colorful List Accent 6" w:uiPriority="72" /><w:lsdException w:name="Colorful Grid Accent 6" w:uiPriority="73" /><w:lsdException w:name="Subtle Emphasis" w:uiPriority="19" w:qFormat="1" /><w:lsdException w:name="Intense Emphasis" w:uiPriority="21" w:qFormat="1" /><w:lsdException w:name="Subtle Reference" w:uiPriority="31" w:qFormat="1" /><w:lsdException w:name="Intense Reference" w:uiPriority="32" w:qFormat="1" /><w:lsdException w:name="Book Title" w:uiPriority="33" w:qFormat="1" /><w:lsdException w:name="Bibliography" w:semiHidden="1" w:uiPriority="37" w:unhideWhenUsed="1" /><w:lsdException w:name="TOC Heading" w:semiHidden="1" w:uiPriority="39" w:unhideWhenUsed="1" w:qFormat="1" /></w:latentStyles><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal" /><w:qFormat /><w:rPr><w:sz w:val="24" /><w:szCs w:val="24" /></w:rPr></w:style><w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont"><w:name w:val="Default Paragraph Font" /><w:semiHidden /></w:style><w:style w:type="table" w:default="1" w:styleId="TableNormal"><w:name w:val="Normal Table" /><w:semiHidden /><w:tblPr><w:tblInd w:w="0" w:type="dxa" /><w:tblCellMar><w:top w:w="0" w:type="dxa" /><w:left w:w="108" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /><w:right w:w="108" w:type="dxa" /></w:tblCellMar></w:tblPr></w:style><w:style w:type="numbering" w:default="1" w:styleId="NoList"><w:name w:val="No List" /><w:semiHidden /></w:style></w:styles>
+﻿<styles r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <docDefaults>
+    <rPrDefault>
+      <rPr>
+        <rFonts ascii="Times New Roman" eastAsia="Times New Roman" hAnsi="Times New Roman" cs="Times New Roman" />
+        <lang val="en-US" eastAsia="en-US" bidi="ar-SA" />
+      </rPr>
+    </rPrDefault>
+    <pPrDefault />
+  </docDefaults>
+  <latentStyles defLockedState="0" defUIPriority="0" defSemiHidden="0" defUnhideWhenUsed="0" defQFormat="0" count="267">
+    <lsdException name="Normal" qFormat="1" />
+    <lsdException name="heading 1" qFormat="1" />
+    <lsdException name="heading 2" semiHidden="1" unhideWhenUsed="1" qFormat="1" />
+    <lsdException name="heading 3" semiHidden="1" unhideWhenUsed="1" qFormat="1" />
+    <lsdException name="heading 4" semiHidden="1" unhideWhenUsed="1" qFormat="1" />
+    <lsdException name="heading 5" semiHidden="1" unhideWhenUsed="1" qFormat="1" />
+    <lsdException name="heading 6" semiHidden="1" unhideWhenUsed="1" qFormat="1" />
+    <lsdException name="heading 7" semiHidden="1" unhideWhenUsed="1" qFormat="1" />
+    <lsdException name="heading 8" semiHidden="1" unhideWhenUsed="1" qFormat="1" />
+    <lsdException name="heading 9" semiHidden="1" unhideWhenUsed="1" qFormat="1" />
+    <lsdException name="caption" semiHidden="1" unhideWhenUsed="1" qFormat="1" />
+    <lsdException name="Title" qFormat="1" />
+    <lsdException name="Subtitle" qFormat="1" />
+    <lsdException name="Strong" qFormat="1" />
+    <lsdException name="Emphasis" qFormat="1" />
+    <lsdException name="Placeholder Text" semiHidden="1" uiPriority="99" />
+    <lsdException name="No Spacing" uiPriority="1" qFormat="1" />
+    <lsdException name="Light Shading" uiPriority="60" />
+    <lsdException name="Light List" uiPriority="61" />
+    <lsdException name="Light Grid" uiPriority="62" />
+    <lsdException name="Medium Shading 1" uiPriority="63" />
+    <lsdException name="Medium Shading 2" uiPriority="64" />
+    <lsdException name="Medium List 1" uiPriority="65" />
+    <lsdException name="Medium List 2" uiPriority="66" />
+    <lsdException name="Medium Grid 1" uiPriority="67" />
+    <lsdException name="Medium Grid 2" uiPriority="68" />
+    <lsdException name="Medium Grid 3" uiPriority="69" />
+    <lsdException name="Dark List" uiPriority="70" />
+    <lsdException name="Colorful Shading" uiPriority="71" />
+    <lsdException name="Colorful List" uiPriority="72" />
+    <lsdException name="Colorful Grid" uiPriority="73" />
+    <lsdException name="Light Shading Accent 1" uiPriority="60" />
+    <lsdException name="Light List Accent 1" uiPriority="61" />
+    <lsdException name="Light Grid Accent 1" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 1" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 1" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 1" uiPriority="65" />
+    <lsdException name="Revision" semiHidden="1" uiPriority="99" />
+    <lsdException name="List Paragraph" uiPriority="34" qFormat="1" />
+    <lsdException name="Quote" uiPriority="29" qFormat="1" />
+    <lsdException name="Intense Quote" uiPriority="30" qFormat="1" />
+    <lsdException name="Medium List 2 Accent 1" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 1" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 1" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 1" uiPriority="69" />
+    <lsdException name="Dark List Accent 1" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 1" uiPriority="71" />
+    <lsdException name="Colorful List Accent 1" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 1" uiPriority="73" />
+    <lsdException name="Light Shading Accent 2" uiPriority="60" />
+    <lsdException name="Light List Accent 2" uiPriority="61" />
+    <lsdException name="Light Grid Accent 2" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 2" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 2" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 2" uiPriority="65" />
+    <lsdException name="Medium List 2 Accent 2" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 2" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 2" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 2" uiPriority="69" />
+    <lsdException name="Dark List Accent 2" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 2" uiPriority="71" />
+    <lsdException name="Colorful List Accent 2" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 2" uiPriority="73" />
+    <lsdException name="Light Shading Accent 3" uiPriority="60" />
+    <lsdException name="Light List Accent 3" uiPriority="61" />
+    <lsdException name="Light Grid Accent 3" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 3" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 3" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 3" uiPriority="65" />
+    <lsdException name="Medium List 2 Accent 3" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 3" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 3" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 3" uiPriority="69" />
+    <lsdException name="Dark List Accent 3" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 3" uiPriority="71" />
+    <lsdException name="Colorful List Accent 3" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 3" uiPriority="73" />
+    <lsdException name="Light Shading Accent 4" uiPriority="60" />
+    <lsdException name="Light List Accent 4" uiPriority="61" />
+    <lsdException name="Light Grid Accent 4" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 4" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 4" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 4" uiPriority="65" />
+    <lsdException name="Medium List 2 Accent 4" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 4" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 4" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 4" uiPriority="69" />
+    <lsdException name="Dark List Accent 4" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 4" uiPriority="71" />
+    <lsdException name="Colorful List Accent 4" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 4" uiPriority="73" />
+    <lsdException name="Light Shading Accent 5" uiPriority="60" />
+    <lsdException name="Light List Accent 5" uiPriority="61" />
+    <lsdException name="Light Grid Accent 5" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 5" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 5" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 5" uiPriority="65" />
+    <lsdException name="Medium List 2 Accent 5" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 5" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 5" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 5" uiPriority="69" />
+    <lsdException name="Dark List Accent 5" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 5" uiPriority="71" />
+    <lsdException name="Colorful List Accent 5" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 5" uiPriority="73" />
+    <lsdException name="Light Shading Accent 6" uiPriority="60" />
+    <lsdException name="Light List Accent 6" uiPriority="61" />
+    <lsdException name="Light Grid Accent 6" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 6" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 6" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 6" uiPriority="65" />
+    <lsdException name="Medium List 2 Accent 6" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 6" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 6" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 6" uiPriority="69" />
+    <lsdException name="Dark List Accent 6" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 6" uiPriority="71" />
+    <lsdException name="Colorful List Accent 6" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 6" uiPriority="73" />
+    <lsdException name="Subtle Emphasis" uiPriority="19" qFormat="1" />
+    <lsdException name="Intense Emphasis" uiPriority="21" qFormat="1" />
+    <lsdException name="Subtle Reference" uiPriority="31" qFormat="1" />
+    <lsdException name="Intense Reference" uiPriority="32" qFormat="1" />
+    <lsdException name="Book Title" uiPriority="33" qFormat="1" />
+    <lsdException name="Bibliography" semiHidden="1" uiPriority="37" unhideWhenUsed="1" />
+    <lsdException name="TOC Heading" semiHidden="1" uiPriority="39" unhideWhenUsed="1" qFormat="1" />
+  </latentStyles>
+  <style type="paragraph" default="1" styleId="Normal">
+    <name val="Normal" />
+    <qFormat />
+    <rPr>
+      <sz val="24" />
+      <szCs val="24" />
+    </rPr>
+  </style>
+  <style type="character" default="1" styleId="DefaultParagraphFont">
+    <name val="Default Paragraph Font" />
+    <semiHidden />
+  </style>
+  <style type="table" default="1" styleId="TableNormal">
+    <name val="Normal Table" />
+    <semiHidden />
+    <tblPr>
+      <tblInd w="0" type="dxa" />
+      <tblCellMar>
+        <top w="0" type="dxa" />
+        <left w="108" type="dxa" />
+        <bottom w="0" type="dxa" />
+        <right w="108" type="dxa" />
+      </tblCellMar>
+    </tblPr>
+  </style>
+  <style type="numbering" default="1" styleId="NoList">
+    <name val="No List" />
+    <semiHidden />
+  </style>
+</styles>

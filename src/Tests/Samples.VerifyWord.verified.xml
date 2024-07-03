@@ -1,1 +1,456 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?><w:styles xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Liberation Serif" w:eastAsia="Droid Sans Fallback" w:hAnsi="Liberation Serif" w:cs="FreeSans" /><w:sz w:val="24" /><w:szCs w:val="24" /><w:lang w:val="en-US" w:eastAsia="zh-CN" w:bidi="hi-IN" /></w:rPr></w:rPrDefault><w:pPrDefault /></w:docDefaults><w:latentStyles w:defLockedState="0" w:defUIPriority="99" w:defSemiHidden="1" w:defUnhideWhenUsed="1" w:defQFormat="0" w:count="267"><w:lsdException w:name="Normal" w:semiHidden="0" w:uiPriority="0" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="heading 1" w:semiHidden="0" w:uiPriority="9" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="heading 2" w:uiPriority="9" w:qFormat="1" /><w:lsdException w:name="heading 3" w:uiPriority="9" w:qFormat="1" /><w:lsdException w:name="heading 4" w:uiPriority="9" w:qFormat="1" /><w:lsdException w:name="heading 5" w:uiPriority="9" w:qFormat="1" /><w:lsdException w:name="heading 6" w:uiPriority="9" w:qFormat="1" /><w:lsdException w:name="heading 7" w:uiPriority="9" w:qFormat="1" /><w:lsdException w:name="heading 8" w:uiPriority="9" w:qFormat="1" /><w:lsdException w:name="heading 9" w:uiPriority="9" w:qFormat="1" /><w:lsdException w:name="toc 1" w:uiPriority="39" /><w:lsdException w:name="toc 2" w:uiPriority="39" /><w:lsdException w:name="toc 3" w:uiPriority="39" /><w:lsdException w:name="toc 4" w:uiPriority="39" /><w:lsdException w:name="toc 5" w:uiPriority="39" /><w:lsdException w:name="toc 6" w:uiPriority="39" /><w:lsdException w:name="toc 7" w:uiPriority="39" /><w:lsdException w:name="toc 8" w:uiPriority="39" /><w:lsdException w:name="toc 9" w:uiPriority="39" /><w:lsdException w:name="caption" w:uiPriority="35" w:qFormat="1" /><w:lsdException w:name="Title" w:semiHidden="0" w:uiPriority="10" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Default Paragraph Font" w:uiPriority="1" /><w:lsdException w:name="Subtitle" w:semiHidden="0" w:uiPriority="11" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Strong" w:semiHidden="0" w:uiPriority="22" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Emphasis" w:semiHidden="0" w:uiPriority="20" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Table Grid" w:semiHidden="0" w:uiPriority="59" w:unhideWhenUsed="0" /><w:lsdException w:name="Placeholder Text" w:unhideWhenUsed="0" /><w:lsdException w:name="No Spacing" w:semiHidden="0" w:uiPriority="1" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Light Shading" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0" /><w:lsdException w:name="Light List" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Grid" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 1" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 2" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 1" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 2" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 1" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 2" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 3" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0" /><w:lsdException w:name="Dark List" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Shading" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful List" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Grid" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Shading Accent 1" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0" /><w:lsdException w:name="Light List Accent 1" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Grid Accent 1" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 1 Accent 1" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 2 Accent 1" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 1 Accent 1" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0" /><w:lsdException w:name="Revision" w:unhideWhenUsed="0" /><w:lsdException w:name="List Paragraph" w:semiHidden="0" w:uiPriority="34" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Quote" w:semiHidden="0" w:uiPriority="29" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Intense Quote" w:semiHidden="0" w:uiPriority="30" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Medium List 2 Accent 1" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 1 Accent 1" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 2 Accent 1" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 3 Accent 1" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0" /><w:lsdException w:name="Dark List Accent 1" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Shading Accent 1" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful List Accent 1" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Grid Accent 1" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Shading Accent 2" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0" /><w:lsdException w:name="Light List Accent 2" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Grid Accent 2" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 1 Accent 2" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 2 Accent 2" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 1 Accent 2" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 2 Accent 2" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 1 Accent 2" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 2 Accent 2" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 3 Accent 2" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0" /><w:lsdException w:name="Dark List Accent 2" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Shading Accent 2" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful List Accent 2" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Grid Accent 2" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Shading Accent 3" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0" /><w:lsdException w:name="Light List Accent 3" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Grid Accent 3" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 1 Accent 3" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 2 Accent 3" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 1 Accent 3" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 2 Accent 3" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 1 Accent 3" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 2 Accent 3" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 3 Accent 3" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0" /><w:lsdException w:name="Dark List Accent 3" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Shading Accent 3" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful List Accent 3" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Grid Accent 3" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Shading Accent 4" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0" /><w:lsdException w:name="Light List Accent 4" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Grid Accent 4" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 1 Accent 4" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 2 Accent 4" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 1 Accent 4" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 2 Accent 4" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 1 Accent 4" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 2 Accent 4" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 3 Accent 4" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0" /><w:lsdException w:name="Dark List Accent 4" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Shading Accent 4" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful List Accent 4" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Grid Accent 4" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Shading Accent 5" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0" /><w:lsdException w:name="Light List Accent 5" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Grid Accent 5" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 1 Accent 5" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 2 Accent 5" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 1 Accent 5" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 2 Accent 5" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 1 Accent 5" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 2 Accent 5" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 3 Accent 5" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0" /><w:lsdException w:name="Dark List Accent 5" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Shading Accent 5" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful List Accent 5" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Grid Accent 5" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Shading Accent 6" w:semiHidden="0" w:uiPriority="60" w:unhideWhenUsed="0" /><w:lsdException w:name="Light List Accent 6" w:semiHidden="0" w:uiPriority="61" w:unhideWhenUsed="0" /><w:lsdException w:name="Light Grid Accent 6" w:semiHidden="0" w:uiPriority="62" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 1 Accent 6" w:semiHidden="0" w:uiPriority="63" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Shading 2 Accent 6" w:semiHidden="0" w:uiPriority="64" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 1 Accent 6" w:semiHidden="0" w:uiPriority="65" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium List 2 Accent 6" w:semiHidden="0" w:uiPriority="66" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 1 Accent 6" w:semiHidden="0" w:uiPriority="67" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 2 Accent 6" w:semiHidden="0" w:uiPriority="68" w:unhideWhenUsed="0" /><w:lsdException w:name="Medium Grid 3 Accent 6" w:semiHidden="0" w:uiPriority="69" w:unhideWhenUsed="0" /><w:lsdException w:name="Dark List Accent 6" w:semiHidden="0" w:uiPriority="70" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Shading Accent 6" w:semiHidden="0" w:uiPriority="71" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful List Accent 6" w:semiHidden="0" w:uiPriority="72" w:unhideWhenUsed="0" /><w:lsdException w:name="Colorful Grid Accent 6" w:semiHidden="0" w:uiPriority="73" w:unhideWhenUsed="0" /><w:lsdException w:name="Subtle Emphasis" w:semiHidden="0" w:uiPriority="19" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Intense Emphasis" w:semiHidden="0" w:uiPriority="21" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Subtle Reference" w:semiHidden="0" w:uiPriority="31" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Intense Reference" w:semiHidden="0" w:uiPriority="32" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Book Title" w:semiHidden="0" w:uiPriority="33" w:unhideWhenUsed="0" w:qFormat="1" /><w:lsdException w:name="Bibliography" w:uiPriority="37" /><w:lsdException w:name="TOC Heading" w:uiPriority="39" w:qFormat="1" /></w:latentStyles><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal" /><w:pPr><w:widowControl w:val="0" /><w:suppressAutoHyphens /><w:bidi w:val="0" /><w:jc w:val="left" /></w:pPr><w:rPr><w:rFonts w:ascii="Liberation Serif;Times New Roma" w:eastAsia="Droid Sans Fallback" w:hAnsi="Liberation Serif;Times New Roma" w:cs="FreeSans" /><w:color w:val="00000A" /><w:sz w:val="24" /><w:szCs w:val="24" /><w:lang w:val="en-US" w:eastAsia="zh-CN" w:bidi="hi-IN" /></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1" /><w:basedOn w:val="Heading" /><w:pPr><w:spacing w:before="240" w:after="120" /><w:outlineLvl w:val="0" /></w:pPr><w:rPr><w:b /><w:bCs /><w:sz w:val="36" /><w:szCs w:val="36" /></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading2"><w:name w:val="heading 2" /><w:basedOn w:val="Heading" /><w:pPr><w:spacing w:before="200" w:after="120" /><w:outlineLvl w:val="1" /></w:pPr><w:rPr><w:b /><w:bCs /><w:sz w:val="32" /><w:szCs w:val="32" /></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading3"><w:name w:val="heading 3" /><w:basedOn w:val="Heading" /><w:pPr><w:spacing w:before="140" w:after="120" /><w:outlineLvl w:val="2" /></w:pPr><w:rPr><w:b /><w:bCs /><w:color w:val="808080" /><w:sz w:val="28" /><w:szCs w:val="28" /></w:rPr></w:style><w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont"><w:name w:val="Default Paragraph Font" /><w:uiPriority w:val="1" /><w:semiHidden /><w:unhideWhenUsed /></w:style><w:style w:type="table" w:default="1" w:styleId="TableNormal"><w:name w:val="Normal Table" /><w:uiPriority w:val="99" /><w:semiHidden /><w:unhideWhenUsed /><w:qFormat /><w:tblPr><w:tblInd w:w="0" w:type="dxa" /><w:tblCellMar><w:top w:w="0" w:type="dxa" /><w:left w:w="108" w:type="dxa" /><w:bottom w:w="0" w:type="dxa" /><w:right w:w="108" w:type="dxa" /></w:tblCellMar></w:tblPr></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num1z0"><w:name w:val="WW8Num1z0" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num1z1"><w:name w:val="WW8Num1z1" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num1z2"><w:name w:val="WW8Num1z2" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num1z3"><w:name w:val="WW8Num1z3" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num1z4"><w:name w:val="WW8Num1z4" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num1z5"><w:name w:val="WW8Num1z5" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num1z6"><w:name w:val="WW8Num1z6" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num1z7"><w:name w:val="WW8Num1z7" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num1z8"><w:name w:val="WW8Num1z8" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num2z0"><w:name w:val="WW8Num2z0" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num2z1"><w:name w:val="WW8Num2z1" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num2z2"><w:name w:val="WW8Num2z2" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num2z3"><w:name w:val="WW8Num2z3" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num2z4"><w:name w:val="WW8Num2z4" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num2z5"><w:name w:val="WW8Num2z5" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num2z6"><w:name w:val="WW8Num2z6" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num2z7"><w:name w:val="WW8Num2z7" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num2z8"><w:name w:val="WW8Num2z8" /></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num3z0"><w:name w:val="WW8Num3z0" /><w:rPr><w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:cs="OpenSymbol;Arial Unicode MS" /></w:rPr></w:style><w:style w:type="character" w:customStyle="1" w:styleId="WW8Num3z1"><w:name w:val="WW8Num3z1" /><w:rPr><w:rFonts w:ascii="OpenSymbol;Arial Unicode MS" w:hAnsi="OpenSymbol;Arial Unicode MS" w:cs="OpenSymbol;Arial Unicode MS" /></w:rPr></w:style><w:style w:type="character" w:customStyle="1" w:styleId="Bullets"><w:name w:val="Bullets" /><w:rPr><w:rFonts w:ascii="OpenSymbol;Arial Unicode MS" w:eastAsia="OpenSymbol;Arial Unicode MS" w:hAnsi="OpenSymbol;Arial Unicode MS" w:cs="OpenSymbol;Arial Unicode MS" /></w:rPr></w:style><w:style w:type="character" w:customStyle="1" w:styleId="InternetLink"><w:name w:val="Internet Link" /><w:rPr><w:color w:val="000080" /><w:u w:val="single" /><w:lang w:val="" w:eastAsia="" w:bidi="" /></w:rPr></w:style><w:style w:type="character" w:customStyle="1" w:styleId="VisitedInternetLink"><w:name w:val="Visited Internet Link" /><w:rPr><w:color w:val="800000" /><w:u w:val="single" /><w:lang w:val="" w:eastAsia="" w:bidi="" /></w:rPr></w:style><w:style w:type="character" w:customStyle="1" w:styleId="ListLabel1"><w:name w:val="ListLabel 1" /><w:rPr><w:rFonts w:cs="Symbol" /></w:rPr></w:style><w:style w:type="character" w:customStyle="1" w:styleId="ListLabel2"><w:name w:val="ListLabel 2" /><w:rPr><w:rFonts w:cs="OpenSymbol" /></w:rPr></w:style><w:style w:type="paragraph" w:customStyle="1" w:styleId="Heading"><w:name w:val="Heading" /><w:basedOn w:val="Normal" /><w:next w:val="TextBody" /><w:pPr><w:keepNext /><w:spacing w:before="240" w:after="120" /></w:pPr><w:rPr><w:rFonts w:ascii="Liberation Sans;Arial" w:eastAsia="Droid Sans Fallback" w:hAnsi="Liberation Sans;Arial" w:cs="FreeSans" /><w:sz w:val="28" /><w:szCs w:val="28" /></w:rPr></w:style><w:style w:type="paragraph" w:customStyle="1" w:styleId="TextBody"><w:name w:val="Text Body" /><w:basedOn w:val="Normal" /><w:pPr><w:spacing w:before="0" w:after="140" w:line="288" w:lineRule="auto" /></w:pPr></w:style><w:style w:type="paragraph" w:styleId="List"><w:name w:val="List" /><w:basedOn w:val="TextBody" /><w:rPr><w:rFonts w:cs="FreeSans" /></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Caption"><w:name w:val="caption" /><w:basedOn w:val="Normal" /><w:pPr><w:suppressLineNumbers /><w:spacing w:before="120" w:after="120" /></w:pPr><w:rPr><w:rFonts w:cs="FreeSans" /><w:i /><w:iCs /><w:sz w:val="24" /><w:szCs w:val="24" /></w:rPr></w:style><w:style w:type="paragraph" w:customStyle="1" w:styleId="Index"><w:name w:val="Index" /><w:basedOn w:val="Normal" /><w:pPr><w:suppressLineNumbers /></w:pPr><w:rPr><w:rFonts w:cs="FreeSans" /></w:rPr></w:style><w:style w:type="paragraph" w:customStyle="1" w:styleId="Quotations"><w:name w:val="Quotations" /><w:basedOn w:val="Normal" /><w:pPr><w:spacing w:before="0" w:after="283" /><w:ind w:left="567" w:right="567" w:firstLine="0" /></w:pPr></w:style><w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title" /><w:basedOn w:val="Heading" /><w:pPr><w:jc w:val="center" /></w:pPr><w:rPr><w:b /><w:bCs /><w:sz w:val="56" /><w:szCs w:val="56" /></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Subtitle"><w:name w:val="Subtitle" /><w:basedOn w:val="Heading" /><w:pPr><w:spacing w:before="60" w:after="120" /><w:jc w:val="center" /></w:pPr><w:rPr><w:sz w:val="36" /><w:szCs w:val="36" /></w:rPr></w:style><w:style w:type="paragraph" w:customStyle="1" w:styleId="TableContents"><w:name w:val="Table Contents" /><w:basedOn w:val="Normal" /><w:pPr><w:suppressLineNumbers /></w:pPr></w:style><w:style w:type="paragraph" w:customStyle="1" w:styleId="TableHeading"><w:name w:val="Table Heading" /><w:basedOn w:val="TableContents" /><w:pPr><w:suppressLineNumbers /><w:jc w:val="center" /></w:pPr><w:rPr><w:b /><w:bCs /></w:rPr></w:style><w:style w:type="numbering" w:customStyle="1" w:styleId="WW8Num1"><w:name w:val="WW8Num1" /></w:style><w:style w:type="numbering" w:customStyle="1" w:styleId="WW8Num2"><w:name w:val="WW8Num2" /></w:style><w:style w:type="numbering" w:customStyle="1" w:styleId="WW8Num3"><w:name w:val="WW8Num3" /></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name w:val="Hyperlink" /><w:basedOn w:val="DefaultParagraphFont" /><w:rsid w:val="00EF7B96" /><w:rPr><w:color w:val="0000FF" /><w:u w:val="single" /></w:rPr></w:style></w:styles>
+﻿<styles r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <docDefaults>
+    <rPrDefault>
+      <rPr>
+        <rFonts ascii="Liberation Serif" eastAsia="Droid Sans Fallback" hAnsi="Liberation Serif" cs="FreeSans" />
+        <sz val="24" />
+        <szCs val="24" />
+        <lang val="en-US" eastAsia="zh-CN" bidi="hi-IN" />
+      </rPr>
+    </rPrDefault>
+    <pPrDefault />
+  </docDefaults>
+  <latentStyles defLockedState="0" defUIPriority="99" defSemiHidden="1" defUnhideWhenUsed="1" defQFormat="0" count="267">
+    <lsdException name="Normal" semiHidden="0" uiPriority="0" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="heading 1" semiHidden="0" uiPriority="9" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="heading 2" uiPriority="9" qFormat="1" />
+    <lsdException name="heading 3" uiPriority="9" qFormat="1" />
+    <lsdException name="heading 4" uiPriority="9" qFormat="1" />
+    <lsdException name="heading 5" uiPriority="9" qFormat="1" />
+    <lsdException name="heading 6" uiPriority="9" qFormat="1" />
+    <lsdException name="heading 7" uiPriority="9" qFormat="1" />
+    <lsdException name="heading 8" uiPriority="9" qFormat="1" />
+    <lsdException name="heading 9" uiPriority="9" qFormat="1" />
+    <lsdException name="toc 1" uiPriority="39" />
+    <lsdException name="toc 2" uiPriority="39" />
+    <lsdException name="toc 3" uiPriority="39" />
+    <lsdException name="toc 4" uiPriority="39" />
+    <lsdException name="toc 5" uiPriority="39" />
+    <lsdException name="toc 6" uiPriority="39" />
+    <lsdException name="toc 7" uiPriority="39" />
+    <lsdException name="toc 8" uiPriority="39" />
+    <lsdException name="toc 9" uiPriority="39" />
+    <lsdException name="caption" uiPriority="35" qFormat="1" />
+    <lsdException name="Title" semiHidden="0" uiPriority="10" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Default Paragraph Font" uiPriority="1" />
+    <lsdException name="Subtitle" semiHidden="0" uiPriority="11" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Strong" semiHidden="0" uiPriority="22" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Emphasis" semiHidden="0" uiPriority="20" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Table Grid" semiHidden="0" uiPriority="59" unhideWhenUsed="0" />
+    <lsdException name="Placeholder Text" unhideWhenUsed="0" />
+    <lsdException name="No Spacing" semiHidden="0" uiPriority="1" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Light Shading" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
+    <lsdException name="Light List" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
+    <lsdException name="Light Grid" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 1" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 2" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
+    <lsdException name="Medium List 1" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
+    <lsdException name="Medium List 2" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 1" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 2" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 3" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
+    <lsdException name="Dark List" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
+    <lsdException name="Colorful Shading" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
+    <lsdException name="Colorful List" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
+    <lsdException name="Colorful Grid" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
+    <lsdException name="Light Shading Accent 1" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
+    <lsdException name="Light List Accent 1" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
+    <lsdException name="Light Grid Accent 1" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 1 Accent 1" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 2 Accent 1" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
+    <lsdException name="Medium List 1 Accent 1" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
+    <lsdException name="Revision" unhideWhenUsed="0" />
+    <lsdException name="List Paragraph" semiHidden="0" uiPriority="34" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Quote" semiHidden="0" uiPriority="29" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Intense Quote" semiHidden="0" uiPriority="30" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Medium List 2 Accent 1" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 1 Accent 1" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 2 Accent 1" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 3 Accent 1" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
+    <lsdException name="Dark List Accent 1" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
+    <lsdException name="Colorful Shading Accent 1" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
+    <lsdException name="Colorful List Accent 1" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
+    <lsdException name="Colorful Grid Accent 1" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
+    <lsdException name="Light Shading Accent 2" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
+    <lsdException name="Light List Accent 2" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
+    <lsdException name="Light Grid Accent 2" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 1 Accent 2" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 2 Accent 2" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
+    <lsdException name="Medium List 1 Accent 2" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
+    <lsdException name="Medium List 2 Accent 2" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 1 Accent 2" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 2 Accent 2" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 3 Accent 2" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
+    <lsdException name="Dark List Accent 2" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
+    <lsdException name="Colorful Shading Accent 2" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
+    <lsdException name="Colorful List Accent 2" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
+    <lsdException name="Colorful Grid Accent 2" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
+    <lsdException name="Light Shading Accent 3" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
+    <lsdException name="Light List Accent 3" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
+    <lsdException name="Light Grid Accent 3" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 1 Accent 3" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 2 Accent 3" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
+    <lsdException name="Medium List 1 Accent 3" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
+    <lsdException name="Medium List 2 Accent 3" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 1 Accent 3" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 2 Accent 3" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 3 Accent 3" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
+    <lsdException name="Dark List Accent 3" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
+    <lsdException name="Colorful Shading Accent 3" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
+    <lsdException name="Colorful List Accent 3" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
+    <lsdException name="Colorful Grid Accent 3" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
+    <lsdException name="Light Shading Accent 4" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
+    <lsdException name="Light List Accent 4" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
+    <lsdException name="Light Grid Accent 4" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 1 Accent 4" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 2 Accent 4" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
+    <lsdException name="Medium List 1 Accent 4" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
+    <lsdException name="Medium List 2 Accent 4" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 1 Accent 4" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 2 Accent 4" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 3 Accent 4" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
+    <lsdException name="Dark List Accent 4" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
+    <lsdException name="Colorful Shading Accent 4" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
+    <lsdException name="Colorful List Accent 4" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
+    <lsdException name="Colorful Grid Accent 4" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
+    <lsdException name="Light Shading Accent 5" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
+    <lsdException name="Light List Accent 5" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
+    <lsdException name="Light Grid Accent 5" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 1 Accent 5" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 2 Accent 5" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
+    <lsdException name="Medium List 1 Accent 5" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
+    <lsdException name="Medium List 2 Accent 5" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 1 Accent 5" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 2 Accent 5" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 3 Accent 5" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
+    <lsdException name="Dark List Accent 5" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
+    <lsdException name="Colorful Shading Accent 5" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
+    <lsdException name="Colorful List Accent 5" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
+    <lsdException name="Colorful Grid Accent 5" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
+    <lsdException name="Light Shading Accent 6" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
+    <lsdException name="Light List Accent 6" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
+    <lsdException name="Light Grid Accent 6" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 1 Accent 6" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
+    <lsdException name="Medium Shading 2 Accent 6" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
+    <lsdException name="Medium List 1 Accent 6" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
+    <lsdException name="Medium List 2 Accent 6" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 1 Accent 6" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 2 Accent 6" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
+    <lsdException name="Medium Grid 3 Accent 6" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
+    <lsdException name="Dark List Accent 6" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
+    <lsdException name="Colorful Shading Accent 6" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
+    <lsdException name="Colorful List Accent 6" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
+    <lsdException name="Colorful Grid Accent 6" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
+    <lsdException name="Subtle Emphasis" semiHidden="0" uiPriority="19" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Intense Emphasis" semiHidden="0" uiPriority="21" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Subtle Reference" semiHidden="0" uiPriority="31" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Intense Reference" semiHidden="0" uiPriority="32" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Book Title" semiHidden="0" uiPriority="33" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Bibliography" uiPriority="37" />
+    <lsdException name="TOC Heading" uiPriority="39" qFormat="1" />
+  </latentStyles>
+  <style type="paragraph" default="1" styleId="Normal">
+    <name val="Normal" />
+    <pPr>
+      <widowControl val="0" />
+      <suppressAutoHyphens />
+      <bidi val="0" />
+      <jc val="left" />
+    </pPr>
+    <rPr>
+      <rFonts ascii="Liberation Serif;Times New Roma" eastAsia="Droid Sans Fallback" hAnsi="Liberation Serif;Times New Roma" cs="FreeSans" />
+      <color val="00000A" />
+      <sz val="24" />
+      <szCs val="24" />
+      <lang val="en-US" eastAsia="zh-CN" bidi="hi-IN" />
+    </rPr>
+  </style>
+  <style type="paragraph" styleId="Heading1">
+    <name val="heading 1" />
+    <basedOn val="Heading" />
+    <pPr>
+      <spacing before="240" after="120" />
+      <outlineLvl val="0" />
+    </pPr>
+    <rPr>
+      <b />
+      <bCs />
+      <sz val="36" />
+      <szCs val="36" />
+    </rPr>
+  </style>
+  <style type="paragraph" styleId="Heading2">
+    <name val="heading 2" />
+    <basedOn val="Heading" />
+    <pPr>
+      <spacing before="200" after="120" />
+      <outlineLvl val="1" />
+    </pPr>
+    <rPr>
+      <b />
+      <bCs />
+      <sz val="32" />
+      <szCs val="32" />
+    </rPr>
+  </style>
+  <style type="paragraph" styleId="Heading3">
+    <name val="heading 3" />
+    <basedOn val="Heading" />
+    <pPr>
+      <spacing before="140" after="120" />
+      <outlineLvl val="2" />
+    </pPr>
+    <rPr>
+      <b />
+      <bCs />
+      <color val="808080" />
+      <sz val="28" />
+      <szCs val="28" />
+    </rPr>
+  </style>
+  <style type="character" default="1" styleId="DefaultParagraphFont">
+    <name val="Default Paragraph Font" />
+    <uiPriority val="1" />
+    <semiHidden />
+    <unhideWhenUsed />
+  </style>
+  <style type="table" default="1" styleId="TableNormal">
+    <name val="Normal Table" />
+    <uiPriority val="99" />
+    <semiHidden />
+    <unhideWhenUsed />
+    <qFormat />
+    <tblPr>
+      <tblInd w="0" type="dxa" />
+      <tblCellMar>
+        <top w="0" type="dxa" />
+        <left w="108" type="dxa" />
+        <bottom w="0" type="dxa" />
+        <right w="108" type="dxa" />
+      </tblCellMar>
+    </tblPr>
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num1z0">
+    <name val="WW8Num1z0" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num1z1">
+    <name val="WW8Num1z1" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num1z2">
+    <name val="WW8Num1z2" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num1z3">
+    <name val="WW8Num1z3" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num1z4">
+    <name val="WW8Num1z4" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num1z5">
+    <name val="WW8Num1z5" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num1z6">
+    <name val="WW8Num1z6" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num1z7">
+    <name val="WW8Num1z7" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num1z8">
+    <name val="WW8Num1z8" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num2z0">
+    <name val="WW8Num2z0" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num2z1">
+    <name val="WW8Num2z1" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num2z2">
+    <name val="WW8Num2z2" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num2z3">
+    <name val="WW8Num2z3" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num2z4">
+    <name val="WW8Num2z4" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num2z5">
+    <name val="WW8Num2z5" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num2z6">
+    <name val="WW8Num2z6" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num2z7">
+    <name val="WW8Num2z7" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num2z8">
+    <name val="WW8Num2z8" />
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num3z0">
+    <name val="WW8Num3z0" />
+    <rPr>
+      <rFonts ascii="Symbol" hAnsi="Symbol" cs="OpenSymbol;Arial Unicode MS" />
+    </rPr>
+  </style>
+  <style type="character" customStyle="1" styleId="WW8Num3z1">
+    <name val="WW8Num3z1" />
+    <rPr>
+      <rFonts ascii="OpenSymbol;Arial Unicode MS" hAnsi="OpenSymbol;Arial Unicode MS" cs="OpenSymbol;Arial Unicode MS" />
+    </rPr>
+  </style>
+  <style type="character" customStyle="1" styleId="Bullets">
+    <name val="Bullets" />
+    <rPr>
+      <rFonts ascii="OpenSymbol;Arial Unicode MS" eastAsia="OpenSymbol;Arial Unicode MS" hAnsi="OpenSymbol;Arial Unicode MS" cs="OpenSymbol;Arial Unicode MS" />
+    </rPr>
+  </style>
+  <style type="character" customStyle="1" styleId="InternetLink">
+    <name val="Internet Link" />
+    <rPr>
+      <color val="000080" />
+      <u val="single" />
+      <lang val="" eastAsia="" bidi="" />
+    </rPr>
+  </style>
+  <style type="character" customStyle="1" styleId="VisitedInternetLink">
+    <name val="Visited Internet Link" />
+    <rPr>
+      <color val="800000" />
+      <u val="single" />
+      <lang val="" eastAsia="" bidi="" />
+    </rPr>
+  </style>
+  <style type="character" customStyle="1" styleId="ListLabel1">
+    <name val="ListLabel 1" />
+    <rPr>
+      <rFonts cs="Symbol" />
+    </rPr>
+  </style>
+  <style type="character" customStyle="1" styleId="ListLabel2">
+    <name val="ListLabel 2" />
+    <rPr>
+      <rFonts cs="OpenSymbol" />
+    </rPr>
+  </style>
+  <style type="paragraph" customStyle="1" styleId="Heading">
+    <name val="Heading" />
+    <basedOn val="Normal" />
+    <next val="TextBody" />
+    <pPr>
+      <keepNext />
+      <spacing before="240" after="120" />
+    </pPr>
+    <rPr>
+      <rFonts ascii="Liberation Sans;Arial" eastAsia="Droid Sans Fallback" hAnsi="Liberation Sans;Arial" cs="FreeSans" />
+      <sz val="28" />
+      <szCs val="28" />
+    </rPr>
+  </style>
+  <style type="paragraph" customStyle="1" styleId="TextBody">
+    <name val="Text Body" />
+    <basedOn val="Normal" />
+    <pPr>
+      <spacing before="0" after="140" line="288" lineRule="auto" />
+    </pPr>
+  </style>
+  <style type="paragraph" styleId="List">
+    <name val="List" />
+    <basedOn val="TextBody" />
+    <rPr>
+      <rFonts cs="FreeSans" />
+    </rPr>
+  </style>
+  <style type="paragraph" styleId="Caption">
+    <name val="caption" />
+    <basedOn val="Normal" />
+    <pPr>
+      <suppressLineNumbers />
+      <spacing before="120" after="120" />
+    </pPr>
+    <rPr>
+      <rFonts cs="FreeSans" />
+      <i />
+      <iCs />
+      <sz val="24" />
+      <szCs val="24" />
+    </rPr>
+  </style>
+  <style type="paragraph" customStyle="1" styleId="Index">
+    <name val="Index" />
+    <basedOn val="Normal" />
+    <pPr>
+      <suppressLineNumbers />
+    </pPr>
+    <rPr>
+      <rFonts cs="FreeSans" />
+    </rPr>
+  </style>
+  <style type="paragraph" customStyle="1" styleId="Quotations">
+    <name val="Quotations" />
+    <basedOn val="Normal" />
+    <pPr>
+      <spacing before="0" after="283" />
+      <ind left="567" right="567" firstLine="0" />
+    </pPr>
+  </style>
+  <style type="paragraph" styleId="Title">
+    <name val="Title" />
+    <basedOn val="Heading" />
+    <pPr>
+      <jc val="center" />
+    </pPr>
+    <rPr>
+      <b />
+      <bCs />
+      <sz val="56" />
+      <szCs val="56" />
+    </rPr>
+  </style>
+  <style type="paragraph" styleId="Subtitle">
+    <name val="Subtitle" />
+    <basedOn val="Heading" />
+    <pPr>
+      <spacing before="60" after="120" />
+      <jc val="center" />
+    </pPr>
+    <rPr>
+      <sz val="36" />
+      <szCs val="36" />
+    </rPr>
+  </style>
+  <style type="paragraph" customStyle="1" styleId="TableContents">
+    <name val="Table Contents" />
+    <basedOn val="Normal" />
+    <pPr>
+      <suppressLineNumbers />
+    </pPr>
+  </style>
+  <style type="paragraph" customStyle="1" styleId="TableHeading">
+    <name val="Table Heading" />
+    <basedOn val="TableContents" />
+    <pPr>
+      <suppressLineNumbers />
+      <jc val="center" />
+    </pPr>
+    <rPr>
+      <b />
+      <bCs />
+    </rPr>
+  </style>
+  <style type="numbering" customStyle="1" styleId="WW8Num1">
+    <name val="WW8Num1" />
+  </style>
+  <style type="numbering" customStyle="1" styleId="WW8Num2">
+    <name val="WW8Num2" />
+  </style>
+  <style type="numbering" customStyle="1" styleId="WW8Num3">
+    <name val="WW8Num3" />
+  </style>
+  <style type="character" styleId="Hyperlink">
+    <name val="Hyperlink" />
+    <basedOn val="DefaultParagraphFont" />
+    <rsid val="00EF7B96" />
+    <rPr>
+      <color val="0000FF" />
+      <u val="single" />
+    </rPr>
+  </style>
+</styles>
