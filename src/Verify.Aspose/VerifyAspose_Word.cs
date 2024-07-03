@@ -160,15 +160,11 @@ public static partial class VerifyAspose
 
 
     };
-    static Dictionary<string, string> attributeRenames = new()
-    {
-        { "styleId", "Id" },
-    };
     static void CleanupXml(XDocument xmlDocument)
     {
         foreach (var node in xmlDocument.Descendants().ToList())
         {
-            node.RemoveNamespaceAttributes();
+            CleanupAttributes(node);
             var name = FixName(node);
 
             if (name == "name" && node.Parent?.Name == "style")
@@ -182,22 +178,42 @@ public static partial class VerifyAspose
                 continue;
             }
 
-            if (RemoveComplexSciptIfSameAsNonComplex(node))
+            if (RemoveComplexScriptIfSameAsNonComplex(node))
             {
                 continue;
             }
+        }
+    }
 
-            var attributes = node.Attributes().ToList();
+    // static Dictionary<string, string> attributeRenames = new()
+    // {
+    //     { "styleId", "Id" },
+    // };
+    static void CleanupAttributes(XElement node)
+    {
+        var attributes = node.Attributes().ToList();
 
-            foreach (var attribute in attributes)
+        foreach (var attribute in attributes)
+        {
+            if (ShouldRemoveAttribute(attribute))
             {
-                if (ShouldRemoveAttribute(attribute))
-                {
-                    attribute.Remove();
-                }
+                attribute.Remove();
+                continue;
+            }
+            // Create and add new attributes with local name only for those with a namespace
+            if (attribute.Name.Namespace != XNamespace.None)
+            {
+                node.Add(new XAttribute(attribute.Name.LocalName, attribute.Value));
+                attribute.Remove();
+                continue;
             }
         }
     }
+
+    static bool ShouldRemoveAttribute(XAttribute attribute) =>
+        attribute.IsNamespaceDeclaration ||
+        attribute.Name.LocalName == "unhideWhenUsed" && attribute.Value == "0" ||
+        attribute.Name.LocalName == "semiHidden" && attribute.Value == "0";
 
     static string FixName(XElement node)
     {
@@ -215,30 +231,7 @@ public static partial class VerifyAspose
     }
 
 
-    static void RemoveNamespaceAttributes(this XElement node)
-    {
-        var attributes = node.NamespaceAttributes();
-
-        // Create and add new attributes with local name only for those with a namespace
-        foreach (var attribute in attributes
-                     .Where(_ => _.Name.Namespace != XNamespace.None))
-        {
-            node.Add(new XAttribute(attribute.Name.LocalName, attribute.Value));
-        }
-
-        // Remove the original attributes
-        attributes.Remove();
-    }
-
-    static List<XAttribute> NamespaceAttributes(this XElement node) =>
-        // Identify xmlns:* attributes and attributes with a namespace
-        node
-            .Attributes()
-            .Where(_ => _.IsNamespaceDeclaration ||
-                        _.Name.Namespace != XNamespace.None)
-            .ToList();
-
-    static bool RemoveComplexSciptIfSameAsNonComplex(XElement node)
+    static bool RemoveComplexScriptIfSameAsNonComplex(XElement node)
     {
         if (node.Name.LocalName.EndsWith("ComplexScript"))
         {
@@ -273,9 +266,5 @@ public static partial class VerifyAspose
 
         return true;
     }
-
-    static bool ShouldRemoveAttribute(XAttribute attribute) =>
-        attribute.Name == "unhideWhenUsed" && attribute.Value == "0" ||
-        attribute.Name == "semiHidden" && attribute.Value == "0";
 
 }
