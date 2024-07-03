@@ -4,15 +4,13 @@
       <rPr>
         <rFonts ascii="Liberation Serif" eastAsia="Droid Sans Fallback" hAnsi="Liberation Serif" cs="FreeSans" />
         <sz val="24" />
-        <szCs val="24" />
-        <lang val="en-US" eastAsia="zh-CN" bidi="hi-IN" />
       </rPr>
     </rPrDefault>
     <pPrDefault />
   </docDefaults>
   <latentStyles defLockedState="0" defUIPriority="99" defSemiHidden="1" defUnhideWhenUsed="1" defQFormat="0" count="267">
-    <lsdException name="Normal" semiHidden="0" uiPriority="0" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="heading 1" semiHidden="0" uiPriority="9" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Normal" uiPriority="0" qFormat="1" />
+    <lsdException name="heading 1" uiPriority="9" qFormat="1" />
     <lsdException name="heading 2" uiPriority="9" qFormat="1" />
     <lsdException name="heading 3" uiPriority="9" qFormat="1" />
     <lsdException name="heading 4" uiPriority="9" qFormat="1" />
@@ -31,126 +29,125 @@
     <lsdException name="toc 8" uiPriority="39" />
     <lsdException name="toc 9" uiPriority="39" />
     <lsdException name="caption" uiPriority="35" qFormat="1" />
-    <lsdException name="Title" semiHidden="0" uiPriority="10" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Title" uiPriority="10" qFormat="1" />
     <lsdException name="Default Paragraph Font" uiPriority="1" />
-    <lsdException name="Subtitle" semiHidden="0" uiPriority="11" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Strong" semiHidden="0" uiPriority="22" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Emphasis" semiHidden="0" uiPriority="20" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Table Grid" semiHidden="0" uiPriority="59" unhideWhenUsed="0" />
-    <lsdException name="Placeholder Text" unhideWhenUsed="0" />
-    <lsdException name="No Spacing" semiHidden="0" uiPriority="1" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Light Shading" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
-    <lsdException name="Light List" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
-    <lsdException name="Light Grid" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 1" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 2" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
-    <lsdException name="Medium List 1" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
-    <lsdException name="Medium List 2" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 1" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 2" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 3" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
-    <lsdException name="Dark List" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
-    <lsdException name="Colorful Shading" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
-    <lsdException name="Colorful List" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
-    <lsdException name="Colorful Grid" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
-    <lsdException name="Light Shading Accent 1" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
-    <lsdException name="Light List Accent 1" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
-    <lsdException name="Light Grid Accent 1" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 1 Accent 1" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 2 Accent 1" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
-    <lsdException name="Medium List 1 Accent 1" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
-    <lsdException name="Revision" unhideWhenUsed="0" />
-    <lsdException name="List Paragraph" semiHidden="0" uiPriority="34" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Quote" semiHidden="0" uiPriority="29" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Intense Quote" semiHidden="0" uiPriority="30" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Medium List 2 Accent 1" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 1 Accent 1" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 2 Accent 1" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 3 Accent 1" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
-    <lsdException name="Dark List Accent 1" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
-    <lsdException name="Colorful Shading Accent 1" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
-    <lsdException name="Colorful List Accent 1" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
-    <lsdException name="Colorful Grid Accent 1" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
-    <lsdException name="Light Shading Accent 2" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
-    <lsdException name="Light List Accent 2" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
-    <lsdException name="Light Grid Accent 2" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 1 Accent 2" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 2 Accent 2" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
-    <lsdException name="Medium List 1 Accent 2" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
-    <lsdException name="Medium List 2 Accent 2" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 1 Accent 2" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 2 Accent 2" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 3 Accent 2" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
-    <lsdException name="Dark List Accent 2" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
-    <lsdException name="Colorful Shading Accent 2" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
-    <lsdException name="Colorful List Accent 2" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
-    <lsdException name="Colorful Grid Accent 2" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
-    <lsdException name="Light Shading Accent 3" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
-    <lsdException name="Light List Accent 3" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
-    <lsdException name="Light Grid Accent 3" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 1 Accent 3" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 2 Accent 3" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
-    <lsdException name="Medium List 1 Accent 3" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
-    <lsdException name="Medium List 2 Accent 3" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 1 Accent 3" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 2 Accent 3" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 3 Accent 3" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
-    <lsdException name="Dark List Accent 3" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
-    <lsdException name="Colorful Shading Accent 3" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
-    <lsdException name="Colorful List Accent 3" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
-    <lsdException name="Colorful Grid Accent 3" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
-    <lsdException name="Light Shading Accent 4" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
-    <lsdException name="Light List Accent 4" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
-    <lsdException name="Light Grid Accent 4" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 1 Accent 4" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 2 Accent 4" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
-    <lsdException name="Medium List 1 Accent 4" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
-    <lsdException name="Medium List 2 Accent 4" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 1 Accent 4" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 2 Accent 4" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 3 Accent 4" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
-    <lsdException name="Dark List Accent 4" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
-    <lsdException name="Colorful Shading Accent 4" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
-    <lsdException name="Colorful List Accent 4" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
-    <lsdException name="Colorful Grid Accent 4" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
-    <lsdException name="Light Shading Accent 5" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
-    <lsdException name="Light List Accent 5" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
-    <lsdException name="Light Grid Accent 5" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 1 Accent 5" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 2 Accent 5" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
-    <lsdException name="Medium List 1 Accent 5" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
-    <lsdException name="Medium List 2 Accent 5" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 1 Accent 5" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 2 Accent 5" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 3 Accent 5" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
-    <lsdException name="Dark List Accent 5" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
-    <lsdException name="Colorful Shading Accent 5" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
-    <lsdException name="Colorful List Accent 5" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
-    <lsdException name="Colorful Grid Accent 5" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
-    <lsdException name="Light Shading Accent 6" semiHidden="0" uiPriority="60" unhideWhenUsed="0" />
-    <lsdException name="Light List Accent 6" semiHidden="0" uiPriority="61" unhideWhenUsed="0" />
-    <lsdException name="Light Grid Accent 6" semiHidden="0" uiPriority="62" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 1 Accent 6" semiHidden="0" uiPriority="63" unhideWhenUsed="0" />
-    <lsdException name="Medium Shading 2 Accent 6" semiHidden="0" uiPriority="64" unhideWhenUsed="0" />
-    <lsdException name="Medium List 1 Accent 6" semiHidden="0" uiPriority="65" unhideWhenUsed="0" />
-    <lsdException name="Medium List 2 Accent 6" semiHidden="0" uiPriority="66" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 1 Accent 6" semiHidden="0" uiPriority="67" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 2 Accent 6" semiHidden="0" uiPriority="68" unhideWhenUsed="0" />
-    <lsdException name="Medium Grid 3 Accent 6" semiHidden="0" uiPriority="69" unhideWhenUsed="0" />
-    <lsdException name="Dark List Accent 6" semiHidden="0" uiPriority="70" unhideWhenUsed="0" />
-    <lsdException name="Colorful Shading Accent 6" semiHidden="0" uiPriority="71" unhideWhenUsed="0" />
-    <lsdException name="Colorful List Accent 6" semiHidden="0" uiPriority="72" unhideWhenUsed="0" />
-    <lsdException name="Colorful Grid Accent 6" semiHidden="0" uiPriority="73" unhideWhenUsed="0" />
-    <lsdException name="Subtle Emphasis" semiHidden="0" uiPriority="19" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Intense Emphasis" semiHidden="0" uiPriority="21" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Subtle Reference" semiHidden="0" uiPriority="31" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Intense Reference" semiHidden="0" uiPriority="32" unhideWhenUsed="0" qFormat="1" />
-    <lsdException name="Book Title" semiHidden="0" uiPriority="33" unhideWhenUsed="0" qFormat="1" />
+    <lsdException name="Subtitle" uiPriority="11" qFormat="1" />
+    <lsdException name="Strong" uiPriority="22" qFormat="1" />
+    <lsdException name="Emphasis" uiPriority="20" qFormat="1" />
+    <lsdException name="Table Grid" uiPriority="59" />
+    <lsdException name="Placeholder Text" />
+    <lsdException name="No Spacing" uiPriority="1" qFormat="1" />
+    <lsdException name="Light Shading" uiPriority="60" />
+    <lsdException name="Light List" uiPriority="61" />
+    <lsdException name="Light Grid" uiPriority="62" />
+    <lsdException name="Medium Shading 1" uiPriority="63" />
+    <lsdException name="Medium Shading 2" uiPriority="64" />
+    <lsdException name="Medium List 1" uiPriority="65" />
+    <lsdException name="Medium List 2" uiPriority="66" />
+    <lsdException name="Medium Grid 1" uiPriority="67" />
+    <lsdException name="Medium Grid 2" uiPriority="68" />
+    <lsdException name="Medium Grid 3" uiPriority="69" />
+    <lsdException name="Dark List" uiPriority="70" />
+    <lsdException name="Colorful Shading" uiPriority="71" />
+    <lsdException name="Colorful List" uiPriority="72" />
+    <lsdException name="Colorful Grid" uiPriority="73" />
+    <lsdException name="Light Shading Accent 1" uiPriority="60" />
+    <lsdException name="Light List Accent 1" uiPriority="61" />
+    <lsdException name="Light Grid Accent 1" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 1" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 1" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 1" uiPriority="65" />
+    <lsdException name="Revision" />
+    <lsdException name="List Paragraph" uiPriority="34" qFormat="1" />
+    <lsdException name="Quote" uiPriority="29" qFormat="1" />
+    <lsdException name="Intense Quote" uiPriority="30" qFormat="1" />
+    <lsdException name="Medium List 2 Accent 1" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 1" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 1" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 1" uiPriority="69" />
+    <lsdException name="Dark List Accent 1" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 1" uiPriority="71" />
+    <lsdException name="Colorful List Accent 1" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 1" uiPriority="73" />
+    <lsdException name="Light Shading Accent 2" uiPriority="60" />
+    <lsdException name="Light List Accent 2" uiPriority="61" />
+    <lsdException name="Light Grid Accent 2" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 2" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 2" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 2" uiPriority="65" />
+    <lsdException name="Medium List 2 Accent 2" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 2" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 2" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 2" uiPriority="69" />
+    <lsdException name="Dark List Accent 2" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 2" uiPriority="71" />
+    <lsdException name="Colorful List Accent 2" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 2" uiPriority="73" />
+    <lsdException name="Light Shading Accent 3" uiPriority="60" />
+    <lsdException name="Light List Accent 3" uiPriority="61" />
+    <lsdException name="Light Grid Accent 3" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 3" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 3" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 3" uiPriority="65" />
+    <lsdException name="Medium List 2 Accent 3" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 3" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 3" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 3" uiPriority="69" />
+    <lsdException name="Dark List Accent 3" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 3" uiPriority="71" />
+    <lsdException name="Colorful List Accent 3" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 3" uiPriority="73" />
+    <lsdException name="Light Shading Accent 4" uiPriority="60" />
+    <lsdException name="Light List Accent 4" uiPriority="61" />
+    <lsdException name="Light Grid Accent 4" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 4" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 4" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 4" uiPriority="65" />
+    <lsdException name="Medium List 2 Accent 4" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 4" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 4" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 4" uiPriority="69" />
+    <lsdException name="Dark List Accent 4" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 4" uiPriority="71" />
+    <lsdException name="Colorful List Accent 4" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 4" uiPriority="73" />
+    <lsdException name="Light Shading Accent 5" uiPriority="60" />
+    <lsdException name="Light List Accent 5" uiPriority="61" />
+    <lsdException name="Light Grid Accent 5" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 5" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 5" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 5" uiPriority="65" />
+    <lsdException name="Medium List 2 Accent 5" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 5" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 5" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 5" uiPriority="69" />
+    <lsdException name="Dark List Accent 5" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 5" uiPriority="71" />
+    <lsdException name="Colorful List Accent 5" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 5" uiPriority="73" />
+    <lsdException name="Light Shading Accent 6" uiPriority="60" />
+    <lsdException name="Light List Accent 6" uiPriority="61" />
+    <lsdException name="Light Grid Accent 6" uiPriority="62" />
+    <lsdException name="Medium Shading 1 Accent 6" uiPriority="63" />
+    <lsdException name="Medium Shading 2 Accent 6" uiPriority="64" />
+    <lsdException name="Medium List 1 Accent 6" uiPriority="65" />
+    <lsdException name="Medium List 2 Accent 6" uiPriority="66" />
+    <lsdException name="Medium Grid 1 Accent 6" uiPriority="67" />
+    <lsdException name="Medium Grid 2 Accent 6" uiPriority="68" />
+    <lsdException name="Medium Grid 3 Accent 6" uiPriority="69" />
+    <lsdException name="Dark List Accent 6" uiPriority="70" />
+    <lsdException name="Colorful Shading Accent 6" uiPriority="71" />
+    <lsdException name="Colorful List Accent 6" uiPriority="72" />
+    <lsdException name="Colorful Grid Accent 6" uiPriority="73" />
+    <lsdException name="Subtle Emphasis" uiPriority="19" qFormat="1" />
+    <lsdException name="Intense Emphasis" uiPriority="21" qFormat="1" />
+    <lsdException name="Subtle Reference" uiPriority="31" qFormat="1" />
+    <lsdException name="Intense Reference" uiPriority="32" qFormat="1" />
+    <lsdException name="Book Title" uiPriority="33" qFormat="1" />
     <lsdException name="Bibliography" uiPriority="37" />
     <lsdException name="TOC Heading" uiPriority="39" qFormat="1" />
   </latentStyles>
   <style type="paragraph" default="1" styleId="Normal">
-    <name val="Normal" />
     <pPr>
       <widowControl val="0" />
       <suppressAutoHyphens />
@@ -161,12 +158,9 @@
       <rFonts ascii="Liberation Serif;Times New Roma" eastAsia="Droid Sans Fallback" hAnsi="Liberation Serif;Times New Roma" cs="FreeSans" />
       <color val="00000A" />
       <sz val="24" />
-      <szCs val="24" />
-      <lang val="en-US" eastAsia="zh-CN" bidi="hi-IN" />
     </rPr>
   </style>
   <style type="paragraph" styleId="Heading1">
-    <name val="heading 1" />
     <basedOn val="Heading" />
     <pPr>
       <spacing before="240" after="120" />
@@ -174,13 +168,10 @@
     </pPr>
     <rPr>
       <b />
-      <bCs />
       <sz val="36" />
-      <szCs val="36" />
     </rPr>
   </style>
   <style type="paragraph" styleId="Heading2">
-    <name val="heading 2" />
     <basedOn val="Heading" />
     <pPr>
       <spacing before="200" after="120" />
@@ -188,13 +179,10 @@
     </pPr>
     <rPr>
       <b />
-      <bCs />
       <sz val="32" />
-      <szCs val="32" />
     </rPr>
   </style>
   <style type="paragraph" styleId="Heading3">
-    <name val="heading 3" />
     <basedOn val="Heading" />
     <pPr>
       <spacing before="140" after="120" />
@@ -202,20 +190,16 @@
     </pPr>
     <rPr>
       <b />
-      <bCs />
       <color val="808080" />
       <sz val="28" />
-      <szCs val="28" />
     </rPr>
   </style>
   <style type="character" default="1" styleId="DefaultParagraphFont">
-    <name val="Default Paragraph Font" />
     <uiPriority val="1" />
     <semiHidden />
     <unhideWhenUsed />
   </style>
   <style type="table" default="1" styleId="TableNormal">
-    <name val="Normal Table" />
     <uiPriority val="99" />
     <semiHidden />
     <unhideWhenUsed />
@@ -230,108 +214,62 @@
       </tblCellMar>
     </tblPr>
   </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z0">
-    <name val="WW8Num1z0" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z1">
-    <name val="WW8Num1z1" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z2">
-    <name val="WW8Num1z2" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z3">
-    <name val="WW8Num1z3" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z4">
-    <name val="WW8Num1z4" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z5">
-    <name val="WW8Num1z5" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z6">
-    <name val="WW8Num1z6" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z7">
-    <name val="WW8Num1z7" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z8">
-    <name val="WW8Num1z8" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num2z0">
-    <name val="WW8Num2z0" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num2z1">
-    <name val="WW8Num2z1" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num2z2">
-    <name val="WW8Num2z2" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num2z3">
-    <name val="WW8Num2z3" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num2z4">
-    <name val="WW8Num2z4" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num2z5">
-    <name val="WW8Num2z5" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num2z6">
-    <name val="WW8Num2z6" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num2z7">
-    <name val="WW8Num2z7" />
-  </style>
-  <style type="character" customStyle="1" styleId="WW8Num2z8">
-    <name val="WW8Num2z8" />
-  </style>
+  <style type="character" customStyle="1" styleId="WW8Num1z0" />
+  <style type="character" customStyle="1" styleId="WW8Num1z1" />
+  <style type="character" customStyle="1" styleId="WW8Num1z2" />
+  <style type="character" customStyle="1" styleId="WW8Num1z3" />
+  <style type="character" customStyle="1" styleId="WW8Num1z4" />
+  <style type="character" customStyle="1" styleId="WW8Num1z5" />
+  <style type="character" customStyle="1" styleId="WW8Num1z6" />
+  <style type="character" customStyle="1" styleId="WW8Num1z7" />
+  <style type="character" customStyle="1" styleId="WW8Num1z8" />
+  <style type="character" customStyle="1" styleId="WW8Num2z0" />
+  <style type="character" customStyle="1" styleId="WW8Num2z1" />
+  <style type="character" customStyle="1" styleId="WW8Num2z2" />
+  <style type="character" customStyle="1" styleId="WW8Num2z3" />
+  <style type="character" customStyle="1" styleId="WW8Num2z4" />
+  <style type="character" customStyle="1" styleId="WW8Num2z5" />
+  <style type="character" customStyle="1" styleId="WW8Num2z6" />
+  <style type="character" customStyle="1" styleId="WW8Num2z7" />
+  <style type="character" customStyle="1" styleId="WW8Num2z8" />
   <style type="character" customStyle="1" styleId="WW8Num3z0">
-    <name val="WW8Num3z0" />
     <rPr>
       <rFonts ascii="Symbol" hAnsi="Symbol" cs="OpenSymbol;Arial Unicode MS" />
     </rPr>
   </style>
   <style type="character" customStyle="1" styleId="WW8Num3z1">
-    <name val="WW8Num3z1" />
     <rPr>
       <rFonts ascii="OpenSymbol;Arial Unicode MS" hAnsi="OpenSymbol;Arial Unicode MS" cs="OpenSymbol;Arial Unicode MS" />
     </rPr>
   </style>
   <style type="character" customStyle="1" styleId="Bullets">
-    <name val="Bullets" />
     <rPr>
       <rFonts ascii="OpenSymbol;Arial Unicode MS" eastAsia="OpenSymbol;Arial Unicode MS" hAnsi="OpenSymbol;Arial Unicode MS" cs="OpenSymbol;Arial Unicode MS" />
     </rPr>
   </style>
   <style type="character" customStyle="1" styleId="InternetLink">
-    <name val="Internet Link" />
     <rPr>
       <color val="000080" />
       <u val="single" />
-      <lang val="" eastAsia="" bidi="" />
     </rPr>
   </style>
   <style type="character" customStyle="1" styleId="VisitedInternetLink">
-    <name val="Visited Internet Link" />
     <rPr>
       <color val="800000" />
       <u val="single" />
-      <lang val="" eastAsia="" bidi="" />
     </rPr>
   </style>
   <style type="character" customStyle="1" styleId="ListLabel1">
-    <name val="ListLabel 1" />
     <rPr>
       <rFonts cs="Symbol" />
     </rPr>
   </style>
   <style type="character" customStyle="1" styleId="ListLabel2">
-    <name val="ListLabel 2" />
     <rPr>
       <rFonts cs="OpenSymbol" />
     </rPr>
   </style>
   <style type="paragraph" customStyle="1" styleId="Heading">
-    <name val="Heading" />
     <basedOn val="Normal" />
     <next val="TextBody" />
     <pPr>
@@ -341,25 +279,21 @@
     <rPr>
       <rFonts ascii="Liberation Sans;Arial" eastAsia="Droid Sans Fallback" hAnsi="Liberation Sans;Arial" cs="FreeSans" />
       <sz val="28" />
-      <szCs val="28" />
     </rPr>
   </style>
   <style type="paragraph" customStyle="1" styleId="TextBody">
-    <name val="Text Body" />
     <basedOn val="Normal" />
     <pPr>
       <spacing before="0" after="140" line="288" lineRule="auto" />
     </pPr>
   </style>
   <style type="paragraph" styleId="List">
-    <name val="List" />
     <basedOn val="TextBody" />
     <rPr>
       <rFonts cs="FreeSans" />
     </rPr>
   </style>
   <style type="paragraph" styleId="Caption">
-    <name val="caption" />
     <basedOn val="Normal" />
     <pPr>
       <suppressLineNumbers />
@@ -368,13 +302,10 @@
     <rPr>
       <rFonts cs="FreeSans" />
       <i />
-      <iCs />
       <sz val="24" />
-      <szCs val="24" />
     </rPr>
   </style>
   <style type="paragraph" customStyle="1" styleId="Index">
-    <name val="Index" />
     <basedOn val="Normal" />
     <pPr>
       <suppressLineNumbers />
@@ -384,7 +315,6 @@
     </rPr>
   </style>
   <style type="paragraph" customStyle="1" styleId="Quotations">
-    <name val="Quotations" />
     <basedOn val="Normal" />
     <pPr>
       <spacing before="0" after="283" />
@@ -392,20 +322,16 @@
     </pPr>
   </style>
   <style type="paragraph" styleId="Title">
-    <name val="Title" />
     <basedOn val="Heading" />
     <pPr>
       <jc val="center" />
     </pPr>
     <rPr>
       <b />
-      <bCs />
       <sz val="56" />
-      <szCs val="56" />
     </rPr>
   </style>
   <style type="paragraph" styleId="Subtitle">
-    <name val="Subtitle" />
     <basedOn val="Heading" />
     <pPr>
       <spacing before="60" after="120" />
@@ -413,18 +339,15 @@
     </pPr>
     <rPr>
       <sz val="36" />
-      <szCs val="36" />
     </rPr>
   </style>
   <style type="paragraph" customStyle="1" styleId="TableContents">
-    <name val="Table Contents" />
     <basedOn val="Normal" />
     <pPr>
       <suppressLineNumbers />
     </pPr>
   </style>
   <style type="paragraph" customStyle="1" styleId="TableHeading">
-    <name val="Table Heading" />
     <basedOn val="TableContents" />
     <pPr>
       <suppressLineNumbers />
@@ -432,20 +355,12 @@
     </pPr>
     <rPr>
       <b />
-      <bCs />
     </rPr>
   </style>
-  <style type="numbering" customStyle="1" styleId="WW8Num1">
-    <name val="WW8Num1" />
-  </style>
-  <style type="numbering" customStyle="1" styleId="WW8Num2">
-    <name val="WW8Num2" />
-  </style>
-  <style type="numbering" customStyle="1" styleId="WW8Num3">
-    <name val="WW8Num3" />
-  </style>
+  <style type="numbering" customStyle="1" styleId="WW8Num1" />
+  <style type="numbering" customStyle="1" styleId="WW8Num2" />
+  <style type="numbering" customStyle="1" styleId="WW8Num3" />
   <style type="character" styleId="Hyperlink">
-    <name val="Hyperlink" />
     <basedOn val="DefaultParagraphFont" />
     <rsid val="00EF7B96" />
     <rPr>

@@ -139,14 +139,33 @@ public static partial class VerifyAspose
     }
     static void RemoveDefaultAttributes(XDocument document)
     {
-        foreach (var node in document.Descendants())
+        foreach (var node in document.Descendants().ToList())
         {
-            // Remove namespace from elements
-            node.Name = node.Name.LocalName;
+            var name = node.Name.LocalName;
+            node.Name = name;
 
-            // Identify xmlns:* attributes and attributes with a namespace
-            var attributes = node
-                .Attributes();
+            if (name == "name" && node.Parent?.Name == "style")
+            {
+                node.Remove();
+                continue;
+            }
+            if (name == "lang")
+            {
+                node.Remove();
+                continue;
+            }
+
+            if (name.EndsWith("Cs"))
+            {
+                var sibling = node.Parent?.Element(name[..^2]);
+                if (sibling != null && HaveSameAttributes(node, sibling))
+                {
+                    node.Remove();
+                    continue;
+                }
+            }
+
+            var attributes = node.Attributes().ToList();
 
             foreach (var attribute in attributes)
             {
@@ -158,9 +177,30 @@ public static partial class VerifyAspose
         }
     }
 
+    static bool HaveSameAttributes(XElement element1, XElement element2)
+    {
+        // Check if both elements have the same number of attributes
+        if (element1.Attributes().Count() != element2.Attributes().Count())
+        {
+            return false;
+        }
+
+        foreach (var attr1 in element1.Attributes())
+        {
+            var attr2 = element2.Attribute(attr1.Name);
+            // Check if the attribute exists in the second element and has the same value
+            if (attr2 == null || attr1.Value != attr2.Value)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     static bool ShouldRemoveAttribute(XAttribute attribute) =>
-        (attribute.Name == "unhideWhenUsed=" && attribute.Value == "0") ||
-        (attribute.Name == "semiHidden=" && attribute.Value == "0") ;
+        attribute.Name == "unhideWhenUsed" && attribute.Value == "0" ||
+        attribute.Name == "semiHidden" && attribute.Value == "0";
 
     static void RemoveXmlNamespaces(XDocument document)
     {

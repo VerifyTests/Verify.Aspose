@@ -3,7 +3,6 @@
     <rPrDefault>
       <rPr>
         <rFonts ascii="Times New Roman" eastAsia="Times New Roman" hAnsi="Times New Roman" cs="Times New Roman" />
-        <lang val="en-US" eastAsia="en-US" bidi="ar-SA" />
       </rPr>
     </rPrDefault>
     <pPrDefault />
@@ -137,19 +136,15 @@
     <lsdException name="TOC Heading" semiHidden="1" uiPriority="39" unhideWhenUsed="1" qFormat="1" />
   </latentStyles>
   <style type="paragraph" default="1" styleId="Normal">
-    <name val="Normal" />
     <qFormat />
     <rPr>
       <sz val="24" />
-      <szCs val="24" />
     </rPr>
   </style>
   <style type="character" default="1" styleId="DefaultParagraphFont">
-    <name val="Default Paragraph Font" />
     <semiHidden />
   </style>
   <style type="table" default="1" styleId="TableNormal">
-    <name val="Normal Table" />
     <semiHidden />
     <tblPr>
       <tblInd w="0" type="dxa" />
@@ -162,7 +157,6 @@
     </tblPr>
   </style>
   <style type="numbering" default="1" styleId="NoList">
-    <name val="No List" />
     <semiHidden />
   </style>
 </styles>
