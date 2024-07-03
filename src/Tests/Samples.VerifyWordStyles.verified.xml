@@ -147,7 +147,7 @@
     <latentStyleException name="Bibliography" uiPriority="37" />
     <latentStyleException name="TOC Heading" uiPriority="39" qFormat="1" />
   </latentStyles>
-  <style type="paragraph" default="1" styleId="Normal">
+  <style type="paragraph" default="1" id="Normal">
     <paragraph>
       <widowControl val="0" />
       <suppressAutoHyphens />
@@ -160,33 +160,33 @@
       <size val="24" />
     </run>
   </style>
-  <style type="paragraph" styleId="Heading1">
+  <style type="paragraph" id="Heading1">
     <basedOn val="Heading" />
     <paragraph>
       <spacing before="240" after="120" />
-      <outlineLvl val="0" />
+      <outlineLevel val="0" />
     </paragraph>
     <run>
       <bold />
       <size val="36" />
     </run>
   </style>
-  <style type="paragraph" styleId="Heading2">
+  <style type="paragraph" id="Heading2">
     <basedOn val="Heading" />
     <paragraph>
       <spacing before="200" after="120" />
-      <outlineLvl val="1" />
+      <outlineLevel val="1" />
     </paragraph>
     <run>
       <bold />
       <size val="32" />
     </run>
   </style>
-  <style type="paragraph" styleId="Heading3">
+  <style type="paragraph" id="Heading3">
     <basedOn val="Heading" />
     <paragraph>
       <spacing before="140" after="120" />
-      <outlineLvl val="2" />
+      <outlineLevel val="2" />
     </paragraph>
     <run>
       <bold />
@@ -194,82 +194,82 @@
       <size val="28" />
     </run>
   </style>
-  <style type="character" default="1" styleId="DefaultParagraphFont">
+  <style type="character" default="1" id="DefaultParagraphFont">
     <uiPriority val="1" />
     <semiHidden />
     <unhideWhenUsed />
   </style>
-  <style type="table" default="1" styleId="TableNormal">
+  <style type="table" default="1" id="TableNormal">
     <uiPriority val="99" />
     <semiHidden />
     <unhideWhenUsed />
     <qFormat />
-    <tblPr>
-      <tblInd w="0" type="dxa" />
-      <tblCellMar>
+    <table>
+      <leadingMarginIndent w="0" type="dxa" />
+      <cellMargin>
         <top w="0" type="dxa" />
         <left w="108" type="dxa" />
         <bottom w="0" type="dxa" />
         <right w="108" type="dxa" />
-      </tblCellMar>
-    </tblPr>
+      </cellMargin>
+    </table>
   </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z0" />
-  <style type="character" customStyle="1" styleId="WW8Num1z1" />
-  <style type="character" customStyle="1" styleId="WW8Num1z2" />
-  <style type="character" customStyle="1" styleId="WW8Num1z3" />
-  <style type="character" customStyle="1" styleId="WW8Num1z4" />
-  <style type="character" customStyle="1" styleId="WW8Num1z5" />
-  <style type="character" customStyle="1" styleId="WW8Num1z6" />
-  <style type="character" customStyle="1" styleId="WW8Num1z7" />
-  <style type="character" customStyle="1" styleId="WW8Num1z8" />
-  <style type="character" customStyle="1" styleId="WW8Num2z0" />
-  <style type="character" customStyle="1" styleId="WW8Num2z1" />
-  <style type="character" customStyle="1" styleId="WW8Num2z2" />
-  <style type="character" customStyle="1" styleId="WW8Num2z3" />
-  <style type="character" customStyle="1" styleId="WW8Num2z4" />
-  <style type="character" customStyle="1" styleId="WW8Num2z5" />
-  <style type="character" customStyle="1" styleId="WW8Num2z6" />
-  <style type="character" customStyle="1" styleId="WW8Num2z7" />
-  <style type="character" customStyle="1" styleId="WW8Num2z8" />
-  <style type="character" customStyle="1" styleId="WW8Num3z0">
+  <style type="character" customStyle="1" id="WW8Num1z0" />
+  <style type="character" customStyle="1" id="WW8Num1z1" />
+  <style type="character" customStyle="1" id="WW8Num1z2" />
+  <style type="character" customStyle="1" id="WW8Num1z3" />
+  <style type="character" customStyle="1" id="WW8Num1z4" />
+  <style type="character" customStyle="1" id="WW8Num1z5" />
+  <style type="character" customStyle="1" id="WW8Num1z6" />
+  <style type="character" customStyle="1" id="WW8Num1z7" />
+  <style type="character" customStyle="1" id="WW8Num1z8" />
+  <style type="character" customStyle="1" id="WW8Num2z0" />
+  <style type="character" customStyle="1" id="WW8Num2z1" />
+  <style type="character" customStyle="1" id="WW8Num2z2" />
+  <style type="character" customStyle="1" id="WW8Num2z3" />
+  <style type="character" customStyle="1" id="WW8Num2z4" />
+  <style type="character" customStyle="1" id="WW8Num2z5" />
+  <style type="character" customStyle="1" id="WW8Num2z6" />
+  <style type="character" customStyle="1" id="WW8Num2z7" />
+  <style type="character" customStyle="1" id="WW8Num2z8" />
+  <style type="character" customStyle="1" id="WW8Num3z0">
     <run>
       <fonts ascii="Symbol" hAnsi="Symbol" cs="OpenSymbol;Arial Unicode MS" />
     </run>
   </style>
-  <style type="character" customStyle="1" styleId="WW8Num3z1">
+  <style type="character" customStyle="1" id="WW8Num3z1">
     <run>
       <fonts ascii="OpenSymbol;Arial Unicode MS" hAnsi="OpenSymbol;Arial Unicode MS" cs="OpenSymbol;Arial Unicode MS" />
     </run>
   </style>
-  <style type="character" customStyle="1" styleId="Bullets">
+  <style type="character" customStyle="1" id="Bullets">
     <run>
       <fonts ascii="OpenSymbol;Arial Unicode MS" eastAsia="OpenSymbol;Arial Unicode MS" hAnsi="OpenSymbol;Arial Unicode MS" cs="OpenSymbol;Arial Unicode MS" />
     </run>
   </style>
-  <style type="character" customStyle="1" styleId="InternetLink">
+  <style type="character" customStyle="1" id="InternetLink">
     <run>
       <color val="000080" />
-      <u val="single" />
+      <underline val="single" />
     </run>
   </style>
-  <style type="character" customStyle="1" styleId="VisitedInternetLink">
+  <style type="character" customStyle="1" id="VisitedInternetLink">
     <run>
       <color val="800000" />
-      <u val="single" />
+      <underline val="single" />
     </run>
   </style>
-  <style type="character" customStyle="1" styleId="ListLabel1">
+  <style type="character" customStyle="1" id="ListLabel1">
     <run>
       <fonts cs="Symbol" />
     </run>
   </style>
-  <style type="character" customStyle="1" styleId="ListLabel2">
+  <style type="character" customStyle="1" id="ListLabel2">
     <run>
       <fonts cs="OpenSymbol" />
     </run>
   </style>
-  <style type="paragraph" customStyle="1" styleId="Heading">
+  <style type="paragraph" customStyle="1" id="Heading">
     <basedOn val="Normal" />
     <next val="TextBody" />
     <paragraph>
@@ -281,19 +281,19 @@
       <size val="28" />
     </run>
   </style>
-  <style type="paragraph" customStyle="1" styleId="TextBody">
+  <style type="paragraph" customStyle="1" id="TextBody">
     <basedOn val="Normal" />
     <paragraph>
       <spacing before="0" after="140" line="288" lineRule="auto" />
     </paragraph>
   </style>
-  <style type="paragraph" styleId="List">
+  <style type="paragraph" id="List">
     <basedOn val="TextBody" />
     <run>
       <fonts cs="FreeSans" />
     </run>
   </style>
-  <style type="paragraph" styleId="Caption">
+  <style type="paragraph" id="Caption">
     <basedOn val="Normal" />
     <paragraph>
       <suppressLineNumbers />
@@ -305,7 +305,7 @@
       <size val="24" />
     </run>
   </style>
-  <style type="paragraph" customStyle="1" styleId="Index">
+  <style type="paragraph" customStyle="1" id="Index">
     <basedOn val="Normal" />
     <paragraph>
       <suppressLineNumbers />
@@ -314,14 +314,14 @@
       <fonts cs="FreeSans" />
     </run>
   </style>
-  <style type="paragraph" customStyle="1" styleId="Quotations">
+  <style type="paragraph" customStyle="1" id="Quotations">
     <basedOn val="Normal" />
     <paragraph>
       <spacing before="0" after="283" />
-      <ind left="567" right="567" firstLine="0" />
+      <indent left="567" right="567" firstLine="0" />
     </paragraph>
   </style>
-  <style type="paragraph" styleId="Title">
+  <style type="paragraph" id="Title">
     <basedOn val="Heading" />
     <paragraph>
       <justification val="center" />
@@ -331,7 +331,7 @@
       <size val="56" />
     </run>
   </style>
-  <style type="paragraph" styleId="Subtitle">
+  <style type="paragraph" id="Subtitle">
     <basedOn val="Heading" />
     <paragraph>
       <spacing before="60" after="120" />
@@ -341,13 +341,13 @@
       <size val="36" />
     </run>
   </style>
-  <style type="paragraph" customStyle="1" styleId="TableContents">
+  <style type="paragraph" customStyle="1" id="TableContents">
     <basedOn val="Normal" />
     <paragraph>
       <suppressLineNumbers />
     </paragraph>
   </style>
-  <style type="paragraph" customStyle="1" styleId="TableHeading">
+  <style type="paragraph" customStyle="1" id="TableHeading">
     <basedOn val="TableContents" />
     <paragraph>
       <suppressLineNumbers />
@@ -357,15 +357,14 @@
       <bold />
     </run>
   </style>
-  <style type="numbering" customStyle="1" styleId="WW8Num1" />
-  <style type="numbering" customStyle="1" styleId="WW8Num2" />
-  <style type="numbering" customStyle="1" styleId="WW8Num3" />
-  <style type="character" styleId="Hyperlink">
+  <style type="numbering" customStyle="1" id="WW8Num1" />
+  <style type="numbering" customStyle="1" id="WW8Num2" />
+  <style type="numbering" customStyle="1" id="WW8Num3" />
+  <style type="character" id="Hyperlink">
     <basedOn val="DefaultParagraphFont" />
-    <rsid val="00EF7B96" />
     <run>
       <color val="0000FF" />
-      <u val="single" />
+      <underline val="single" />
     </run>
   </style>
 </styles>

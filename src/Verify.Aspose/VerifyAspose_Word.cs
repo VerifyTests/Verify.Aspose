@@ -140,13 +140,14 @@ public static partial class VerifyAspose
         return xmlDocument.ToString();
     }
 
-
     static Dictionary<string, string> nodeRenames = new()
     {
         { "b", "bold" },
         { "bCs", "boldComplexScript" },
         { "i", "italic" },
         { "iCs", "italicComplexScript" },
+        { "u", "underline" },
+        { "uCs", "underlineComplexScript" },
         { "sz", "size" },
         { "szCs", "sizeComplexScript" },
         { "jc", "justification" },
@@ -157,8 +158,11 @@ public static partial class VerifyAspose
         { "pPrDefault", "paragraphDefault" },
         { "lsdException", "latentStyleException" },
         { "bidi", "complexScriptLanguage" },
-
-
+        { "ind", "indent" },
+        { "tblPr", "table" },
+        { "tblInd", "leadingMarginIndent" },
+        { "tblCellMar", "cellMargin" },
+        { "outlineLvl", "outlineLevel" },
     };
     static void CleanupXml(XDocument xmlDocument)
     {
@@ -172,7 +176,7 @@ public static partial class VerifyAspose
                 node.Remove();
                 continue;
             }
-            if (name == "lang")
+            if (name is "lang" or "rsid")
             {
                 node.Remove();
                 continue;
@@ -185,10 +189,11 @@ public static partial class VerifyAspose
         }
     }
 
-    // static Dictionary<string, string> attributeRenames = new()
-    // {
-    //     { "styleId", "Id" },
-    // };
+    static Dictionary<string, string> attributeRenames = new()
+    {
+        { "styleId", "id" },
+    };
+
     static void CleanupAttributes(XElement node)
     {
         var attributes = node.Attributes().ToList();
@@ -200,10 +205,17 @@ public static partial class VerifyAspose
                 attribute.Remove();
                 continue;
             }
+
+            var name = attribute.Name.LocalName;
+            if (attributeRenames.TryGetValue(name, out var newName))
+            {
+                name = newName;
+            }
+
             // Create and add new attributes with local name only for those with a namespace
             if (attribute.Name.Namespace != XNamespace.None)
             {
-                node.Add(new XAttribute(attribute.Name.LocalName, attribute.Value));
+                node.Add(new XAttribute(name, attribute.Value));
                 attribute.Remove();
                 continue;
             }
@@ -229,7 +241,6 @@ public static partial class VerifyAspose
 
         return name;
     }
-
 
     static bool RemoveComplexScriptIfSameAsNonComplex(XElement node)
     {
