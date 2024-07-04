@@ -1,9 +1,8 @@
 ﻿<styles>
   <docDefaults>
     <runDefault>
-      <run>
+      <run size="24">
         <fonts ascii="Liberation Serif" eastAsia="Droid Sans Fallback" hAnsi="Liberation Serif" cs="FreeSans" />
-        <size val="24" />
       </run>
     </runDefault>
     <paragraphDefault />
@@ -148,59 +147,42 @@
     <latentStyleException name="TOC Heading" uiPriority="39" qFormat="1" />
   </latentStyles>
   <style type="paragraph" default="1" id="Normal">
-    <paragraph>
-      <widowControl val="0" />
+    <paragraph widowControl="0" complexScriptLanguage="0" justification="left">
       <suppressAutoHyphens />
-      <complexScriptLanguage val="0" />
-      <justification val="left" />
     </paragraph>
-    <run>
+    <run color="00000A" size="24">
       <fonts ascii="Liberation Serif;Times New Roma" eastAsia="Droid Sans Fallback" hAnsi="Liberation Serif;Times New Roma" cs="FreeSans" />
-      <color val="00000A" />
-      <size val="24" />
     </run>
   </style>
-  <style type="paragraph" id="Heading1">
-    <basedOn val="Heading" />
-    <paragraph>
+  <style type="paragraph" id="Heading1" basedOn="Heading">
+    <paragraph outlineLevel="0">
       <spacing before="240" after="120" />
-      <outlineLevel val="0" />
     </paragraph>
-    <run>
+    <run size="36">
       <bold />
-      <size val="36" />
     </run>
   </style>
-  <style type="paragraph" id="Heading2">
-    <basedOn val="Heading" />
-    <paragraph>
+  <style type="paragraph" id="Heading2" basedOn="Heading">
+    <paragraph outlineLevel="1">
       <spacing before="200" after="120" />
-      <outlineLevel val="1" />
     </paragraph>
-    <run>
+    <run size="32">
       <bold />
-      <size val="32" />
     </run>
   </style>
-  <style type="paragraph" id="Heading3">
-    <basedOn val="Heading" />
-    <paragraph>
+  <style type="paragraph" id="Heading3" basedOn="Heading">
+    <paragraph outlineLevel="2">
       <spacing before="140" after="120" />
-      <outlineLevel val="2" />
     </paragraph>
-    <run>
+    <run color="808080" size="28">
       <bold />
-      <color val="808080" />
-      <size val="28" />
     </run>
   </style>
-  <style type="character" default="1" id="DefaultParagraphFont">
-    <uiPriority val="1" />
+  <style type="character" default="1" id="DefaultParagraphFont" uiPriority="1">
     <semiHidden />
     <unhideWhenUsed />
   </style>
-  <style type="table" default="1" id="TableNormal">
-    <uiPriority val="99" />
+  <style type="table" default="1" id="TableNormal" uiPriority="99">
     <semiHidden />
     <unhideWhenUsed />
     <qFormat />
@@ -248,16 +230,10 @@
     </run>
   </style>
   <style type="character" customStyle="1" id="InternetLink">
-    <run>
-      <color val="000080" />
-      <underline val="single" />
-    </run>
+    <run color="000080" underline="single" />
   </style>
   <style type="character" customStyle="1" id="VisitedInternetLink">
-    <run>
-      <color val="800000" />
-      <underline val="single" />
-    </run>
+    <run color="800000" underline="single" />
   </style>
   <style type="character" customStyle="1" id="ListLabel1">
     <run>
@@ -269,44 +245,36 @@
       <fonts cs="OpenSymbol" />
     </run>
   </style>
-  <style type="paragraph" customStyle="1" id="Heading">
-    <basedOn val="Normal" />
-    <next val="TextBody" />
+  <style type="paragraph" customStyle="1" id="Heading" basedOn="Normal" next="TextBody">
     <paragraph>
       <keepNext />
       <spacing before="240" after="120" />
     </paragraph>
-    <run>
+    <run size="28">
       <fonts ascii="Liberation Sans;Arial" eastAsia="Droid Sans Fallback" hAnsi="Liberation Sans;Arial" cs="FreeSans" />
-      <size val="28" />
     </run>
   </style>
-  <style type="paragraph" customStyle="1" id="TextBody">
-    <basedOn val="Normal" />
+  <style type="paragraph" customStyle="1" id="TextBody" basedOn="Normal">
     <paragraph>
       <spacing before="0" after="140" line="288" lineRule="auto" />
     </paragraph>
   </style>
-  <style type="paragraph" id="List">
-    <basedOn val="TextBody" />
+  <style type="paragraph" id="List" basedOn="TextBody">
     <run>
       <fonts cs="FreeSans" />
     </run>
   </style>
-  <style type="paragraph" id="Caption">
-    <basedOn val="Normal" />
+  <style type="paragraph" id="Caption" basedOn="Normal">
     <paragraph>
       <suppressLineNumbers />
       <spacing before="120" after="120" />
     </paragraph>
-    <run>
+    <run size="24">
       <fonts cs="FreeSans" />
       <italic />
-      <size val="24" />
     </run>
   </style>
-  <style type="paragraph" customStyle="1" id="Index">
-    <basedOn val="Normal" />
+  <style type="paragraph" customStyle="1" id="Index" basedOn="Normal">
     <paragraph>
       <suppressLineNumbers />
     </paragraph>
@@ -314,44 +282,32 @@
       <fonts cs="FreeSans" />
     </run>
   </style>
-  <style type="paragraph" customStyle="1" id="Quotations">
-    <basedOn val="Normal" />
+  <style type="paragraph" customStyle="1" id="Quotations" basedOn="Normal">
     <paragraph>
       <spacing before="0" after="283" />
       <indent left="567" right="567" firstLine="0" />
     </paragraph>
   </style>
-  <style type="paragraph" id="Title">
-    <basedOn val="Heading" />
-    <paragraph>
-      <justification val="center" />
-    </paragraph>
-    <run>
+  <style type="paragraph" id="Title" basedOn="Heading">
+    <paragraph justification="center" />
+    <run size="56">
       <bold />
-      <size val="56" />
     </run>
   </style>
-  <style type="paragraph" id="Subtitle">
-    <basedOn val="Heading" />
-    <paragraph>
+  <style type="paragraph" id="Subtitle" basedOn="Heading">
+    <paragraph justification="center">
       <spacing before="60" after="120" />
-      <justification val="center" />
     </paragraph>
-    <run>
-      <size val="36" />
-    </run>
+    <run size="36" />
   </style>
-  <style type="paragraph" customStyle="1" id="TableContents">
-    <basedOn val="Normal" />
+  <style type="paragraph" customStyle="1" id="TableContents" basedOn="Normal">
     <paragraph>
       <suppressLineNumbers />
     </paragraph>
   </style>
-  <style type="paragraph" customStyle="1" id="TableHeading">
-    <basedOn val="TableContents" />
-    <paragraph>
+  <style type="paragraph" customStyle="1" id="TableHeading" basedOn="TableContents">
+    <paragraph justification="center">
       <suppressLineNumbers />
-      <justification val="center" />
     </paragraph>
     <run>
       <bold />
@@ -360,11 +316,7 @@
   <style type="numbering" customStyle="1" id="WW8Num1" />
   <style type="numbering" customStyle="1" id="WW8Num2" />
   <style type="numbering" customStyle="1" id="WW8Num3" />
-  <style type="character" id="Hyperlink">
-    <basedOn val="DefaultParagraphFont" />
-    <run>
-      <color val="0000FF" />
-      <underline val="single" />
-    </run>
+  <style type="character" id="Hyperlink" basedOn="DefaultParagraphFont">
+    <run color="0000FF" underline="single" />
   </style>
 </styles>

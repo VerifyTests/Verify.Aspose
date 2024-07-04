@@ -166,16 +166,25 @@ public static partial class VerifyAspose
     };
     static void CleanupXml(XDocument xmlDocument)
     {
-        foreach (var node in xmlDocument.Descendants().ToList())
+        foreach (var node in xmlDocument
+                     .Descendants())
         {
+            FixName(node);
             CleanupAttributes(node);
-            var name = FixName(node);
+        }
+
+        foreach (var node in xmlDocument
+                     .Descendants()
+                     .ToList())
+        {
+            var name = node.Name.LocalName;
 
             if (name == "name" && node.Parent?.Name == "style")
             {
                 node.Remove();
                 continue;
             }
+
             if (name is "lang" or "rsid")
             {
                 node.Remove();
@@ -187,6 +196,75 @@ public static partial class VerifyAspose
                 continue;
             }
         }
+        foreach (var node in xmlDocument
+                     .Descendants()
+                     .ToList())
+        {
+            RemoveRedundantZeroValAttribute(node);
+            HandleValueAttribute(node);
+        }
+    }
+
+
+    static bool RemoveComplexScriptIfSameAsNonComplex(XElement node)
+    {
+        var parent = node.Parent;
+        if (parent == null)
+        {
+            return false;
+        }
+
+        var complexScriptNode = parent.Element($"{node.Name.LocalName}ComplexScript");
+        if (complexScriptNode == null)
+        {
+            return false;
+        }
+
+        if (HaveSameAttributes(node, complexScriptNode))
+        {
+            complexScriptNode.Remove();
+            return true;
+        }
+
+        return false;
+    }
+    static void HandleValueAttribute(XElement node)
+    {
+        var name = node.Name.LocalName;
+        var attribute = node.Attribute("val");
+        if (attribute == null)
+        {
+            return;
+        }
+
+        if (!node.HasElements &&
+            node.Attributes().Count() == 1)
+        {
+            var parent = node.Parent;
+            if (parent != null)
+            {
+                parent.Add(new XAttribute(name, attribute.Value));
+                node.Remove();
+            }
+        }
+    }
+    static void RemoveRedundantZeroValAttribute(XElement node)
+    {
+        var name = node.Name.LocalName;
+        var attribute = node.Attribute("val");
+        if (attribute == null)
+        {
+            return;
+        }
+
+        if (name is "bold" or "italic" or "underline")
+        {
+            if (attribute.Value == "0")
+            {
+                attribute.Remove();
+            }
+        }
+
     }
 
     static Dictionary<string, string> attributeRenames = new()
@@ -233,28 +311,12 @@ public static partial class VerifyAspose
         if (nodeRenames.TryGetValue(name, out var newName))
         {
             node.Name = newName;
+            return newName;
         }
-        else
-        {
-            node.Name = name;
-        }
+
+        node.Name = name;
 
         return name;
-    }
-
-    static bool RemoveComplexScriptIfSameAsNonComplex(XElement node)
-    {
-        if (node.Name.LocalName.EndsWith("ComplexScript"))
-        {
-            var sibling = node.Parent?.Element(node.Name.LocalName[..^13]);
-            if (sibling != null && HaveSameAttributes(node, sibling))
-            {
-                node.Remove();
-                return true;
-            }
-        }
-
-        return false;
     }
 
     static bool HaveSameAttributes(XElement element1, XElement element2)
