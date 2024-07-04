@@ -10,14 +10,12 @@ public class Samples
     #region VerifyPdf
 
     [Test]
-    [Explicit]
     public Task VerifyPdf() =>
         VerifyFile("sample.pdf");
 
     #endregion
 
     [Test]
-    [Explicit]
     public Task VerifyPdfResolution() =>
         VerifyFile("sample.pdf")
             .PdfPngDevice(page =>
@@ -32,7 +30,6 @@ public class Samples
     #region VerifyPdfStream
 
     [Test]
-    [Explicit]
     public Task VerifyPdfStream()
     {
         var stream = new MemoryStream(File.ReadAllBytes("sample.pdf"));
@@ -46,7 +43,6 @@ public class Samples
     #region VerifyPowerPoint
 
     [Test]
-    [Explicit]
     public Task VerifyPowerPoint() =>
         VerifyFile("sample.pptx");
 
@@ -55,7 +51,6 @@ public class Samples
     #region VerifyPowerPointStream
 
     [Test]
-    [Explicit]
     public Task VerifyPowerPointStream()
     {
         var stream = new MemoryStream(File.ReadAllBytes("sample.pptx"));
@@ -64,7 +59,6 @@ public class Samples
 
     #endregion
     [Test]
-    [Explicit]
     public Task VerifyPowerPointDoc()
     {
         var presentation = new Presentation();
@@ -77,7 +71,6 @@ public class Samples
     #region VerifyExcel
 
     [Test]
-    [Explicit]
     public Task VerifyExcel() =>
         VerifyFile("sample.xlsx");
 
@@ -86,7 +79,6 @@ public class Samples
     #region VerifySheet
 
     [Test]
-    [Explicit]
     public Task VerifySheet()
     {
         using var book = new Workbook();
@@ -105,7 +97,6 @@ public class Samples
     #region VerifyWorkbook
 
     [Test]
-    [Explicit]
     public Task VerifyWorkbook()
     {
         var book = new Workbook
@@ -128,7 +119,6 @@ public class Samples
     #endregion
 
     [Test]
-    [Explicit]
     public async Task Cell()
     {
         using var workbook = new Workbook();
@@ -142,7 +132,6 @@ public class Samples
     #region VerifyExcelStream
 
     [Test]
-    [Explicit]
     public Task VerifyExcelStream()
     {
         var stream = new MemoryStream(File.ReadAllBytes("sample.xlsx"));

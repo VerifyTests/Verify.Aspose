@@ -196,6 +196,9 @@ public static partial class VerifyAspose
                 node.Attribute("ascii")?.Remove();
                 node.Attribute("eastAsia")?.Remove();
                 node.Attribute("hAnsi")?.Remove();
+                node.Attribute("asciiTheme")?.Remove();
+                node.Attribute("eastAsiaTheme")?.Remove();
+                node.Attribute("hAnsiTheme")?.Remove();
             }
 
             if (RemoveComplexScriptIfSameAsNonComplex(node))
@@ -317,6 +320,7 @@ public static partial class VerifyAspose
 
     static bool ShouldRemoveAttribute(XAttribute attribute) =>
         attribute.IsNamespaceDeclaration ||
+        attribute.Name.LocalName == "aliases" ||
         attribute.Name.LocalName == "unhideWhenUsed" && attribute.Value == "0" ||
         attribute.Name.LocalName == "semiHidden" && attribute.Value == "0";
 
