@@ -181,13 +181,14 @@ public Task VerifyExcel() =>
 <a id='snippet-VerifyExcelStream'></a>
 ```cs
 [Test]
+[Explicit]
 public Task VerifyExcelStream()
 {
     var stream = new MemoryStream(File.ReadAllBytes("sample.xlsx"));
     return Verify(stream, "xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L142-L151' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L142-L152' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -237,7 +238,7 @@ public Task VerifyWorkbook()
 public Task VerifyWord() =>
     VerifyFile("sample.docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L153-L159' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L154-L160' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -253,7 +254,7 @@ public Task VerifyWordStream()
     return Verify(stream, "docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L161-L170' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L162-L171' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

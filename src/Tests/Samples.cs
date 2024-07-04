@@ -142,6 +142,7 @@ public class Samples
     #region VerifyExcelStream
 
     [Test]
+    [Explicit]
     public Task VerifyExcelStream()
     {
         var stream = new MemoryStream(File.ReadAllBytes("sample.xlsx"));

@@ -1,9 +1,7 @@
 ﻿<styles>
   <docDefaults>
     <runDefault>
-      <run size="24">
-        <fonts ascii="Liberation Serif" eastAsia="Droid Sans Fallback" hAnsi="Liberation Serif" cs="FreeSans" />
-      </run>
+      <run fonts="FreeSans" size="24" />
     </runDefault>
     <paragraphDefault />
   </docDefaults>
@@ -150,9 +148,7 @@
     <paragraph widowControl="0" complexScriptLanguage="0" justification="left">
       <suppressAutoHyphens />
     </paragraph>
-    <run color="00000A" size="24">
-      <fonts ascii="Liberation Serif;Times New Roma" eastAsia="Droid Sans Fallback" hAnsi="Liberation Serif;Times New Roma" cs="FreeSans" />
-    </run>
+    <run fonts="FreeSans" color="00000A" size="24" />
   </style>
   <style type="paragraph" id="Heading1" basedOn="Heading">
     <paragraph outlineLevel="0">
@@ -196,93 +192,76 @@
       </cellMargin>
     </table>
   </style>
-  <style type="character" customStyle="1" id="WW8Num1z0" />
-  <style type="character" customStyle="1" id="WW8Num1z1" />
-  <style type="character" customStyle="1" id="WW8Num1z2" />
-  <style type="character" customStyle="1" id="WW8Num1z3" />
-  <style type="character" customStyle="1" id="WW8Num1z4" />
-  <style type="character" customStyle="1" id="WW8Num1z5" />
-  <style type="character" customStyle="1" id="WW8Num1z6" />
-  <style type="character" customStyle="1" id="WW8Num1z7" />
-  <style type="character" customStyle="1" id="WW8Num1z8" />
-  <style type="character" customStyle="1" id="WW8Num2z0" />
-  <style type="character" customStyle="1" id="WW8Num2z1" />
-  <style type="character" customStyle="1" id="WW8Num2z2" />
-  <style type="character" customStyle="1" id="WW8Num2z3" />
-  <style type="character" customStyle="1" id="WW8Num2z4" />
-  <style type="character" customStyle="1" id="WW8Num2z5" />
-  <style type="character" customStyle="1" id="WW8Num2z6" />
-  <style type="character" customStyle="1" id="WW8Num2z7" />
-  <style type="character" customStyle="1" id="WW8Num2z8" />
-  <style type="character" customStyle="1" id="WW8Num3z0">
-    <run>
-      <fonts ascii="Symbol" hAnsi="Symbol" cs="OpenSymbol;Arial Unicode MS" />
-    </run>
+  <style type="character" custom="1" id="WW8Num1z0" />
+  <style type="character" custom="1" id="WW8Num1z1" />
+  <style type="character" custom="1" id="WW8Num1z2" />
+  <style type="character" custom="1" id="WW8Num1z3" />
+  <style type="character" custom="1" id="WW8Num1z4" />
+  <style type="character" custom="1" id="WW8Num1z5" />
+  <style type="character" custom="1" id="WW8Num1z6" />
+  <style type="character" custom="1" id="WW8Num1z7" />
+  <style type="character" custom="1" id="WW8Num1z8" />
+  <style type="character" custom="1" id="WW8Num2z0" />
+  <style type="character" custom="1" id="WW8Num2z1" />
+  <style type="character" custom="1" id="WW8Num2z2" />
+  <style type="character" custom="1" id="WW8Num2z3" />
+  <style type="character" custom="1" id="WW8Num2z4" />
+  <style type="character" custom="1" id="WW8Num2z5" />
+  <style type="character" custom="1" id="WW8Num2z6" />
+  <style type="character" custom="1" id="WW8Num2z7" />
+  <style type="character" custom="1" id="WW8Num2z8" />
+  <style type="character" custom="1" id="WW8Num3z0">
+    <run fonts="OpenSymbol;Arial Unicode MS" />
   </style>
-  <style type="character" customStyle="1" id="WW8Num3z1">
-    <run>
-      <fonts ascii="OpenSymbol;Arial Unicode MS" hAnsi="OpenSymbol;Arial Unicode MS" cs="OpenSymbol;Arial Unicode MS" />
-    </run>
+  <style type="character" custom="1" id="WW8Num3z1">
+    <run fonts="OpenSymbol;Arial Unicode MS" />
   </style>
-  <style type="character" customStyle="1" id="Bullets">
-    <run>
-      <fonts ascii="OpenSymbol;Arial Unicode MS" eastAsia="OpenSymbol;Arial Unicode MS" hAnsi="OpenSymbol;Arial Unicode MS" cs="OpenSymbol;Arial Unicode MS" />
-    </run>
+  <style type="character" custom="1" id="Bullets">
+    <run fonts="OpenSymbol;Arial Unicode MS" />
   </style>
-  <style type="character" customStyle="1" id="InternetLink">
+  <style type="character" custom="1" id="InternetLink">
     <run color="000080" underline="single" />
   </style>
-  <style type="character" customStyle="1" id="VisitedInternetLink">
+  <style type="character" custom="1" id="VisitedInternetLink">
     <run color="800000" underline="single" />
   </style>
-  <style type="character" customStyle="1" id="ListLabel1">
-    <run>
-      <fonts cs="Symbol" />
-    </run>
+  <style type="character" custom="1" id="ListLabel1">
+    <run fonts="Symbol" />
   </style>
-  <style type="character" customStyle="1" id="ListLabel2">
-    <run>
-      <fonts cs="OpenSymbol" />
-    </run>
+  <style type="character" custom="1" id="ListLabel2">
+    <run fonts="OpenSymbol" />
   </style>
-  <style type="paragraph" customStyle="1" id="Heading" basedOn="Normal" next="TextBody">
+  <style type="paragraph" custom="1" id="Heading" basedOn="Normal" next="TextBody">
     <paragraph>
       <keepNext />
       <spacing before="240" after="120" />
     </paragraph>
-    <run size="28">
-      <fonts ascii="Liberation Sans;Arial" eastAsia="Droid Sans Fallback" hAnsi="Liberation Sans;Arial" cs="FreeSans" />
-    </run>
+    <run fonts="FreeSans" size="28" />
   </style>
-  <style type="paragraph" customStyle="1" id="TextBody" basedOn="Normal">
+  <style type="paragraph" custom="1" id="TextBody" basedOn="Normal">
     <paragraph>
       <spacing before="0" after="140" line="288" lineRule="auto" />
     </paragraph>
   </style>
   <style type="paragraph" id="List" basedOn="TextBody">
-    <run>
-      <fonts cs="FreeSans" />
-    </run>
+    <run fonts="FreeSans" />
   </style>
   <style type="paragraph" id="Caption" basedOn="Normal">
     <paragraph>
       <suppressLineNumbers />
       <spacing before="120" after="120" />
     </paragraph>
-    <run size="24">
-      <fonts cs="FreeSans" />
+    <run fonts="FreeSans" size="24">
       <italic />
     </run>
   </style>
-  <style type="paragraph" customStyle="1" id="Index" basedOn="Normal">
+  <style type="paragraph" custom="1" id="Index" basedOn="Normal">
     <paragraph>
       <suppressLineNumbers />
     </paragraph>
-    <run>
-      <fonts cs="FreeSans" />
-    </run>
+    <run fonts="FreeSans" />
   </style>
-  <style type="paragraph" customStyle="1" id="Quotations" basedOn="Normal">
+  <style type="paragraph" custom="1" id="Quotations" basedOn="Normal">
     <paragraph>
       <spacing before="0" after="283" />
       <indent left="567" right="567" firstLine="0" />
@@ -300,12 +279,12 @@
     </paragraph>
     <run size="36" />
   </style>
-  <style type="paragraph" customStyle="1" id="TableContents" basedOn="Normal">
+  <style type="paragraph" custom="1" id="TableContents" basedOn="Normal">
     <paragraph>
       <suppressLineNumbers />
     </paragraph>
   </style>
-  <style type="paragraph" customStyle="1" id="TableHeading" basedOn="TableContents">
+  <style type="paragraph" custom="1" id="TableHeading" basedOn="TableContents">
     <paragraph justification="center">
       <suppressLineNumbers />
     </paragraph>
@@ -313,9 +292,9 @@
       <bold />
     </run>
   </style>
-  <style type="numbering" customStyle="1" id="WW8Num1" />
-  <style type="numbering" customStyle="1" id="WW8Num2" />
-  <style type="numbering" customStyle="1" id="WW8Num3" />
+  <style type="numbering" custom="1" id="WW8Num1" />
+  <style type="numbering" custom="1" id="WW8Num2" />
+  <style type="numbering" custom="1" id="WW8Num3" />
   <style type="character" id="Hyperlink" basedOn="DefaultParagraphFont">
     <run color="0000FF" underline="single" />
   </style>

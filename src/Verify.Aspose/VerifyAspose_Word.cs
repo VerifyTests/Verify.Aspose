@@ -191,6 +191,13 @@ public static partial class VerifyAspose
                 continue;
             }
 
+            if (name == "fonts")
+            {
+                node.Attribute("ascii")?.Remove();
+                node.Attribute("eastAsia")?.Remove();
+                node.Attribute("hAnsi")?.Remove();
+            }
+
             if (RemoveComplexScriptIfSameAsNonComplex(node))
             {
                 continue;
@@ -230,8 +237,14 @@ public static partial class VerifyAspose
     }
     static void HandleValueAttribute(XElement node)
     {
+        HandleValueAttribute(node, "val");
+        HandleValueAttribute(node, "cs");
+    }
+
+    static void HandleValueAttribute(XElement node, string xName)
+    {
         var name = node.Name.LocalName;
-        var attribute = node.Attribute("val");
+        var attribute = node.Attribute(xName);
         if (attribute == null)
         {
             return;
@@ -248,6 +261,7 @@ public static partial class VerifyAspose
             }
         }
     }
+
     static void RemoveRedundantZeroValAttribute(XElement node)
     {
         var name = node.Name.LocalName;
@@ -270,6 +284,7 @@ public static partial class VerifyAspose
     static Dictionary<string, string> attributeRenames = new()
     {
         { "styleId", "id" },
+        { "customStyle", "custom" },
     };
 
     static void CleanupAttributes(XElement node)
@@ -305,18 +320,16 @@ public static partial class VerifyAspose
         attribute.Name.LocalName == "unhideWhenUsed" && attribute.Value == "0" ||
         attribute.Name.LocalName == "semiHidden" && attribute.Value == "0";
 
-    static string FixName(XElement node)
+    static void FixName(XElement node)
     {
         var name = node.Name.LocalName;
         if (nodeRenames.TryGetValue(name, out var newName))
         {
             node.Name = newName;
-            return newName;
+            return;
         }
 
         node.Name = name;
-
-        return name;
     }
 
     static bool HaveSameAttributes(XElement element1, XElement element2)
@@ -327,11 +340,11 @@ public static partial class VerifyAspose
             return false;
         }
 
-        foreach (var attr1 in element1.Attributes())
+        foreach (var attribute1 in element1.Attributes())
         {
-            var attr2 = element2.Attribute(attr1.Name);
+            var attribute2 = element2.Attribute(attribute1.Name);
             // Check if the attribute exists in the second element and has the same value
-            if (attr2 == null || attr1.Value != attr2.Value)
+            if (attribute2 == null || attribute1.Value != attribute2.Value)
             {
                 return false;
             }
