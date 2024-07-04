@@ -1,371 +1,301 @@
-﻿<styles r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+﻿<styles>
   <docDefaults>
-    <rPrDefault>
-      <rPr>
-        <rFonts ascii="Liberation Serif" eastAsia="Droid Sans Fallback" hAnsi="Liberation Serif" cs="FreeSans" />
-        <sz val="24" />
-      </rPr>
-    </rPrDefault>
-    <pPrDefault />
+    <runDefault>
+      <run fonts="FreeSans" size="24" />
+    </runDefault>
+    <paragraphDefault />
   </docDefaults>
   <latentStyles defLockedState="0" defUIPriority="99" defSemiHidden="1" defUnhideWhenUsed="1" defQFormat="0" count="267">
-    <lsdException name="Normal" uiPriority="0" qFormat="1" />
-    <lsdException name="heading 1" uiPriority="9" qFormat="1" />
-    <lsdException name="heading 2" uiPriority="9" qFormat="1" />
-    <lsdException name="heading 3" uiPriority="9" qFormat="1" />
-    <lsdException name="heading 4" uiPriority="9" qFormat="1" />
-    <lsdException name="heading 5" uiPriority="9" qFormat="1" />
-    <lsdException name="heading 6" uiPriority="9" qFormat="1" />
-    <lsdException name="heading 7" uiPriority="9" qFormat="1" />
-    <lsdException name="heading 8" uiPriority="9" qFormat="1" />
-    <lsdException name="heading 9" uiPriority="9" qFormat="1" />
-    <lsdException name="toc 1" uiPriority="39" />
-    <lsdException name="toc 2" uiPriority="39" />
-    <lsdException name="toc 3" uiPriority="39" />
-    <lsdException name="toc 4" uiPriority="39" />
-    <lsdException name="toc 5" uiPriority="39" />
-    <lsdException name="toc 6" uiPriority="39" />
-    <lsdException name="toc 7" uiPriority="39" />
-    <lsdException name="toc 8" uiPriority="39" />
-    <lsdException name="toc 9" uiPriority="39" />
-    <lsdException name="caption" uiPriority="35" qFormat="1" />
-    <lsdException name="Title" uiPriority="10" qFormat="1" />
-    <lsdException name="Default Paragraph Font" uiPriority="1" />
-    <lsdException name="Subtitle" uiPriority="11" qFormat="1" />
-    <lsdException name="Strong" uiPriority="22" qFormat="1" />
-    <lsdException name="Emphasis" uiPriority="20" qFormat="1" />
-    <lsdException name="Table Grid" uiPriority="59" />
-    <lsdException name="Placeholder Text" />
-    <lsdException name="No Spacing" uiPriority="1" qFormat="1" />
-    <lsdException name="Light Shading" uiPriority="60" />
-    <lsdException name="Light List" uiPriority="61" />
-    <lsdException name="Light Grid" uiPriority="62" />
-    <lsdException name="Medium Shading 1" uiPriority="63" />
-    <lsdException name="Medium Shading 2" uiPriority="64" />
-    <lsdException name="Medium List 1" uiPriority="65" />
-    <lsdException name="Medium List 2" uiPriority="66" />
-    <lsdException name="Medium Grid 1" uiPriority="67" />
-    <lsdException name="Medium Grid 2" uiPriority="68" />
-    <lsdException name="Medium Grid 3" uiPriority="69" />
-    <lsdException name="Dark List" uiPriority="70" />
-    <lsdException name="Colorful Shading" uiPriority="71" />
-    <lsdException name="Colorful List" uiPriority="72" />
-    <lsdException name="Colorful Grid" uiPriority="73" />
-    <lsdException name="Light Shading Accent 1" uiPriority="60" />
-    <lsdException name="Light List Accent 1" uiPriority="61" />
-    <lsdException name="Light Grid Accent 1" uiPriority="62" />
-    <lsdException name="Medium Shading 1 Accent 1" uiPriority="63" />
-    <lsdException name="Medium Shading 2 Accent 1" uiPriority="64" />
-    <lsdException name="Medium List 1 Accent 1" uiPriority="65" />
-    <lsdException name="Revision" />
-    <lsdException name="List Paragraph" uiPriority="34" qFormat="1" />
-    <lsdException name="Quote" uiPriority="29" qFormat="1" />
-    <lsdException name="Intense Quote" uiPriority="30" qFormat="1" />
-    <lsdException name="Medium List 2 Accent 1" uiPriority="66" />
-    <lsdException name="Medium Grid 1 Accent 1" uiPriority="67" />
-    <lsdException name="Medium Grid 2 Accent 1" uiPriority="68" />
-    <lsdException name="Medium Grid 3 Accent 1" uiPriority="69" />
-    <lsdException name="Dark List Accent 1" uiPriority="70" />
-    <lsdException name="Colorful Shading Accent 1" uiPriority="71" />
-    <lsdException name="Colorful List Accent 1" uiPriority="72" />
-    <lsdException name="Colorful Grid Accent 1" uiPriority="73" />
-    <lsdException name="Light Shading Accent 2" uiPriority="60" />
-    <lsdException name="Light List Accent 2" uiPriority="61" />
-    <lsdException name="Light Grid Accent 2" uiPriority="62" />
-    <lsdException name="Medium Shading 1 Accent 2" uiPriority="63" />
-    <lsdException name="Medium Shading 2 Accent 2" uiPriority="64" />
-    <lsdException name="Medium List 1 Accent 2" uiPriority="65" />
-    <lsdException name="Medium List 2 Accent 2" uiPriority="66" />
-    <lsdException name="Medium Grid 1 Accent 2" uiPriority="67" />
-    <lsdException name="Medium Grid 2 Accent 2" uiPriority="68" />
-    <lsdException name="Medium Grid 3 Accent 2" uiPriority="69" />
-    <lsdException name="Dark List Accent 2" uiPriority="70" />
-    <lsdException name="Colorful Shading Accent 2" uiPriority="71" />
-    <lsdException name="Colorful List Accent 2" uiPriority="72" />
-    <lsdException name="Colorful Grid Accent 2" uiPriority="73" />
-    <lsdException name="Light Shading Accent 3" uiPriority="60" />
-    <lsdException name="Light List Accent 3" uiPriority="61" />
-    <lsdException name="Light Grid Accent 3" uiPriority="62" />
-    <lsdException name="Medium Shading 1 Accent 3" uiPriority="63" />
-    <lsdException name="Medium Shading 2 Accent 3" uiPriority="64" />
-    <lsdException name="Medium List 1 Accent 3" uiPriority="65" />
-    <lsdException name="Medium List 2 Accent 3" uiPriority="66" />
-    <lsdException name="Medium Grid 1 Accent 3" uiPriority="67" />
-    <lsdException name="Medium Grid 2 Accent 3" uiPriority="68" />
-    <lsdException name="Medium Grid 3 Accent 3" uiPriority="69" />
-    <lsdException name="Dark List Accent 3" uiPriority="70" />
-    <lsdException name="Colorful Shading Accent 3" uiPriority="71" />
-    <lsdException name="Colorful List Accent 3" uiPriority="72" />
-    <lsdException name="Colorful Grid Accent 3" uiPriority="73" />
-    <lsdException name="Light Shading Accent 4" uiPriority="60" />
-    <lsdException name="Light List Accent 4" uiPriority="61" />
-    <lsdException name="Light Grid Accent 4" uiPriority="62" />
-    <lsdException name="Medium Shading 1 Accent 4" uiPriority="63" />
-    <lsdException name="Medium Shading 2 Accent 4" uiPriority="64" />
-    <lsdException name="Medium List 1 Accent 4" uiPriority="65" />
-    <lsdException name="Medium List 2 Accent 4" uiPriority="66" />
-    <lsdException name="Medium Grid 1 Accent 4" uiPriority="67" />
-    <lsdException name="Medium Grid 2 Accent 4" uiPriority="68" />
-    <lsdException name="Medium Grid 3 Accent 4" uiPriority="69" />
-    <lsdException name="Dark List Accent 4" uiPriority="70" />
-    <lsdException name="Colorful Shading Accent 4" uiPriority="71" />
-    <lsdException name="Colorful List Accent 4" uiPriority="72" />
-    <lsdException name="Colorful Grid Accent 4" uiPriority="73" />
-    <lsdException name="Light Shading Accent 5" uiPriority="60" />
-    <lsdException name="Light List Accent 5" uiPriority="61" />
-    <lsdException name="Light Grid Accent 5" uiPriority="62" />
-    <lsdException name="Medium Shading 1 Accent 5" uiPriority="63" />
-    <lsdException name="Medium Shading 2 Accent 5" uiPriority="64" />
-    <lsdException name="Medium List 1 Accent 5" uiPriority="65" />
-    <lsdException name="Medium List 2 Accent 5" uiPriority="66" />
-    <lsdException name="Medium Grid 1 Accent 5" uiPriority="67" />
-    <lsdException name="Medium Grid 2 Accent 5" uiPriority="68" />
-    <lsdException name="Medium Grid 3 Accent 5" uiPriority="69" />
-    <lsdException name="Dark List Accent 5" uiPriority="70" />
-    <lsdException name="Colorful Shading Accent 5" uiPriority="71" />
-    <lsdException name="Colorful List Accent 5" uiPriority="72" />
-    <lsdException name="Colorful Grid Accent 5" uiPriority="73" />
-    <lsdException name="Light Shading Accent 6" uiPriority="60" />
-    <lsdException name="Light List Accent 6" uiPriority="61" />
-    <lsdException name="Light Grid Accent 6" uiPriority="62" />
-    <lsdException name="Medium Shading 1 Accent 6" uiPriority="63" />
-    <lsdException name="Medium Shading 2 Accent 6" uiPriority="64" />
-    <lsdException name="Medium List 1 Accent 6" uiPriority="65" />
-    <lsdException name="Medium List 2 Accent 6" uiPriority="66" />
-    <lsdException name="Medium Grid 1 Accent 6" uiPriority="67" />
-    <lsdException name="Medium Grid 2 Accent 6" uiPriority="68" />
-    <lsdException name="Medium Grid 3 Accent 6" uiPriority="69" />
-    <lsdException name="Dark List Accent 6" uiPriority="70" />
-    <lsdException name="Colorful Shading Accent 6" uiPriority="71" />
-    <lsdException name="Colorful List Accent 6" uiPriority="72" />
-    <lsdException name="Colorful Grid Accent 6" uiPriority="73" />
-    <lsdException name="Subtle Emphasis" uiPriority="19" qFormat="1" />
-    <lsdException name="Intense Emphasis" uiPriority="21" qFormat="1" />
-    <lsdException name="Subtle Reference" uiPriority="31" qFormat="1" />
-    <lsdException name="Intense Reference" uiPriority="32" qFormat="1" />
-    <lsdException name="Book Title" uiPriority="33" qFormat="1" />
-    <lsdException name="Bibliography" uiPriority="37" />
-    <lsdException name="TOC Heading" uiPriority="39" qFormat="1" />
+    <latentStyleException name="Normal" uiPriority="0" qFormat="1" />
+    <latentStyleException name="heading 1" uiPriority="9" qFormat="1" />
+    <latentStyleException name="heading 2" uiPriority="9" qFormat="1" />
+    <latentStyleException name="heading 3" uiPriority="9" qFormat="1" />
+    <latentStyleException name="heading 4" uiPriority="9" qFormat="1" />
+    <latentStyleException name="heading 5" uiPriority="9" qFormat="1" />
+    <latentStyleException name="heading 6" uiPriority="9" qFormat="1" />
+    <latentStyleException name="heading 7" uiPriority="9" qFormat="1" />
+    <latentStyleException name="heading 8" uiPriority="9" qFormat="1" />
+    <latentStyleException name="heading 9" uiPriority="9" qFormat="1" />
+    <latentStyleException name="toc 1" uiPriority="39" />
+    <latentStyleException name="toc 2" uiPriority="39" />
+    <latentStyleException name="toc 3" uiPriority="39" />
+    <latentStyleException name="toc 4" uiPriority="39" />
+    <latentStyleException name="toc 5" uiPriority="39" />
+    <latentStyleException name="toc 6" uiPriority="39" />
+    <latentStyleException name="toc 7" uiPriority="39" />
+    <latentStyleException name="toc 8" uiPriority="39" />
+    <latentStyleException name="toc 9" uiPriority="39" />
+    <latentStyleException name="caption" uiPriority="35" qFormat="1" />
+    <latentStyleException name="Title" uiPriority="10" qFormat="1" />
+    <latentStyleException name="Default Paragraph Font" uiPriority="1" />
+    <latentStyleException name="Subtitle" uiPriority="11" qFormat="1" />
+    <latentStyleException name="Strong" uiPriority="22" qFormat="1" />
+    <latentStyleException name="Emphasis" uiPriority="20" qFormat="1" />
+    <latentStyleException name="Table Grid" uiPriority="59" />
+    <latentStyleException name="Placeholder Text" />
+    <latentStyleException name="No Spacing" uiPriority="1" qFormat="1" />
+    <latentStyleException name="Light Shading" uiPriority="60" />
+    <latentStyleException name="Light List" uiPriority="61" />
+    <latentStyleException name="Light Grid" uiPriority="62" />
+    <latentStyleException name="Medium Shading 1" uiPriority="63" />
+    <latentStyleException name="Medium Shading 2" uiPriority="64" />
+    <latentStyleException name="Medium List 1" uiPriority="65" />
+    <latentStyleException name="Medium List 2" uiPriority="66" />
+    <latentStyleException name="Medium Grid 1" uiPriority="67" />
+    <latentStyleException name="Medium Grid 2" uiPriority="68" />
+    <latentStyleException name="Medium Grid 3" uiPriority="69" />
+    <latentStyleException name="Dark List" uiPriority="70" />
+    <latentStyleException name="Colorful Shading" uiPriority="71" />
+    <latentStyleException name="Colorful List" uiPriority="72" />
+    <latentStyleException name="Colorful Grid" uiPriority="73" />
+    <latentStyleException name="Light Shading Accent 1" uiPriority="60" />
+    <latentStyleException name="Light List Accent 1" uiPriority="61" />
+    <latentStyleException name="Light Grid Accent 1" uiPriority="62" />
+    <latentStyleException name="Medium Shading 1 Accent 1" uiPriority="63" />
+    <latentStyleException name="Medium Shading 2 Accent 1" uiPriority="64" />
+    <latentStyleException name="Medium List 1 Accent 1" uiPriority="65" />
+    <latentStyleException name="Revision" />
+    <latentStyleException name="List Paragraph" uiPriority="34" qFormat="1" />
+    <latentStyleException name="Quote" uiPriority="29" qFormat="1" />
+    <latentStyleException name="Intense Quote" uiPriority="30" qFormat="1" />
+    <latentStyleException name="Medium List 2 Accent 1" uiPriority="66" />
+    <latentStyleException name="Medium Grid 1 Accent 1" uiPriority="67" />
+    <latentStyleException name="Medium Grid 2 Accent 1" uiPriority="68" />
+    <latentStyleException name="Medium Grid 3 Accent 1" uiPriority="69" />
+    <latentStyleException name="Dark List Accent 1" uiPriority="70" />
+    <latentStyleException name="Colorful Shading Accent 1" uiPriority="71" />
+    <latentStyleException name="Colorful List Accent 1" uiPriority="72" />
+    <latentStyleException name="Colorful Grid Accent 1" uiPriority="73" />
+    <latentStyleException name="Light Shading Accent 2" uiPriority="60" />
+    <latentStyleException name="Light List Accent 2" uiPriority="61" />
+    <latentStyleException name="Light Grid Accent 2" uiPriority="62" />
+    <latentStyleException name="Medium Shading 1 Accent 2" uiPriority="63" />
+    <latentStyleException name="Medium Shading 2 Accent 2" uiPriority="64" />
+    <latentStyleException name="Medium List 1 Accent 2" uiPriority="65" />
+    <latentStyleException name="Medium List 2 Accent 2" uiPriority="66" />
+    <latentStyleException name="Medium Grid 1 Accent 2" uiPriority="67" />
+    <latentStyleException name="Medium Grid 2 Accent 2" uiPriority="68" />
+    <latentStyleException name="Medium Grid 3 Accent 2" uiPriority="69" />
+    <latentStyleException name="Dark List Accent 2" uiPriority="70" />
+    <latentStyleException name="Colorful Shading Accent 2" uiPriority="71" />
+    <latentStyleException name="Colorful List Accent 2" uiPriority="72" />
+    <latentStyleException name="Colorful Grid Accent 2" uiPriority="73" />
+    <latentStyleException name="Light Shading Accent 3" uiPriority="60" />
+    <latentStyleException name="Light List Accent 3" uiPriority="61" />
+    <latentStyleException name="Light Grid Accent 3" uiPriority="62" />
+    <latentStyleException name="Medium Shading 1 Accent 3" uiPriority="63" />
+    <latentStyleException name="Medium Shading 2 Accent 3" uiPriority="64" />
+    <latentStyleException name="Medium List 1 Accent 3" uiPriority="65" />
+    <latentStyleException name="Medium List 2 Accent 3" uiPriority="66" />
+    <latentStyleException name="Medium Grid 1 Accent 3" uiPriority="67" />
+    <latentStyleException name="Medium Grid 2 Accent 3" uiPriority="68" />
+    <latentStyleException name="Medium Grid 3 Accent 3" uiPriority="69" />
+    <latentStyleException name="Dark List Accent 3" uiPriority="70" />
+    <latentStyleException name="Colorful Shading Accent 3" uiPriority="71" />
+    <latentStyleException name="Colorful List Accent 3" uiPriority="72" />
+    <latentStyleException name="Colorful Grid Accent 3" uiPriority="73" />
+    <latentStyleException name="Light Shading Accent 4" uiPriority="60" />
+    <latentStyleException name="Light List Accent 4" uiPriority="61" />
+    <latentStyleException name="Light Grid Accent 4" uiPriority="62" />
+    <latentStyleException name="Medium Shading 1 Accent 4" uiPriority="63" />
+    <latentStyleException name="Medium Shading 2 Accent 4" uiPriority="64" />
+    <latentStyleException name="Medium List 1 Accent 4" uiPriority="65" />
+    <latentStyleException name="Medium List 2 Accent 4" uiPriority="66" />
+    <latentStyleException name="Medium Grid 1 Accent 4" uiPriority="67" />
+    <latentStyleException name="Medium Grid 2 Accent 4" uiPriority="68" />
+    <latentStyleException name="Medium Grid 3 Accent 4" uiPriority="69" />
+    <latentStyleException name="Dark List Accent 4" uiPriority="70" />
+    <latentStyleException name="Colorful Shading Accent 4" uiPriority="71" />
+    <latentStyleException name="Colorful List Accent 4" uiPriority="72" />
+    <latentStyleException name="Colorful Grid Accent 4" uiPriority="73" />
+    <latentStyleException name="Light Shading Accent 5" uiPriority="60" />
+    <latentStyleException name="Light List Accent 5" uiPriority="61" />
+    <latentStyleException name="Light Grid Accent 5" uiPriority="62" />
+    <latentStyleException name="Medium Shading 1 Accent 5" uiPriority="63" />
+    <latentStyleException name="Medium Shading 2 Accent 5" uiPriority="64" />
+    <latentStyleException name="Medium List 1 Accent 5" uiPriority="65" />
+    <latentStyleException name="Medium List 2 Accent 5" uiPriority="66" />
+    <latentStyleException name="Medium Grid 1 Accent 5" uiPriority="67" />
+    <latentStyleException name="Medium Grid 2 Accent 5" uiPriority="68" />
+    <latentStyleException name="Medium Grid 3 Accent 5" uiPriority="69" />
+    <latentStyleException name="Dark List Accent 5" uiPriority="70" />
+    <latentStyleException name="Colorful Shading Accent 5" uiPriority="71" />
+    <latentStyleException name="Colorful List Accent 5" uiPriority="72" />
+    <latentStyleException name="Colorful Grid Accent 5" uiPriority="73" />
+    <latentStyleException name="Light Shading Accent 6" uiPriority="60" />
+    <latentStyleException name="Light List Accent 6" uiPriority="61" />
+    <latentStyleException name="Light Grid Accent 6" uiPriority="62" />
+    <latentStyleException name="Medium Shading 1 Accent 6" uiPriority="63" />
+    <latentStyleException name="Medium Shading 2 Accent 6" uiPriority="64" />
+    <latentStyleException name="Medium List 1 Accent 6" uiPriority="65" />
+    <latentStyleException name="Medium List 2 Accent 6" uiPriority="66" />
+    <latentStyleException name="Medium Grid 1 Accent 6" uiPriority="67" />
+    <latentStyleException name="Medium Grid 2 Accent 6" uiPriority="68" />
+    <latentStyleException name="Medium Grid 3 Accent 6" uiPriority="69" />
+    <latentStyleException name="Dark List Accent 6" uiPriority="70" />
+    <latentStyleException name="Colorful Shading Accent 6" uiPriority="71" />
+    <latentStyleException name="Colorful List Accent 6" uiPriority="72" />
+    <latentStyleException name="Colorful Grid Accent 6" uiPriority="73" />
+    <latentStyleException name="Subtle Emphasis" uiPriority="19" qFormat="1" />
+    <latentStyleException name="Intense Emphasis" uiPriority="21" qFormat="1" />
+    <latentStyleException name="Subtle Reference" uiPriority="31" qFormat="1" />
+    <latentStyleException name="Intense Reference" uiPriority="32" qFormat="1" />
+    <latentStyleException name="Book Title" uiPriority="33" qFormat="1" />
+    <latentStyleException name="Bibliography" uiPriority="37" />
+    <latentStyleException name="TOC Heading" uiPriority="39" qFormat="1" />
   </latentStyles>
-  <style type="paragraph" default="1" styleId="Normal">
-    <pPr>
-      <widowControl val="0" />
+  <style type="paragraph" default="1" id="Normal">
+    <paragraph widowControl="0" complexScriptLanguage="0" justification="left">
       <suppressAutoHyphens />
-      <bidi val="0" />
-      <jc val="left" />
-    </pPr>
-    <rPr>
-      <rFonts ascii="Liberation Serif;Times New Roma" eastAsia="Droid Sans Fallback" hAnsi="Liberation Serif;Times New Roma" cs="FreeSans" />
-      <color val="00000A" />
-      <sz val="24" />
-    </rPr>
+    </paragraph>
+    <run fonts="FreeSans" color="00000A" size="24" />
   </style>
-  <style type="paragraph" styleId="Heading1">
-    <basedOn val="Heading" />
-    <pPr>
+  <style type="paragraph" id="Heading1" basedOn="Heading">
+    <paragraph outlineLevel="0">
       <spacing before="240" after="120" />
-      <outlineLvl val="0" />
-    </pPr>
-    <rPr>
-      <b />
-      <sz val="36" />
-    </rPr>
+    </paragraph>
+    <run size="36">
+      <bold />
+    </run>
   </style>
-  <style type="paragraph" styleId="Heading2">
-    <basedOn val="Heading" />
-    <pPr>
+  <style type="paragraph" id="Heading2" basedOn="Heading">
+    <paragraph outlineLevel="1">
       <spacing before="200" after="120" />
-      <outlineLvl val="1" />
-    </pPr>
-    <rPr>
-      <b />
-      <sz val="32" />
-    </rPr>
+    </paragraph>
+    <run size="32">
+      <bold />
+    </run>
   </style>
-  <style type="paragraph" styleId="Heading3">
-    <basedOn val="Heading" />
-    <pPr>
+  <style type="paragraph" id="Heading3" basedOn="Heading">
+    <paragraph outlineLevel="2">
       <spacing before="140" after="120" />
-      <outlineLvl val="2" />
-    </pPr>
-    <rPr>
-      <b />
-      <color val="808080" />
-      <sz val="28" />
-    </rPr>
+    </paragraph>
+    <run color="808080" size="28">
+      <bold />
+    </run>
   </style>
-  <style type="character" default="1" styleId="DefaultParagraphFont">
-    <uiPriority val="1" />
+  <style type="character" default="1" id="DefaultParagraphFont" uiPriority="1">
     <semiHidden />
     <unhideWhenUsed />
   </style>
-  <style type="table" default="1" styleId="TableNormal">
-    <uiPriority val="99" />
+  <style type="table" default="1" id="TableNormal" uiPriority="99">
     <semiHidden />
     <unhideWhenUsed />
     <qFormat />
-    <tblPr>
-      <tblInd w="0" type="dxa" />
-      <tblCellMar>
+    <table>
+      <leadingMarginIndent w="0" type="dxa" />
+      <cellMargin>
         <top w="0" type="dxa" />
         <left w="108" type="dxa" />
         <bottom w="0" type="dxa" />
         <right w="108" type="dxa" />
-      </tblCellMar>
-    </tblPr>
+      </cellMargin>
+    </table>
   </style>
-  <style type="character" customStyle="1" styleId="WW8Num1z0" />
-  <style type="character" customStyle="1" styleId="WW8Num1z1" />
-  <style type="character" customStyle="1" styleId="WW8Num1z2" />
-  <style type="character" customStyle="1" styleId="WW8Num1z3" />
-  <style type="character" customStyle="1" styleId="WW8Num1z4" />
-  <style type="character" customStyle="1" styleId="WW8Num1z5" />
-  <style type="character" customStyle="1" styleId="WW8Num1z6" />
-  <style type="character" customStyle="1" styleId="WW8Num1z7" />
-  <style type="character" customStyle="1" styleId="WW8Num1z8" />
-  <style type="character" customStyle="1" styleId="WW8Num2z0" />
-  <style type="character" customStyle="1" styleId="WW8Num2z1" />
-  <style type="character" customStyle="1" styleId="WW8Num2z2" />
-  <style type="character" customStyle="1" styleId="WW8Num2z3" />
-  <style type="character" customStyle="1" styleId="WW8Num2z4" />
-  <style type="character" customStyle="1" styleId="WW8Num2z5" />
-  <style type="character" customStyle="1" styleId="WW8Num2z6" />
-  <style type="character" customStyle="1" styleId="WW8Num2z7" />
-  <style type="character" customStyle="1" styleId="WW8Num2z8" />
-  <style type="character" customStyle="1" styleId="WW8Num3z0">
-    <rPr>
-      <rFonts ascii="Symbol" hAnsi="Symbol" cs="OpenSymbol;Arial Unicode MS" />
-    </rPr>
+  <style type="character" custom="1" id="WW8Num1z0" />
+  <style type="character" custom="1" id="WW8Num1z1" />
+  <style type="character" custom="1" id="WW8Num1z2" />
+  <style type="character" custom="1" id="WW8Num1z3" />
+  <style type="character" custom="1" id="WW8Num1z4" />
+  <style type="character" custom="1" id="WW8Num1z5" />
+  <style type="character" custom="1" id="WW8Num1z6" />
+  <style type="character" custom="1" id="WW8Num1z7" />
+  <style type="character" custom="1" id="WW8Num1z8" />
+  <style type="character" custom="1" id="WW8Num2z0" />
+  <style type="character" custom="1" id="WW8Num2z1" />
+  <style type="character" custom="1" id="WW8Num2z2" />
+  <style type="character" custom="1" id="WW8Num2z3" />
+  <style type="character" custom="1" id="WW8Num2z4" />
+  <style type="character" custom="1" id="WW8Num2z5" />
+  <style type="character" custom="1" id="WW8Num2z6" />
+  <style type="character" custom="1" id="WW8Num2z7" />
+  <style type="character" custom="1" id="WW8Num2z8" />
+  <style type="character" custom="1" id="WW8Num3z0">
+    <run fonts="OpenSymbol;Arial Unicode MS" />
   </style>
-  <style type="character" customStyle="1" styleId="WW8Num3z1">
-    <rPr>
-      <rFonts ascii="OpenSymbol;Arial Unicode MS" hAnsi="OpenSymbol;Arial Unicode MS" cs="OpenSymbol;Arial Unicode MS" />
-    </rPr>
+  <style type="character" custom="1" id="WW8Num3z1">
+    <run fonts="OpenSymbol;Arial Unicode MS" />
   </style>
-  <style type="character" customStyle="1" styleId="Bullets">
-    <rPr>
-      <rFonts ascii="OpenSymbol;Arial Unicode MS" eastAsia="OpenSymbol;Arial Unicode MS" hAnsi="OpenSymbol;Arial Unicode MS" cs="OpenSymbol;Arial Unicode MS" />
-    </rPr>
+  <style type="character" custom="1" id="Bullets">
+    <run fonts="OpenSymbol;Arial Unicode MS" />
   </style>
-  <style type="character" customStyle="1" styleId="InternetLink">
-    <rPr>
-      <color val="000080" />
-      <u val="single" />
-    </rPr>
+  <style type="character" custom="1" id="InternetLink">
+    <run color="000080" underline="single" />
   </style>
-  <style type="character" customStyle="1" styleId="VisitedInternetLink">
-    <rPr>
-      <color val="800000" />
-      <u val="single" />
-    </rPr>
+  <style type="character" custom="1" id="VisitedInternetLink">
+    <run color="800000" underline="single" />
   </style>
-  <style type="character" customStyle="1" styleId="ListLabel1">
-    <rPr>
-      <rFonts cs="Symbol" />
-    </rPr>
+  <style type="character" custom="1" id="ListLabel1">
+    <run fonts="Symbol" />
   </style>
-  <style type="character" customStyle="1" styleId="ListLabel2">
-    <rPr>
-      <rFonts cs="OpenSymbol" />
-    </rPr>
+  <style type="character" custom="1" id="ListLabel2">
+    <run fonts="OpenSymbol" />
   </style>
-  <style type="paragraph" customStyle="1" styleId="Heading">
-    <basedOn val="Normal" />
-    <next val="TextBody" />
-    <pPr>
+  <style type="paragraph" custom="1" id="Heading" basedOn="Normal" next="TextBody">
+    <paragraph>
       <keepNext />
       <spacing before="240" after="120" />
-    </pPr>
-    <rPr>
-      <rFonts ascii="Liberation Sans;Arial" eastAsia="Droid Sans Fallback" hAnsi="Liberation Sans;Arial" cs="FreeSans" />
-      <sz val="28" />
-    </rPr>
+    </paragraph>
+    <run fonts="FreeSans" size="28" />
   </style>
-  <style type="paragraph" customStyle="1" styleId="TextBody">
-    <basedOn val="Normal" />
-    <pPr>
+  <style type="paragraph" custom="1" id="TextBody" basedOn="Normal">
+    <paragraph>
       <spacing before="0" after="140" line="288" lineRule="auto" />
-    </pPr>
+    </paragraph>
   </style>
-  <style type="paragraph" styleId="List">
-    <basedOn val="TextBody" />
-    <rPr>
-      <rFonts cs="FreeSans" />
-    </rPr>
+  <style type="paragraph" id="List" basedOn="TextBody">
+    <run fonts="FreeSans" />
   </style>
-  <style type="paragraph" styleId="Caption">
-    <basedOn val="Normal" />
-    <pPr>
+  <style type="paragraph" id="Caption" basedOn="Normal">
+    <paragraph>
       <suppressLineNumbers />
       <spacing before="120" after="120" />
-    </pPr>
-    <rPr>
-      <rFonts cs="FreeSans" />
-      <i />
-      <sz val="24" />
-    </rPr>
+    </paragraph>
+    <run fonts="FreeSans" size="24">
+      <italic />
+    </run>
   </style>
-  <style type="paragraph" customStyle="1" styleId="Index">
-    <basedOn val="Normal" />
-    <pPr>
+  <style type="paragraph" custom="1" id="Index" basedOn="Normal">
+    <paragraph>
       <suppressLineNumbers />
-    </pPr>
-    <rPr>
-      <rFonts cs="FreeSans" />
-    </rPr>
+    </paragraph>
+    <run fonts="FreeSans" />
   </style>
-  <style type="paragraph" customStyle="1" styleId="Quotations">
-    <basedOn val="Normal" />
-    <pPr>
+  <style type="paragraph" custom="1" id="Quotations" basedOn="Normal">
+    <paragraph>
       <spacing before="0" after="283" />
-      <ind left="567" right="567" firstLine="0" />
-    </pPr>
+      <indent left="567" right="567" firstLine="0" />
+    </paragraph>
   </style>
-  <style type="paragraph" styleId="Title">
-    <basedOn val="Heading" />
-    <pPr>
-      <jc val="center" />
-    </pPr>
-    <rPr>
-      <b />
-      <sz val="56" />
-    </rPr>
+  <style type="paragraph" id="Title" basedOn="Heading">
+    <paragraph justification="center" />
+    <run size="56">
+      <bold />
+    </run>
   </style>
-  <style type="paragraph" styleId="Subtitle">
-    <basedOn val="Heading" />
-    <pPr>
+  <style type="paragraph" id="Subtitle" basedOn="Heading">
+    <paragraph justification="center">
       <spacing before="60" after="120" />
-      <jc val="center" />
-    </pPr>
-    <rPr>
-      <sz val="36" />
-    </rPr>
+    </paragraph>
+    <run size="36" />
   </style>
-  <style type="paragraph" customStyle="1" styleId="TableContents">
-    <basedOn val="Normal" />
-    <pPr>
+  <style type="paragraph" custom="1" id="TableContents" basedOn="Normal">
+    <paragraph>
       <suppressLineNumbers />
-    </pPr>
+    </paragraph>
   </style>
-  <style type="paragraph" customStyle="1" styleId="TableHeading">
-    <basedOn val="TableContents" />
-    <pPr>
+  <style type="paragraph" custom="1" id="TableHeading" basedOn="TableContents">
+    <paragraph justification="center">
       <suppressLineNumbers />
-      <jc val="center" />
-    </pPr>
-    <rPr>
-      <b />
-    </rPr>
+    </paragraph>
+    <run>
+      <bold />
+    </run>
   </style>
-  <style type="numbering" customStyle="1" styleId="WW8Num1" />
-  <style type="numbering" customStyle="1" styleId="WW8Num2" />
-  <style type="numbering" customStyle="1" styleId="WW8Num3" />
-  <style type="character" styleId="Hyperlink">
-    <basedOn val="DefaultParagraphFont" />
-    <rsid val="00EF7B96" />
-    <rPr>
-      <color val="0000FF" />
-      <u val="single" />
-    </rPr>
+  <style type="numbering" custom="1" id="WW8Num1" />
+  <style type="numbering" custom="1" id="WW8Num2" />
+  <style type="numbering" custom="1" id="WW8Num3" />
+  <style type="character" id="Hyperlink" basedOn="DefaultParagraphFont">
+    <run color="0000FF" underline="single" />
   </style>
 </styles>
