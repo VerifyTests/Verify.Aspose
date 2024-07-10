@@ -160,6 +160,10 @@ public class Samples
     #endregion
 
     [Test]
+    public Task VerifyWordStyles() =>
+        VerifyFile("sample.docx").IncludeWordStyles();
+
+    [Test]
     public Task VerifyWordDocument()
     {
         var document = new Document

@@ -96,10 +96,13 @@ public static partial class VerifyAspose
 
         return true;
     }
-
     static IEnumerable<Target> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
     {
-        yield return new("xml", GetStyles(document));
+        if (settings.GetIncludeWordStyles())
+        {
+            yield return new("xml", GetStyles(document));
+        }
+
         var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
         for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)
         {
@@ -133,48 +136,204 @@ public static partial class VerifyAspose
         var entry = archive.GetEntry("word/styles.xml")!;
         using var entryStream = entry.Open();
         var xmlDocument = XDocument.Load(entryStream);
-        RemoveXmlNamespaces(xmlDocument);
-        RemoveDefaultAttributes(xmlDocument);
+        CleanupXml(xmlDocument);
         return xmlDocument.ToString();
     }
-    static void RemoveDefaultAttributes(XDocument document)
+
+    static Dictionary<string, string> nodeRenames = new()
     {
-        foreach (var node in document.Descendants().ToList())
+        { "b", "bold" },
+        { "bCs", "boldComplexScript" },
+        { "i", "italic" },
+        { "iCs", "italicComplexScript" },
+        { "u", "underline" },
+        { "uCs", "underlineComplexScript" },
+        { "sz", "size" },
+        { "szCs", "sizeComplexScript" },
+        { "jc", "justification" },
+        { "rFonts", "fonts" },
+        { "rPr", "run" },
+        { "pPr", "paragraph" },
+        { "rPrDefault", "runDefault" },
+        { "pPrDefault", "paragraphDefault" },
+        { "lsdException", "latentStyleException" },
+        { "bidi", "complexScriptLanguage" },
+        { "ind", "indent" },
+        { "tblPr", "table" },
+        { "tblInd", "leadingMarginIndent" },
+        { "tblCellMar", "cellMargin" },
+        { "outlineLvl", "outlineLevel" },
+    };
+    static void CleanupXml(XDocument xmlDocument)
+    {
+        foreach (var node in xmlDocument
+                     .Descendants())
+        {
+            FixName(node);
+            CleanupAttributes(node);
+        }
+
+        foreach (var node in xmlDocument
+                     .Descendants()
+                     .ToList())
         {
             var name = node.Name.LocalName;
-            node.Name = name;
 
             if (name == "name" && node.Parent?.Name == "style")
             {
                 node.Remove();
                 continue;
             }
-            if (name == "lang")
+
+            if (name is "lang" or "rsid")
             {
                 node.Remove();
                 continue;
             }
 
-            if (name.EndsWith("Cs"))
+            if (name == "fonts")
             {
-                var sibling = node.Parent?.Element(name[..^2]);
-                if (sibling != null && HaveSameAttributes(node, sibling))
-                {
-                    node.Remove();
-                    continue;
-                }
+                node.Attribute("ascii")?.Remove();
+                node.Attribute("eastAsia")?.Remove();
+                node.Attribute("hAnsi")?.Remove();
+                node.Attribute("asciiTheme")?.Remove();
+                node.Attribute("eastAsiaTheme")?.Remove();
+                node.Attribute("hAnsiTheme")?.Remove();
             }
 
-            var attributes = node.Attributes().ToList();
-
-            foreach (var attribute in attributes)
+            if (RemoveComplexScriptIfSameAsNonComplex(node))
             {
-                if (ShouldRemoveAttribute(attribute))
-                {
-                    attribute.Remove();
-                }
+                continue;
             }
         }
+        foreach (var node in xmlDocument
+                     .Descendants()
+                     .ToList())
+        {
+            RemoveRedundantZeroValAttribute(node);
+            HandleValueAttribute(node);
+        }
+    }
+
+
+    static bool RemoveComplexScriptIfSameAsNonComplex(XElement node)
+    {
+        var parent = node.Parent;
+        if (parent == null)
+        {
+            return false;
+        }
+
+        var complexScriptNode = parent.Element($"{node.Name.LocalName}ComplexScript");
+        if (complexScriptNode == null)
+        {
+            return false;
+        }
+
+        if (HaveSameAttributes(node, complexScriptNode))
+        {
+            complexScriptNode.Remove();
+            return true;
+        }
+
+        return false;
+    }
+    static void HandleValueAttribute(XElement node)
+    {
+        HandleValueAttribute(node, "val");
+        HandleValueAttribute(node, "cs");
+    }
+
+    static void HandleValueAttribute(XElement node, string xName)
+    {
+        var name = node.Name.LocalName;
+        var attribute = node.Attribute(xName);
+        if (attribute == null)
+        {
+            return;
+        }
+
+        if (!node.HasElements &&
+            node.Attributes().Count() == 1)
+        {
+            var parent = node.Parent;
+            if (parent != null)
+            {
+                parent.Add(new XAttribute(name, attribute.Value));
+                node.Remove();
+            }
+        }
+    }
+
+    static void RemoveRedundantZeroValAttribute(XElement node)
+    {
+        var name = node.Name.LocalName;
+        var attribute = node.Attribute("val");
+        if (attribute == null)
+        {
+            return;
+        }
+
+        if (name is "bold" or "italic" or "underline")
+        {
+            if (attribute.Value == "0")
+            {
+                attribute.Remove();
+            }
+        }
+
+    }
+
+    static Dictionary<string, string> attributeRenames = new()
+    {
+        { "styleId", "id" },
+        { "customStyle", "custom" },
+    };
+
+    static void CleanupAttributes(XElement node)
+    {
+        var attributes = node.Attributes().ToList();
+
+        foreach (var attribute in attributes)
+        {
+            if (ShouldRemoveAttribute(attribute))
+            {
+                attribute.Remove();
+                continue;
+            }
+
+            var name = attribute.Name.LocalName;
+            if (attributeRenames.TryGetValue(name, out var newName))
+            {
+                name = newName;
+            }
+
+            // Create and add new attributes with local name only for those with a namespace
+            if (attribute.Name.Namespace != XNamespace.None)
+            {
+                node.Add(new XAttribute(name, attribute.Value));
+                attribute.Remove();
+                continue;
+            }
+        }
+    }
+
+    static bool ShouldRemoveAttribute(XAttribute attribute) =>
+        attribute.IsNamespaceDeclaration ||
+        attribute.Name.LocalName == "aliases" ||
+        attribute.Name.LocalName == "unhideWhenUsed" && attribute.Value == "0" ||
+        attribute.Name.LocalName == "semiHidden" && attribute.Value == "0";
+
+    static void FixName(XElement node)
+    {
+        var name = node.Name.LocalName;
+        if (nodeRenames.TryGetValue(name, out var newName))
+        {
+            node.Name = newName;
+            return;
+        }
+
+        node.Name = name;
     }
 
     static bool HaveSameAttributes(XElement element1, XElement element2)
@@ -185,11 +344,11 @@ public static partial class VerifyAspose
             return false;
         }
 
-        foreach (var attr1 in element1.Attributes())
+        foreach (var attribute1 in element1.Attributes())
         {
-            var attr2 = element2.Attribute(attr1.Name);
+            var attribute2 = element2.Attribute(attribute1.Name);
             // Check if the attribute exists in the second element and has the same value
-            if (attr2 == null || attr1.Value != attr2.Value)
+            if (attribute2 == null || attribute1.Value != attribute2.Value)
             {
                 return false;
             }
@@ -198,33 +357,4 @@ public static partial class VerifyAspose
         return true;
     }
 
-    static bool ShouldRemoveAttribute(XAttribute attribute) =>
-        attribute.Name == "unhideWhenUsed" && attribute.Value == "0" ||
-        attribute.Name == "semiHidden" && attribute.Value == "0";
-
-    static void RemoveXmlNamespaces(XDocument document)
-    {
-        foreach (var node in document.Descendants())
-        {
-            // Remove namespace from elements
-            node.Name = node.Name.LocalName;
-
-            // Identify xmlns:* attributes and attributes with a namespace
-            var attributesToRemove = node
-                .Attributes()
-                .Where(a => a.IsNamespaceDeclaration ||
-                            a.Name.Namespace != XNamespace.None)
-                .ToList();
-
-            // Create and add new attributes with local name only for those with a namespace
-            foreach (var attribute in attributesToRemove
-                         .Where(a => a.Name.Namespace != XNamespace.None))
-            {
-                node.Add(new XAttribute(attribute.Name.LocalName, attribute.Value));
-            }
-
-            // Remove the original attributes
-            attributesToRemove.Remove();
-        }
-    }
 }

@@ -2,6 +2,25 @@
 
 public static class VerifyAsposeSettings
 {
+    public static void IncludeWordStyles(this VerifySettings settings) =>
+        settings.Context["VerifyAsposeIncludeWordStyles"] = true;
+
+    public static SettingsTask IncludeWordStyles(this SettingsTask settings)
+    {
+        settings.CurrentSettings.IncludeWordStyles();
+        return settings;
+    }
+
+    internal static bool GetIncludeWordStyles(this IReadOnlyDictionary<string, object> settings)
+    {
+        if (settings.TryGetValue("VerifyAsposeIncludeWordStyles", out var value))
+        {
+            return (bool)value;
+        }
+
+        return false;
+    }
+
     public static void PagesToInclude(this VerifySettings settings, int count) =>
         settings.Context["VerifyAsposePagesToInclude"] = count;
 
