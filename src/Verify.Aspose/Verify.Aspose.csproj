@@ -8,6 +8,8 @@
     <PackageReference Include="Aspose.Cells" />
     <PackageReference Include="Aspose.Words" />
     <PackageReference Include="Aspose.Slides.NET" />
+    <PackageReference Include="System.Text.Json" />
+    <PackageReference Include="System.Formats.Asn1" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
   </ItemGroup>
 </Project>
