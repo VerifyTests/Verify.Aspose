@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Aspose.Cells" Version="24.9.0" />
-    <PackageVersion Include="Aspose.Pdf" Version="24.8.0" />
+    <PackageVersion Include="Aspose.Pdf" Version="24.9.0" />
     <PackageVersion Include="Aspose.Slides.NET" Version="24.9.0" />
     <PackageVersion Include="Aspose.Words" Version="24.9.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="27.0.2" />
