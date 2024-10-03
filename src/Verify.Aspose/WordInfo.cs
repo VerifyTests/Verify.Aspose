@@ -6,5 +6,6 @@ readonly record struct WordInfo
     public EditingLanguage DefaultLocale { get; init; }
     public Dictionary<string, object> Properties { get; init; }
     public Dictionary<string, object> CustomProperties { get; init; }
+    public bool ShadeFormData { get; init; }
     public string Text { get; init; }
 }

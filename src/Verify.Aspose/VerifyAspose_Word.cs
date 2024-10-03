@@ -31,6 +31,7 @@ public static partial class VerifyAspose
             Properties = GetProperties(document),
             CustomProperties = GetCustomProperties(document),
             Text = GetDocumentText(document),
+            ShadeFormData = document.ShadeFormData
         };
 
     static Dictionary<string, object> GetProperties(Document document) =>
