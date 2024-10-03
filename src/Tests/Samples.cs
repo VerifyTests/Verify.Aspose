@@ -58,6 +58,7 @@ public class Samples
     }
 
     #endregion
+
     [Test]
     public Task VerifyPowerPointDoc()
     {
@@ -172,6 +173,17 @@ public class Samples
             {
                 Comments = "the comments"
             }
+        };
+        document.CustomDocumentProperties.Add("key", "value");
+        return Verify(document);
+    }
+
+    [Test]
+    public Task ShadeFormData()
+    {
+        var document = new Document
+        {
+            ShadeFormData = false
         };
         document.CustomDocumentProperties.Add("key", "value");
         return Verify(document);

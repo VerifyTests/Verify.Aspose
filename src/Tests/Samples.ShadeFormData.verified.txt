@@ -2,7 +2,6 @@
   HasRevisions: False,
   DefaultLocale: EnglishUS,
   Properties: {
-    Comments: the comments,
     HeadingPairs: [
       Title,
       1
@@ -15,7 +14,7 @@
   CustomProperties: {
     key: value
   },
-  ShadeFormData: true,
+  ShadeFormData: false,
   Text:
 
 }
