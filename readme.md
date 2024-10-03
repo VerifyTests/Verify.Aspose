@@ -265,6 +265,7 @@ public Task VerifyWordStream()
     CreateTime: DateTime_1,
     Language: en-US
   },
+  ShadeFormData: true,
   Text:
 ![](content.001.png)
 
@@ -323,8 +324,7 @@ Fusce vitae vestibulum velit. Pellentesque vulputate lectus quis pellentesque co
 Etiam vehicula luctus fermentum. In vel metus congue, pulvinar lectus vel, fermentum dui. Maecenas ante orci, egestas ut aliquet sit amet, sagittis a magna. Aliquam ante quam, pellentesque ut dignissim quis, laoreet eget est. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut ullamcorper justo sapien, in cursus libero viverra eget. Vivamus auctor imperdiet urna, at pulvinar leo posuere laoreet. Suspendisse neque nisl, fringilla at iaculis scelerisque, ornare vel dolor. Ut et pulvinar nunc. Pellentesque fringilla mollis efficitur. Nullam venenatis commodo imperdiet. Morbi velit neque, semper quis lorem quis, efficitur dignissim ipsum. Ut ac lorem sed turpis imperdiet eleifend sit amet id sapien.
 
 ![](content.003.jpeg)
-,
-  ShadeFormData: true
+
 }
 ```
 <sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
