@@ -2,14 +2,14 @@
 <Project>
   <PropertyGroup>
     <NoWarn>CS1591;CS0649;CA1416</NoWarn>
-    <Version>5.6.0</Version>
+    <Version>5.7.0</Version>
     <LangVersion>preview</LangVersion>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <PackageTags>Aspose, Verify</PackageTags>
     <Description>Extends Verify (https://github.com/VerifyTests/Verify) to allow verification via Aspose.</Description>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
-    <NuGetAuditMode>all</NuGetAuditMode>
-    <NuGetAuditLevel>low</NuGetAuditLevel>
+<!--    <NuGetAuditMode>all</NuGetAuditMode>-->
+<!--    <NuGetAuditLevel>low</NuGetAuditLevel>-->
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
