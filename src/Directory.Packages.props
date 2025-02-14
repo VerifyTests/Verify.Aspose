@@ -4,7 +4,7 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Aspose.Cells" Version="25.1.2" />
+    <PackageVersion Include="Aspose.Cells" Version="25.2.0" />
     <PackageVersion Include="Aspose.Pdf" Version="25.2.0" />
     <PackageVersion Include="Aspose.Slides.NET" Version="25.2.0" />
     <PackageVersion Include="Aspose.Words" Version="25.2.0" />
