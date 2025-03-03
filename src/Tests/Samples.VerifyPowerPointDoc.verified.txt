@@ -18,5 +18,8 @@
   ContentStatus: ,
   ContentType: ,
   HyperlinkBase: ,
-  CountOfCustomProperties: 1
+  CountOfCustomProperties: 1,
+  ScaleCrop: false,
+  LinksUpToDate: false,
+  HyperlinksChanged: false
 }
