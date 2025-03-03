@@ -392,10 +392,46 @@ public Task VerifyPowerPointStream()
   RevisionNumber: 1,
   ContentStatus: ,
   ContentType: ,
-  HyperlinkBase: 
+  HyperlinkBase: ,
+  ScaleCrop: false,
+  LinksUpToDate: false,
+  HyperlinksChanged: false,
+  Slides: 3,
+  Notes: 3,
+  Paragraphs: 14,
+  Words: 231,
+  TitlesOfParts: [
+    Times New Roman,
+    Arial,
+    Droid Sans Fallback,
+    WenQuanYi Zen Hei,
+    DejaVu Sans,
+    Office Theme,
+    Office Theme,
+    Lorem ipsum,
+    Chart,
+    Table
+  ],
+  HeadingPairs: [
+    {
+      Name: Fonts Used,
+      Count: 5
+    },
+    {
+      Name: Theme,
+      Count: 2
+    },
+    {
+      Name: Embedded OLE Servers
+    },
+    {
+      Name: Slide Titles,
+      Count: 3
+    }
+  ]
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L58' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPowerPoint%2300.verified.png](/src/Tests/Samples.VerifyPowerPoint%2300.verified.png):
