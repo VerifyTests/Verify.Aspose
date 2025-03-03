@@ -23,8 +23,8 @@ public static partial class VerifyAspose
         new(GetInfo(document), GetWordStreams(document, settings)
             .ToList());
 
-    static object GetInfo(Document document) =>
-        new WordInfo
+    static WordInfo GetInfo(Document document) =>
+        new()
         {
             HasRevisions = document.HasRevisions.ToString(),
             DefaultLocale = (EditingLanguage)document.Styles.DefaultFont.LocaleId,
