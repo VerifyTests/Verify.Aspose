@@ -7,7 +7,7 @@
     <PackageVersion Include="Aspose.Cells" Version="25.3.0" />
     <PackageVersion Include="Aspose.Pdf" Version="25.3.0" />
     <PackageVersion Include="Aspose.Slides.NET" Version="25.3.0" />
-    <PackageVersion Include="Aspose.Words" Version="25.3.0" />
+    <PackageVersion Include="Aspose.Words" Version="25.4.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="27.0.2" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
     <PackageVersion Include="NUnit" Version="4.3.2" />
