@@ -4,13 +4,13 @@ namespace VerifyTests;
 
 public static partial class VerifyAspose
 {
-    static ConversionResult ConvertPdf(Stream stream, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertPdf(string? name, Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         using var document = new Document(stream);
-        return ConvertPdf(document, settings);
+        return ConvertPdf(name, document, settings);
     }
 
-    static ConversionResult ConvertPdf(Document document, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertPdf(string? name, Document document, IReadOnlyDictionary<string, object> settings)
     {
         var info = document.Info;
         if (info.Title == "Aspose" ||
@@ -49,7 +49,7 @@ public static partial class VerifyAspose
                 document.Version,
                 Text = GetDocumentText(document)
             },
-            GetPdfStreams(document, settings).ToList());
+            GetPdfStreams(name, document, settings).ToList());
     }
 
     static string GetDocumentText(Document document)
@@ -67,7 +67,7 @@ public static partial class VerifyAspose
                         !_.Value.Contains("Aspose"))
             .ToDictionary(_ => _.Key, _ => _.Value);
 
-    static IEnumerable<Target> GetPdfStreams(Document document, IReadOnlyDictionary<string, object> settings)
+    static IEnumerable<Target> GetPdfStreams(string? name, Document document, IReadOnlyDictionary<string, object> settings)
     {
         var pagesToInclude = settings.GetPagesToInclude(document.Pages.Count);
         for (var index = 0; index < pagesToInclude; index++)
@@ -76,7 +76,7 @@ public static partial class VerifyAspose
             var stream = new MemoryStream();
             var pngDevice = settings.GetPdfPngDevice(page);
             pngDevice.Process(page, stream);
-            yield return new("png", stream);
+            yield return new("png", stream, name);
         }
     }
 }

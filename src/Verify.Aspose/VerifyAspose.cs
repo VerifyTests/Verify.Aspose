@@ -21,21 +21,21 @@ public static partial class VerifyAspose
 
         VerifierSettings.AddExtraSettings(_ => _.Converters.Add(new CellConverter()));
         VerifierSettings.ScrubLines(_ => _.Contains("<meta name=\"generator\" content=\"Aspose"));
-        VerifierSettings.RegisterFileConverter("xlsx", ConvertExcel);
-        VerifierSettings.RegisterFileConverter("xls", ConvertExcel);
+        VerifierSettings.RegisterStreamConverter("xlsx", ConvertExcel);
+        VerifierSettings.RegisterStreamConverter("xls", ConvertExcel);
         VerifierSettings.IgnoreMember<IDocumentProperties>(_ => _.AppVersion);
-        VerifierSettings.RegisterFileConverter<Workbook>(ConvertExcel);
-        VerifierSettings.RegisterFileConverter<Worksheet>(ConvertSheet);
+        VerifierSettings.RegisterFileConverter<Workbook>((target, _) => ConvertExcel(null, target));
+        VerifierSettings.RegisterFileConverter<Worksheet>((target, _) => ConvertSheet(null, target));
 
-        VerifierSettings.RegisterFileConverter("pdf", ConvertPdf);
-        VerifierSettings.RegisterFileConverter<Aspose.Pdf.Document>(ConvertPdf);
+        VerifierSettings.RegisterStreamConverter("pdf", ConvertPdf);
+        VerifierSettings.RegisterFileConverter<Aspose.Pdf.Document>((target, context) => ConvertPdf(null, target, context));
 
-        VerifierSettings.RegisterFileConverter("pptx", ConvertPowerPoint);
-        VerifierSettings.RegisterFileConverter("ppt", ConvertPowerPoint);
-        VerifierSettings.RegisterFileConverter<Presentation>(ConvertPowerPoint);
+        VerifierSettings.RegisterStreamConverter("pptx", ConvertPowerPoint);
+        VerifierSettings.RegisterStreamConverter("ppt", ConvertPowerPoint);
+        VerifierSettings.RegisterFileConverter<Presentation>((target, context) => ConvertPowerPoint(null, target, context));
 
-        VerifierSettings.RegisterFileConverter("docx", ConvertWord);
-        VerifierSettings.RegisterFileConverter("doc", ConvertWord);
-        VerifierSettings.RegisterFileConverter<Document>(ConvertWord);
+        VerifierSettings.RegisterStreamConverter("docx", ConvertWord);
+        VerifierSettings.RegisterStreamConverter("doc", ConvertWord);
+        VerifierSettings.RegisterFileConverter<Document>((target, context) => ConvertWord(null, target, context));
     }
 }

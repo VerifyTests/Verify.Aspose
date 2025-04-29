@@ -16,19 +16,19 @@ public static partial class VerifyAspose
         PrintingPage = PrintingPageType.IgnoreBlank
     };
 
-    static ConversionResult ConvertExcel(Stream stream, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertExcel(string? name, Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         using var book = new Workbook(stream);
-        return ConvertExcel(book, settings);
+        return ConvertExcel(name, book);
     }
 
-    static ConversionResult ConvertExcel(Workbook book, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertExcel(string? name, Workbook book)
     {
         //force dates in csv export to be consistent
         book.Settings.Region = CountryCode.USA;
         book.Settings.CultureInfo = CultureInfo.InvariantCulture;
         var info = GetInfo(book);
-        return new(info, GetExcelStreams(book).ToList());
+        return new(info, GetExcelStreams(name, book).ToList());
     }
 
     static object GetInfo(Workbook book) =>
@@ -52,20 +52,20 @@ public static partial class VerifyAspose
             .Where(_ => _.Value.HasValue())
             .ToDictionary(_ => _.Name, _ => _.Value);
 
-    static ConversionResult ConvertSheet(Worksheet sheet, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertSheet(string? name, Worksheet sheet)
     {
         var info = GetInfo(sheet);
-        return new(info, GetSheetStreams(sheet).ToList());
+        return new(info, GetSheetStreams(name, sheet).ToList());
     }
 
     static Sheet GetInfo(Worksheet sheet) =>
         new(sheet.Name, GetColumns(sheet).ToList(), sheet.CustomProperties
             .ToDictionary(_ => _.Name, _ => _.Value));
 
-    static IEnumerable<Target> GetExcelStreams(Workbook book) =>
-        book.Worksheets.SelectMany(GetSheetStreams);
+    static IEnumerable<Target> GetExcelStreams(string? name, Workbook book) =>
+        book.Worksheets.SelectMany(_ => GetSheetStreams(name, _));
 
-    static IEnumerable<Target> GetSheetStreams(Worksheet sheet)
+    static IEnumerable<Target> GetSheetStreams(string? name, Worksheet sheet)
     {
         var setup = sheet.PageSetup;
         setup.PrintGridlines = true;
@@ -82,7 +82,7 @@ public static partial class VerifyAspose
         {
             var stream = new MemoryStream();
             render.ToImage(index, stream);
-            yield return new("png", stream);
+            yield return new("png", stream, name);
         }
     }
 
