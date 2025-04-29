@@ -9,18 +9,18 @@ namespace VerifyTests;
 
 public static partial class VerifyAspose
 {
-    static ConversionResult ConvertWord(Stream stream, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertWord(string? name, Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         //Aspose makes shitty assumptions about streams. like they are writable.
         using var memoryStream = new MemoryStream();
         stream.CopyTo(memoryStream);
         memoryStream.Position = 0;
         var document = new Document(memoryStream);
-        return ConvertWord(document, settings);
+        return ConvertWord(name, document, settings);
     }
 
-    static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings) =>
-        new(GetInfo(document), GetWordStreams(document, settings)
+    static ConversionResult ConvertWord(string? name, Document document, IReadOnlyDictionary<string, object> settings) =>
+        new(GetInfo(document), GetWordStreams(name, document, settings)
             .ToList());
 
     static WordInfo GetInfo(Document document) =>
@@ -97,11 +97,11 @@ public static partial class VerifyAspose
 
         return true;
     }
-    static IEnumerable<Target> GetWordStreams(Document document, IReadOnlyDictionary<string, object> settings)
+    static IEnumerable<Target> GetWordStreams(string? name, Document document, IReadOnlyDictionary<string, object> settings)
     {
         if (settings.GetIncludeWordStyles())
         {
-            yield return new("xml", GetStyles(document));
+            yield return new("xml", GetStyles(document), name);
         }
 
         var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
@@ -113,7 +113,7 @@ public static partial class VerifyAspose
             };
             var stream = new MemoryStream();
             document.Save(stream, saveOptions);
-            yield return new("png", stream);
+            yield return new("png", stream, name);
         }
     }
 
@@ -349,7 +349,8 @@ public static partial class VerifyAspose
         {
             var attribute2 = element2.Attribute(attribute1.Name);
             // Check if the attribute exists in the second element and has the same value
-            if (attribute2 == null || attribute1.Value != attribute2.Value)
+            if (attribute2 == null ||
+                attribute1.Value != attribute2.Value)
             {
                 return false;
             }
