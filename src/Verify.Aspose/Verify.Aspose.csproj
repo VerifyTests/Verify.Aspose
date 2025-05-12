@@ -9,5 +9,6 @@
     <PackageReference Include="Aspose.Words" />
     <PackageReference Include="Aspose.Slides.NET" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Sbom.Targets" PrivateAssets="all" />
   </ItemGroup>
 </Project>
