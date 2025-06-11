@@ -15,7 +15,11 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
 
 ## Sponsors
 
-include: zzz
+### Entity Framework Extensions<!-- include: zzz. path: /docs/zzz.include.md -->
+
+[Entity Framework Extensions](https://entityframework-extensions.net/) is a major sponsor and is proud to contribute to the development this project.
+
+[![Entity Framework Extensions](docs/zzz.png)](https://entityframework-extensions.net)<!-- endInclude -->
 
 
 ## NuGet
