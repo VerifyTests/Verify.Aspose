@@ -13,6 +13,11 @@ Converts documents (pdf, docx, xlsx, and pptx) to png for verification.
 An [Aspose License](https://purchase.aspose.com/policies/license-types) is required to use this tool.
 
 
+## Sponsors
+
+include: zzz
+
+
 ## NuGet
 
  * https://nuget.org/packages/Verify.Aspose
