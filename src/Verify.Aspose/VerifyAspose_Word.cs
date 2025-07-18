@@ -1,6 +1,4 @@
-﻿using System.IO.Compression;
-using System.Xml.Linq;
-using Aspose.Words;
+﻿using Aspose.Words;
 using Aspose.Words.Loading;
 using Aspose.Words.Properties;
 using Aspose.Words.Saving;
