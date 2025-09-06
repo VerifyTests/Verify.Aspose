@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageVersion Include="Aspose.Cells" Version="25.7.0" />
     <PackageVersion Include="Aspose.PDF" Version="25.7.0" />
-    <PackageVersion Include="Aspose.Slides.NET" Version="25.8.0" />
+    <PackageVersion Include="Aspose.Slides.NET" Version="25.9.0" />
     <PackageVersion Include="Aspose.Words" Version="25.9.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.0.0-beta.2" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
