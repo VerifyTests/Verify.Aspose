@@ -4,15 +4,15 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Aspose.Cells" Version="25.7.0" />
-    <PackageVersion Include="Aspose.PDF" Version="25.7.0" />
+    <PackageVersion Include="Aspose.Cells" Version="25.9.0" />
+    <PackageVersion Include="Aspose.PDF" Version="25.9.0" />
     <PackageVersion Include="Aspose.Slides.NET" Version="25.9.0" />
     <PackageVersion Include="Aspose.Words" Version="25.9.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.0.0-beta.2" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="NUnit" Version="4.4.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="5.1.0" />
-    <PackageVersion Include="ProjectDefaults" Version="1.0.157" />
+    <PackageVersion Include="ProjectDefaults" Version="1.0.158" />
     <PackageVersion Include="Verify" Version="30.13.0" />
     <PackageVersion Include="Verify.DiffPlex" Version="3.1.2" />
     <PackageVersion Include="Verify.ImageMagick" Version="3.7.3" />
