@@ -16,19 +16,19 @@ public static partial class VerifyAspose
         PrintingPage = PrintingPageType.IgnoreBlank
     };
 
-    static ConversionResult ConvertExcel(string? name, Stream stream, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertExcel(string? targetName, Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         using var book = new Workbook(stream);
-        return ConvertExcel(name, book);
+        return ConvertExcel(targetName, book);
     }
 
-    static ConversionResult ConvertExcel(string? name, Workbook book)
+    static ConversionResult ConvertExcel(string? targetName, Workbook book)
     {
         //force dates in csv export to be consistent
         book.Settings.Region = CountryCode.USA;
         book.Settings.CultureInfo = CultureInfo.InvariantCulture;
         var info = GetInfo(book);
-        return new(info, GetExcelStreams(name, book).ToList());
+        return new(info, GetExcelStreams(targetName, book).ToList());
     }
 
     static object GetInfo(Workbook book) =>
@@ -62,10 +62,10 @@ public static partial class VerifyAspose
         new(sheet.Name, GetColumns(sheet).ToList(), sheet.CustomProperties
             .ToDictionary(_ => _.Name, _ => _.Value));
 
-    static IEnumerable<Target> GetExcelStreams(string? name, Workbook book) =>
-        book.Worksheets.SelectMany(_ => GetSheetStreams(name, _));
+    static IEnumerable<Target> GetExcelStreams(string? targetName, Workbook book) =>
+        book.Worksheets.SelectMany(_ => GetSheetStreams(targetName, _));
 
-    static IEnumerable<Target> GetSheetStreams(string? name, Worksheet sheet)
+    static IEnumerable<Target> GetSheetStreams(string? targetName, Worksheet sheet)
     {
         var setup = sheet.PageSetup;
         setup.PrintGridlines = true;
@@ -78,11 +78,29 @@ public static partial class VerifyAspose
         yield return new("csv", csv);
         var render = new SheetRender(sheet, options);
 
+        string targetAndSheet;
+        if (targetName == null)
+        {
+            targetAndSheet = sheet.Name;
+        }
+        else
+        {
+            targetAndSheet = $"{targetName}-{sheet.Name}";
+        }
+
+        if (render.PageCount == 1)
+        {
+            var stream = new MemoryStream();
+            render.ToImage(0, stream);
+            yield return new("png", stream, targetAndSheet);
+            yield break;
+        }
+
         for (var index = 0; index < render.PageCount; index++)
         {
             var stream = new MemoryStream();
             render.ToImage(index, stream);
-            yield return new("png", stream, name);
+            yield return new("png", stream, $"{targetAndSheet}_{index}");
         }
     }
 
