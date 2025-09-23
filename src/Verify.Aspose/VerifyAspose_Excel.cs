@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using Aspose.Cells;
+﻿using Aspose.Cells;
 using Aspose.Cells.Drawing;
 using Aspose.Cells.Rendering;
 
@@ -107,7 +106,7 @@ public static partial class VerifyAspose
     static string ToCsv(Worksheet sheet)
     {
         var utf8 = Encoding.UTF8;
-        var txtSaveOptions = new TxtSaveOptions
+        var saveOptions = new TxtSaveOptions
         {
             Encoding = utf8,
             TrimTailingBlankCells = true,
@@ -116,7 +115,7 @@ public static partial class VerifyAspose
         var book = sheet.Workbook;
         book.Worksheets.ActiveSheetName = sheet.Name;
         using var stream = new MemoryStream();
-        book.Save(stream, txtSaveOptions);
+        book.Save(stream, saveOptions);
         stream.Position = 0;
         using var reader = new StreamReader(stream, utf8);
         return reader.ReadToEnd();
