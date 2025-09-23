@@ -140,12 +140,12 @@ public static partial class VerifyAspose
             var firstRow = cells[1, column];
             yield return new(
                 header.Value,
-                (uint) cells.GetColumnWidth(column),
+                cells.GetColumnWidth(column),
                 firstRow.Value);
         }
     }
 }
 
-record ColumnInfo(object Name, uint Width, object FirstValue);
+record ColumnInfo(object Name, double Width, object FirstValue);
 
 record Sheet(string Name, List<ColumnInfo> Columns, Dictionary<string, string> Properties);
