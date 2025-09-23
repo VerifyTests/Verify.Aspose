@@ -1,7 +1,8 @@
-﻿using System.Globalization;
-using Aspose.Cells;
+﻿using Aspose.Cells;
 using Aspose.Cells.Drawing;
 using Aspose.Cells.Rendering;
+using DeterministicIoPackaging;
+using TxtSaveOptions = Aspose.Cells.TxtSaveOptions;
 
 namespace VerifyTests;
 
@@ -62,8 +63,20 @@ public static partial class VerifyAspose
         new(sheet.Name, GetColumns(sheet).ToList(), sheet.CustomProperties
             .ToDictionary(_ => _.Name, _ => _.Value));
 
-    static IEnumerable<Target> GetExcelStreams(string? name, Workbook book) =>
-        book.Worksheets.SelectMany(_ => GetSheetStreams(name, _));
+    static IEnumerable<Target> GetExcelStreams(string? name, Workbook book)
+    {
+        book.BuiltInDocumentProperties.CreatedTime = DeterministicPackage.StableDate;
+        book.BuiltInDocumentProperties.LastSavedTime = DeterministicPackage.StableDate;
+        book.BuiltInDocumentProperties.Author = null;
+        using var sourceStream = new MemoryStream();
+        book.Save(sourceStream, SaveFormat.Xlsx);
+        sourceStream.Position = 0;
+        var resultStream = DeterministicPackage.Convert(sourceStream);
+
+        List<Target> targets = [new("xlsx", resultStream, performConversion: false)];
+        targets.AddRange(book.Worksheets.SelectMany(_ => GetSheetStreams(name, _)));
+        return targets;
+    }
 
     static IEnumerable<Target> GetSheetStreams(string? name, Worksheet sheet)
     {
