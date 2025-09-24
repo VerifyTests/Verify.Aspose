@@ -1,7 +1,6 @@
 ﻿using Aspose.Cells;
 using Aspose.Cells.Drawing;
 using Aspose.Cells.Rendering;
-using DeterministicIoPackaging;
 
 namespace VerifyTests;
 
@@ -24,7 +23,7 @@ public static partial class VerifyAspose
 
     static ConversionResult ConvertExcel(string? targetName, Workbook book)
     {
-        //force dates in csv export to be consistent
+        // force dates in csv export to be consistent
         book.Settings.Region = CountryCode.USA;
         book.Settings.CultureInfo = CultureInfo.InvariantCulture;
         var info = GetInfo(book);
@@ -55,7 +54,9 @@ public static partial class VerifyAspose
 
     static Dictionary<string, object> GetProperties(Workbook book) =>
         book.BuiltInDocumentProperties
-            .Where(_ => _.Value.HasValue())
+            .Where(_ => _.Name != "LastSavedBy" &&
+                        _.Name != "LastSavedTime" &&
+                        _.Value.HasValue())
             .ToDictionary(_ => _.Name, _ => _.Value);
 
     static Dictionary<string, object> GetCustomProperties(Workbook book) =>
