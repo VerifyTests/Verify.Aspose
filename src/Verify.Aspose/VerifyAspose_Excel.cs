@@ -23,11 +23,22 @@ public static partial class VerifyAspose
 
     static ConversionResult ConvertExcel(string? targetName, Workbook book)
     {
-        //force dates in csv export to be consistent
+        // force dates in csv export to be consistent
         book.Settings.Region = CountryCode.USA;
         book.Settings.CultureInfo = CultureInfo.InvariantCulture;
         var info = GetInfo(book);
-        return new(info, GetExcelStreams(targetName, book).ToList());
+
+        using var sourceStream = new MemoryStream();
+        book.Save(sourceStream, SaveFormat.Xlsx);
+        var resultStream = DeterministicPackage.Convert(sourceStream);
+
+        List<Target> targets = [new("xlsx", resultStream, performConversion: false)];
+
+        targets.AddRange(
+            book.Worksheets
+                .SelectMany(_ => GetSheetStreams(targetName, _)));
+
+        return new(info, targets);
     }
 
     static object GetInfo(Workbook book) =>
@@ -43,7 +54,9 @@ public static partial class VerifyAspose
 
     static Dictionary<string, object> GetProperties(Workbook book) =>
         book.BuiltInDocumentProperties
-            .Where(_ => _.Value.HasValue())
+            .Where(_ => _.Name != "LastSavedBy" &&
+                        _.Name != "LastSavedTime" &&
+                        _.Value.HasValue())
             .ToDictionary(_ => _.Name, _ => _.Value);
 
     static Dictionary<string, object> GetCustomProperties(Workbook book) =>
@@ -60,9 +73,6 @@ public static partial class VerifyAspose
     static Sheet GetInfo(Worksheet sheet) =>
         new(sheet.Name, GetColumns(sheet).ToList(), sheet.CustomProperties
             .ToDictionary(_ => _.Name, _ => _.Value));
-
-    static IEnumerable<Target> GetExcelStreams(string? targetName, Workbook book) =>
-        book.Worksheets.SelectMany(_ => GetSheetStreams(targetName, _));
 
     static IEnumerable<Target> GetSheetStreams(string? targetName, Worksheet sheet)
     {
