@@ -226,7 +226,7 @@ public Task VerifyWorkbook()
 <sup><a href='/src/Tests/Samples.cs#L93-L115' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWorkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyExcel.verified.png](/src/Tests/Samples.VerifyExcel.verified.png):
+[Samples.VerifyExcel#Sheet1.verified.png](/src/Tests/Samples.VerifyExcel#Sheet1.verified.verified.png):
 
 <img src="/src/Tests/Samples.VerifyExcel.verified.png" width="200px">
 
