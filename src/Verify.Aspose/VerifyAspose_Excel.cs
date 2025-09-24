@@ -83,10 +83,6 @@ public static partial class VerifyAspose
         setup.RightMargin = 0;
         setup.BottomMargin = 0;
 
-        var csv = ToCsv(sheet);
-        yield return new("csv", csv);
-        var render = new SheetRender(sheet, options);
-
         string targetAndSheet;
         if (targetName == null)
         {
@@ -96,6 +92,10 @@ public static partial class VerifyAspose
         {
             targetAndSheet = $"{targetName}-{sheet.Name}";
         }
+
+        var csv = ToCsv(sheet);
+        yield return new("csv", csv, targetAndSheet);
+        var render = new SheetRender(sheet, options);
 
         if (render.PageCount == 1)
         {
