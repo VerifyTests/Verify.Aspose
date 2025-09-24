@@ -295,7 +295,4 @@
   <style type="numbering" custom="1" id="WW8Num1" />
   <style type="numbering" custom="1" id="WW8Num2" />
   <style type="numbering" custom="1" id="WW8Num3" />
-  <style type="character" id="Hyperlink" basedOn="DefaultParagraphFont">
-    <run color="0000FF" underline="single" />
-  </style>
 </styles>

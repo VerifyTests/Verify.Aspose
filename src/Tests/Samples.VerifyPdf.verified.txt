@@ -23,13 +23,8 @@
   PdfFormat: v_1_4,
   Version: 1.4,
   Text:
-![ref1]
 
-
-
-
-
-A Simple PDF File
+<a name="br1"></a>A Simple PDF File
 
 This is a small demonstration .pdf file -
 
@@ -50,7 +45,6 @@ And more text. And more text. And more text. And more text. And more
 text. And more text. And more text. Even more. Continued on page 2 ...
 
 
-![ref2]
 
 
 
@@ -69,8 +63,5 @@ paint dry. And more text. And more text. And more text. And more text.
 Boring. More, a little more text. The end, and just as well.
 
 
-
-[ref1]: content.001.png
-[ref2]: content.002.png
 
 }

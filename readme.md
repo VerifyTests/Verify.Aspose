@@ -106,13 +106,8 @@ public Task VerifyPdfStream()
   PdfFormat: v_1_4,
   Version: 1.4,
   Text:
-![ref1]
 
-
-
-
-
-A Simple PDF File
+<a name="br1"></a>A Simple PDF File
 
 This is a small demonstration .pdf file -
 
@@ -133,7 +128,6 @@ And more text. And more text. And more text. And more text. And more
 text. And more text. And more text. Even more. Continued on page 2 ...
 
 
-![ref2]
 
 
 
@@ -153,12 +147,9 @@ Boring. More, a little more text. The end, and just as well.
 
 
 
-[ref1]: content.001.png
-[ref2]: content.002.png
-
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L76' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf#00.verified.png](/src/Tests/Samples.VerifyPdf%2300.verified.png):
@@ -277,9 +268,6 @@ public Task VerifyWordStream()
   },
   ShadeFormData: true,
   Text:
-![](content.001.png)
-
-
 **Lorem ipsum** 
 
 # **Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac faucibus odio.** 
@@ -295,7 +283,7 @@ Maecenas mauris lectus, lobortis et purus mattis, blandit dictum tellus.
 - Morbi viverra semper lorem nec molestie. 
 - Maecenas tincidunt est efficitur ligula euismod, sit amet ornare est vulputate.
 
-![](content.002.png)
+![](content.001.png)
 
 
 
@@ -333,11 +321,11 @@ Fusce vitae vestibulum velit. Pellentesque vulputate lectus quis pellentesque co
 
 Etiam vehicula luctus fermentum. In vel metus congue, pulvinar lectus vel, fermentum dui. Maecenas ante orci, egestas ut aliquet sit amet, sagittis a magna. Aliquam ante quam, pellentesque ut dignissim quis, laoreet eget est. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut ullamcorper justo sapien, in cursus libero viverra eget. Vivamus auctor imperdiet urna, at pulvinar leo posuere laoreet. Suspendisse neque nisl, fringilla at iaculis scelerisque, ornare vel dolor. Ut et pulvinar nunc. Pellentesque fringilla mollis efficitur. Nullam venenatis commodo imperdiet. Morbi velit neque, semper quis lorem quis, efficitur dignissim ipsum. Ut ac lorem sed turpis imperdiet eleifend sit amet id sapien.
 
-![](content.003.jpeg)
+![](content.002.jpeg)
 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L65' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyWord#00.verified.png](/src/Tests/Samples.VerifyWord%2300.verified.png):
