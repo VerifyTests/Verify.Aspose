@@ -1,6 +1,7 @@
 ﻿using Aspose.Cells;
 using Aspose.Cells.Drawing;
 using Aspose.Cells.Rendering;
+using DeterministicIoPackaging;
 
 namespace VerifyTests;
 
@@ -27,7 +28,18 @@ public static partial class VerifyAspose
         book.Settings.Region = CountryCode.USA;
         book.Settings.CultureInfo = CultureInfo.InvariantCulture;
         var info = GetInfo(book);
-        return new(info, GetExcelStreams(targetName, book).ToList());
+
+        using var sourceStream = new MemoryStream();
+        book.Save(sourceStream, SaveFormat.Xlsx);
+        var resultStream = DeterministicPackage.Convert(sourceStream);
+
+        List<Target> targets = [new("xlsx", resultStream, performConversion: false)];
+
+        targets.AddRange(
+            book.Worksheets
+                .SelectMany(_ => GetSheetStreams(targetName, _)));
+
+        return new(info, targets);
     }
 
     static object GetInfo(Workbook book) =>
@@ -60,9 +72,6 @@ public static partial class VerifyAspose
     static Sheet GetInfo(Worksheet sheet) =>
         new(sheet.Name, GetColumns(sheet).ToList(), sheet.CustomProperties
             .ToDictionary(_ => _.Name, _ => _.Value));
-
-    static IEnumerable<Target> GetExcelStreams(string? targetName, Workbook book) =>
-        book.Worksheets.SelectMany(_ => GetSheetStreams(targetName, _));
 
     static IEnumerable<Target> GetSheetStreams(string? targetName, Worksheet sheet)
     {
