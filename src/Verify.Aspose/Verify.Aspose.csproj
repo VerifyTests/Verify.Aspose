@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Aspose.Pdf" />
+    <PackageReference Include="DeterministicIoPackaging" />
     <PackageReference Include="Verify" />
     <PackageReference Include="Aspose.Cells" />
     <PackageReference Include="Aspose.Words" />
