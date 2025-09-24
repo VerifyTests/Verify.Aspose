@@ -23,9 +23,15 @@
 
     static void ApplyAsposeLicense()
     {
+        var licenseText = Environment.GetEnvironmentVariable("AsposeLicense");
+        if (licenseText == null)
+        {
+            throw new("Expected a `AsposeLicense` environment variable");
+        }
+
         var stream = new MemoryStream();
         var writer = new StreamWriter(stream);
-        writer.Write(Environment.GetEnvironmentVariable("AsposeLicense"));
+        writer.Write(licenseText);
         writer.Flush();
         stream.Position = 0;
         var license = new Aspose.Cells.License();
