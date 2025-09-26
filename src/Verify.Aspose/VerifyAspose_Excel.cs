@@ -26,6 +26,11 @@ public static partial class VerifyAspose
         // force dates in csv export to be consistent
         book.Settings.Region = CountryCode.USA;
         book.Settings.CultureInfo = CultureInfo.InvariantCulture;
+        foreach (var sheet in book.Worksheets)
+        {
+            ScrubCells(sheet);
+        }
+
         var info = GetInfo(book);
 
         using var sourceStream = new MemoryStream();
@@ -66,6 +71,7 @@ public static partial class VerifyAspose
 
     static ConversionResult ConvertSheet(string? name, Worksheet sheet)
     {
+        ScrubCells(sheet);
         var info = GetInfo(sheet);
         return new(info, GetSheetStreams(name, sheet).ToList());
     }
@@ -76,8 +82,6 @@ public static partial class VerifyAspose
 
     static IEnumerable<Target> GetSheetStreams(string? targetName, Worksheet sheet)
     {
-        var counter = Counter.Current;
-        ScrubCells(sheet, counter);
         var setup = sheet.PageSetup;
         setup.PrintGridlines = true;
         setup.LeftMargin = 0;
@@ -115,8 +119,9 @@ public static partial class VerifyAspose
         }
     }
 
-    static void ScrubCells(Worksheet sheet, Counter counter)
+    static void ScrubCells(Worksheet sheet)
     {
+        var counter = Counter.Current;
         var cells = sheet.Cells;
         var maxRow = cells.MaxDataRow;
         var maxCol = cells.MaxDataColumn;
