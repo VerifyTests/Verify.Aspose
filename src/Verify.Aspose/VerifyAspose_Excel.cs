@@ -76,6 +76,8 @@ public static partial class VerifyAspose
 
     static IEnumerable<Target> GetSheetStreams(string? targetName, Worksheet sheet)
     {
+        var counter = Counter.Current;
+        ScrubCells(sheet, counter);
         var setup = sheet.PageSetup;
         setup.PrintGridlines = true;
         setup.LeftMargin = 0;
@@ -113,6 +115,73 @@ public static partial class VerifyAspose
         }
     }
 
+    static void ScrubCells(Worksheet sheet, Counter counter)
+    {
+        var cells = sheet.Cells;
+        var maxRow = cells.MaxDataRow;
+        var maxCol = cells.MaxDataColumn;
+
+        for (var row = 0; row <= maxRow; row++)
+        {
+            for (var col = 0; col <= maxCol; col++)
+            {
+                var cell = cells[row, col];
+                var (value, replaceCellValue) = GetCellValue(cell, counter);
+                if (replaceCellValue)
+                {
+                    cell.Value = value;
+                }
+            }
+        }
+    }
+
+    static (string value, bool replaceCellValue) GetCellValue(Cell cell, Counter counter)
+    {
+        if (!cell.HasValue())
+        {
+            return (string.Empty, false);
+        }
+
+        switch (cell.Type)
+        {
+            case CellValueType.IsNumeric:
+                var value = cell.DoubleValue;
+                if (cell.GetStyle().Custom.Contains('%'))
+                {
+                    // Percentage
+                    return (value.ToString("P", CultureInfo.InvariantCulture), false);
+                }
+
+                return (value.ToString(CultureInfo.InvariantCulture), false);
+
+            case CellValueType.IsBool:
+                return (cell.BoolValue.ToString(), false);
+
+            case CellValueType.IsDateTime:
+                var date = cell.DateTimeValue;
+                if (counter.TryConvert(date, out var dateResult))
+                {
+                    return (dateResult, true);
+                }
+
+                return (DateFormatter.Convert(date), false);
+
+            case CellValueType.IsError:
+                return (cell.Value.ToString()!, false);
+
+            case CellValueType.IsNull:
+                return ("", false);
+
+            default:
+                var text = cell.StringValue;
+                if (counter.TryConvert(text, out var result))
+                {
+                    return (result, true);
+                }
+
+                return (text, false);
+        }
+    }
     static string ToCsv(Worksheet sheet)
     {
         var utf8 = Encoding.UTF8;
