@@ -187,6 +187,7 @@ public static partial class VerifyAspose
                 return (text, false);
         }
     }
+
     static string ToCsv(Worksheet sheet)
     {
         var utf8 = Encoding.UTF8;
