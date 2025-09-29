@@ -222,15 +222,13 @@ public static partial class VerifyAspose
         for (var column = 0; column <= lastCell.Column; column++)
         {
             var header = cells[0, column];
-            var firstRow = cells[1, column];
             yield return new(
                 header.Value,
-                cells.GetColumnWidth(column),
-                firstRow.Value);
+                cells.GetColumnWidth(column));
         }
     }
 }
 
-record ColumnInfo(object Name, double Width, object FirstValue);
+record ColumnInfo(object Name, double Width);
 
 record Sheet(string Name, List<ColumnInfo> Columns, Dictionary<string, string> Properties);

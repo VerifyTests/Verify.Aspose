@@ -7,40 +7,31 @@
       Name: Sheet1,
       Columns: [
         {
-          Name: 0,
-          FirstValue: 1
+          Name: 0
         },
         {
-          Name: First Name,
-          FirstValue: Dulce
+          Name: First Name
         },
         {
-          Name: Last Name,
-          FirstValue: Abril
+          Name: Last Name
         },
         {
-          Name: Gender,
-          FirstValue: Female
+          Name: Gender
         },
         {
-          Name: Country,
-          FirstValue: United States
+          Name: Country
         },
         {
-          Name: Age,
-          FirstValue: 32
+          Name: Age
         },
         {
-          Name: Id,
-          FirstValue: 1562
+          Name: Id
         },
         {
-          Name: Formula,
-          FirstValue: 1563
+          Name: Formula
         },
         {
-          Name: DOB,
-          FirstValue: DateTime_1
+          Name: DOB
         }
       ]
     }
