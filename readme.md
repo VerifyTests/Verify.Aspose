@@ -185,7 +185,7 @@ public Task VerifyExcelStream()
     return Verify(stream, "xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L128-L137' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L143-L152' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -214,7 +214,7 @@ public Task VerifyWorkbook()
     return Verify(book);
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L93-L115' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWorkbook' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L108-L130' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWorkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyExcel#Sheet1.verified.png](/src/Tests/Samples.VerifyExcel#Sheet1.verified.verified.png):
@@ -234,7 +234,7 @@ public Task VerifyWorkbook()
 public Task VerifyWord() =>
     VerifyFile("sample.docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L139-L145' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L154-L160' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -250,7 +250,7 @@ public Task VerifyWordStream()
     return Verify(stream, "docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L147-L156' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L162-L171' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

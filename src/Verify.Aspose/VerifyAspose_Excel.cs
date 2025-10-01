@@ -54,7 +54,7 @@ public static partial class VerifyAspose
             IsDigitallySigned = book.IsDigitallySigned.ToString(),
             Sheets = GetSheetData(book).ToList(),
             Properties = GetProperties(book),
-            CustomProperties = GetCustomProperties(book)
+            CustomProperties = GetCustomProperties(book),
         };
 
     static Dictionary<string, object> GetProperties(Workbook book) =>
@@ -77,8 +77,12 @@ public static partial class VerifyAspose
     }
 
     static Sheet GetInfo(Worksheet sheet) =>
-        new(sheet.Name, GetColumns(sheet).ToList(), sheet.CustomProperties
-            .ToDictionary(_ => _.Name, _ => _.Value));
+        new(
+            sheet.Name,
+            GetColumns(sheet).ToList(),
+            sheet.CustomProperties
+                .ToDictionary(_ => _.Name, _ => _.Value),
+            sheet.Hyperlinks);
 
     static IEnumerable<Target> GetSheetStreams(string? targetName, Worksheet sheet)
     {
@@ -231,4 +235,4 @@ public static partial class VerifyAspose
 
 record ColumnInfo(object Name, double Width);
 
-record Sheet(string Name, List<ColumnInfo> Columns, Dictionary<string, string> Properties);
+record Sheet(string Name, List<ColumnInfo> Columns, Dictionary<string, string> Properties, HyperlinkCollection Hyperlinks);

@@ -1,0 +1,22 @@
+﻿{
+  Name: New Sheet,
+  Columns: [
+    {
+      Name: Some Text
+    }
+  ],
+  Properties: {
+    key: value
+  },
+  Hyperlinks: [
+    {
+      Address: theUrl,
+      Text: Some Text,
+      Area: {
+        Column: 0,
+        Row: 0
+      },
+      LinkType: FilePath
+    }
+  ]
+}

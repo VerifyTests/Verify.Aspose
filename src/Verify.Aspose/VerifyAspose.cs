@@ -19,7 +19,18 @@ public static partial class VerifyAspose
 
         InnerVerifier.ThrowIfVerifyHasBeenRun();
 
-        VerifierSettings.AddExtraSettings(_ => _.Converters.Add(new CellConverter()));
+        var cellConverter = new CellConverter();
+        var hyperlinkConverter = new HyperlinkConverter();
+        var cellAreaConverter = new CellAreaConverter();
+
+        VerifierSettings.AddExtraSettings(
+            _ =>
+            {
+                _.Converters.Add(cellConverter);
+                _.Converters.Add(hyperlinkConverter);
+                _.Converters.Add(cellAreaConverter);
+            });
+
         VerifierSettings.ScrubLines(_ => _.Contains("<meta name=\"generator\" content=\"Aspose"));
         VerifierSettings.RegisterStreamConverter("xlsx", ConvertExcel);
         VerifierSettings.RegisterStreamConverter("xls", ConvertExcel);

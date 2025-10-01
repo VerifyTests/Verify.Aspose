@@ -90,6 +90,21 @@ public class Samples
 
     #endregion
 
+    [Test]
+    public Task VerifySheetWithHyperlinks()
+    {
+        using var book = new Workbook();
+
+        var sheet = book.Worksheets.Add("New Sheet");
+        sheet.CustomProperties.Add("key", "value");
+        var cells = sheet.Cells;
+
+        cells[0, 0].PutValue("Some Text");
+        sheet.Hyperlinks.Add(0, 0, 1, 1, "theUrl");
+
+        return Verify(sheet);
+    }
+
     #region VerifyWorkbook
 
     [Test]
