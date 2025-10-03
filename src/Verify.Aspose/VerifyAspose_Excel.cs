@@ -110,7 +110,7 @@ public static partial class VerifyAspose
         if (render.PageCount == 1)
         {
             var stream = new MemoryStream();
-            render.ToImage(0, stream);
+            render.ToImageWithRetry(0, stream);
             yield return new("png", stream, targetAndSheet);
             yield break;
         }
@@ -118,8 +118,23 @@ public static partial class VerifyAspose
         for (var index = 0; index < render.PageCount; index++)
         {
             var stream = new MemoryStream();
-            render.ToImage(index, stream);
+            render.ToImageWithRetry(index, stream);
             yield return new("png", stream, $"{targetAndSheet}_{index}");
+        }
+    }
+
+    static void ToImageWithRetry(this SheetRender render, int index, MemoryStream stream)
+    {
+        try
+        {
+            render.ToImage(index, stream);
+        }
+        catch
+        {
+            //Aspsoe has an intermitant bug where it will null ref on render.
+            //This is an attempt to mitigate that
+            stream.Position = 0;
+            render.ToImage(index, stream);
         }
     }
 
