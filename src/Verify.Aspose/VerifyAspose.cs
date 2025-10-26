@@ -23,15 +23,14 @@ public static partial class VerifyAspose
         var hyperlinkConverter = new HyperlinkConverter();
         var cellAreaConverter = new CellAreaConverter();
 
-        VerifierSettings.AddExtraSettings(
-            _ =>
-            {
-                _.Converters.Add(cellConverter);
-                _.Converters.Add(hyperlinkConverter);
-                _.Converters.Add(cellAreaConverter);
-            });
+        VerifierSettings.AddExtraSettings(_ =>
+        {
+            _.Converters.Add(cellConverter);
+            _.Converters.Add(hyperlinkConverter);
+            _.Converters.Add(cellAreaConverter);
+        });
 
-        VerifierSettings.ScrubLines(_ => _.Contains("<meta name=\"generator\" content=\"Aspose"));
+        VerifierSettings.AddScrubber(RemoveGeneratorInfo);
         VerifierSettings.RegisterStreamConverter("xlsx", ConvertExcel);
         VerifierSettings.RegisterStreamConverter("xls", ConvertExcel);
         VerifierSettings.IgnoreMember<IDocumentProperties>(_ => _.AppVersion);
@@ -48,5 +47,26 @@ public static partial class VerifyAspose
         VerifierSettings.RegisterStreamConverter("docx", ConvertWord);
         VerifierSettings.RegisterStreamConverter("doc", ConvertWord);
         VerifierSettings.RegisterFileConverter<Document>((target, context) => ConvertWord(null, target, context));
+    }
+
+    static void RemoveGeneratorInfo(StringBuilder builder)
+    {
+        var index = 0;
+        const string startPattern = "<meta name=\"generator\" content=\"Aspose";
+        var stringValue = builder.ToString();
+        while ((index = stringValue.IndexOf(startPattern, index, StringComparison.Ordinal)) != -1)
+        {
+            var endIndex = stringValue.IndexOf('>', index + startPattern.Length);
+
+            if (endIndex != -1)
+            {
+                var length = endIndex + 1 - index;
+                builder.Remove(index, length);
+            }
+            else
+            {
+                index += startPattern.Length;
+            }
+        }
     }
 }
