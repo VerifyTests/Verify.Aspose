@@ -198,4 +198,8 @@ public class Samples
         document.CustomDocumentProperties.Add("key", "value");
         return Verify(document);
     }
+
+    [Test]
+    public Task AsposeGenerator() =>
+        VerifyFile("sample.WithAsposeGenerator.html");
 }

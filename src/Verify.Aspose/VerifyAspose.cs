@@ -30,7 +30,7 @@ public static partial class VerifyAspose
             _.Converters.Add(cellAreaConverter);
         });
 
-        VerifierSettings.AddScrubber(RemoveGeneratorInfo);
+        VerifierSettings.AddScrubber("html", RemoveGeneratorInfo);
         VerifierSettings.RegisterStreamConverter("xlsx", ConvertExcel);
         VerifierSettings.RegisterStreamConverter("xls", ConvertExcel);
         VerifierSettings.IgnoreMember<IDocumentProperties>(_ => _.AppVersion);
@@ -51,21 +51,16 @@ public static partial class VerifyAspose
 
     static void RemoveGeneratorInfo(StringBuilder builder)
     {
-        var index = 0;
+        var input = builder.ToString();
         const string startPattern = "<meta name=\"generator\" content=\"Aspose";
-        var stringValue = builder.ToString();
-        while ((index = stringValue.IndexOf(startPattern, index, StringComparison.Ordinal)) != -1)
-        {
-            var endIndex = stringValue.IndexOf('>', index + startPattern.Length);
 
+        var startIndex = input.IndexOf(startPattern, StringComparison.OrdinalIgnoreCase);
+        if (startIndex != -1)
+        {
+            var endIndex = input.IndexOf('>', startIndex);
             if (endIndex != -1)
             {
-                var length = endIndex + 1 - index;
-                builder.Remove(index, length);
-            }
-            else
-            {
-                index += startPattern.Length;
+                builder.Remove(startIndex, endIndex - startIndex + 1);
             }
         }
     }
