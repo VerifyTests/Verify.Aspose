@@ -6,6 +6,9 @@ namespace VerifyTests;
 
 public static partial class VerifyAspose
 {
+    static VerifyAspose() =>
+        RenderEmptySheet();
+
     public static bool Initialized { get; private set; }
 
     public static void Initialize()
