@@ -107,7 +107,13 @@ public static partial class VerifyAspose
         {
             var saveOptions = new ImageSaveOptions(SaveFormat.Png)
             {
-                PageSet = new(pageIndex)
+                PageSet = new(pageIndex),
+                Resolution = 96,
+                Scale = 1.0f,
+                UseAntiAliasing = true,
+                UseHighQualityRendering = true,
+                HorizontalResolution = 96,
+                VerticalResolution = 96,
             };
             var stream = new MemoryStream();
             document.Save(stream, saveOptions);
