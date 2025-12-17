@@ -17,9 +17,22 @@ public static partial class VerifyAspose
         return ConvertWord(name, document, settings);
     }
 
-    static ConversionResult ConvertWord(string? name, Document document, IReadOnlyDictionary<string, object> settings) =>
-        new(GetInfo(document), GetWordStreams(name, document, settings)
-            .ToList());
+    static ConversionResult ConvertWord(string? name, Document document, IReadOnlyDictionary<string, object> settings)
+    {
+        var info = GetInfo(document);
+        List<Target> targets = [BuildDocxTarget(document)];
+        targets.AddRange(GetWordStreams(name, document, settings));
+        return new(info, targets);
+    }
+
+    static Target BuildDocxTarget(Document book)
+    {
+        using var source = new MemoryStream();
+        book.Save(source, SaveFormat.Docx);
+        var resultStream = DeterministicPackage.Convert(source);
+
+        return new("docx", resultStream, performConversion: false);
+    }
 
     static WordInfo GetInfo(Document document) =>
         new()
