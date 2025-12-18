@@ -164,6 +164,17 @@ public class Samples
     }
 
     [Test]
+    public void FontSubstitutionPdf()
+    {
+        var exception = Assert.ThrowsAsync<Exception>(() => VerifyFile("fontSubstitution.pdf"))!;
+        Assert.That(exception.Message, Does.StartWith(
+            """
+            Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+            Details:
+            """));
+    }
+
+    [Test]
     public void FontSubstitutionExcel()
     {
         var exception = Assert.ThrowsAsync<Exception>(() => VerifyFile("fontSubstitution.xlsx"))!;
