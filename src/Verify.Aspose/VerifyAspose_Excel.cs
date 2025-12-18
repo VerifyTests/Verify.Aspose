@@ -6,6 +6,23 @@ namespace VerifyTests;
 
 public static partial class VerifyAspose
 {
+    class ExcelFontWarningCallback : IWarningCallback
+    {
+        public void Warning(WarningInfo info)
+        {
+            if (info.Type != ExceptionType.FontSubstitution)
+            {
+                return;
+            }
+
+            throw new(
+                $"""
+                 Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+                 Details: {info.Description}
+                 """);
+        }
+    }
+
     static void RenderEmptySheet()
     {
         //Aspose has an intermitant bug where it will null ref on render.
@@ -23,7 +40,8 @@ public static partial class VerifyAspose
         OnePagePerSheet = true,
         GridlineType = GridlineType.Hair,
         OnlyArea = true,
-        PrintingPage = PrintingPageType.IgnoreBlank
+        PrintingPage = PrintingPageType.IgnoreBlank,
+        WarningCallback = new ExcelFontWarningCallback()
     };
 
     static ConversionResult ConvertExcel(string? targetName, Stream stream, IReadOnlyDictionary<string, object> settings)

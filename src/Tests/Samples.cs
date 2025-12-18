@@ -152,7 +152,7 @@ public class Samples
     #endregion
 
     [Test]
-    public void FontSubstitution()
+    public void FontSubstitutionWord()
     {
         var exception = Assert.ThrowsAsync<Exception>(() => VerifyFile("fontSubstitution.docx"))!;
         AreEqual(
@@ -162,6 +162,30 @@ public class Samples
             """,
             exception.Message);
     }
+
+    [Test]
+    public void FontSubstitutionExcel()
+    {
+        var exception = Assert.ThrowsAsync<Exception>(() => VerifyFile("fontSubstitution.xlsx"))!;
+        Assert.That(exception.Message, Does.StartWith(
+            """
+            Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+            Details:
+            """));
+    }
+
+#if DEBUG
+    [Test]
+    public void FontSubstitutionPowerPoint()
+    {
+        var exception = Assert.ThrowsAsync<Exception>(() => VerifyFile("fontSubstitution.pptx"))!;
+        Assert.That(exception.Message, Does.StartWith(
+            """
+            Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+            Details:
+            """));
+    }
+#endif
 
     #region VerifyWord
 
