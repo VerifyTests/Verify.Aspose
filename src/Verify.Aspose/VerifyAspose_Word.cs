@@ -7,18 +7,36 @@ namespace VerifyTests;
 
 public static partial class VerifyAspose
 {
+    static Aspose.Words.Loading.LoadOptions wordLoadOptions = new()
+    {
+        WarningCallback = new FontWarningCallback()
+    };
+
+    class FontWarningCallback : IWarningCallback
+    {
+        public void Warning(WarningInfo info)
+        {
+            if (info.WarningType == WarningType.FontSubstitution)
+            {
+                throw new($"Font substitution detected: {info.Description}");
+            }
+        }
+    }
+
     static ConversionResult ConvertWord(string? name, Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         //Aspose makes shitty assumptions about streams. like they are writable.
         using var memoryStream = new MemoryStream();
         stream.CopyTo(memoryStream);
         memoryStream.Position = 0;
-        var document = new Document(memoryStream);
+        var document = new Document(memoryStream, wordLoadOptions);
         return ConvertWord(name, document, settings);
     }
 
     static ConversionResult ConvertWord(string? name, Document document, IReadOnlyDictionary<string, object> settings)
     {
+        Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+        Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
         var info = GetInfo(document);
         List<Target> targets = [BuildDocxTarget(document)];
         targets.AddRange(GetWordStreams(name, document, settings));
