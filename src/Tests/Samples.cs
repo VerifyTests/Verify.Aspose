@@ -151,6 +151,18 @@ public class Samples
 
     #endregion
 
+    [Test]
+    public void FontSubstitution()
+    {
+        var exception = Assert.ThrowsAsync<Exception>(() => VerifyFile("fontSubstitution.docx"))!;
+        AreEqual(
+            """
+            Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+            Details: Font 'Droid Sans Fallback' has not been found. Using 'Times New Roman' font instead. Reason: default font substitution.
+            """,
+            exception.Message);
+    }
+
     #region VerifyWord
 
     [Test]
