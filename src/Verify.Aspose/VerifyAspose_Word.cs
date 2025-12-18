@@ -8,6 +8,7 @@ namespace VerifyTests;
 public static partial class VerifyAspose
 {
     static Aspose.Words.Loading.LoadOptions wordLoadOptions = new()
+    static Aspose.Words.Loading.LoadOptions loadOptions = new()
     {
         WarningCallback = new FontWarningCallback()
     };
@@ -16,10 +17,16 @@ public static partial class VerifyAspose
     {
         public void Warning(WarningInfo info)
         {
-            if (info.WarningType == WarningType.FontSubstitution)
+            if (info.WarningType != WarningType.FontSubstitution)
             {
-                throw new($"Font substitution detected: {info.Description}");
+                return;
             }
+
+            throw new(
+                $"""
+                 Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+                 Details: {info.Description}
+                 """);
         }
     }
 
@@ -29,7 +36,7 @@ public static partial class VerifyAspose
         using var memoryStream = new MemoryStream();
         stream.CopyTo(memoryStream);
         memoryStream.Position = 0;
-        var document = new Document(memoryStream, wordLoadOptions);
+        var document = new Document(memoryStream, loadOptions);
         return ConvertWord(name, document, settings);
     }
 

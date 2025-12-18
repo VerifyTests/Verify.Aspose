@@ -17,6 +17,19 @@ public static partial class VerifyAspose
         {
             properties.NameOfApplication = null;
         }
+
+        // Check for font substitutions
+        var substitutions = document.FontsManager.GetSubstitutions().ToList();
+        if (substitutions.Count > 0)
+        {
+            var details = string.Join("; ", substitutions.Select(s => $"'{s.OriginalFontName}' -> '{s.SubstitutedFontName}'"));
+            throw new(
+                $"""
+                 Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+                 Details: {details}
+                 """);
+        }
+
         return new(properties, GetPowerPointStreams(name, document, settings).ToList());
     }
 

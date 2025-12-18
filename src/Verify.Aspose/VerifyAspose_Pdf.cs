@@ -1,17 +1,72 @@
 ﻿using Aspose.Pdf;
+using Aspose.Pdf.Text;
 
 namespace VerifyTests;
 
 public static partial class VerifyAspose
 {
+    static void OnPdfFontSubstitution(Font oldFont, Font newFont) =>
+        throw new(
+            $"""
+             Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+             Details: '{oldFont.FontName}' -> '{newFont.FontName}'
+             """);
+
+    static void CheckPdfFonts(Document document)
+    {
+        var fonts = document.FontUtilities.GetAllFonts();
+        var missingFonts = new List<string>();
+
+        foreach (var font in fonts)
+        {
+            // Skip embedded fonts - they don't need substitution
+            if (font.IsEmbedded)
+            {
+                continue;
+            }
+
+            // Check if font is available on the system
+            try
+            {
+                var found = FontRepository.FindFont(font.FontName);
+                if (found == null)
+                {
+                    missingFonts.Add(font.FontName);
+                }
+            }
+            catch
+            {
+                missingFonts.Add(font.FontName);
+            }
+        }
+
+        if (missingFonts.Count > 0)
+        {
+            var details = string.Join(", ", missingFonts.Select(f => $"'{f}'"));
+            throw new(
+                $"""
+                 Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+                 Details: Missing fonts: {details}
+                 """);
+        }
+    }
+
     static ConversionResult ConvertPdf(string? name, Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         using var document = new Document(stream);
+        // Subscribe to font substitution events immediately after loading
+        document.FontSubstitution += OnPdfFontSubstitution;
         return ConvertPdf(name, document, settings);
     }
 
     static ConversionResult ConvertPdf(string? name, Document document, IReadOnlyDictionary<string, object> settings)
     {
+        // Subscribe to font substitution events (for when Document is passed directly)
+        document.FontSubstitution += OnPdfFontSubstitution;
+
+        // Check for fonts that will be substituted
+        CheckPdfFonts(document);
+
         var info = document.Info;
         if (info.Title == "Aspose" ||
             info.Subject == "Aspose" ||
