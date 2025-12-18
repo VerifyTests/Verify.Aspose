@@ -105,6 +105,9 @@ public Task VerifyPdfStream()
   PageLayout: Default,
   PdfFormat: v_1_4,
   Version: 1.4,
+  Fonts: [
+    Helvetica
+  ],
   Text:
 
 <a name="br1"></a>A Simple PDF File
@@ -149,7 +152,7 @@ Boring. More, a little more text. The end, and just as well.
 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L70' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf#00.verified.png](/src/Tests/Samples.VerifyPdf%2300.verified.png):
@@ -281,6 +284,13 @@ public Task VerifyWordStream()
     ContentTypeId: 0x010100AA3F7D94069FF64A86F7DFF56D60E3BE
   },
   ShadeFormData: true,
+  Fonts: [
+    Consolas,
+    Segoe UI,
+    Symbol,
+    Times New Roman,
+    Trebuchet MS
+  ],
   Text:
 [Meeting name] meeting minutes
 
@@ -310,7 +320,7 @@ public Task VerifyWordStream()
 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L57' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyWord#00.verified.png](/src/Tests/Samples.VerifyWord%2300.verified.png):
@@ -356,65 +366,76 @@ public Task VerifyPowerPointStream()
 <a id='snippet-Samples.VerifyPowerPoint.verified.txt'></a>
 ```txt
 {
-  NameOfApplication: Microsoft Office PowerPoint,
-  Company: ,
-  Manager: ,
-  PresentationFormat: Custom,
-  SharedDoc: false,
-  ApplicationTemplate: ,
-  Title: Lorem ipsum,
-  Subject: ,
-  Author: simon,
-  Keywords: ,
-  Comments: ,
-  Category: ,
-  CreatedTime: DateTime_1,
-  LastSavedTime: DateTime_2,
-  LastPrinted: DateTime_3,
-  LastSavedBy: Simon Cropp,
-  RevisionNumber: 1,
-  ContentStatus: ,
-  ContentType: ,
-  HyperlinkBase: ,
-  ScaleCrop: false,
-  LinksUpToDate: false,
-  HyperlinksChanged: false,
-  Slides: 3,
-  Notes: 3,
-  Paragraphs: 14,
-  Words: 231,
-  TitlesOfParts: [
-    Times New Roman,
+  Properties: {
+    NameOfApplication: Microsoft Office PowerPoint,
+    Company: ,
+    Manager: ,
+    PresentationFormat: Custom,
+    SharedDoc: false,
+    ApplicationTemplate: ,
+    Title: Lorem ipsum,
+    Subject: ,
+    Author: simon,
+    Keywords: ,
+    Comments: ,
+    Category: ,
+    CreatedTime: DateTime_1,
+    LastSavedTime: DateTime_2,
+    LastPrinted: DateTime_3,
+    LastSavedBy: Simon Cropp,
+    RevisionNumber: 1,
+    ContentStatus: ,
+    ContentType: ,
+    HyperlinkBase: ,
+    ScaleCrop: false,
+    LinksUpToDate: false,
+    HyperlinksChanged: false,
+    Slides: 3,
+    Notes: 3,
+    Paragraphs: 14,
+    Words: 231,
+    TitlesOfParts: [
+      Times New Roman,
+      Arial,
+      Droid Sans Fallback,
+      WenQuanYi Zen Hei,
+      DejaVu Sans,
+      Office Theme,
+      Office Theme,
+      Lorem ipsum,
+      Chart,
+      Table
+    ],
+    HeadingPairs: [
+      {
+        Name: Fonts Used,
+        Count: 5
+      },
+      {
+        Name: Theme,
+        Count: 2
+      },
+      {
+        Name: Embedded OLE Servers
+      },
+      {
+        Name: Slide Titles,
+        Count: 3
+      }
+    ]
+  },
+  Fonts: [
     Arial,
-    Droid Sans Fallback,
-    WenQuanYi Zen Hei,
+    Calibri,
+    Calibri Light,
     DejaVu Sans,
-    Office Theme,
-    Office Theme,
-    Lorem ipsum,
-    Chart,
-    Table
-  ],
-  HeadingPairs: [
-    {
-      Name: Fonts Used,
-      Count: 5
-    },
-    {
-      Name: Theme,
-      Count: 2
-    },
-    {
-      Name: Embedded OLE Servers
-    },
-    {
-      Name: Slide Titles,
-      Count: 3
-    }
+    Droid Sans Fallback,
+    Times New Roman,
+    WenQuanYi Zen Hei
   ]
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L58' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L69' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPowerPoint%2300.verified.png](/src/Tests/Samples.VerifyPowerPoint%2300.verified.png):
