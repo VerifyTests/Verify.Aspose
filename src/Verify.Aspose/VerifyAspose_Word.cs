@@ -7,13 +7,35 @@ namespace VerifyTests;
 
 public static partial class VerifyAspose
 {
+    static Aspose.Words.Loading.LoadOptions loadOptions = new()
+    {
+        WarningCallback = new FontWarningCallback()
+    };
+
+    class FontWarningCallback : IWarningCallback
+    {
+        public void Warning(WarningInfo info)
+        {
+            if (info.WarningType != WarningType.FontSubstitution)
+            {
+                return;
+            }
+
+            throw new(
+                $"""
+                 Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+                 Details: {info.Description}
+                 """);
+        }
+    }
+
     static ConversionResult ConvertWord(string? name, Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         //Aspose makes shitty assumptions about streams. like they are writable.
         using var memoryStream = new MemoryStream();
         stream.CopyTo(memoryStream);
         memoryStream.Position = 0;
-        var document = new Document(memoryStream);
+        var document = new Document(memoryStream, loadOptions);
         return ConvertWord(name, document, settings);
     }
 

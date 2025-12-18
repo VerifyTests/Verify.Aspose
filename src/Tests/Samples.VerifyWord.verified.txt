@@ -2,64 +2,49 @@
   HasRevisions: False,
   DefaultLocale: EnglishUS,
   Properties: {
+    Characters: 1009,
+    CharactersWithSpaces: 1183,
     CreateTime: DateTime_1,
-    Language: en-US
+    HeadingPairs: [
+      Title,
+      1
+    ],
+    LastSavedTime: DateTime_2,
+    Lines: 8,
+    Pages: 1,
+    Paragraphs: 2,
+    Template: Normal,
+    Words: 176
+  },
+  CustomProperties: {
+    ContentTypeId: 0x010100AA3F7D94069FF64A86F7DFF56D60E3BE
   },
   ShadeFormData: true,
   Text:
-**Lorem ipsum** 
+[Meeting name] meeting minutes
 
-# **Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac faucibus odio.** 
+|Location:|[Address or room number]|
+| :- | :- |
+|Date:|[Date]|
+|Time:|[Time]|
+|Attendees:|[List attendees]|
+# Agenda items
+1. [It’s easy to make this template your own. To replace placeholder text, just select it and start typing. Don’t include space to the right or left of the characters in your selection.]
+1. [Apply any text formatting you see in this template with just a click from the Home tab, in the Styles group. For example, this text uses the List Number style.]
+1. [To add a new row at the end of the action items table, just click into the last cell in the last row and then press Tab.]
+1. [To add a new row or column anywhere in a table, click in an adjacent row or column to the one you need and then, on the Table Tools Layout tab of the ribbon, click an Insert option.]
+1. [Agenda item]
+1. [Agenda item]
 
-Vestibulum neque massa, scelerisque sit amet ligula eu, congue molestie mi. Praesent ut varius sem. Nullam at porttitor arcu, nec lacinia nisi. Ut ac dolor vitae odio interdum condimentum. **Vivamus dapibus sodales ex, vitae malesuada ipsum cursus convallis. Maecenas sed egestas nulla, ac condimentum orci.** Mauris diam felis, vulputate ac suscipit et, iaculis non est. Curabitur semper arcu ac ligula semper, nec luctus nisl blandit. Integer lacinia ante ac libero lobortis imperdiet. *Nullam mollis convallis ipsum, ac accumsan nunc vehicula vitae.* Nulla eget justo in felis tristique fringilla. Morbi sit amet tortor quis risus auctor condimentum. Morbi in ullamcorper elit. Nulla iaculis tellus sit amet mauris tempus fringilla.
-
-Maecenas mauris lectus, lobortis et purus mattis, blandit dictum tellus.
-
-- **Maecenas non lorem quis tellus placerat varius.** 
-- *Nulla facilisi.* 
-- Aenean congue fringilla justo ut aliquam. 
-- [Mauris id ex erat. ](https://products.office.com/en-us/word)Nunc vulputate neque vitae justo facilisis, non condimentum ante sagittis. 
-- Morbi viverra semper lorem nec molestie. 
-- Maecenas tincidunt est efficitur ligula euismod, sit amet ornare est vulputate.
-
-![](content.001.png)
-
-
-
-
-
-
-
-
-In non mauris justo. Duis vehicula mi vel mi pretium, a viverra erat efficitur. Cras aliquam est ac eros varius, id iaculis dui auctor. Duis pretium neque ligula, et pulvinar mi placerat et. Nulla nec nunc sit amet nunc posuere vestibulum. Ut id neque eget tortor mattis tristique. Donec ante est, blandit sit amet tristique vel, lacinia pulvinar arcu. Pellentesque scelerisque fermentum erat, id posuere justo pulvinar ut. Cras id eros sed enim aliquam lobortis. Sed lobortis nisl ut eros efficitur tincidunt. Cras justo mi, porttitor quis mattis vel, ultricies ut purus. Ut facilisis et lacus eu cursus.
-
-In eleifend velit vitae libero sollicitudin euismod. Fusce vitae vestibulum velit. Pellentesque vulputate lectus quis pellentesque commodo. Aliquam erat volutpat. Vestibulum in egestas velit. Pellentesque fermentum nisl vitae fringilla venenatis. Etiam id mauris vitae orci maximus ultricies. 
-
-# **Cras fringilla ipsum magna, in fringilla dui commodo a.**
-
-||Lorem ipsum|Lorem ipsum|Lorem ipsum|
+|<h1>Action items</h1>|<h1>Owner(s)</h1>|<h1>Deadline</h1>|<h1>Status</h1>|
 | :- | :- | :- | :- |
-|1|In eleifend velit vitae libero sollicitudin euismod.|Lorem||
-|2|Cras fringilla ipsum magna, in fringilla dui commodo a.|Ipsum||
-|3|Aliquam erat volutpat. |Lorem||
-|4|Fusce vitae vestibulum velit. |Lorem||
-|5|Etiam vehicula luctus fermentum.|Ipsum||
+|[Action item 1]|[Name(s) 1]|[Date 1]|[Status 1, such as In Progress or Complete]|
+|[Action item 2]|[Name(s) 2]|[Date 2]|[Status 2]|
+|[Action item 3]|[Name(s) 3]|[Date 3]|[Status 3]|
+|[Action item 4]|[Name(s) 4]|[Date 4]|[Status 4]|
+|[Action item 5]|[Name(s) 5]|[Date 5]|[Status 5]|
+|[Action item 6]|[Name(s) 6]|[Date 6]|[Status 6]|
 
-Etiam vehicula luctus fermentum. In vel metus congue, pulvinar lectus vel, fermentum dui. Maecenas ante orci, egestas ut aliquet sit amet, sagittis a magna. Aliquam ante quam, pellentesque ut dignissim quis, laoreet eget est. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut ullamcorper justo sapien, in cursus libero viverra eget. Vivamus auctor imperdiet urna, at pulvinar leo posuere laoreet. Suspendisse neque nisl, fringilla at iaculis scelerisque, ornare vel dolor. Ut et pulvinar nunc. Pellentesque fringilla mollis efficitur. Nullam venenatis commodo imperdiet. Morbi velit neque, semper quis lorem quis, efficitur dignissim ipsum. Ut ac lorem sed turpis imperdiet eleifend sit amet id sapien.
-
-
-# **Lorem ipsum dolor sit amet, consectetur adipiscing elit.** 
-
-Nunc ac faucibus odio. Vestibulum neque massa, scelerisque sit amet ligula eu, congue molestie mi. Praesent ut varius sem. Nullam at porttitor arcu, nec lacinia nisi. Ut ac dolor vitae odio interdum condimentum. Vivamus dapibus sodales ex, vitae malesuada ipsum cursus convallis. Maecenas sed egestas nulla, ac condimentum orci. Mauris diam felis, vulputate ac suscipit et, iaculis non est. Curabitur semper arcu ac ligula semper, nec luctus nisl blandit. Integer lacinia ante ac libero lobortis imperdiet. Nullam mollis convallis ipsum, ac accumsan nunc vehicula vitae. Nulla eget justo in felis tristique fringilla. Morbi sit amet tortor quis risus auctor condimentum. Morbi in ullamcorper elit. Nulla iaculis tellus sit amet mauris tempus fringilla.
-## **Maecenas mauris lectus, lobortis et purus mattis, blandit dictum tellus.** 
-Maecenas non lorem quis tellus placerat varius. Nulla facilisi. Aenean congue fringilla justo ut aliquam. Mauris id ex erat. Nunc vulputate neque vitae justo facilisis, non condimentum ante sagittis. Morbi viverra semper lorem nec molestie. Maecenas tincidunt est efficitur ligula euismod, sit amet ornare est vulputate.
-
-In non mauris justo. Duis vehicula mi vel mi pretium, a viverra erat efficitur. Cras aliquam est ac eros varius, id iaculis dui auctor. Duis pretium neque ligula, et pulvinar mi placerat et. Nulla nec nunc sit amet nunc posuere vestibulum. Ut id neque eget tortor mattis tristique. Donec ante est, blandit sit amet tristique vel, lacinia pulvinar arcu. Pellentesque scelerisque fermentum erat, id posuere justo pulvinar ut. Cras id eros sed enim aliquam lobortis. Sed lobortis nisl ut eros efficitur tincidunt. Cras justo mi, porttitor quis mattis vel, ultricies ut purus. Ut facilisis et lacus eu cursus.
-## **In eleifend velit vitae libero sollicitudin euismod.** 
-Fusce vitae vestibulum velit. Pellentesque vulputate lectus quis pellentesque commodo. Aliquam erat volutpat. Vestibulum in egestas velit. Pellentesque fermentum nisl vitae fringilla venenatis. Etiam id mauris vitae orci maximus ultricies. Cras fringilla ipsum magna, in fringilla dui commodo a.
-
-Etiam vehicula luctus fermentum. In vel metus congue, pulvinar lectus vel, fermentum dui. Maecenas ante orci, egestas ut aliquet sit amet, sagittis a magna. Aliquam ante quam, pellentesque ut dignissim quis, laoreet eget est. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut ullamcorper justo sapien, in cursus libero viverra eget. Vivamus auctor imperdiet urna, at pulvinar leo posuere laoreet. Suspendisse neque nisl, fringilla at iaculis scelerisque, ornare vel dolor. Ut et pulvinar nunc. Pellentesque fringilla mollis efficitur. Nullam venenatis commodo imperdiet. Morbi velit neque, semper quis lorem quis, efficitur dignissim ipsum. Ut ac lorem sed turpis imperdiet eleifend sit amet id sapien.
-
-![](content.002.jpeg)
+2
 
 }
