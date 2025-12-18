@@ -7,7 +7,6 @@ namespace VerifyTests;
 
 public static partial class VerifyAspose
 {
-    static Aspose.Words.Loading.LoadOptions wordLoadOptions = new()
     static Aspose.Words.Loading.LoadOptions loadOptions = new()
     {
         WarningCallback = new FontWarningCallback()
