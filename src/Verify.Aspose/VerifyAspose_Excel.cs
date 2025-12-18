@@ -62,17 +62,22 @@ public static partial class VerifyAspose
 
         var info = GetInfo(book);
 
-        using var sourceStream = new MemoryStream();
-        book.Save(sourceStream, SaveFormat.Xlsx);
-        var resultStream = DeterministicPackage.Convert(sourceStream);
-
-        List<Target> targets = [new("xlsx", resultStream, performConversion: false)];
+        List<Target> targets = [BuildXlsxTarget(book)];
 
         targets.AddRange(
             book.Worksheets
                 .SelectMany(_ => GetSheetStreams(targetName, _)));
 
         return new(info, targets);
+    }
+
+    static Target BuildXlsxTarget(Workbook book)
+    {
+        using var source = new MemoryStream();
+        book.Save(source, SaveFormat.Xlsx);
+        var resultStream = DeterministicPackage.Convert(source);
+
+        return new("xlsx", resultStream, performConversion: false);
     }
 
     static object GetInfo(Workbook book) =>
