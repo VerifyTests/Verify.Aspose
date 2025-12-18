@@ -1,4 +1,5 @@
 ﻿using Aspose.Words;
+using Aspose.Words.Fonts;
 using Aspose.Words.Loading;
 using Aspose.Words.Properties;
 using Aspose.Words.Saving;
@@ -58,16 +59,40 @@ public static partial class VerifyAspose
         return new("docx", resultStream, performConversion: false);
     }
 
-    static WordInfo GetInfo(Document document) =>
-        new()
+    static WordInfo GetInfo(Document document)
+    {
+        var (fonts, embeddedFonts) = GetDocumentFonts(document);
+        return new()
         {
             HasRevisions = document.HasRevisions.ToString(),
             DefaultLocale = (EditingLanguage)document.Styles.DefaultFont.LocaleId,
             Properties = GetProperties(document),
             CustomProperties = GetCustomProperties(document),
-            Text = GetDocumentText(document),
-            ShadeFormData = document.ShadeFormData
+
+            ShadeFormData = document.ShadeFormData,
+            Fonts = fonts,
+            EmbeddedFonts = embeddedFonts,
+            Text = GetDocumentText(document)
         };
+    }
+
+    static (List<string> fonts, List<string> embeddedFonts) GetDocumentFonts(Document document)
+    {
+        var fonts = new List<string>();
+        var embeddedFonts = new List<string>();
+
+        foreach (var font in document.FontInfos)
+        {
+            fonts.Add(font.Name);
+            if (font.IsTrueType &&
+                font.GetEmbeddedFont(EmbeddedFontFormat.EmbeddedOpenType, EmbeddedFontStyle.Regular) != null)
+            {
+                embeddedFonts.Add(font.Name);
+            }
+        }
+
+        return (fonts.OrderBy(_ => _).ToList(), embeddedFonts.OrderBy(_ => _).ToList());
+    }
 
     static Dictionary<string, object> GetProperties(Document document) =>
         document
@@ -132,6 +157,7 @@ public static partial class VerifyAspose
 
         return true;
     }
+
     static IEnumerable<Target> GetWordStreams(string? name, Document document, IReadOnlyDictionary<string, object> settings)
     {
         if (settings.GetIncludeWordStyles())
@@ -184,28 +210,71 @@ public static partial class VerifyAspose
 
     static Dictionary<string, string> nodeRenames = new()
     {
-        { "b", "bold" },
-        { "bCs", "boldComplexScript" },
-        { "i", "italic" },
-        { "iCs", "italicComplexScript" },
-        { "u", "underline" },
-        { "uCs", "underlineComplexScript" },
-        { "sz", "size" },
-        { "szCs", "sizeComplexScript" },
-        { "jc", "justification" },
-        { "rFonts", "fonts" },
-        { "rPr", "run" },
-        { "pPr", "paragraph" },
-        { "rPrDefault", "runDefault" },
-        { "pPrDefault", "paragraphDefault" },
-        { "lsdException", "latentStyleException" },
-        { "bidi", "complexScriptLanguage" },
-        { "ind", "indent" },
-        { "tblPr", "table" },
-        { "tblInd", "leadingMarginIndent" },
-        { "tblCellMar", "cellMargin" },
-        { "outlineLvl", "outlineLevel" },
+        {
+            "b", "bold"
+        },
+        {
+            "bCs", "boldComplexScript"
+        },
+        {
+            "i", "italic"
+        },
+        {
+            "iCs", "italicComplexScript"
+        },
+        {
+            "u", "underline"
+        },
+        {
+            "uCs", "underlineComplexScript"
+        },
+        {
+            "sz", "size"
+        },
+        {
+            "szCs", "sizeComplexScript"
+        },
+        {
+            "jc", "justification"
+        },
+        {
+            "rFonts", "fonts"
+        },
+        {
+            "rPr", "run"
+        },
+        {
+            "pPr", "paragraph"
+        },
+        {
+            "rPrDefault", "runDefault"
+        },
+        {
+            "pPrDefault", "paragraphDefault"
+        },
+        {
+            "lsdException", "latentStyleException"
+        },
+        {
+            "bidi", "complexScriptLanguage"
+        },
+        {
+            "ind", "indent"
+        },
+        {
+            "tblPr", "table"
+        },
+        {
+            "tblInd", "leadingMarginIndent"
+        },
+        {
+            "tblCellMar", "cellMargin"
+        },
+        {
+            "outlineLvl", "outlineLevel"
+        },
     };
+
     static void CleanupXml(XDocument xmlDocument)
     {
         foreach (var node in xmlDocument
@@ -248,6 +317,7 @@ public static partial class VerifyAspose
                 continue;
             }
         }
+
         foreach (var node in xmlDocument
                      .Descendants()
                      .ToList())
@@ -280,6 +350,7 @@ public static partial class VerifyAspose
 
         return false;
     }
+
     static void HandleValueAttribute(XElement node)
     {
         HandleValueAttribute(node, "val");
@@ -328,8 +399,12 @@ public static partial class VerifyAspose
 
     static Dictionary<string, string> attributeRenames = new()
     {
-        { "styleId", "id" },
-        { "customStyle", "custom" },
+        {
+            "styleId", "id"
+        },
+        {
+            "customStyle", "custom"
+        },
     };
 
     static void CleanupAttributes(XElement node)
@@ -399,5 +474,4 @@ public static partial class VerifyAspose
 
         return true;
     }
-
 }

@@ -2,6 +2,14 @@
   HasMacro: False,
   HasRevisions: False,
   IsDigitallySigned: False,
+  Properties: {
+    NameOfApplication: Microsoft Excel,
+    Title: The Title,
+    Version: 16.0300
+  },
+  Fonts: [
+    Arial
+  ],
   Sheets: [
     {
       Name: Sheet1,
@@ -35,10 +43,5 @@
         }
       ]
     }
-  ],
-  Properties: {
-    NameOfApplication: Microsoft Excel,
-    Title: The Title,
-    Version: 16.0300
-  }
+  ]
 }

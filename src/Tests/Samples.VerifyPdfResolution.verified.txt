@@ -22,6 +22,9 @@
   PageLayout: Default,
   PdfFormat: v_1_4,
   Version: 1.4,
+  Fonts: [
+    Helvetica
+  ],
   Text:
 
 <a name="br1"></a>A Simple PDF File

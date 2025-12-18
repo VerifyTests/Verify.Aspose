@@ -15,6 +15,11 @@
     key: value
   },
   ShadeFormData: false,
+  Fonts: [
+    Arial,
+    Symbol,
+    Times New Roman
+  ],
   Text:
 
 }
