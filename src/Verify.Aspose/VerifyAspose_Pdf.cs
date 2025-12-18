@@ -12,6 +12,24 @@ public static partial class VerifyAspose
              Details: '{oldFont.FontName}' -> '{newFont.FontName}'
              """);
 
+    static (List<string> fonts, List<string> embeddedFonts) GetPdfFonts(Document document)
+    {
+        var fonts = document.FontUtilities.GetAllFonts();
+        var all = new List<string>();
+        var embedded = new List<string>();
+
+        foreach (var font in fonts)
+        {
+            all.Add(font.FontName);
+            if (font.IsEmbedded)
+            {
+                embedded.Add(font.FontName);
+            }
+        }
+
+        return (all.OrderBy(_ => _).ToList(), embedded.OrderBy(_ => _).ToList());
+    }
+
     static void CheckPdfFonts(Document document)
     {
         var fonts = document.FontUtilities.GetAllFonts();
@@ -75,6 +93,7 @@ public static partial class VerifyAspose
             throw new("The default value of 'Aspose' for Title, Subject, or Author is not allowed.");
         }
 
+        var (fonts, embeddedFonts) = GetPdfFonts(document);
         return new(
             new
             {
@@ -102,6 +121,8 @@ public static partial class VerifyAspose
                 document.PageMode,
                 document.PdfFormat,
                 document.Version,
+                Fonts = fonts,
+                EmbeddedFonts = embeddedFonts,
                 Text = GetDocumentText(document)
             },
             GetPdfStreams(name, document, settings).ToList());

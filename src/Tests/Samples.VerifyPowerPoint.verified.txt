@@ -1,58 +1,69 @@
 ﻿{
-  NameOfApplication: Microsoft Office PowerPoint,
-  Company: ,
-  Manager: ,
-  PresentationFormat: Custom,
-  SharedDoc: false,
-  ApplicationTemplate: ,
-  Title: Lorem ipsum,
-  Subject: ,
-  Author: simon,
-  Keywords: ,
-  Comments: ,
-  Category: ,
-  CreatedTime: DateTime_1,
-  LastSavedTime: DateTime_2,
-  LastPrinted: DateTime_3,
-  LastSavedBy: Simon Cropp,
-  RevisionNumber: 1,
-  ContentStatus: ,
-  ContentType: ,
-  HyperlinkBase: ,
-  ScaleCrop: false,
-  LinksUpToDate: false,
-  HyperlinksChanged: false,
-  Slides: 3,
-  Notes: 3,
-  Paragraphs: 14,
-  Words: 231,
-  TitlesOfParts: [
-    Times New Roman,
+  Properties: {
+    NameOfApplication: Microsoft Office PowerPoint,
+    Company: ,
+    Manager: ,
+    PresentationFormat: Custom,
+    SharedDoc: false,
+    ApplicationTemplate: ,
+    Title: Lorem ipsum,
+    Subject: ,
+    Author: simon,
+    Keywords: ,
+    Comments: ,
+    Category: ,
+    CreatedTime: DateTime_1,
+    LastSavedTime: DateTime_2,
+    LastPrinted: DateTime_3,
+    LastSavedBy: Simon Cropp,
+    RevisionNumber: 1,
+    ContentStatus: ,
+    ContentType: ,
+    HyperlinkBase: ,
+    ScaleCrop: false,
+    LinksUpToDate: false,
+    HyperlinksChanged: false,
+    Slides: 3,
+    Notes: 3,
+    Paragraphs: 14,
+    Words: 231,
+    TitlesOfParts: [
+      Times New Roman,
+      Arial,
+      Droid Sans Fallback,
+      WenQuanYi Zen Hei,
+      DejaVu Sans,
+      Office Theme,
+      Office Theme,
+      Lorem ipsum,
+      Chart,
+      Table
+    ],
+    HeadingPairs: [
+      {
+        Name: Fonts Used,
+        Count: 5
+      },
+      {
+        Name: Theme,
+        Count: 2
+      },
+      {
+        Name: Embedded OLE Servers
+      },
+      {
+        Name: Slide Titles,
+        Count: 3
+      }
+    ]
+  },
+  Fonts: [
     Arial,
-    Droid Sans Fallback,
-    WenQuanYi Zen Hei,
+    Calibri,
+    Calibri Light,
     DejaVu Sans,
-    Office Theme,
-    Office Theme,
-    Lorem ipsum,
-    Chart,
-    Table
-  ],
-  HeadingPairs: [
-    {
-      Name: Fonts Used,
-      Count: 5
-    },
-    {
-      Name: Theme,
-      Count: 2
-    },
-    {
-      Name: Embedded OLE Servers
-    },
-    {
-      Name: Slide Titles,
-      Count: 3
-    }
+    Droid Sans Fallback,
+    Times New Roman,
+    WenQuanYi Zen Hei
   ]
 }

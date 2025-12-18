@@ -30,7 +30,33 @@ public static partial class VerifyAspose
                  """);
         }
 
-        return new(properties, GetPowerPointStreams(name, document, settings).ToList());
+        var (fonts, embeddedFonts) = GetPowerPointFonts(document);
+        var info = new
+        {
+            Properties = properties,
+            Fonts = fonts,
+            EmbeddedFonts = embeddedFonts
+        };
+
+        return new(info, GetPowerPointStreams(name, document, settings).ToList());
+    }
+
+    static (List<string> fonts, List<string> embeddedFonts) GetPowerPointFonts(Presentation document)
+    {
+        var fonts = new HashSet<string>();
+        var embeddedFonts = new HashSet<string>();
+
+        foreach (var font in document.FontsManager.GetFonts())
+        {
+            fonts.Add(font.FontName);
+        }
+
+        foreach (var font in document.FontsManager.GetEmbeddedFonts())
+        {
+            embeddedFonts.Add(font.FontName);
+        }
+
+        return (fonts.OrderBy(_ => _).ToList(), embeddedFonts.OrderBy(_ => _).ToList());
     }
 
     static IEnumerable<Target> GetPowerPointStreams(string? name, Presentation document, IReadOnlyDictionary<string, object> settings)

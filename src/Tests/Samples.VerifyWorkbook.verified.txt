@@ -2,6 +2,15 @@
   HasMacro: False,
   HasRevisions: False,
   IsDigitallySigned: False,
+  Properties: {
+    Comments: the comments
+  },
+  CustomProperties: {
+    key: value
+  },
+  Fonts: [
+    Arial
+  ],
   Sheets: [
     {
       Name: Sheet1
@@ -14,11 +23,5 @@
         }
       ]
     }
-  ],
-  Properties: {
-    Comments: the comments
-  },
-  CustomProperties: {
-    key: value
-  }
+  ]
 }

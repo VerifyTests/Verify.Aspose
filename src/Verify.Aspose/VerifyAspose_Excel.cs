@@ -86,10 +86,43 @@ public static partial class VerifyAspose
             HasMacro = book.HasMacro.ToString(),
             HasRevisions = book.HasRevisions.ToString(),
             IsDigitallySigned = book.IsDigitallySigned.ToString(),
-            Sheets = GetSheetData(book).ToList(),
             Properties = GetProperties(book),
             CustomProperties = GetCustomProperties(book),
+            Fonts = GetFonts(book),
+            Sheets = GetSheetData(book).ToList()
         };
+
+    static List<string> GetFonts(Workbook book)
+    {
+        var fonts = new HashSet<string>();
+
+        foreach (var sheet in book.Worksheets)
+        {
+            var cells = sheet.Cells;
+            var maxRow = cells.MaxDataRow;
+            var maxCol = cells.MaxDataColumn;
+
+            for (var row = 0; row <= maxRow; row++)
+            {
+                for (var col = 0; col <= maxCol; col++)
+                {
+                    var cell = cells[row, col];
+                    if (cell.HasValue())
+                    {
+                        var style = cell.GetStyle();
+                        if (style?.Font?.Name != null)
+                        {
+                            fonts.Add(style.Font.Name);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Excel doesn't typically embed fonts in the same way as Word/PDF
+        // Fonts are referenced from the system
+        return fonts.OrderBy(_ => _).ToList();
+    }
 
     static Dictionary<string, object> GetProperties(Workbook book) =>
         book.BuiltInDocumentProperties

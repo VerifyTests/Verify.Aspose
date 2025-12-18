@@ -20,6 +20,13 @@
     ContentTypeId: 0x010100AA3F7D94069FF64A86F7DFF56D60E3BE
   },
   ShadeFormData: true,
+  Fonts: [
+    Consolas,
+    Segoe UI,
+    Symbol,
+    Times New Roman,
+    Trebuchet MS
+  ],
   Text:
 [Meeting name] meeting minutes
 
