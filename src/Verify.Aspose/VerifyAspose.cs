@@ -20,12 +20,6 @@ public static partial class VerifyAspose
 
         Initialized = true;
 
-        // Force consistent culture for deterministic output
-        CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
-        CultureInfo.CurrentUICulture = CultureInfo.InvariantCulture;
-        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
-
         InnerVerifier.ThrowIfVerifyHasBeenRun();
 
         var cellConverter = new CellConverter();
