@@ -1,4 +1,6 @@
-﻿public static class ModuleInitializer
+﻿[assembly: Culture("en-AU")]
+
+public static class ModuleInitializer
 {
     #region enable
 
