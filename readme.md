@@ -220,9 +220,9 @@ public Task VerifyWorkbook()
 <sup><a href='/src/Tests/Samples.cs#L108-L130' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWorkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyExcel#Sheet1.verified.png](/src/Tests/Samples.VerifyExcel#Sheet1.verified.verified.png):
+[Samples.VerifyExcel#Sheet1.verified.png](/src/Tests/Samples.VerifyExcel#Sheet1.verified.png):
 
-<img src="/src/Tests/Samples.VerifyExcel.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyExcel%23Sheet1.verified.png" width="200px">
 
 
 ### Word
@@ -439,6 +439,8 @@ public Task VerifyPowerPointStream()
 <!-- endSnippet -->
 
 [Samples.VerifyPowerPoint%2300.verified.png](/src/Tests/Samples.VerifyPowerPoint%2300.verified.png):
+
+<img src="/src/Tests/Samples.VerifyPowerPoint%2300.verified.png" width="200px">
 
 
 ## File Samples
