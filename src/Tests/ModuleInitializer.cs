@@ -1,4 +1,6 @@
-﻿public static class ModuleInitializer
+﻿[assembly: Culture("en-AU")]
+
+public static class ModuleInitializer
 {
     #region enable
 
@@ -13,8 +15,6 @@
     {
         ApplyAsposeLicense();
 
-        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
-        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
         VerifyDiffPlex.Initialize();
         VerifyImageMagick.RegisterComparers(.01);
         VerifierSettings.IgnoreMember("Width");
