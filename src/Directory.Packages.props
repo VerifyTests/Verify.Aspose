@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Aspose.Cells" Version="26.1.0" />
-    <PackageVersion Include="Aspose.Email" Version="25.12.0" />
+    <PackageVersion Include="Aspose.Email" Version="26.1.0" />
     <PackageVersion Include="Aspose.PDF" Version="26.1.0" />
     <PackageVersion Include="Aspose.Slides.NET" Version="26.1.0" />
     <PackageVersion Include="Aspose.Words" Version="26.1.0" />
