@@ -8,7 +8,7 @@
     <PackageVersion Include="Aspose.Email" Version="26.1.0" />
     <PackageVersion Include="Aspose.PDF" Version="26.1.0" />
     <PackageVersion Include="Aspose.Slides.NET" Version="26.2.0" />
-    <PackageVersion Include="Aspose.Words" Version="26.1.0" />
+    <PackageVersion Include="Aspose.Words" Version="26.2.0" />
     <PackageVersion Include="DeterministicIoPackaging" Version="0.15.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
