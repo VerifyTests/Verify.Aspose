@@ -16,7 +16,7 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
 ## Sponsors
 
 
-### Entity Framework Extensions<!-- include: zzz. path: /docs/zzz.include.md -->
+### Entity Framework Extensions<!-- include: sponsors. path: /docs/sponsors.include.md -->
 
 [Entity Framework Extensions](https://entityframework-extensions.net/?utm_source=simoncropp&utm_medium=Verify.Aspose) is a major sponsor and is proud to contribute to the development this project.
 
