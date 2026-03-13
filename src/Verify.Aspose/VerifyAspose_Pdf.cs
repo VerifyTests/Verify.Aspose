@@ -8,7 +8,7 @@ public static partial class VerifyAspose
     static void OnPdfFontSubstitution(Font oldFont, Font newFont) =>
         throw new(
             $"""
-             Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+             Font substitution detected. This can cause inconsistent rendering of documents. Either ensure all dev machines the full set of required fonts, or use font embedding.
              Details: '{oldFont.FontName}' -> '{newFont.FontName}'
              """);
 
@@ -63,7 +63,7 @@ public static partial class VerifyAspose
             var details = string.Join(", ", missingFonts.Select(f => $"'{f}'"));
             throw new(
                 $"""
-                 Font substitution detected. This can cause inconsitent rendering of documents. Either ensure all dev machines the full set of required conts, or use font embedding.
+                 Font substitution detected. This can cause inconsistent rendering of documents. Either ensure all dev machines the full set of required fonts, or use font embedding.
                  Details: Missing fonts: {details}
                  """);
         }
