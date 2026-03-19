@@ -449,7 +449,7 @@ public Task VerifyPowerPointStream()
 
 ### Binary output across .NET frameworks
 
-When verifying binary xlsx/docx output across multiple target frameworks (e.g. net48 and net10.0), the binary output may differ due to Deflate compression implementation differences. The XML content within entries is identical — only the compressed bytes differ. Use `UniqueForRuntime` to generate framework-specific verified files:
+When verifying binary package output (xlsx, docx, nupkg, etc.) across multiple target frameworks (e.g. net48 and net10.0), the binary output may differ due to Deflate compression implementation differences. The XML content within entries is identical — only the compressed bytes differ. Use `UniqueForRuntime` to generate framework-specific verified files:
 
 ```cs
 await Verify(stream, extension: "xlsx")
