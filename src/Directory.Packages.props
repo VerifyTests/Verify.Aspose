@@ -9,7 +9,7 @@
     <PackageVersion Include="Aspose.PDF" Version="26.3.0" />
     <PackageVersion Include="Aspose.Slides.NET" Version="26.3.0" />
     <PackageVersion Include="Aspose.Words" Version="26.3.0" />
-    <PackageVersion Include="DeterministicIoPackaging" Version="0.24.0" />
+    <PackageVersion Include="DeterministicIoPackaging" Version="0.24.1" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.0.1" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
     <PackageVersion Include="NUnit" Version="4.5.1" />
