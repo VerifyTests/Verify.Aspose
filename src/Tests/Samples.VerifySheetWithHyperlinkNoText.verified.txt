@@ -1,0 +1,19 @@
+﻿{
+  Name: New Sheet,
+  Columns: [
+    {
+      Name: https://example.com
+    }
+  ],
+  Hyperlinks: [
+    {
+      Address: https://example.com,
+      Text: https://example.com,
+      Area: {
+        Column: 0,
+        Row: 0
+      },
+      LinkType: External
+    }
+  ]
+}
