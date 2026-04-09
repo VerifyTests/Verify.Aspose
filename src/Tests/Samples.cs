@@ -105,6 +105,18 @@ public class Samples
         return Verify(sheet);
     }
 
+    [Test]
+    public Task VerifySheetWithHyperlinkNoText()
+    {
+        using var book = new Workbook();
+
+        var sheet = book.Worksheets.Add("New Sheet");
+        // Hyperlink without cell value causes Aspose Hyperlink.TextToDisplay to throw
+        sheet.Hyperlinks.Add(0, 0, 1, 1, "https://example.com");
+
+        return Verify(sheet);
+    }
+
     #region VerifyWorkbook
 
     [Test]

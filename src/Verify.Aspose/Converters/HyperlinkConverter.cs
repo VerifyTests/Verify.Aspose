@@ -8,7 +8,16 @@ class HyperlinkConverter :
         writer.WriteStartObject();
 
         writer.WriteMember(link, link.Address, "Address");
-        writer.WriteMember(link, link.TextToDisplay, "Text");
+        // Aspose.Cells throws NullReferenceException from Hyperlink.TextToDisplay
+        // when the hyperlink was created without display text (e.g. by OpenXml)
+        try
+        {
+            writer.WriteMember(link, link.TextToDisplay, "Text");
+        }
+        catch (NullReferenceException)
+        {
+        }
+
         writer.WriteMember(link, link.Area, "Area");
         writer.WriteMember(link, link.LinkType, "LinkType");
         writer.WriteMember(link, link.ScreenTip, "ScreenTip");
