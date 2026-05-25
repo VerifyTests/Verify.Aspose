@@ -34,22 +34,37 @@ public static partial class VerifyAspose
         });
 
         VerifierSettings.AddScrubber("html", RemoveGeneratorInfo);
-        VerifierSettings.RegisterStreamConverter("xlsx", ConvertExcel);
-        VerifierSettings.RegisterStreamConverter("xls", ConvertExcel);
+        VerifierSettings.RegisterStreamConverter("xlsx", (name, stream, settings) => Locked(() => ConvertExcel(name, stream, settings)));
+        VerifierSettings.RegisterStreamConverter("xls", (name, stream, settings) => Locked(() => ConvertExcel(name, stream, settings)));
         VerifierSettings.IgnoreMember<IDocumentProperties>(_ => _.AppVersion);
-        VerifierSettings.RegisterFileConverter<Workbook>((target, _) => ConvertExcel(null, target));
-        VerifierSettings.RegisterFileConverter<Worksheet>((target, _) => ConvertSheet(null, target));
+        VerifierSettings.RegisterFileConverter<Workbook>((target, _) => Locked(() => ConvertExcel(null, target)));
+        VerifierSettings.RegisterFileConverter<Worksheet>((target, _) => Locked(() => ConvertSheet(null, target)));
 
-        VerifierSettings.RegisterStreamConverter("pdf", ConvertPdf);
-        VerifierSettings.RegisterFileConverter<Aspose.Pdf.Document>((target, context) => ConvertPdf(null, target, context));
+        VerifierSettings.RegisterStreamConverter("pdf", (name, stream, settings) => Locked(() => ConvertPdf(name, stream, settings)));
+        VerifierSettings.RegisterFileConverter<Aspose.Pdf.Document>((target, context) => Locked(() => ConvertPdf(null, target, context)));
 
-        VerifierSettings.RegisterStreamConverter("pptx", ConvertPowerPoint);
-        VerifierSettings.RegisterStreamConverter("ppt", ConvertPowerPoint);
-        VerifierSettings.RegisterFileConverter<Presentation>((target, context) => ConvertPowerPoint(null, target, context));
+        VerifierSettings.RegisterStreamConverter("pptx", (name, stream, settings) => Locked(() => ConvertPowerPoint(name, stream, settings)));
+        VerifierSettings.RegisterStreamConverter("ppt", (name, stream, settings) => Locked(() => ConvertPowerPoint(name, stream, settings)));
+        VerifierSettings.RegisterFileConverter<Presentation>((target, context) => Locked(() => ConvertPowerPoint(null, target, context)));
 
-        VerifierSettings.RegisterStreamConverter("docx", ConvertWord);
-        VerifierSettings.RegisterStreamConverter("doc", ConvertWord);
-        VerifierSettings.RegisterFileConverter<Document>((target, context) => ConvertWord(null, target, context));
+        VerifierSettings.RegisterStreamConverter("docx", (name, stream, settings) => Locked(() => ConvertWord(name, stream, settings)));
+        VerifierSettings.RegisterStreamConverter("doc", (name, stream, settings) => Locked(() => ConvertWord(name, stream, settings)));
+        VerifierSettings.RegisterFileConverter<Document>((target, context) => Locked(() => ConvertWord(null, target, context)));
+    }
+
+    // Aspose document processing relies on global, non-thread-safe state (font caches,
+    // FontSettings.DefaultInstance, rendering engine internals). Aspose.Pdf conversion also
+    // invokes Aspose.Words internally, so a single global lock is used across all formats.
+    // Without this, rendering can be non-deterministic when the consuming test suite runs in
+    // parallel, producing intermittent image-snapshot diffs.
+    static readonly Lock asposeLock = new();
+
+    static ConversionResult Locked(Func<ConversionResult> convert)
+    {
+        lock (asposeLock)
+        {
+            return convert();
+        }
     }
 
     static void RemoveGeneratorInfo(StringBuilder builder)

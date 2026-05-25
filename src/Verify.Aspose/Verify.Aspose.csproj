@@ -10,6 +10,7 @@
     <PackageReference Include="Aspose.Cells" />
     <PackageReference Include="Aspose.Words" />
     <PackageReference Include="Aspose.Slides.NET" />
+    <PackageReference Include="Polyfill" PrivateAssets="all" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Sbom.Targets" PrivateAssets="all" Condition="'$(CI)' == 'true'" />
   </ItemGroup>
