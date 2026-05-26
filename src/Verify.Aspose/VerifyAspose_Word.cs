@@ -56,7 +56,10 @@ public static partial class VerifyAspose
         book.Save(source, SaveFormat.Docx);
         var resultStream = DeterministicPackage.Convert(source);
 
-        return new("docx", resultStream, performConversion: false);
+        return new("docx", resultStream, performConversion: false)
+        {
+            BypassComparersForSubsequentOnDifference = true
+        };
     }
 
     static WordInfo GetInfo(Document document)

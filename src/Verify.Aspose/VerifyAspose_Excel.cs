@@ -77,7 +77,10 @@ public static partial class VerifyAspose
         book.Save(source, SaveFormat.Xlsx);
         var resultStream = DeterministicPackage.Convert(source);
 
-        return new("xlsx", resultStream, performConversion: false);
+        return new("xlsx", resultStream, performConversion: false)
+        {
+            BypassComparersForSubsequentOnDifference = true
+        };
     }
 
     static object GetInfo(Workbook book) =>
