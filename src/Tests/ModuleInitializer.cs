@@ -16,7 +16,7 @@ public static class ModuleInitializer
         ApplyAsposeLicense();
 
         VerifyDiffPlex.Initialize();
-        VerifyImageMagick.RegisterComparers(.01);
+        VerifierSettings.UseSsimForPng();
         VerifierSettings.IgnoreMember("Width");
     }
 
