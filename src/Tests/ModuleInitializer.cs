@@ -15,9 +15,9 @@ public static class ModuleInitializer
     {
         ApplyAsposeLicense();
 
-        VerifyDiffPlex.Initialize();
         VerifierSettings.UseSsimForPng();
         VerifierSettings.IgnoreMember("Width");
+        VerifierSettings.InitializePlugins();
     }
 
     static void ApplyAsposeLicense()
