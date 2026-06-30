@@ -1,0 +1,47 @@
+﻿{
+  HasMacro: False,
+  HasRevisions: False,
+  IsDigitallySigned: False,
+  Properties: {
+    NameOfApplication: Microsoft Macintosh Excel,
+    Title: The Title,
+    Version: 16.0300
+  },
+  Fonts: [
+    Arial
+  ],
+  Sheets: [
+    {
+      Name: Sheet1,
+      Columns: [
+        {
+          Name: 0
+        },
+        {
+          Name: First Name
+        },
+        {
+          Name: Last Name
+        },
+        {
+          Name: Gender
+        },
+        {
+          Name: Country
+        },
+        {
+          Name: Date
+        },
+        {
+          Name: Age
+        },
+        {
+          Name: Id
+        },
+        {
+          Name: Formula
+        }
+      ]
+    }
+  ]
+}

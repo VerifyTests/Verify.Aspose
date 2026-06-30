@@ -23,6 +23,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
 
+    <None Update="sample_hidden_row.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+
     <None Update="fontSubstitution.*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

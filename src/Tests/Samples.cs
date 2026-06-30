@@ -72,6 +72,10 @@ public class Samples
 
     #endregion
 
+    [Test]
+    public Task HiddenRow() =>
+        VerifyFile("sample_hidden_row.xlsx");
+
     #region VerifySheet
 
     [Test]
