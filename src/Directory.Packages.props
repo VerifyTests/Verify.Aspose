@@ -5,12 +5,12 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Aspose.Cells" Version="26.6.0" />
-    <PackageVersion Include="Aspose.Email" Version="26.5.0" />
+    <PackageVersion Include="Aspose.Email" Version="26.6.0" />
     <!-- https://forum.aspose.com/t/cant-use-aspose-pdf-26-5-0-and-markdig-1-2-0/328597 -->
     <PackageVersion Include="Aspose.PDF" Version="26.4.0" Pinned="true" />
     <PackageVersion Include="Aspose.Slides.NET" Version="26.6.0" />
     <PackageVersion Include="Aspose.Words" Version="26.6.0" />
-    <PackageVersion Include="DeterministicIoPackaging" Version="0.27.0" />
+    <PackageVersion Include="DeterministicIoPackaging" Version="0.28.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.3.1" />
     <PackageVersion Include="Microsoft.Bcl.Memory" Version="10.0.9" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.7.0" />

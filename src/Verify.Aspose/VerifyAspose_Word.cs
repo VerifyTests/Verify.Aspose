@@ -173,7 +173,7 @@ public static partial class VerifyAspose
         {
             var saveOptions = new ImageSaveOptions(SaveFormat.Png)
             {
-                PageSet = new(pageIndex),
+                PageSet = [with(pageIndex)],
                 Resolution = 96,
                 Scale = 1.0f,
                 UseAntiAliasing = true,
