@@ -293,9 +293,12 @@ public static partial class VerifyAspose
             yield break;
         }
 
+        // Headers live on the first populated row. Reading a hardcoded row 0 would mistake a
+        // leading hidden/empty row for the header and yield columns with null names.
+        var headerRow = cells.FirstCell.Row;
         for (var column = 0; column <= lastCell.Column; column++)
         {
-            var header = cells[0, column];
+            var header = cells[headerRow, column];
             yield return new(
                 header.Value,
                 cells.GetColumnWidth(column));
