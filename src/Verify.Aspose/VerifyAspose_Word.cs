@@ -50,6 +50,8 @@ public static partial class VerifyAspose
         return new(info, targets);
     }
 
+    // The docx snapshot is always the full document, regardless of PagesToInclude: PagesToInclude
+    // only trims the rendered png pages in GetWordStreams.
     static Target BuildDocxTarget(Document book)
     {
         using var source = new MemoryStream();
@@ -67,6 +69,7 @@ public static partial class VerifyAspose
         var (fonts, embeddedFonts) = GetDocumentFonts(document);
         return new()
         {
+            PageCount = document.PageCount,
             HasRevisions = document.HasRevisions.ToString(),
             DefaultLocale = (EditingLanguage)document.Styles.DefaultFont.LocaleId,
             Properties = GetProperties(document),

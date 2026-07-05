@@ -21,9 +21,15 @@ public static class VerifyAsposeSettings
         return false;
     }
 
+    /// <summary>
+    /// Limits the number of rendered page/slide <c>png</c> snapshots to the first
+    /// <paramref name="count"/>. Any full-document binary target (for example the <c>docx</c>
+    /// emitted for Word) is unaffected and always contains the full source document.
+    /// </summary>
     public static void PagesToInclude(this VerifySettings settings, int count) =>
         settings.Context["VerifyAsposePagesToInclude"] = count;
 
+    /// <inheritdoc cref="PagesToInclude(VerifySettings, int)"/>
     public static SettingsTask PagesToInclude(this SettingsTask settings, int count)
     {
         settings.CurrentSettings.PagesToInclude(count);
