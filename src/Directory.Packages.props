@@ -11,7 +11,7 @@
     <PackageVersion Include="Aspose.Slides.NET" Version="26.6.0" />
     <PackageVersion Include="Aspose.Words" Version="26.6.0" />
     <PackageVersion Include="DeterministicIoPackaging" Version="0.28.0" />
-    <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.3.1" />
+    <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.4.0" />
     <PackageVersion Include="Microsoft.Bcl.Memory" Version="10.0.9" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.7.0" />
     <PackageVersion Include="NUnit" Version="4.6.1" />
