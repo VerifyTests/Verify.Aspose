@@ -192,7 +192,7 @@ public Task VerifyExcelStream()
     return Verify(stream, "xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L159-L168' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L169-L178' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -221,7 +221,7 @@ public Task VerifyWorkbook()
     return Verify(book);
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L124-L146' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWorkbook' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L134-L156' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWorkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyExcel#Sheet1.verified.png](/src/Tests/Samples.VerifyExcel#Sheet1.verified.png):
@@ -241,7 +241,7 @@ public Task VerifyWorkbook()
 public Task VerifyWord() =>
     VerifyFile("sample.docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L217-L223' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L227-L233' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -257,7 +257,7 @@ public Task VerifyWordStream()
     return Verify(stream, "docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L225-L234' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L245-L254' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -457,6 +457,25 @@ await Verify(stream, extension: "xlsx")
 ```
 
 See [Verify Naming docs](https://github.com/VerifyTests/Verify/blob/main/docs/naming.md) for more details.
+
+
+## Exclude the document
+
+The source document is included in the snapshot as a `.verified.docx` or `.verified.xlsx`. Building the deterministic package is expensive, and committing it is not always wanted. [`ExcludeTargets`](https://github.com/VerifyTests/Verify/blob/main/docs/converter.md#excluding-targets) drops it from a verification and skips the build, while the info, text, csv, and rendered pages still verify:
+
+<!-- snippet: ExcludeXlsx -->
+<a id='snippet-ExcludeXlsx'></a>
+```cs
+[Test]
+public Task ExcludeXlsx() =>
+    // ExcludeTargets skips the expensive deterministic xlsx build.
+    VerifyFile("sample.xlsx")
+        .ExcludeTargets("xlsx");
+```
+<sup><a href='/src/Tests/Samples.cs#L75-L83' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExcludeXlsx' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+The same applies to `docx` via `ExcludeTargets("docx")`. To exclude for every test, call `VerifierSettings.ExcludeTargets("xlsx")` at initialization.
 
 
 ## File Samples

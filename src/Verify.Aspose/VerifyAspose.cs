@@ -37,7 +37,7 @@ public static partial class VerifyAspose
         VerifierSettings.RegisterStreamConverter("xlsx", ConvertExcel);
         VerifierSettings.RegisterStreamConverter("xls", ConvertExcel);
         VerifierSettings.IgnoreMember<IDocumentProperties>(_ => _.AppVersion);
-        VerifierSettings.RegisterFileConverter<Workbook>((target, _) => ConvertExcel(null, target));
+        VerifierSettings.RegisterFileConverter<Workbook>((target, context) => ConvertExcel(null, target, context));
         VerifierSettings.RegisterFileConverter<Worksheet>((target, _) => ConvertSheet(null, target));
 
         VerifierSettings.RegisterStreamConverter("pdf", ConvertPdf);

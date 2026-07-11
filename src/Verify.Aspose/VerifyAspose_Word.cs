@@ -45,7 +45,13 @@ public static partial class VerifyAspose
         Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
         Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
         var info = GetInfo(document);
-        List<Target> targets = [BuildDocxTarget(document)];
+        List<Target> targets = [];
+        // Building the deterministic docx is expensive, so skip it when the docx target is excluded.
+        if (!settings.IsTargetExcluded("docx"))
+        {
+            targets.Add(BuildDocxTarget(document));
+        }
+
         targets.AddRange(GetWordStreams(name, document, settings));
         return new(info, targets);
     }
