@@ -72,6 +72,16 @@ public class Samples
 
     #endregion
 
+    #region ExcludeXlsx
+
+    [Test]
+    public Task ExcludeXlsx() =>
+        // ExcludeTargets skips the expensive deterministic xlsx build.
+        VerifyFile("sample.xlsx")
+            .ExcludeTargets("xlsx");
+
+    #endregion
+
     [Test]
     public Task HiddenRow() =>
         VerifyFile("sample_hidden_row.xlsx");
@@ -219,6 +229,16 @@ public class Samples
     [Test]
     public Task VerifyWord() =>
         VerifyFile("sample.docx");
+
+    #endregion
+
+    #region ExcludeDocx
+
+    [Test]
+    public Task ExcludeDocx() =>
+        // ExcludeTargets skips the expensive deterministic docx build.
+        VerifyFile("sample.docx")
+            .ExcludeTargets("docx");
 
     #endregion
 

@@ -47,10 +47,10 @@ public static partial class VerifyAspose
     static ConversionResult ConvertExcel(string? targetName, Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         using var book = new Workbook(stream);
-        return ConvertExcel(targetName, book);
+        return ConvertExcel(targetName, book, settings);
     }
 
-    static ConversionResult ConvertExcel(string? targetName, Workbook book)
+    static ConversionResult ConvertExcel(string? targetName, Workbook book, IReadOnlyDictionary<string, object> settings)
     {
         // force dates in csv export to be consistent
         book.Settings.Region = CountryCode.USA;
@@ -62,7 +62,12 @@ public static partial class VerifyAspose
 
         var info = GetInfo(book);
 
-        List<Target> targets = [BuildXlsxTarget(book)];
+        List<Target> targets = [];
+        // Building the deterministic xlsx is expensive, so skip it when the xlsx target is excluded.
+        if (!settings.IsTargetExcluded("xlsx"))
+        {
+            targets.Add(BuildXlsxTarget(book));
+        }
 
         targets.AddRange(
             book.Worksheets
