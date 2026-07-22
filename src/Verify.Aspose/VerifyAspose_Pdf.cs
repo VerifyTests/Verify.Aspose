@@ -94,7 +94,11 @@ public static partial class VerifyAspose
         }
 
         var (fonts, embeddedFonts) = GetPdfFonts(document);
-        return new(
+
+        // Built before the targets, preserving the original evaluation order: GetDocumentText below
+        // re-saves the document to extract its text, and the page rendering in GetPdfStreams has
+        // always run after that.
+        var snapshotInfo =
             new
             {
                 Pages = document.Pages.Count,
@@ -124,8 +128,33 @@ public static partial class VerifyAspose
                 Fonts = fonts,
                 EmbeddedFonts = embeddedFonts,
                 Text = GetDocumentText(document)
-            },
-            GetPdfStreams(name, document, settings).ToList());
+            };
+
+        List<Target> targets = [];
+        // Building the deterministic pdf is expensive, so skip it when the pdf target is excluded.
+        if (!settings.IsTargetExcluded("pdf"))
+        {
+            targets.Add(BuildPdfTarget(document));
+        }
+
+        targets.AddRange(GetPdfStreams(name, document, settings));
+
+        return new(snapshotInfo, targets);
+    }
+
+    // The pdf snapshot is always the full document, regardless of PagesToInclude: PagesToInclude
+    // only trims the rendered png pages in GetPdfStreams. Mirrors BuildXlsxTarget/BuildDocxTarget,
+    // which do the same for the OOXML formats via DeterministicPackage.
+    static Target BuildPdfTarget(Document document)
+    {
+        using var source = new MemoryStream();
+        document.Save(source);
+        var resultStream = PdfNormalizer.Normalize(source);
+
+        return new("pdf", resultStream, performConversion: false)
+        {
+            BypassComparersForSubsequentOnDifference = true
+        };
     }
 
     static string GetDocumentText(Document document)
