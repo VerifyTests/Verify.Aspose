@@ -5,6 +5,7 @@
   <ItemGroup>
     <PackageReference Include="Aspose.Pdf" />
     <PackageReference Include="DeterministicIoPackaging" />
+    <PackageReference Include="DeterministicPdf" />
     <PackageReference Include="Microsoft.Bcl.Memory" />
     <PackageReference Include="Verify" />
     <PackageReference Include="Aspose.Cells" />
