@@ -134,7 +134,7 @@ public static partial class VerifyAspose
         // Building the deterministic pdf is expensive, so skip it when the pdf target is excluded.
         if (!settings.IsTargetExcluded("pdf"))
         {
-            targets.Add(BuildPdfTarget(document));
+            targets.Add(BuildPdfTarget(document, settings.NormalizePdf()));
         }
 
         targets.AddRange(GetPdfStreams(name, document, settings));
@@ -145,11 +145,12 @@ public static partial class VerifyAspose
     // The pdf snapshot is always the full document, regardless of PagesToInclude: PagesToInclude
     // only trims the rendered png pages in GetPdfStreams. Mirrors BuildXlsxTarget/BuildDocxTarget,
     // which do the same for the OOXML formats via DeterministicPackage.
-    static Target BuildPdfTarget(Document document)
+    static Target BuildPdfTarget(Document document, bool normalize)
     {
         using var source = new MemoryStream();
         document.Save(source);
-        var resultStream = PdfNormalizer.Normalize(source);
+        source.Position = 0;
+        var resultStream = normalize ? PdfNormalizer.Normalize(source) : new MemoryStream(source.ToArray());
 
         return new("pdf", resultStream, performConversion: false)
         {
