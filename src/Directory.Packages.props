@@ -10,7 +10,7 @@
     <PackageVersion Include="Aspose.PDF" Version="26.4.0" Pinned="true" />
     <PackageVersion Include="Aspose.Slides.NET" Version="26.7.0" />
     <PackageVersion Include="Aspose.Words" Version="26.7.0" />
-    <PackageVersion Include="DeterministicPdf" Version="1.0.1" />
+    <PackageVersion Include="DeterministicPdf" Version="1.0.2" />
     <PackageVersion Include="DeterministicIoPackaging" Version="0.30.0" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.4.1" />
     <PackageVersion Include="Microsoft.Bcl.Memory" Version="10.0.10" />
