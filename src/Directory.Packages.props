@@ -12,7 +12,7 @@
     <PackageVersion Include="Aspose.Words" Version="26.7.0" />
     <PackageVersion Include="DeterministicPdf" Version="1.0.2" />
     <PackageVersion Include="DeterministicIoPackaging" Version="0.30.0" />
-    <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.4.1" />
+    <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.4.2" />
     <PackageVersion Include="Microsoft.Bcl.Memory" Version="10.0.10" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.8.1" />
     <PackageVersion Include="NUnit" Version="4.6.1" />
