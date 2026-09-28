@@ -1,5 +1,3 @@
-﻿[assembly: Culture("en-AU")]
-
 public static class ModuleInitializer
 {
     #region enable
@@ -13,6 +11,12 @@ public static class ModuleInitializer
     [ModuleInitializer]
     public static void InitializeOther()
     {
+        var culture = new CultureInfo("en-AU");
+        CultureInfo.DefaultThreadCurrentCulture = culture;
+        CultureInfo.DefaultThreadCurrentUICulture = culture;
+        CultureInfo.CurrentCulture = culture;
+        CultureInfo.CurrentUICulture = culture;
+
         ApplyAsposeLicense();
 
         VerifierSettings.UseSsimForPng();

@@ -1,5 +1,4 @@
-﻿
-[TestFixture]
+
 public class Samples
 {
     #region VerifyPdf
@@ -178,49 +177,48 @@ public class Samples
     #endregion
 
     [Test]
-    public void FontSubstitutionWord()
+    public async Task FontSubstitutionWord()
     {
-        var exception = Assert.ThrowsAsync<Exception>(() => VerifyFile("fontSubstitution.docx"))!;
-        AreEqual(
+        var exception = await Assert.That(() => VerifyFile("fontSubstitution.docx")).ThrowsExactly<Exception>();
+        await Assert.That(exception!.Message).IsEqualTo(
             """
             Font substitution detected. This can cause inconsistent rendering of documents. Either ensure all dev machines the full set of required fonts, or use font embedding.
             Details: Font 'Droid Sans Fallback' has not been found. Using 'Times New Roman' font instead. Reason: default font substitution.
-            """,
-            exception.Message);
+            """);
     }
 
     [Test]
-    public void FontSubstitutionPdf()
+    public async Task FontSubstitutionPdf()
     {
-        var exception = Assert.ThrowsAsync<Exception>(() => VerifyFile("fontSubstitution.pdf"))!;
-        Assert.That(exception.Message, Does.StartWith(
+        var exception = await Assert.That(() => VerifyFile("fontSubstitution.pdf")).ThrowsExactly<Exception>();
+        await Assert.That(exception!.Message).StartsWith(
             """
             Font substitution detected. This can cause inconsistent rendering of documents. Either ensure all dev machines the full set of required fonts, or use font embedding.
             Details:
-            """));
+            """);
     }
 
     [Test]
-    public void FontSubstitutionExcel()
+    public async Task FontSubstitutionExcel()
     {
-        var exception = Assert.ThrowsAsync<Exception>(() => VerifyFile("fontSubstitution.xlsx"))!;
-        Assert.That(exception.Message, Does.StartWith(
+        var exception = await Assert.That(() => VerifyFile("fontSubstitution.xlsx")).ThrowsExactly<Exception>();
+        await Assert.That(exception!.Message).StartsWith(
             """
             Font substitution detected. This can cause inconsistent rendering of documents. Either ensure all dev machines the full set of required fonts, or use font embedding.
             Details:
-            """));
+            """);
     }
 
 #if DEBUG
     [Test]
-    public void FontSubstitutionPowerPoint()
+    public async Task FontSubstitutionPowerPoint()
     {
-        var exception = Assert.ThrowsAsync<Exception>(() => VerifyFile("fontSubstitution.pptx"))!;
-        Assert.That(exception.Message, Does.StartWith(
+        var exception = await Assert.That(() => VerifyFile("fontSubstitution.pptx")).ThrowsExactly<Exception>();
+        await Assert.That(exception!.Message).StartsWith(
             """
             Font substitution detected. This can cause inconsistent rendering of documents. Either ensure all dev machines the full set of required fonts, or use font embedding.
             Details:
-            """));
+            """);
     }
 #endif
 

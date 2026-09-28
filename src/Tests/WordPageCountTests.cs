@@ -1,4 +1,3 @@
-[TestFixture]
 public class WordPageCountTests
 {
     // WordInfo.PageCount is the full laid-out page count of the source document, independent of

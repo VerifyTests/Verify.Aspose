@@ -44,7 +44,7 @@ An [Aspose License](https://purchase.aspose.com/policies/license-types) is requi
 public static void Initialize() =>
     VerifyAspose.Initialize();
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L5-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L3-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -60,7 +60,7 @@ public static void Initialize() =>
 public Task VerifyPdf() =>
     VerifyFile("sample.pdf");
 ```
-<sup><a href='/src/Tests/Samples.cs#L5-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPdf' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L4-L10' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPdf' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -76,7 +76,7 @@ public Task VerifyPdfStream()
     return Verify(stream, "pdf");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L25-L34' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPdfStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L24-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPdfStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -176,7 +176,7 @@ Boring. More, a little more text. The end, and just as well.
 public Task VerifyExcel() =>
     VerifyFile("sample.xlsx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L67-L73' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcel' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L66-L72' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcel' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -192,7 +192,7 @@ public Task VerifyExcelStream()
     return Verify(stream, "xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L169-L178' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L168-L177' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -221,7 +221,7 @@ public Task VerifyWorkbook()
     return Verify(book);
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L134-L156' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWorkbook' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L133-L155' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWorkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyExcel#Sheet1.verified.png](/src/Tests/Samples.VerifyExcel#Sheet1.verified.png):
@@ -241,7 +241,7 @@ public Task VerifyWorkbook()
 public Task VerifyWord() =>
     VerifyFile("sample.docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L227-L233' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L225-L231' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -257,7 +257,7 @@ public Task VerifyWordStream()
     return Verify(stream, "docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L245-L254' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L243-L252' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -344,7 +344,7 @@ public Task VerifyWordStream()
 public Task VerifyPowerPoint() =>
     VerifyFile("sample.pptx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L38-L44' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPowerPoint' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L37-L43' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPowerPoint' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -360,7 +360,7 @@ public Task VerifyPowerPointStream()
     return Verify(stream, "pptx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L46-L55' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPowerPointStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L45-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyPowerPointStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -472,7 +472,7 @@ public Task ExcludeXlsx() =>
     VerifyFile("sample.xlsx")
         .ExcludeTargets("xlsx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L75-L83' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExcludeXlsx' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L74-L82' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExcludeXlsx' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The same applies to `docx` via `ExcludeTargets("docx")`. To exclude for every test, call `VerifierSettings.ExcludeTargets("xlsx")` at initialization.
