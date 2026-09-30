@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Aspose.Cells" Version="26.9.0" />
-    <PackageVersion Include="Aspose.Email" Version="26.7.0" />
+    <PackageVersion Include="Aspose.Email" Version="26.9.0" />
     <!-- https://forum.aspose.com/t/cant-use-aspose-pdf-26-5-0-and-markdig-1-2-0/328597 -->
     <PackageVersion Include="Aspose.PDF" Version="26.9.0" Pinned="true" />
     <PackageVersion Include="Aspose.Slides.NET" Version="26.9.0" />
@@ -16,12 +16,11 @@
     <PackageVersion Include="Microsoft.Bcl.Memory" Version="10.0.12" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.182" />
     <PackageVersion Include="Sbom" Version="0.3.1" />
-    <PackageVersion Include="Verify" Version="33.1.5" />
-    <PackageVersion Include="TUnit" Version="1.71.0" />
-    <PackageVersion Include="Verify.DiffPlex" Version="3.3.1" />
-    <PackageVersion Include="Verify.TUnit" Version="33.1.5" />
+    <PackageVersion Include="Verify" Version="33.2.0" />
+    <PackageVersion Include="TUnit" Version="1.72.4" />
+    <PackageVersion Include="Verify.TUnit" Version="33.2.0" />
     <PackageVersion Include="Argon" Version="0.37.0" />
-    <PackageVersion Include="DiffEngine" Version="20.5.2" />
+    <PackageVersion Include="DiffEngine" Version="20.6.0" />
     <PackageVersion Include="EmptyFiles" Version="8.19.0" />
     <PackageVersion Include="SimpleInfoName" Version="3.2.0" />
   </ItemGroup>
