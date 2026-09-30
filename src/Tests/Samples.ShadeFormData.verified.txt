@@ -1,4 +1,5 @@
 ﻿{
+  PageCount: 1,
   HasRevisions: False,
   DefaultLocale: EnglishUS,
   Properties: {

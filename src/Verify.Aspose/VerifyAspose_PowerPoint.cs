@@ -38,8 +38,15 @@ public static partial class VerifyAspose
             EmbeddedFonts = embeddedFonts
         };
 
-        return new(info, GetPowerPointStreams(name, document, settings).ToList());
+        // Aspose.Slides is not safe to render from multiple threads: when two presentations render
+        // concurrently a chart can be silently left out of a slide image.
+        lock (powerPointRenderLock)
+        {
+            return new(info, GetPowerPointStreams(name, document, settings).ToList());
+        }
     }
+
+    static Lock powerPointRenderLock = new();
 
     static (List<string> fonts, List<string> embeddedFonts) GetPowerPointFonts(Presentation document)
     {
