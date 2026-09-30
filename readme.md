@@ -113,8 +113,15 @@ public Task VerifyPdfStream()
     Helvetica
   ],
   Text:
+![ref1]
 
-<a name="br1"></a>A Simple PDF File
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
+
+
+
+<a name="br1"></a>Evaluation Only. Created with Aspose.PDF. Copyright 2002-2026 Aspose Pty Ltd.
+
+A Simple PDF File
 
 This is a small demonstration .pdf file -
 
@@ -135,6 +142,8 @@ And more text. And more text. And more text. And more text. And more
 text. And more text. And more text. Even more. Continued on page 2 ...
 
 
+**Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
+![ref2]
 
 
 
@@ -153,10 +162,14 @@ paint dry. And more text. And more text. And more text. And more text.
 Boring. More, a little more text. The end, and just as well.
 
 
+**Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
+
+[ref1]: content.001.png
+[ref2]: content.002.png
 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L70' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L83' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf#00.verified.png](/src/Tests/Samples.VerifyPdf%2300.verified.png):
@@ -267,6 +280,7 @@ public Task VerifyWordStream()
 <a id='snippet-Samples.VerifyWord.verified.txt'></a>
 ```txt
 {
+  PageCount: 2,
   HasRevisions: False,
   DefaultLocale: EnglishUS,
   Properties: {
@@ -279,7 +293,7 @@ public Task VerifyWordStream()
     ],
     LastSavedTime: DateTime_2,
     Lines: 8,
-    Pages: 1,
+    Pages: 2,
     Paragraphs: 2,
     Template: Normal,
     Words: 176
@@ -296,6 +310,10 @@ public Task VerifyWordStream()
     Trebuchet MS
   ],
   Text:
+![ref1]
+
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
+
 [Meeting name] meeting minutes
 
 |Location:|[Address or room number]|
@@ -320,11 +338,15 @@ public Task VerifyWordStream()
 |[Action item 5]|[Name(s) 5]|[Date 5]|[Status 5]|
 |[Action item 6]|[Name(s) 6]|[Date 6]|[Status 6]|
 
+**Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
+
 2
+
+[ref1]: content.001.png
 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L57' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L66' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyWord#00.verified.png](/src/Tests/Samples.VerifyWord%2300.verified.png):

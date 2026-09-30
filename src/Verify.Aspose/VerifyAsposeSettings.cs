@@ -70,10 +70,11 @@ public static class VerifyAsposeSettings
 
     /// <summary>
     /// Snapshots the pdf bytes exactly as produced, skipping the normalization that neutralizes the
-    /// trailer <c>/ID</c>, the <c>/CreationDate</c> and <c>/ModDate</c>, and the XMP dates and
-    /// identifiers. Use it when the producer already emits byte-deterministic documents, since
-    /// normalizing them again copies the whole buffer, rescans it, and — when the XMP packet is
-    /// canonicalized — rebuilds it and repairs the cross-reference table, all to change nothing.
+    /// trailer <c>/ID</c>, the <c>/CreationDate</c> and <c>/ModDate</c>, the XMP dates and
+    /// identifiers, and the random tags of subset font names. Use it when the producer already emits
+    /// byte-deterministic documents, since normalizing them again copies the whole buffer, rescans
+    /// it, and — when the XMP packet is canonicalized — rebuilds it and repairs the cross-reference
+    /// table, all to change nothing.
     /// </summary>
     /// <remarks>
     /// Only skip this when the producer is genuinely deterministic. Without it a freshly generated

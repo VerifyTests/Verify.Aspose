@@ -1,4 +1,5 @@
 ﻿{
+  PageCount: 2,
   HasRevisions: False,
   DefaultLocale: EnglishUS,
   Properties: {
@@ -11,7 +12,7 @@
     ],
     LastSavedTime: DateTime_2,
     Lines: 8,
-    Pages: 1,
+    Pages: 2,
     Paragraphs: 2,
     Template: Normal,
     Words: 176
@@ -28,6 +29,10 @@
     Trebuchet MS
   ],
   Text:
+![ref1]
+
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
+
 [Meeting name] meeting minutes
 
 |Location:|[Address or room number]|
@@ -52,6 +57,10 @@
 |[Action item 5]|[Name(s) 5]|[Date 5]|[Status 5]|
 |[Action item 6]|[Name(s) 6]|[Date 6]|[Status 6]|
 
+**Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
+
 2
+
+[ref1]: content.001.png
 
 }

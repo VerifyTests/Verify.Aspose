@@ -161,10 +161,18 @@ public static partial class VerifyAspose
     static string GetDocumentText(Document document)
     {
         using var stream = new MemoryStream();
-        document.Save(stream,new DocSaveOptions());
+        // Aspose.Pdf is not safe to convert to doc from multiple threads: when two documents convert
+        // concurrently the save can throw "This is not a structured storage file".
+        lock (pdfToDocLock)
+        {
+            document.Save(stream, new DocSaveOptions());
+        }
+
         stream.Position = 0;
         return GetDocumentText(new Aspose.Words.Document(stream));
     }
+
+    static Lock pdfToDocLock = new();
 
     static Dictionary<string, string> GetInfo(Document document) =>
         document.Info
