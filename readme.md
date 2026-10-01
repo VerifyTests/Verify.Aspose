@@ -48,6 +48,28 @@ public static void Initialize() =>
 <!-- endSnippet -->
 
 
+### Outputs
+
+`Initialize` accepts an optional `AsposeOutputs` flags enum that controls, globally, which outputs a document is split into. Outputs that are not selected are not generated at all, so the rendering/extraction cost is avoided.
+
+ * `Png`: Render pages, slides, and sheets to png images.
+ * `Text`: Extract the document text (markdown) into the `Text` property of the info for pdf and Word documents.
+ * `Csv`: Export each Excel sheet to csv.
+ * `All`: All of the above. The default.
+
+The source document target (pdf/docx/xlsx/pptx) is not affected. Use `VerifierSettings.ExcludeTargets` to exclude it.
+
+<!-- snippet: InitializeOutputs -->
+<a id='snippet-InitializeOutputs'></a>
+```cs
+[ModuleInitializer]
+public static void Initialize() =>
+    VerifyAspose.Initialize(AsposeOutputs.Text);
+```
+<sup><a href='/src/StaticSettingsTests/ModuleInitializer.cs#L3-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-InitializeOutputs' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+
 ### PDF
 
 

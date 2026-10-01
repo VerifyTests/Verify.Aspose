@@ -178,8 +178,17 @@ public static partial class VerifyAspose
             targetAndSheet = $"{targetName}-{sheet.Name}";
         }
 
-        var csv = ToCsv(sheet);
-        yield return new("csv", csv, targetAndSheet);
+        if (outputs.HasFlag(AsposeOutputs.Csv))
+        {
+            var csv = ToCsv(sheet);
+            yield return new("csv", csv, targetAndSheet);
+        }
+
+        if (!outputs.HasFlag(AsposeOutputs.Png))
+        {
+            yield break;
+        }
+
         var render = new SheetRender(sheet, options);
 
         if (render.PageCount == 1)

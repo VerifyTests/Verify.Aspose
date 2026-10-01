@@ -11,7 +11,10 @@ public static partial class VerifyAspose
 
     public static bool Initialized { get; private set; }
 
-    public static void Initialize()
+    static AsposeOutputs outputs = AsposeOutputs.All;
+
+    /// <param name="outputs">The outputs that documents are split into. Defaults to <see cref="AsposeOutputs.All"/>.</param>
+    public static void Initialize(AsposeOutputs outputs = AsposeOutputs.All)
     {
         if (Initialized)
         {
@@ -19,6 +22,7 @@ public static partial class VerifyAspose
         }
 
         Initialized = true;
+        VerifyAspose.outputs = outputs;
 
         InnerVerifier.ThrowIfVerifyHasBeenRun();
 

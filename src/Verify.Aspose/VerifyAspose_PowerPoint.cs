@@ -68,6 +68,11 @@ public static partial class VerifyAspose
 
     static IEnumerable<Target> GetPowerPointStreams(string? name, Presentation document, IReadOnlyDictionary<string, object> settings)
     {
+        if (!outputs.HasFlag(AsposeOutputs.Png))
+        {
+            yield break;
+        }
+
         var pagesToInclude = settings.GetPagesToInclude(document.Slides.Count);
         for (var index = 0; index < pagesToInclude; index++)
         {

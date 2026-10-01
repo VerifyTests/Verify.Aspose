@@ -127,7 +127,7 @@ public static partial class VerifyAspose
                 document.Version,
                 Fonts = fonts,
                 EmbeddedFonts = embeddedFonts,
-                Text = GetDocumentText(document)
+                Text = outputs.HasFlag(AsposeOutputs.Text) ? GetDocumentText(document) : null
             };
 
         List<Target> targets = [];
@@ -183,6 +183,11 @@ public static partial class VerifyAspose
 
     static IEnumerable<Target> GetPdfStreams(string? name, Document document, IReadOnlyDictionary<string, object> settings)
     {
+        if (!outputs.HasFlag(AsposeOutputs.Png))
+        {
+            yield break;
+        }
+
         var pagesToInclude = settings.GetPagesToInclude(document.Pages.Count);
         for (var index = 0; index < pagesToInclude; index++)
         {
