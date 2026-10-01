@@ -8,6 +8,11 @@ namespace VerifyTests;
 public enum AsposeOutputs
 {
     /// <summary>
+    /// No outputs. Only the source document and info are emitted.
+    /// </summary>
+    None = 0,
+
+    /// <summary>
     /// Render pages, slides, and sheets to png images.
     /// </summary>
     Png = 1,
