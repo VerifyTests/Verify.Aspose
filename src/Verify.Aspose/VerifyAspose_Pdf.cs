@@ -150,7 +150,7 @@ public static partial class VerifyAspose
         using var source = new MemoryStream();
         document.Save(source);
         source.Position = 0;
-        var resultStream = normalize ? PdfNormalizer.Normalize(source) : new MemoryStream(source.ToArray());
+        var resultStream = normalize ? PdfNormalizer.Normalize(source) : new(source.ToArray());
 
         return new("pdf", resultStream, performConversion: false)
         {
