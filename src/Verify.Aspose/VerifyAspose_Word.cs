@@ -84,7 +84,7 @@ public static partial class VerifyAspose
             ShadeFormData = document.ShadeFormData,
             Fonts = fonts,
             EmbeddedFonts = embeddedFonts,
-            Text = GetDocumentText(document)
+            Text = outputs.HasFlag(AsposeOutputs.Text) ? GetDocumentText(document) : null
         };
     }
 
@@ -175,6 +175,11 @@ public static partial class VerifyAspose
         if (settings.GetIncludeWordStyles())
         {
             yield return new("xml", GetStyles(document), name);
+        }
+
+        if (!outputs.HasFlag(AsposeOutputs.Png))
+        {
+            yield break;
         }
 
         var pagesToInclude = settings.GetPagesToInclude(document.PageCount);

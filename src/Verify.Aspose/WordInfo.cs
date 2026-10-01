@@ -14,5 +14,5 @@ readonly record struct WordInfo
     public bool ShadeFormData { get; init; }
     public List<string> Fonts { get; init; }
     public List<string> EmbeddedFonts { get; init; }
-    public string Text { get; init; }
+    public string? Text { get; init; }
 }
