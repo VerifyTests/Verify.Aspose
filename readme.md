@@ -55,6 +55,7 @@ public static void Initialize() =>
  * `Png`: Render pages, slides, and sheets to png images.
  * `Text`: Extract the document text (markdown) into the `Text` property of the info for pdf and Word documents.
  * `Csv`: Export each Excel sheet to csv.
+ * `None`: none of the above. Only the info and the source document are emitted.
  * `All`: All of the above. The default.
 
 The source document target (pdf/docx/xlsx/pptx) is not affected. Use `VerifierSettings.ExcludeTargets` to exclude it.
