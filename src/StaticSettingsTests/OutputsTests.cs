@@ -3,13 +3,13 @@ public class OutputsTests
 {
     [Test]
     public Task Pdf() =>
-        VerifyFile("sample.pdf");
+        VerifyFile(ProjectFiles.sample_pdf.Path);
 
     [Test]
     public Task Word() =>
-        VerifyFile("sample.docx");
+        VerifyFile(ProjectFiles.sample_docx.Path);
 
     [Test]
     public Task Excel() =>
-        VerifyFile("sample.xlsx");
+        VerifyFile(ProjectFiles.sample_xlsx.Path);
 }
