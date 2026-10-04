@@ -11,7 +11,7 @@ public class Samples
 
     [Test]
     public Task VerifyPdfResolution() =>
-        VerifyFile("sample.pdf")
+        VerifyFile(ProjectFiles.sample_pdf.Path)
             .PdfPngDevice(page =>
             {
                 var resolution = new Resolution(100);
@@ -83,7 +83,7 @@ public class Samples
 
     [Test]
     public Task HiddenRow() =>
-        VerifyFile("sample_hidden_row.xlsx");
+        VerifyFile(ProjectFiles.sample_hidden_row_xlsx.Path);
 
     #region VerifySheet
 
@@ -179,7 +179,7 @@ public class Samples
     [Test]
     public async Task FontSubstitutionWord()
     {
-        var exception = await Assert.That(async () => await VerifyFile("fontSubstitution.docx")).ThrowsExactly<Exception>();
+        var exception = await Assert.That(async () => await VerifyFile(ProjectFiles.fontSubstitution_docx.Path)).ThrowsExactly<Exception>();
         await Assert.That(exception!.Message).IsEqualTo(
             """
             Font substitution detected. This can cause inconsistent rendering of documents. Either ensure all dev machines the full set of required fonts, or use font embedding.
@@ -201,7 +201,7 @@ public class Samples
     [Test]
     public async Task FontSubstitutionExcel()
     {
-        var exception = await Assert.That(async () => await VerifyFile("fontSubstitution.xlsx")).ThrowsExactly<Exception>();
+        var exception = await Assert.That(async () => await VerifyFile(ProjectFiles.fontSubstitution_xlsx.Path)).ThrowsExactly<Exception>();
         await Assert.That(exception!.Message).StartsWith(
             """
             Font substitution detected. This can cause inconsistent rendering of documents. Either ensure all dev machines the full set of required fonts, or use font embedding.
@@ -213,7 +213,7 @@ public class Samples
     [Test]
     public async Task FontSubstitutionPowerPoint()
     {
-        var exception = await Assert.That(async () => await VerifyFile("fontSubstitution.pptx")).ThrowsExactly<Exception>();
+        var exception = await Assert.That(async () => await VerifyFile(ProjectFiles.fontSubstitution_pptx.Path)).ThrowsExactly<Exception>();
         await Assert.That(exception!.Message).StartsWith(
             """
             Font substitution detected. This can cause inconsistent rendering of documents. Either ensure all dev machines the full set of required fonts, or use font embedding.
@@ -253,7 +253,7 @@ public class Samples
 
     [Test]
     public Task VerifyWordStyles() =>
-        VerifyFile("sample.docx").IncludeWordStyles();
+        VerifyFile(ProjectFiles.sample_docx.Path).IncludeWordStyles();
 
     [Test]
     public Task VerifyWordDocument()
