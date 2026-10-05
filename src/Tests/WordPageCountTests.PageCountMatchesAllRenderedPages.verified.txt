@@ -20,17 +20,40 @@
     ]
   },
   PageCount: 3,
-  Text:
+  Pages: [
+    {
+      Number: 1,
+      Text:
 ![](content.001.png)
 
 **Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
 
 Page one
+**Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
+
+    },
+    {
+      Number: 2,
+      Text:
+![](content.001.png)
+
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
 
 Page two
+**Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
+
+    },
+    {
+      Number: 3,
+      Text:
+![](content.001.png)
+
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
 
 Page three
 
 **Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
 
+    }
+  ]
 }

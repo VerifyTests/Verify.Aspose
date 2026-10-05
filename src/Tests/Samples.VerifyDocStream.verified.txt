@@ -20,6 +20,11 @@
     ]
   },
   PageCount: 1,
-  Text:
+  Pages: [
+    {
+      Number: 1,
+      Text:
 
+    }
+  ]
 }

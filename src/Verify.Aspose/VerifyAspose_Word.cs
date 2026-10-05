@@ -54,12 +54,6 @@ public static partial class VerifyAspose
             TextExtension = "md"
         };
 
-        // The text is that of the whole document, so it is given as one text rather than page by page
-        if (conversion.IncludeText)
-        {
-            conversion.Text(GetDocumentText(document));
-        }
-
         // Building the deterministic docx is expensive, so skip it when the docx target is excluded.
         if (!settings.IsTargetExcluded("docx"))
         {
@@ -72,15 +66,34 @@ public static partial class VerifyAspose
         }
 
         var includeImages = conversion.IncludeImages;
+        var includeText = conversion.IncludeText;
         foreach (var number in conversion.Pages(document.PageCount))
         {
+            Stream? image = null;
             if (includeImages)
             {
-                conversion.AddPage(number, RenderWordPage(document, number));
+                image = RenderWordPage(document, number);
             }
+
+            string? text = null;
+            if (includeText)
+            {
+                text = GetPageText(document, number);
+            }
+
+            conversion.AddPage(number, image, text);
         }
 
         return conversion.Build();
+    }
+
+    // The text of one page, so that PagesToInclude limits the text as it does the images. The page
+    // is taken out as a document of its own, which is what can be saved as markdown.
+    static string GetPageText(Document document, int number)
+    {
+        // ExtractPages is 0 based
+        var page = document.ExtractPages(number - 1, 1);
+        return GetDocumentText(page);
     }
 
     // The docx snapshot is always the full document, regardless of PagesToInclude: PagesToInclude

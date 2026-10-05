@@ -8,7 +8,7 @@ Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of
 
 Verifying a document (pdf, docx, xlsx, or pptx) produces:
 
- * A `.verified.txt` info file with what Aspose reports of the document (its properties and fonts), the count of its pages, and for a pdf or a Word document its text, read as markdown.
+ * A `.verified.txt` info file with what Aspose reports of the document (its properties and fonts), the count of its pages, and the text of each page: read as markdown for a pdf or a Word document, and as plain text for the slides of a presentation.
  * The document itself as a `.verified.pdf`, `.verified.docx`, `.verified.xlsx` or `.verified.pptx`. It can be left out with [`ExcludeTargets`](#exclude-the-document).
  * A png of every page of a pdf or a Word document, every slide of a presentation, and every sheet of a workbook, as `#page_0001.verified.png`, `#page_0002.verified.png`, etc.
  * A csv of every sheet of a workbook, named by the sheet: `#Sheet1.verified.csv`.
@@ -59,7 +59,7 @@ public static void Initialize() =>
 
 What a document is split into is controlled by Verify's settings for [paged documents](https://github.com/VerifyTests/Verify/blob/main/docs/paged-documents.md). Anything left out is not produced at all (pages are not drawn, text is not read, sheets are not exported), so these also save work.
 
-The text of a pdf or a Word document is read as markdown, and as one text for the whole document rather than one for each page. It is in the info file by default. `PageText` moves it to a `#text.verified.md`, or leaves it out with `PageTextPlacement.None`:
+The text of a pdf or a Word document is read as markdown, page by page, and that of a presentation as plain text, slide by slide. It is in the info file by default, under the page it is on. `PageText` moves it to a file for each page (`#page_0001.verified.md`, or `#page_0001.verified.txt` for a slide), or leaves it out with `PageTextPlacement.None`:
 
 <!-- snippet: PageTextPerPage -->
 <a id='snippet-PageTextPerPage'></a>
@@ -73,9 +73,7 @@ public Task PageTextPerPage() =>
 <sup><a href='/src/Tests/Samples.cs#L309-L317' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageTextPerPage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-The text of a pdf is read by converting it, which can leave marks in the pdf that is saved afterwards. So the `.verified.pdf` of a verification with the text and of one without it can differ.
-
-`PagesToInclude` limits the pages that are drawn, to the first pages of a document or to those a delegate accepts. A slide of a presentation is a page, and so is a sheet of a workbook. The document itself is still verified whole, as is its text, and `PageCount` in the info file is still the number of pages the document has:
+`PagesToInclude` limits the pages that are drawn and read, to the first pages of a document or to those a delegate accepts. A slide of a presentation is a page, and so is a sheet of a workbook. The document itself is still verified whole, and `PageCount` in the info file is still the number of pages the document has:
 
 <!-- snippet: PagesToInclude -->
 <a id='snippet-PagesToInclude'></a>
@@ -191,14 +189,19 @@ public Task VerifyPdfStream()
     ]
   },
   PageCount: 2,
-  Text:
-![ref1]
+  Pages: [
+    {
+      Number: 1,
+      Text:
+![](content.001.png)
 
 **Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
 
 
 
-<a name="br1"></a>Evaluation Only. Created with Aspose.PDF. Copyright 2002-2026 Aspose Pty Ltd.
+<a name="br1"></a>aluation Only. Created with Aspose.PDF. Copyright 2002-2026 Aspose Pty Ltd.
+
+Evaluation Only. Created with Aspose.PDF. Copyright 2002-2026 Aspose Pty Ltd.
 
 A Simple PDF File
 
@@ -222,13 +225,18 @@ text. And more text. And more text. Even more. Continued on page 2 ...
 
 
 **Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
-![ref2]
+
+    },
+    {
+      Number: 2,
+      Text:
+![](content.001.png)
+
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
 
 
 
-<a name="br2"></a> 
-
-Simple PDF File 2
+<a name="br1"></a>Simple PDF File 2
 
 ...continued from page 1. Yet more text. And more text. And more text.
 
@@ -243,12 +251,11 @@ Boring. More, a little more text. The end, and just as well.
 
 **Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
 
-[ref1]: content.001.png
-[ref2]: content.002.png
-
+    }
+  ]
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L85' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L94' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf#page_0001.verified.png](/src/Tests/Samples.VerifyPdf%23page_0001.verified.png):
@@ -451,7 +458,10 @@ public Task VerifyWordStream()
     ]
   },
   PageCount: 2,
-  Text:
+  Pages: [
+    {
+      Number: 1,
+      Text:
 ![ref1]
 
 **Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
@@ -478,6 +488,23 @@ public Task VerifyWordStream()
 |[Action item 3]|[Name(s) 3]|[Date 3]|[Status 3]|
 |[Action item 4]|[Name(s) 4]|[Date 4]|[Status 4]|
 |[Action item 5]|[Name(s) 5]|[Date 5]|[Status 5]|
+
+**Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
+
+2
+
+[ref1]: content.001.png
+
+    },
+    {
+      Number: 2,
+      Text:
+![ref1]
+
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
+
+|<h1>Action items</h1>|<h1>Owner(s)</h1>|<h1>Deadline</h1>|<h1>Status</h1>|
+| :- | :- | :- | :- |
 |[Action item 6]|[Name(s) 6]|[Date 6]|[Status 6]|
 
 **Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
@@ -486,9 +513,11 @@ public Task VerifyWordStream()
 
 [ref1]: content.001.png
 
+    }
+  ]
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L90' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyWord#page_0001.verified.png](/src/Tests/Samples.VerifyWord%23page_0001.verified.png):
@@ -603,10 +632,37 @@ public Task VerifyPowerPointStream()
       WenQuanYi Zen Hei
     ]
   },
-  PageCount: 3
+  PageCount: 3,
+  Pages: [
+    {
+      Number: 1,
+      Text:
+Lorem... text has been truncated due to evaluation version limitation.
+Lorem... text has been truncated due to evaluation version limitation.
+Maece... text has been truncated due to evaluation version limitation.
+
+    },
+    {
+      Number: 2,
+      Text:
+Chart
+
+    },
+    {
+      Number: 3,
+      Text:
+Table
+Colum... text has been truncated due to evaluation version limitation.
+Colum... text has been truncated due to evaluation version limitation.
+Colum... text has been truncated due to evaluation version limitation.
+Colum... text has been truncated due to evaluation version limitation.
+Colum... text has been truncated due to evaluation version limitation.
+
+    }
+  ]
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L72' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L99' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPowerPoint#page_0001.verified.png](/src/Tests/Samples.VerifyPowerPoint%23page_0001.verified.png):
@@ -654,7 +710,7 @@ When the document differs, its pages are compared exactly, skipping any [compare
 
 ## Migrating from 5.x
 
-Version 6 moves to the paged document support in Verify 33.3. The `AsposeOutputs` enum and the `outputs` argument of `Initialize` are gone, as is the `PagesToInclude` of this package. Verify's settings replace them, and can be set for one verification as well as for every test:
+Version 6 moves to the paged document support in Verify 33.3. The `outputs` argument of `Initialize` is gone, as is the `PagesToInclude` of this package, and the `AsposeOutputs` enum is obsolete as an error, so that code naming it is pointed here. Verify's settings replace them, and can be set for one verification as well as for every test:
 
 | 5.x | 6.x |
 | --- | --- |

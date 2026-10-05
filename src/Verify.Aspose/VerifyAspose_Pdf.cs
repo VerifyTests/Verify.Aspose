@@ -131,15 +131,6 @@ public static partial class VerifyAspose
             TextExtension = "md"
         };
 
-        // The text is that of the whole document, so it is given as one text rather than page by
-        // page. Read before the pdf is built and the pages are drawn, preserving the original
-        // evaluation order: GetDocumentText converts the document to extract its text, which leaves
-        // marks in what is saved afterwards.
-        if (conversion.IncludeText)
-        {
-            conversion.Text(GetDocumentText(document));
-        }
-
         // Building the deterministic pdf is expensive, so skip it when the pdf target is excluded.
         if (!settings.IsTargetExcluded("pdf"))
         {
@@ -147,16 +138,38 @@ public static partial class VerifyAspose
         }
 
         var includeImages = conversion.IncludeImages;
+        var includeText = conversion.IncludeText;
         // Aspose numbers the pages of a pdf from 1, as Verify does
         foreach (var number in conversion.Pages(document.Pages.Count))
         {
+            var page = document.Pages[number];
+
+            Stream? image = null;
             if (includeImages)
             {
-                conversion.AddPage(number, RenderPdfPage(document.Pages[number], settings));
+                image = RenderPdfPage(page, settings);
             }
+
+            string? text = null;
+            if (includeText)
+            {
+                text = GetPageText(page);
+            }
+
+            conversion.AddPage(number, image, text);
         }
 
         return conversion.Build();
+    }
+
+    // The text of one page, so that PagesToInclude limits the text as it does the images. The page
+    // is copied to a document of its own, which is what can be converted, and so the document being
+    // verified is left as it was.
+    static string GetPageText(Page page)
+    {
+        using var single = new Document();
+        single.Pages.Add(page);
+        return GetDocumentText(single);
     }
 
     // The pdf snapshot is always the full document, regardless of PagesToInclude: PagesToInclude

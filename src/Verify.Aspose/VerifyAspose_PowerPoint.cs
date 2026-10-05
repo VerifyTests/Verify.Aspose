@@ -57,16 +57,47 @@ public static partial class VerifyAspose
                 conversion.Source(BuildPptxTarget(document));
             }
 
+            var includeText = conversion.IncludeText;
             foreach (var number in conversion.Pages(document.Slides.Count))
             {
+                var slide = document.Slides[number - 1];
+
+                Stream? image = null;
                 if (includeImages)
                 {
-                    conversion.AddPage(number, RenderSlide(document.Slides[number - 1]));
+                    image = RenderSlide(slide);
                 }
+
+                string? text = null;
+                if (includeText)
+                {
+                    text = GetSlideText(slide);
+                }
+
+                conversion.AddPage(number, image, text);
             }
         }
 
         return conversion.Build();
+    }
+
+    // The text of a slide: a line for each paragraph that has any, in the order of its shapes.
+    static string GetSlideText(ISlide slide)
+    {
+        var builder = new StringBuilder();
+        foreach (var frame in Aspose.Slides.Util.SlideUtil.GetAllTextBoxes(slide))
+        {
+            foreach (var paragraph in frame.Paragraphs)
+            {
+                var text = paragraph.Text;
+                if (!string.IsNullOrEmpty(text))
+                {
+                    builder.AppendLine(text);
+                }
+            }
+        }
+
+        return builder.ToString();
     }
 
     // The pptx snapshot is always the whole presentation, regardless of PagesToInclude, which only
