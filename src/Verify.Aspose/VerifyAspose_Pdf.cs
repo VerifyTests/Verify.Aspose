@@ -69,15 +69,15 @@ public static partial class VerifyAspose
         }
     }
 
-    static ConversionResult ConvertPdf(string? name, Stream stream, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertPdf(Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         using var document = new Document(stream);
         // Subscribe to font substitution events immediately after loading
         document.FontSubstitution += OnPdfFontSubstitution;
-        return ConvertPdf(name, document, settings);
+        return ConvertPdf(document, settings);
     }
 
-    static ConversionResult ConvertPdf(string? name, Document document, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertPdf(Document document, IReadOnlyDictionary<string, object> settings)
     {
         // Subscribe to font substitution events (for when Document is passed directly)
         document.FontSubstitution += OnPdfFontSubstitution;
@@ -95,13 +95,12 @@ public static partial class VerifyAspose
 
         var (fonts, embeddedFonts) = GetPdfFonts(document);
 
-        // Built before the targets, preserving the original evaluation order: GetDocumentText below
-        // re-saves the document to extract its text, and the page rendering in GetPdfStreams has
-        // always run after that.
-        var snapshotInfo =
-            new
+        // Names the pages, places the text, and says which pages and which outputs the verification
+        // wants, so what is left out is neither drawn nor read.
+        var conversion = new PagedConversion(settings)
+        {
+            Info = new
             {
-                Pages = document.Pages.Count,
                 document.AllowReusePageContent,
                 document.CenterWindow,
                 document.DisplayDocTitle,
@@ -126,25 +125,43 @@ public static partial class VerifyAspose
                 document.PdfFormat,
                 document.Version,
                 Fonts = fonts,
-                EmbeddedFonts = embeddedFonts,
-                Text = outputs.HasFlag(AsposeOutputs.Text) ? GetDocumentText(document) : null
-            };
+                EmbeddedFonts = embeddedFonts
+            },
+            // The text is read as markdown
+            TextExtension = "md"
+        };
 
-        List<Target> targets = [];
+        // The text is that of the whole document, so it is given as one text rather than page by
+        // page. Read before the pdf is built and the pages are drawn, preserving the original
+        // evaluation order: GetDocumentText converts the document to extract its text, which leaves
+        // marks in what is saved afterwards.
+        if (conversion.IncludeText)
+        {
+            conversion.Text(GetDocumentText(document));
+        }
+
         // Building the deterministic pdf is expensive, so skip it when the pdf target is excluded.
         if (!settings.IsTargetExcluded("pdf"))
         {
-            targets.Add(BuildPdfTarget(document, settings.NormalizePdf()));
+            conversion.Source(BuildPdfTarget(document, settings.NormalizePdf()));
         }
 
-        targets.AddRange(GetPdfStreams(name, document, settings));
+        var includeImages = conversion.IncludeImages;
+        // Aspose numbers the pages of a pdf from 1, as Verify does
+        foreach (var number in conversion.Pages(document.Pages.Count))
+        {
+            if (includeImages)
+            {
+                conversion.AddPage(number, RenderPdfPage(document.Pages[number], settings));
+            }
+        }
 
-        return new(snapshotInfo, targets);
+        return conversion.Build();
     }
 
     // The pdf snapshot is always the full document, regardless of PagesToInclude: PagesToInclude
-    // only trims the rendered png pages in GetPdfStreams. Mirrors BuildXlsxTarget/BuildDocxTarget,
-    // which do the same for the OOXML formats via DeterministicPackage.
+    // only limits the pages that are drawn. Mirrors BuildXlsxTarget/BuildDocxTarget, which do the
+    // same for the OOXML formats via DeterministicPackage.
     static Target BuildPdfTarget(Document document, bool normalize)
     {
         using var source = new MemoryStream();
@@ -152,10 +169,7 @@ public static partial class VerifyAspose
         source.Position = 0;
         var resultStream = normalize ? PdfNormalizer.Normalize(source) : new(source.ToArray());
 
-        return new("pdf", resultStream, performConversion: false)
-        {
-            BypassComparersForSubsequentOnDifference = true
-        };
+        return new("pdf", resultStream);
     }
 
     static string GetDocumentText(Document document)
@@ -181,21 +195,11 @@ public static partial class VerifyAspose
                         !_.Value.Contains("Aspose"))
             .ToDictionary(_ => _.Key, _ => _.Value);
 
-    static IEnumerable<Target> GetPdfStreams(string? name, Document document, IReadOnlyDictionary<string, object> settings)
+    static MemoryStream RenderPdfPage(Page page, IReadOnlyDictionary<string, object> settings)
     {
-        if (!outputs.HasFlag(AsposeOutputs.Png))
-        {
-            yield break;
-        }
-
-        var pagesToInclude = settings.GetPagesToInclude(document.Pages.Count);
-        for (var index = 0; index < pagesToInclude; index++)
-        {
-            var page = document.Pages[index + 1];
-            var stream = new MemoryStream();
-            var pngDevice = settings.GetPdfPngDevice(page);
-            pngDevice.Process(page, stream);
-            yield return new("png", stream, name);
-        }
+        var stream = new MemoryStream();
+        var pngDevice = settings.GetPdfPngDevice(page);
+        pngDevice.Process(page, stream);
+        return stream;
     }
 }

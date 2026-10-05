@@ -44,13 +44,13 @@ public static partial class VerifyAspose
         WarningCallback = new ExcelFontWarningCallback()
     };
 
-    static ConversionResult ConvertExcel(string? targetName, Stream stream, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertExcel(Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         using var book = new Workbook(stream);
-        return ConvertExcel(targetName, book, settings);
+        return ConvertExcel(book, settings);
     }
 
-    static ConversionResult ConvertExcel(string? targetName, Workbook book, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertExcel(Workbook book, IReadOnlyDictionary<string, object> settings)
     {
         // force dates in csv export to be consistent
         book.Settings.Region = CountryCode.USA;
@@ -60,32 +60,37 @@ public static partial class VerifyAspose
             ScrubCells(sheet);
         }
 
-        var info = GetInfo(book);
+        // A sheet is a page. Names the image of each, and says which sheets and which outputs the
+        // verification wants, so what is left out is neither drawn nor exported.
+        var conversion = new PagedConversion(settings)
+        {
+            Info = GetInfo(book)
+        };
 
-        List<Target> targets = [];
         // Building the deterministic xlsx is expensive, so skip it when the xlsx target is excluded.
         if (!settings.IsTargetExcluded("xlsx"))
         {
-            targets.Add(BuildXlsxTarget(book));
+            conversion.Source(BuildXlsxTarget(book));
         }
 
-        targets.AddRange(
-            book.Worksheets
-                .SelectMany(_ => GetSheetStreams(targetName, _)));
+        var sheets = book.Worksheets;
+        foreach (var number in conversion.Pages(sheets.Count))
+        {
+            AddSheet(conversion, settings, number, sheets[number - 1]);
+        }
 
-        return new(info, targets);
+        return conversion.Build();
     }
 
+    // The xlsx snapshot is always the full workbook, regardless of PagesToInclude. It is the source
+    // of the conversion, so it is never converted again, whichever of xls and xlsx was passed in.
     static Target BuildXlsxTarget(Workbook book)
     {
         using var source = new MemoryStream();
         book.Save(source, SaveFormat.Xlsx);
         var resultStream = DeterministicPackage.Convert(source);
 
-        return new("xlsx", resultStream, performConversion: false)
-        {
-            BypassComparersForSubsequentOnDifference = true
-        };
+        return new("xlsx", resultStream);
     }
 
     static object GetInfo(Workbook book) =>
@@ -96,8 +101,7 @@ public static partial class VerifyAspose
             IsDigitallySigned = book.IsDigitallySigned.ToString(),
             Properties = GetProperties(book),
             CustomProperties = GetCustomProperties(book),
-            Fonts = GetFonts(book),
-            Sheets = GetSheetData(book).ToList()
+            Fonts = GetFonts(book)
         };
 
     static List<string> GetFonts(Workbook book)
@@ -144,11 +148,17 @@ public static partial class VerifyAspose
             .Where(_ => _.Value.HasValue())
             .ToDictionary(_ => _.Name, _ => _.Value);
 
-    static ConversionResult ConvertSheet(string? name, Worksheet sheet)
+    static ConversionResult ConvertSheet(Worksheet sheet, IReadOnlyDictionary<string, object> settings)
     {
         ScrubCells(sheet);
-        var info = GetInfo(sheet);
-        return new(info, GetSheetStreams(name, sheet).ToList());
+
+        // A sheet verified on its own is the one page, whichever sheet of its workbook it is
+        var conversion = new PagedConversion(settings)
+        {
+            PageCount = 1
+        };
+        AddSheet(conversion, settings, 1, sheet);
+        return conversion.Build();
     }
 
     static Sheet GetInfo(Worksheet sheet) =>
@@ -159,8 +169,12 @@ public static partial class VerifyAspose
                 .ToDictionary(_ => _.Name, _ => _.Value),
             sheet.Hyperlinks);
 
-    static IEnumerable<Target> GetSheetStreams(string? targetName, Worksheet sheet)
+    // A sheet as the page with the 1 based number: what there is to say of it, its image, and a
+    // csv of it.
+    static void AddSheet(PagedConversion conversion, IReadOnlyDictionary<string, object> settings, int number, Worksheet sheet)
     {
+        var info = GetInfo(sheet);
+
         var setup = sheet.PageSetup;
         setup.PrintGridlines = true;
         setup.LeftMargin = 0;
@@ -168,43 +182,36 @@ public static partial class VerifyAspose
         setup.RightMargin = 0;
         setup.BottomMargin = 0;
 
-        string targetAndSheet;
-        if (targetName == null)
+        // Not the text of the page, which would put it in the info file: a csv is a file of its own,
+        // named by the sheet.
+        if (!settings.IsDerivedTargetExcluded("csv"))
         {
-            targetAndSheet = sheet.Name;
-        }
-        else
-        {
-            targetAndSheet = $"{targetName}-{sheet.Name}";
+            conversion.AddDerived(new("csv", ToCsv(sheet), sheet.Name));
         }
 
-        if (outputs.HasFlag(AsposeOutputs.Csv))
+        Stream? image = null;
+        if (conversion.IncludeImages)
         {
-            var csv = ToCsv(sheet);
-            yield return new("csv", csv, targetAndSheet);
+            image = RenderSheet(sheet);
         }
 
-        if (!outputs.HasFlag(AsposeOutputs.Png))
-        {
-            yield break;
-        }
+        conversion.AddPage(number, image, info: info);
+    }
 
+    static MemoryStream? RenderSheet(Worksheet sheet)
+    {
         var render = new SheetRender(sheet, options);
 
-        if (render.PageCount == 1)
+        // OnePagePerSheet draws a sheet as the one image, and IgnoreBlank draws none for a sheet
+        // with nothing in it.
+        if (render.PageCount == 0)
         {
-            var stream = new MemoryStream();
-            render.ToImage(0, stream);
-            yield return new("png", stream, targetAndSheet);
-            yield break;
+            return null;
         }
 
-        for (var index = 0; index < render.PageCount; index++)
-        {
-            var stream = new MemoryStream();
-            render.ToImage(index, stream);
-            yield return new("png", stream, $"{targetAndSheet}_{index}");
-        }
+        var stream = new MemoryStream();
+        render.ToImage(0, stream);
+        return stream;
     }
 
     static void ScrubCells(Worksheet sheet)
@@ -293,10 +300,6 @@ public static partial class VerifyAspose
         using var reader = new StreamReader(stream, utf8);
         return reader.ReadToEnd();
     }
-
-    static IEnumerable<Sheet> GetSheetData(Workbook book) =>
-        book.Worksheets
-            .Select(GetInfo);
 
     static IEnumerable<ColumnInfo> GetColumns(Worksheet sheet)
     {

@@ -6,7 +6,14 @@
 
 Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of documents via [Aspose](https://www.aspose.com/).<!-- singleLineInclude: intro. path: /docs/intro.include.md -->
 
-Converts documents (pdf, docx, xlsx, and pptx) to png for verification.
+Verifying a document (pdf, docx, xlsx, or pptx) produces:
+
+ * A `.verified.txt` info file with what Aspose reports of the document (its properties and fonts), the count of its pages, and for a pdf or a Word document its text, read as markdown.
+ * The document itself as a `.verified.pdf`, `.verified.docx`, `.verified.xlsx` or `.verified.pptx`. It can be left out with [`ExcludeTargets`](#exclude-the-document).
+ * A png of every page of a pdf or a Word document, every slide of a presentation, and every sheet of a workbook, as `#page_0001.verified.png`, `#page_0002.verified.png`, etc.
+ * A csv of every sheet of a workbook, named by the sheet: `#Sheet1.verified.csv`.
+
+The page files are named, and the text placed, by Verify's [paged documents](https://github.com/VerifyTests/Verify/blob/main/docs/paged-documents.md) support, which every Verify plugin that splits a document into pages shares. So do the settings that [choose what is verified](#choosing-what-is-verified).
 
 **See [Milestones](../../milestones?state=closed) for release notes.**
 
@@ -48,26 +55,73 @@ public static void Initialize() =>
 <!-- endSnippet -->
 
 
-### Outputs
+### Choosing what is verified
 
-`Initialize` accepts an optional `AsposeOutputs` flags enum that controls, globally, which outputs a document is split into. Outputs that are not selected are not generated at all, so the rendering/extraction cost is avoided.
+What a document is split into is controlled by Verify's settings for [paged documents](https://github.com/VerifyTests/Verify/blob/main/docs/paged-documents.md). Anything left out is not produced at all (pages are not drawn, text is not read, sheets are not exported), so these also save work.
 
- * `Png`: Render pages, slides, and sheets to png images.
- * `Text`: Extract the document text (markdown) into the `Text` property of the info for pdf and Word documents.
- * `Csv`: Export each Excel sheet to csv.
- * `None`: none of the above. Only the info and the source document are emitted.
- * `All`: All of the above. The default.
+The text of a pdf or a Word document is read as markdown, and as one text for the whole document rather than one for each page. It is in the info file by default. `PageText` moves it to a `#text.verified.md`, or leaves it out with `PageTextPlacement.None`:
 
-The source document target (pdf/docx/xlsx/pptx) is not affected. Use `VerifierSettings.ExcludeTargets` to exclude it.
+<!-- snippet: PageTextPerPage -->
+<a id='snippet-PageTextPerPage'></a>
+```cs
+[Test]
+public Task PageTextPerPage() =>
+    VerifyFile("sample.docx")
+        .PageText(PageTextPlacement.PerPage)
+        .ExcludeDerivedTargets("png");
+```
+<sup><a href='/src/Tests/Samples.cs#L309-L317' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageTextPerPage' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+The text of a pdf is read by converting it, which can leave marks in the pdf that is saved afterwards. So the `.verified.pdf` of a verification with the text and of one without it can differ.
+
+`PagesToInclude` limits the pages that are drawn, to the first pages of a document or to those a delegate accepts. A slide of a presentation is a page, and so is a sheet of a workbook. The document itself is still verified whole, as is its text, and `PageCount` in the info file is still the number of pages the document has:
+
+<!-- snippet: PagesToInclude -->
+<a id='snippet-PagesToInclude'></a>
+```cs
+[Test]
+public Task PageCountIsIndependentOfPagesToInclude()
+{
+    var document = BuildThreePageDocument();
+    return Verify(document)
+        .PagesToInclude(1);
+}
+```
+<sup><a href='/src/Tests/WordPageCountTests.cs#L7-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-PagesToInclude' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+A sheet that is not included is left out altogether: its png, its csv, and what the info file says of it.
+
+`ExcludeDerivedTargets("png")` leaves out the drawn pages, keeping the document and its text. `ExcludeDerivedTargets("csv")` does the same for the csv of each sheet:
+
+<!-- snippet: TextOnly -->
+<a id='snippet-TextOnly'></a>
+```cs
+[Test]
+public Task TextOnly() =>
+    VerifyFile("sample.pdf")
+        .ExcludeDerivedTargets("png");
+```
+<sup><a href='/src/Tests/Samples.cs#L319-L326' title='Snippet source file'>snippet source</a> | <a href='#snippet-TextOnly' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Each can also be set for every test, on `VerifierSettings`:
 
 <!-- snippet: InitializeOutputs -->
 <a id='snippet-InitializeOutputs'></a>
 ```cs
 [ModuleInitializer]
-public static void Initialize() =>
-    VerifyAspose.Initialize(AsposeOutputs.Text);
+public static void Initialize()
+{
+    VerifyAspose.Initialize();
+
+    // For every test: no page is drawn and no sheet is exported to csv,
+    // so only the documents and their text are verified
+    VerifierSettings.ExcludeDerivedTargets("png", "csv");
+}
 ```
-<sup><a href='/src/StaticSettingsTests/ModuleInitializer.cs#L3-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-InitializeOutputs' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/StaticSettingsTests/ModuleInitializer.cs#L3-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-InitializeOutputs' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -109,32 +163,34 @@ public Task VerifyPdfStream()
 <a id='snippet-Samples.VerifyPdf.verified.txt'></a>
 ```txt
 {
-  Pages: 2,
-  AllowReusePageContent: false,
-  CenterWindow: false,
-  DisplayDocTitle: false,
-  FitWindow: False,
-  HideMenubar: False,
-  HideToolBar: False,
-  HideWindowUI: False,
-  IgnoreCorruptedObjects: True,
-  Info: {
-    Creator: RAD PDF,
-    Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com
+  Document: {
+    AllowReusePageContent: false,
+    CenterWindow: false,
+    DisplayDocTitle: false,
+    FitWindow: False,
+    HideMenubar: False,
+    HideToolBar: False,
+    HideWindowUI: False,
+    IgnoreCorruptedObjects: True,
+    Info: {
+      Creator: RAD PDF,
+      Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com
+    },
+    IsEncrypted: False,
+    IsLinearized: False,
+    IsPdfaCompliant: False,
+    IsPdfUaCompliant: False,
+    IsXrefGapsAllowed: True,
+    OptimizeSize: False,
+    PageLabels: {},
+    PageLayout: Default,
+    PdfFormat: v_1_4,
+    Version: 1.4,
+    Fonts: [
+      Helvetica
+    ]
   },
-  IsEncrypted: False,
-  IsLinearized: False,
-  IsPdfaCompliant: False,
-  IsPdfUaCompliant: False,
-  IsXrefGapsAllowed: True,
-  OptimizeSize: False,
-  PageLabels: {},
-  PageLayout: Default,
-  PdfFormat: v_1_4,
-  Version: 1.4,
-  Fonts: [
-    Helvetica
-  ],
+  PageCount: 2,
   Text:
 ![ref1]
 
@@ -192,12 +248,12 @@ Boring. More, a little more text. The end, and just as well.
 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L83' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L85' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyPdf#00.verified.png](/src/Tests/Samples.VerifyPdf%2300.verified.png):
+[Samples.VerifyPdf#page_0001.verified.png](/src/Tests/Samples.VerifyPdf%23page_0001.verified.png):
 
-<img src="/src/Tests/Samples.VerifyPdf%2300.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyPdf%23page_0001.verified.png" width="200px">
 
 
 ### Excel
@@ -228,7 +284,7 @@ public Task VerifyExcelStream()
     return Verify(stream, "xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L168-L177' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L182-L191' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -260,9 +316,70 @@ public Task VerifyWorkbook()
 <sup><a href='/src/Tests/Samples.cs#L133-L155' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWorkbook' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyExcel#Sheet1.verified.png](/src/Tests/Samples.VerifyExcel#Sheet1.verified.png):
 
-<img src="/src/Tests/Samples.VerifyExcel%23Sheet1.verified.png" width="200px">
+#### Result
+
+A sheet is a page. `Number` is its position in the workbook, and `Info` has its name, its columns, its custom properties and its hyperlinks. A sheet with nothing in it has no png. A `Worksheet` verified on its own is the one page.
+
+<!-- snippet: Samples.VerifyWorkbook.verified.txt -->
+<a id='snippet-Samples.VerifyWorkbook.verified.txt'></a>
+```txt
+{
+  Document: {
+    HasMacro: False,
+    HasRevisions: False,
+    IsDigitallySigned: False,
+    Properties: {
+      Comments: the comments
+    },
+    CustomProperties: {
+      key: value
+    },
+    Fonts: [
+      Arial
+    ]
+  },
+  PageCount: 3,
+  Pages: [
+    {
+      Number: 1,
+      Info: {
+        Name: Sheet1
+      }
+    },
+    {
+      Number: 2,
+      Info: {
+        Name: New Sheet,
+        Columns: [
+          {
+            Name: Some Text
+          }
+        ]
+      }
+    },
+    {
+      Number: 3,
+      Info: {
+        Name: Evaluation Warning,
+        Columns: [
+          {
+            Name: Evaluation Only. Created with Aspose.Cells for .NET. Copyright 2003 - 2026 Aspose Pty Ltd.
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+<sup><a href='/src/Tests/Samples.VerifyWorkbook.verified.txt#L1-L47' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWorkbook.verified.txt' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+The `Evaluation Warning` sheet is added by Aspose.Cells when it saves a workbook without a license.
+
+[Samples.VerifyExcel#page_0001.verified.png](/src/Tests/Samples.VerifyExcel%23page_0001.verified.png):
+
+<img src="/src/Tests/Samples.VerifyExcel%23page_0001.verified.png" width="200px">
 
 
 ### Word
@@ -277,7 +394,7 @@ public Task VerifyWorkbook()
 public Task VerifyWord() =>
     VerifyFile("sample.docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L225-L231' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L239-L245' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -293,7 +410,7 @@ public Task VerifyWordStream()
     return Verify(stream, "docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L243-L252' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L257-L266' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -303,35 +420,37 @@ public Task VerifyWordStream()
 <a id='snippet-Samples.VerifyWord.verified.txt'></a>
 ```txt
 {
+  Document: {
+    HasRevisions: False,
+    DefaultLocale: EnglishUS,
+    Properties: {
+      Characters: 1009,
+      CharactersWithSpaces: 1183,
+      CreateTime: DateTime_1,
+      HeadingPairs: [
+        Title,
+        1
+      ],
+      LastSavedTime: DateTime_2,
+      Lines: 8,
+      Pages: 2,
+      Paragraphs: 2,
+      Template: Normal,
+      Words: 176
+    },
+    CustomProperties: {
+      ContentTypeId: 0x010100AA3F7D94069FF64A86F7DFF56D60E3BE
+    },
+    ShadeFormData: true,
+    Fonts: [
+      Consolas,
+      Segoe UI,
+      Symbol,
+      Times New Roman,
+      Trebuchet MS
+    ]
+  },
   PageCount: 2,
-  HasRevisions: False,
-  DefaultLocale: EnglishUS,
-  Properties: {
-    Characters: 1009,
-    CharactersWithSpaces: 1183,
-    CreateTime: DateTime_1,
-    HeadingPairs: [
-      Title,
-      1
-    ],
-    LastSavedTime: DateTime_2,
-    Lines: 8,
-    Pages: 2,
-    Paragraphs: 2,
-    Template: Normal,
-    Words: 176
-  },
-  CustomProperties: {
-    ContentTypeId: 0x010100AA3F7D94069FF64A86F7DFF56D60E3BE
-  },
-  ShadeFormData: true,
-  Fonts: [
-    Consolas,
-    Segoe UI,
-    Symbol,
-    Times New Roman,
-    Trebuchet MS
-  ],
   Text:
 ![ref1]
 
@@ -369,12 +488,12 @@ public Task VerifyWordStream()
 
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L66' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyWord.verified.txt#L1-L68' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyWord.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyWord#00.verified.png](/src/Tests/Samples.VerifyWord%2300.verified.png):
+[Samples.VerifyWord#page_0001.verified.png](/src/Tests/Samples.VerifyWord%23page_0001.verified.png):
 
-<img src="/src/Tests/Samples.VerifyWord%2300.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyWord%23page_0001.verified.png" width="200px">
 
 
 ### PowerPoint
@@ -415,81 +534,84 @@ public Task VerifyPowerPointStream()
 <a id='snippet-Samples.VerifyPowerPoint.verified.txt'></a>
 ```txt
 {
-  Properties: {
-    NameOfApplication: Microsoft Office PowerPoint,
-    Company: ,
-    Manager: ,
-    PresentationFormat: Custom,
-    SharedDoc: false,
-    ApplicationTemplate: ,
-    Title: Lorem ipsum,
-    Subject: ,
-    Author: simon,
-    Keywords: ,
-    Comments: ,
-    Category: ,
-    CreatedTime: DateTime_1,
-    LastSavedTime: DateTime_2,
-    LastPrinted: DateTime_3,
-    LastSavedBy: Simon Cropp,
-    RevisionNumber: 1,
-    ContentStatus: ,
-    ContentType: ,
-    HyperlinkBase: ,
-    ScaleCrop: false,
-    LinksUpToDate: false,
-    HyperlinksChanged: false,
-    Slides: 3,
-    Notes: 3,
-    Paragraphs: 14,
-    Words: 231,
-    TitlesOfParts: [
-      Times New Roman,
+  Document: {
+    Properties: {
+      NameOfApplication: Microsoft Office PowerPoint,
+      Company: ,
+      Manager: ,
+      PresentationFormat: Custom,
+      SharedDoc: false,
+      ApplicationTemplate: ,
+      Title: Lorem ipsum,
+      Subject: ,
+      Author: simon,
+      Keywords: ,
+      Comments: ,
+      Category: ,
+      CreatedTime: DateTime_1,
+      LastSavedTime: DateTime_2,
+      LastPrinted: DateTime_3,
+      LastSavedBy: Simon Cropp,
+      RevisionNumber: 1,
+      ContentStatus: ,
+      ContentType: ,
+      HyperlinkBase: ,
+      ScaleCrop: false,
+      LinksUpToDate: false,
+      HyperlinksChanged: false,
+      Slides: 3,
+      Notes: 3,
+      Paragraphs: 14,
+      Words: 231,
+      TitlesOfParts: [
+        Times New Roman,
+        Arial,
+        Droid Sans Fallback,
+        WenQuanYi Zen Hei,
+        DejaVu Sans,
+        Office Theme,
+        Office Theme,
+        Lorem ipsum,
+        Chart,
+        Table
+      ],
+      HeadingPairs: [
+        {
+          Name: Fonts Used,
+          Count: 5
+        },
+        {
+          Name: Theme,
+          Count: 2
+        },
+        {
+          Name: Embedded OLE Servers
+        },
+        {
+          Name: Slide Titles,
+          Count: 3
+        }
+      ]
+    },
+    Fonts: [
       Arial,
-      Droid Sans Fallback,
-      WenQuanYi Zen Hei,
+      Calibri,
+      Calibri Light,
       DejaVu Sans,
-      Office Theme,
-      Office Theme,
-      Lorem ipsum,
-      Chart,
-      Table
-    ],
-    HeadingPairs: [
-      {
-        Name: Fonts Used,
-        Count: 5
-      },
-      {
-        Name: Theme,
-        Count: 2
-      },
-      {
-        Name: Embedded OLE Servers
-      },
-      {
-        Name: Slide Titles,
-        Count: 3
-      }
+      Droid Sans Fallback,
+      Times New Roman,
+      WenQuanYi Zen Hei
     ]
   },
-  Fonts: [
-    Arial,
-    Calibri,
-    Calibri Light,
-    DejaVu Sans,
-    Droid Sans Fallback,
-    Times New Roman,
-    WenQuanYi Zen Hei
-  ]
+  PageCount: 3
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L69' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPowerPoint.verified.txt#L1-L72' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPowerPoint.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-[Samples.VerifyPowerPoint%2300.verified.png](/src/Tests/Samples.VerifyPowerPoint%2300.verified.png):
+[Samples.VerifyPowerPoint#page_0001.verified.png](/src/Tests/Samples.VerifyPowerPoint%23page_0001.verified.png):
 
-<img src="/src/Tests/Samples.VerifyPowerPoint%2300.verified.png" width="200px">
+<img src="/src/Tests/Samples.VerifyPowerPoint%23page_0001.verified.png" width="200px">
 
 
 ### Binary output across .NET frameworks
@@ -506,7 +628,7 @@ See [Verify Naming docs](https://github.com/VerifyTests/Verify/blob/main/docs/na
 
 ## Exclude the document
 
-The source document is included in the snapshot as a `.verified.docx` or `.verified.xlsx`. Building the deterministic package is expensive, and committing it is not always wanted. [`ExcludeTargets`](https://github.com/VerifyTests/Verify/blob/main/docs/converter.md#excluding-targets) drops it from a verification and skips the build, while the info, text, csv, and rendered pages still verify:
+The source document is included in the snapshot as a `.verified.pdf`, `.verified.docx` or `.verified.xlsx`. Building the deterministic document is expensive, and committing it is not always wanted. [`ExcludeTargets`](https://github.com/VerifyTests/Verify/blob/main/docs/converter.md#excluding-targets) drops it from a verification and skips the build, while the info, text, csv, and rendered pages still verify:
 
 <!-- snippet: ExcludeXlsx -->
 <a id='snippet-ExcludeXlsx'></a>
@@ -520,7 +642,83 @@ public Task ExcludeXlsx() =>
 <sup><a href='/src/Tests/Samples.cs#L74-L82' title='Snippet source file'>snippet source</a> | <a href='#snippet-ExcludeXlsx' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-The same applies to `docx` via `ExcludeTargets("docx")`. To exclude for every test, call `VerifierSettings.ExcludeTargets("xlsx")` at initialization.
+The same applies to `docx` via `ExcludeTargets("docx")` and to `pdf` via `ExcludeTargets("pdf")`. A `doc` is given back as a `docx`, and an `xls` as an `xlsx`, so those are the extensions to exclude for them. To exclude for every test, call `VerifierSettings.ExcludeTargets("xlsx")` at initialization.
+
+
+## Reviewing changes
+
+A change to a document is a change to several files: the document, its info file, and every page. Verify tells the diff tool that the pages, the csv of each sheet and the info file were derived from the document, and [DiffEngineViewer](https://github.com/VerifyTests/DiffEngine/blob/main/docs/viewer.md#files-derived-from-a-document), which draws the pages of a document itself, shows them as one row and accepts them together. Other diff tools are given each file, as before.
+
+When the document differs, its pages are compared exactly, skipping any [comparer](https://github.com/VerifyTests/Verify/blob/main/docs/comparer.md) registered for png.
+
+
+## Migrating from 5.x
+
+Version 6 moves to the paged document support in Verify 33.3. The `AsposeOutputs` enum and the `outputs` argument of `Initialize` are gone, as is the `PagesToInclude` of this package. Verify's settings replace them, and can be set for one verification as well as for every test:
+
+| 5.x | 6.x |
+| --- | --- |
+| `Initialize` without `AsposeOutputs.Png` | `ExcludeDerivedTargets("png")` |
+| `Initialize` without `AsposeOutputs.Text` | `PageText(PageTextPlacement.None)` |
+| `Initialize` without `AsposeOutputs.Csv` | `ExcludeDerivedTargets("csv")` |
+| `Initialize(AsposeOutputs.Text)` | `VerifierSettings.ExcludeDerivedTargets("png", "csv")` |
+| `Initialize(AsposeOutputs.None)` | `VerifierSettings.PageText(PageTextPlacement.None)` and `VerifierSettings.ExcludeDerivedTargets("png", "csv")` |
+| `.PagesToInclude(count)` from `VerifyTestsAspose` | `.PagesToInclude(count)` from Verify. The call is the same |
+
+`PagesToInclude` now also limits the sheets of a workbook, where it was ignored.
+
+The snapshot files are renamed:
+
+| 5.x | 6.x |
+| --- | --- |
+| `Tests.Pdf#00.verified.png`, `Tests.Pdf#01.verified.png` | `Tests.Pdf#page_0001.verified.png`, `Tests.Pdf#page_0002.verified.png` |
+| `Tests.Pdf.verified.png`, where there was one page | `Tests.Pdf#page_0001.verified.png` |
+| `Tests.Excel#Sheet1.verified.png` | `Tests.Excel#page_0001.verified.png` |
+| `Tests.Word.verified.xml`, from `IncludeWordStyles` | `Tests.Word#styles.verified.xml` |
+| `Tests.Excel#Sheet1.verified.csv` | Unchanged |
+| `Tests.Word.verified.docx`, and the pdf and xlsx | Unchanged |
+| A presentation was not a snapshot | `Tests.PowerPoint.verified.pptx` |
+| `Tests.Word.verified.txt` | Same name, new shape |
+
+A presentation is now a snapshot, as the other documents are. It is saved as a pptx, a `ppt` included, and passed through [DeterministicIoPackaging](https://github.com/SimonCropp/DeterministicIoPackaging), with the field ids and the last printed time that Aspose.Slides writes afresh on each save neutralized. `VerifierSettings.ExcludeTargets("pptx")` keeps it out of the snapshots, as it was in 5.x.
+
+Renamed snapshots show as a new file and a pending delete. Accepting both, or running once with [AutoVerify](https://github.com/VerifyTests/Verify/blob/main/docs/autoverify.md), moves a test over. The content of a png is unchanged, so source control shows it as a rename.
+
+The info file has the shape every paged document has. What Aspose reports of the document is under `Document`, `PageCount` is the number of pages, slides or sheets (it was `Pages` for a pdf), and `Text` follows:
+
+```
+{                                    {
+  PageCount: 2,                        Document: {
+  HasRevisions: False,                   HasRevisions: False,
+  Fonts: [                               Fonts: [
+    Arial                                  Arial
+  ],                                     ]
+  Text: The text                       },
+}                                      PageCount: 2,
+                                       Text: The text
+                                     }
+```
+
+For a workbook, what was in `Sheets` is the `Info` of each page. For a `Worksheet` verified on its own, what was the whole info file is the `Info` of the one page:
+
+```
+{                                    {
+  HasMacro: False,                     Document: {
+  Sheets: [                              HasMacro: False
+    {                                  },
+      Name: Sheet1                     PageCount: 1,
+    }                                  Pages: [
+  ]                                      {
+}                                          Number: 1,
+                                           Info: {
+                                             Name: Sheet1
+                                           }
+                                         }
+                                       ]
+                                     }
+```
+
+A document that is itself a named target of a verification, an attachment for example, has its files named by Verify: `#Attachment1.Sheet1.verified.csv`, where it was `#Attachment1-Sheet1.verified.csv`.
 
 
 ## File Samples

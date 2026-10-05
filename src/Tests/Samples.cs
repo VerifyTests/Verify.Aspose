@@ -154,6 +154,20 @@ public class Samples
 
     #endregion
 
+    // A sheet is a page, so PagesToInclude limits the sheets that are drawn, exported and described.
+    // PageCount is still the number of sheets in the workbook.
+    [Test]
+    public Task PagesToIncludeSheets()
+    {
+        var book = new Workbook();
+        book.Worksheets[0].Cells[0, 0].PutValue("First sheet");
+        book.Worksheets.Add("Second").Cells[0, 0].PutValue("Second sheet");
+
+        return Verify(book)
+            .PagesToInclude(1)
+            .ExcludeTargets("xlsx");
+    }
+
     [Test]
     public async Task Cell()
     {
@@ -255,6 +269,18 @@ public class Samples
     public Task VerifyWordStyles() =>
         VerifyFile(ProjectFiles.sample_docx.Path).IncludeWordStyles();
 
+    // A doc is given back as a docx. That docx is the source of the conversion, so the docx
+    // converter does not convert it again: there is one info, not two.
+    [Test]
+    public Task VerifyDocStream()
+    {
+        var document = new Document();
+        var stream = new MemoryStream();
+        document.Save(stream, Aspose.Words.SaveFormat.Doc);
+        return Verify(stream, "doc")
+            .ExcludeDerivedTargets("png");
+    }
+
     [Test]
     public Task VerifyWordDocument()
     {
@@ -279,6 +305,34 @@ public class Samples
         document.CustomDocumentProperties.Add("key", "value");
         return Verify(document);
     }
+
+    #region PageTextPerPage
+
+    [Test]
+    public Task PageTextPerPage() =>
+        VerifyFile("sample.docx")
+            .PageText(PageTextPlacement.PerPage)
+            .ExcludeDerivedTargets("png");
+
+    #endregion
+
+    #region TextOnly
+
+    [Test]
+    public Task TextOnly() =>
+        VerifyFile("sample.pdf")
+            .ExcludeDerivedTargets("png");
+
+    #endregion
+
+    // Only what Aspose says of the pdf is left: no text is read, no page is drawn, and the pdf is
+    // not built
+    [Test]
+    public Task NoText() =>
+        VerifyFile(ProjectFiles.sample_pdf.Path)
+            .PageText(PageTextPlacement.None)
+            .ExcludeDerivedTargets("png")
+            .ExcludeTargets("pdf");
 
     [Test]
     public Task AsposeGenerator() =>

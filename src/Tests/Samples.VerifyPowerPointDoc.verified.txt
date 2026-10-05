@@ -1,27 +1,31 @@
 ﻿{
-  Properties: {
-    Company: ,
-    Manager: ,
-    PresentationFormat: On-screen Show (4:3),
-    SharedDoc: false,
-    ApplicationTemplate: ,
-    TotalEditingTime: 00:01:00,
-    Title: ,
-    Subject: ,
-    Author: ,
-    Keywords: ,
-    Comments: ,
-    Category: ,
-    CreatedTime: DateTime_1,
-    LastPrinted: DateTime_2,
-    LastSavedBy: ,
-    RevisionNumber: 1,
-    ContentStatus: ,
-    ContentType: ,
-    HyperlinkBase: ,
-    CountOfCustomProperties: 1,
-    ScaleCrop: false,
-    LinksUpToDate: false,
-    HyperlinksChanged: false
-  }
+  Document: {
+    Properties: {
+      Company: ,
+      Manager: ,
+      PresentationFormat: On-screen Show (4:3),
+      SharedDoc: false,
+      ApplicationTemplate: ,
+      TotalEditingTime: 00:01:00,
+      Title: ,
+      Subject: ,
+      Author: ,
+      Keywords: ,
+      Comments: ,
+      Category: ,
+      CreatedTime: DateTime_1,
+      LastSavedTime: DateTime_2,
+      LastPrinted: DateTime_3,
+      LastSavedBy: ,
+      RevisionNumber: 1,
+      ContentStatus: ,
+      ContentType: ,
+      HyperlinkBase: ,
+      CountOfCustomProperties: 1,
+      ScaleCrop: false,
+      LinksUpToDate: false,
+      HyperlinksChanged: false
+    }
+  },
+  PageCount: 1
 }

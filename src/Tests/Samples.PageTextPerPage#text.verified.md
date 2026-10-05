@@ -1,37 +1,4 @@
-﻿{
-  Document: {
-    HasRevisions: False,
-    DefaultLocale: EnglishUS,
-    Properties: {
-      Characters: 1009,
-      CharactersWithSpaces: 1183,
-      CreateTime: DateTime_1,
-      HeadingPairs: [
-        Title,
-        1
-      ],
-      LastSavedTime: DateTime_2,
-      Lines: 8,
-      Pages: 2,
-      Paragraphs: 2,
-      Template: Normal,
-      Words: 176
-    },
-    CustomProperties: {
-      ContentTypeId: 0x010100AA3F7D94069FF64A86F7DFF56D60E3BE
-    },
-    ShadeFormData: true,
-    Fonts: [
-      Consolas,
-      Segoe UI,
-      Symbol,
-      Times New Roman,
-      Trebuchet MS
-    ]
-  },
-  PageCount: 2,
-  Text:
-![ref1]
+﻿![ref1]
 
 **Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
 
@@ -64,5 +31,3 @@
 2
 
 [ref1]: content.001.png
-
-}

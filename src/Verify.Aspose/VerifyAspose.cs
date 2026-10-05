@@ -11,10 +11,7 @@ public static partial class VerifyAspose
 
     public static bool Initialized { get; private set; }
 
-    static AsposeOutputs outputs = AsposeOutputs.All;
-
-    /// <param name="outputs">The outputs that documents are split into. Defaults to <see cref="AsposeOutputs.All"/>.</param>
-    public static void Initialize(AsposeOutputs outputs = AsposeOutputs.All)
+    public static void Initialize()
     {
         if (Initialized)
         {
@@ -22,7 +19,6 @@ public static partial class VerifyAspose
         }
 
         Initialized = true;
-        VerifyAspose.outputs = outputs;
 
         InnerVerifier.ThrowIfVerifyHasBeenRun();
 
@@ -38,22 +34,25 @@ public static partial class VerifyAspose
         });
 
         VerifierSettings.AddScrubber("html", RemoveGeneratorInfo);
-        VerifierSettings.RegisterStreamConverter("xlsx", ConvertExcel);
-        VerifierSettings.RegisterStreamConverter("xls", ConvertExcel);
+
+        // The name a stream converter is passed is not used. Verify names what a converter returns
+        // relative to the target that was converted.
+        VerifierSettings.RegisterStreamConverter("xlsx", (_, stream, context) => ConvertExcel(stream, context));
+        VerifierSettings.RegisterStreamConverter("xls", (_, stream, context) => ConvertExcel(stream, context));
         VerifierSettings.IgnoreMember<IDocumentProperties>(_ => _.AppVersion);
-        VerifierSettings.RegisterFileConverter<Workbook>((target, context) => ConvertExcel(null, target, context));
-        VerifierSettings.RegisterFileConverter<Worksheet>((target, _) => ConvertSheet(null, target));
+        VerifierSettings.RegisterFileConverter<Workbook>(ConvertExcel);
+        VerifierSettings.RegisterFileConverter<Worksheet>(ConvertSheet);
 
-        VerifierSettings.RegisterStreamConverter("pdf", ConvertPdf);
-        VerifierSettings.RegisterFileConverter<Aspose.Pdf.Document>((target, context) => ConvertPdf(null, target, context));
+        VerifierSettings.RegisterStreamConverter("pdf", (_, stream, context) => ConvertPdf(stream, context));
+        VerifierSettings.RegisterFileConverter<Aspose.Pdf.Document>(ConvertPdf);
 
-        VerifierSettings.RegisterStreamConverter("pptx", ConvertPowerPoint);
-        VerifierSettings.RegisterStreamConverter("ppt", ConvertPowerPoint);
-        VerifierSettings.RegisterFileConverter<Presentation>((target, context) => ConvertPowerPoint(null, target, context));
+        VerifierSettings.RegisterStreamConverter("pptx", (_, stream, context) => ConvertPowerPoint(stream, context));
+        VerifierSettings.RegisterStreamConverter("ppt", (_, stream, context) => ConvertPowerPoint(stream, context));
+        VerifierSettings.RegisterFileConverter<Presentation>(ConvertPowerPoint);
 
-        VerifierSettings.RegisterStreamConverter("docx", ConvertWord);
-        VerifierSettings.RegisterStreamConverter("doc", ConvertWord);
-        VerifierSettings.RegisterFileConverter<Document>((target, context) => ConvertWord(null, target, context));
+        VerifierSettings.RegisterStreamConverter("docx", (_, stream, context) => ConvertWord(stream, context));
+        VerifierSettings.RegisterStreamConverter("doc", (_, stream, context) => ConvertWord(stream, context));
+        VerifierSettings.RegisterFileConverter<Document>(ConvertWord);
     }
 
     static void RemoveGeneratorInfo(StringBuilder builder)

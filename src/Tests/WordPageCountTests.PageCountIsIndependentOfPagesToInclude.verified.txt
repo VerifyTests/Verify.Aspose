@@ -1,23 +1,25 @@
 ﻿{
-  PageCount: 3,
-  HasRevisions: False,
-  DefaultLocale: EnglishUS,
-  Properties: {
-    HeadingPairs: [
-      Title,
-      1
-    ],
-    Lines: 1,
-    Pages: 3,
-    Paragraphs: 1,
-    RevisionNumber: 1
+  Document: {
+    HasRevisions: False,
+    DefaultLocale: EnglishUS,
+    Properties: {
+      HeadingPairs: [
+        Title,
+        1
+      ],
+      Lines: 1,
+      Pages: 3,
+      Paragraphs: 1,
+      RevisionNumber: 1
+    },
+    ShadeFormData: true,
+    Fonts: [
+      Arial,
+      Symbol,
+      Times New Roman
+    ]
   },
-  ShadeFormData: true,
-  Fonts: [
-    Arial,
-    Symbol,
-    Times New Roman
-  ],
+  PageCount: 3,
   Text:
 ![](content.001.png)
 

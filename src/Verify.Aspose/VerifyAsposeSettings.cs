@@ -21,31 +21,6 @@ public static class VerifyAsposeSettings
         return false;
     }
 
-    /// <summary>
-    /// Limits the number of rendered page/slide <c>png</c> snapshots to the first
-    /// <paramref name="count"/>. Any full-document binary target (for example the <c>docx</c>
-    /// emitted for Word) is unaffected and always contains the full source document.
-    /// </summary>
-    public static void PagesToInclude(this VerifySettings settings, int count) =>
-        settings.Context["VerifyAsposePagesToInclude"] = count;
-
-    /// <inheritdoc cref="PagesToInclude(VerifySettings, int)"/>
-    public static SettingsTask PagesToInclude(this SettingsTask settings, int count)
-    {
-        settings.CurrentSettings.PagesToInclude(count);
-        return settings;
-    }
-
-    internal static int GetPagesToInclude(this IReadOnlyDictionary<string, object> settings, int count)
-    {
-        if (!settings.TryGetValue("VerifyAsposePagesToInclude", out var value))
-        {
-            return count;
-        }
-
-        return Math.Min(count, (int) value);
-    }
-
     public static void PdfPngDevice(this VerifySettings settings, Func<Aspose.Pdf.Page, PngDevice> func) =>
         settings.Context["VerifyAsposePdfPngDevice"] = func;
 

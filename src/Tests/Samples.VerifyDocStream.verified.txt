@@ -3,7 +3,6 @@
     HasRevisions: False,
     DefaultLocale: EnglishUS,
     Properties: {
-      Comments: the comments,
       HeadingPairs: [
         Title,
         1
@@ -12,9 +11,6 @@
       Pages: 1,
       Paragraphs: 1,
       RevisionNumber: 1
-    },
-    CustomProperties: {
-      key: value
     },
     ShadeFormData: true,
     Fonts: [

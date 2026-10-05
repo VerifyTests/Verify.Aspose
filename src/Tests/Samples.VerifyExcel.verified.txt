@@ -1,47 +1,64 @@
 ﻿{
-  HasMacro: False,
-  HasRevisions: False,
-  IsDigitallySigned: False,
-  Properties: {
-    NameOfApplication: Microsoft Excel,
-    Title: The Title,
-    Version: 16.0300
+  Document: {
+    HasMacro: False,
+    HasRevisions: False,
+    IsDigitallySigned: False,
+    Properties: {
+      NameOfApplication: Microsoft Excel,
+      Title: The Title,
+      Version: 16.0300
+    },
+    Fonts: [
+      Arial
+    ]
   },
-  Fonts: [
-    Arial
-  ],
-  Sheets: [
+  PageCount: 2,
+  Pages: [
     {
-      Name: Sheet1,
-      Columns: [
-        {
-          Name: 0
-        },
-        {
-          Name: First Name
-        },
-        {
-          Name: Last Name
-        },
-        {
-          Name: Gender
-        },
-        {
-          Name: Country
-        },
-        {
-          Name: Age
-        },
-        {
-          Name: Id
-        },
-        {
-          Name: Formula
-        },
-        {
-          Name: DOB
-        }
-      ]
+      Number: 1,
+      Info: {
+        Name: Sheet1,
+        Columns: [
+          {
+            Name: 0
+          },
+          {
+            Name: First Name
+          },
+          {
+            Name: Last Name
+          },
+          {
+            Name: Gender
+          },
+          {
+            Name: Country
+          },
+          {
+            Name: Age
+          },
+          {
+            Name: Id
+          },
+          {
+            Name: Formula
+          },
+          {
+            Name: DOB
+          }
+        ]
+      }
+    },
+    {
+      Number: 2,
+      Info: {
+        Name: Evaluation Warning,
+        Columns: [
+          {
+            Name: Evaluation Only. Created with Aspose.Cells for .NET. Copyright 2003 - 2026 Aspose Pty Ltd.
+          }
+        ]
+      }
     }
   ]
 }
