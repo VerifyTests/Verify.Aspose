@@ -1,38 +1,45 @@
 ﻿{
-  Pages: 2,
-  AllowReusePageContent: false,
-  CenterWindow: false,
-  DisplayDocTitle: false,
-  FitWindow: False,
-  HideMenubar: False,
-  HideToolBar: False,
-  HideWindowUI: False,
-  IgnoreCorruptedObjects: True,
-  Info: {
-    Creator: RAD PDF,
-    Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com
+  Document: {
+    AllowReusePageContent: false,
+    CenterWindow: false,
+    DisplayDocTitle: false,
+    FitWindow: False,
+    HideMenubar: False,
+    HideToolBar: False,
+    HideWindowUI: False,
+    IgnoreCorruptedObjects: True,
+    Info: {
+      Creator: RAD PDF,
+      Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com
+    },
+    IsEncrypted: False,
+    IsLinearized: False,
+    IsPdfaCompliant: False,
+    IsPdfUaCompliant: False,
+    IsXrefGapsAllowed: True,
+    OptimizeSize: False,
+    PageLabels: {},
+    PageLayout: Default,
+    PdfFormat: v_1_4,
+    Version: 1.4,
+    Fonts: [
+      Helvetica
+    ]
   },
-  IsEncrypted: False,
-  IsLinearized: False,
-  IsPdfaCompliant: False,
-  IsPdfUaCompliant: False,
-  IsXrefGapsAllowed: True,
-  OptimizeSize: False,
-  PageLabels: {},
-  PageLayout: Default,
-  PdfFormat: v_1_4,
-  Version: 1.4,
-  Fonts: [
-    Helvetica
-  ],
-  Text:
-![ref1]
+  PageCount: 2,
+  Pages: [
+    {
+      Number: 1,
+      Text:
+![](content.001.png)
 
 **Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
 
 
 
-<a name="br1"></a>Evaluation Only. Created with Aspose.PDF. Copyright 2002-2026 Aspose Pty Ltd.
+<a name="br1"></a>aluation Only. Created with Aspose.PDF. Copyright 2002-2026 Aspose Pty Ltd.
+
+Evaluation Only. Created with Aspose.PDF. Copyright 2002-2026 Aspose Pty Ltd.
 
 A Simple PDF File
 
@@ -56,13 +63,18 @@ text. And more text. And more text. Even more. Continued on page 2 ...
 
 
 **Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
-![ref2]
+
+    },
+    {
+      Number: 2,
+      Text:
+![](content.001.png)
+
+**Created with an evaluation copy of Aspose.Words. To remove all limitations, you can use Free Temporary License [**https://products.aspose.com/words/temporary-license/**](https://products.aspose.com/words/temporary-license/)**
 
 
 
-<a name="br2"></a> 
-
-Simple PDF File 2
+<a name="br1"></a>Simple PDF File 2
 
 ...continued from page 1. Yet more text. And more text. And more text.
 
@@ -77,7 +89,6 @@ Boring. More, a little more text. The end, and just as well.
 
 **Evaluation Only. Created with Aspose.Words. Copyright 2003-2026 Aspose Pty Ltd.**
 
-[ref1]: content.001.png
-[ref2]: content.002.png
-
+    }
+  ]
 }

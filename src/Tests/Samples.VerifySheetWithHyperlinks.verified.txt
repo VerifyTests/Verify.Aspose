@@ -1,22 +1,30 @@
 ﻿{
-  Name: New Sheet,
-  Columns: [
+  PageCount: 1,
+  Pages: [
     {
-      Name: Some Text
-    }
-  ],
-  Properties: {
-    key: value
-  },
-  Hyperlinks: [
-    {
-      Address: theUrl,
-      Text: Some Text,
-      Area: {
-        Column: 0,
-        Row: 0
-      },
-      LinkType: FilePath
+      Number: 1,
+      Info: {
+        Name: New Sheet,
+        Columns: [
+          {
+            Name: Some Text
+          }
+        ],
+        Properties: {
+          key: value
+        },
+        Hyperlinks: [
+          {
+            Address: theUrl,
+            Text: Some Text,
+            Area: {
+              Column: 0,
+              Row: 0
+            },
+            LinkType: FilePath
+          }
+        ]
+      }
     }
   ]
 }

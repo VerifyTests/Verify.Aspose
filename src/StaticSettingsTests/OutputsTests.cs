@@ -1,4 +1,5 @@
-// Initialize is called with AsposeOutputs.Text, so no png or csv targets are produced
+// The module initializer excludes the png and csv derived targets, so no page is drawn and no
+// sheet is exported
 public class OutputsTests
 {
     [Test]

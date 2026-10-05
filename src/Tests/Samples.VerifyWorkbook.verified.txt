@@ -1,27 +1,47 @@
 ﻿{
-  HasMacro: False,
-  HasRevisions: False,
-  IsDigitallySigned: False,
-  Properties: {
-    Comments: the comments
+  Document: {
+    HasMacro: False,
+    HasRevisions: False,
+    IsDigitallySigned: False,
+    Properties: {
+      Comments: the comments
+    },
+    CustomProperties: {
+      key: value
+    },
+    Fonts: [
+      Arial
+    ]
   },
-  CustomProperties: {
-    key: value
-  },
-  Fonts: [
-    Arial
-  ],
-  Sheets: [
+  PageCount: 3,
+  Pages: [
     {
-      Name: Sheet1
+      Number: 1,
+      Info: {
+        Name: Sheet1
+      }
     },
     {
-      Name: New Sheet,
-      Columns: [
-        {
-          Name: Some Text
-        }
-      ]
+      Number: 2,
+      Info: {
+        Name: New Sheet,
+        Columns: [
+          {
+            Name: Some Text
+          }
+        ]
+      }
+    },
+    {
+      Number: 3,
+      Info: {
+        Name: Evaluation Warning,
+        Columns: [
+          {
+            Name: Evaluation Only. Created with Aspose.Cells for .NET. Copyright 2003 - 2026 Aspose Pty Ltd.
+          }
+        ]
+      }
     }
   ]
 }

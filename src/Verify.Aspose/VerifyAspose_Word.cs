@@ -30,52 +30,93 @@ public static partial class VerifyAspose
         }
     }
 
-    static ConversionResult ConvertWord(string? name, Stream stream, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertWord(Stream stream, IReadOnlyDictionary<string, object> settings)
     {
         //Aspose makes shitty assumptions about streams. like they are writable.
         using var memoryStream = new MemoryStream();
         stream.CopyTo(memoryStream);
         memoryStream.Position = 0;
         var document = new Document(memoryStream, loadOptions);
-        return ConvertWord(name, document, settings);
+        return ConvertWord(document, settings);
     }
 
-    static ConversionResult ConvertWord(string? name, Document document, IReadOnlyDictionary<string, object> settings)
+    static ConversionResult ConvertWord(Document document, IReadOnlyDictionary<string, object> settings)
     {
         Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
         Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
-        var info = GetInfo(document);
-        List<Target> targets = [];
+
+        // Names the pages, places the text, and says which pages and which outputs the verification
+        // wants, so what is left out is neither drawn nor read.
+        var conversion = new PagedConversion(settings)
+        {
+            Info = GetInfo(document),
+            // The text is read as markdown
+            TextExtension = "md"
+        };
+
         // Building the deterministic docx is expensive, so skip it when the docx target is excluded.
         if (!settings.IsTargetExcluded("docx"))
         {
-            targets.Add(BuildDocxTarget(document));
+            conversion.Source(BuildDocxTarget(document));
         }
 
-        targets.AddRange(GetWordStreams(name, document, settings));
-        return new(info, targets);
+        if (settings.GetIncludeWordStyles())
+        {
+            conversion.AddDerived(new("xml", GetStyles(document), "styles"));
+        }
+
+        var includeImages = conversion.IncludeImages;
+        var includeText = conversion.IncludeText;
+        foreach (var number in conversion.Pages(document.PageCount))
+        {
+            Stream? image = null;
+            if (includeImages)
+            {
+                image = RenderWordPage(document, number);
+            }
+
+            string? text = null;
+            if (includeText)
+            {
+                text = GetPageText(document, number);
+            }
+
+            conversion.AddPage(number, image, text);
+        }
+
+        return conversion.Build();
+    }
+
+    // The text of one page, so that PagesToInclude limits the text as it does the images. The page
+    // is taken out as a document of its own, which is what can be saved as markdown.
+    static string GetPageText(Document document, int number)
+    {
+        // ExtractPages is 0 based
+        var page = document.ExtractPages(number - 1, 1);
+        return GetDocumentText(page);
     }
 
     // The docx snapshot is always the full document, regardless of PagesToInclude: PagesToInclude
-    // only trims the rendered png pages in GetWordStreams.
+    // only limits the pages that are drawn. It is the source of the conversion, so it is never
+    // converted again, whichever of doc and docx was passed in.
     static Target BuildDocxTarget(Document book)
     {
         using var source = new MemoryStream();
         book.Save(source, SaveFormat.Docx);
         var resultStream = DeterministicPackage.Convert(source);
 
-        return new("docx", resultStream, performConversion: false)
-        {
-            BypassComparersForSubsequentOnDifference = true
-        };
+        return new("docx", resultStream);
     }
 
     static WordInfo GetInfo(Document document)
     {
         var (fonts, embeddedFonts) = GetDocumentFonts(document);
+
+        // Counting the pages lays the document out, which is what brings its Pages property up to
+        // date: in the properties read below, and in the docx that is saved after them.
+        _ = document.PageCount;
         return new()
         {
-            PageCount = document.PageCount,
             HasRevisions = document.HasRevisions.ToString(),
             DefaultLocale = (EditingLanguage)document.Styles.DefaultFont.LocaleId,
             Properties = GetProperties(document),
@@ -83,8 +124,7 @@ public static partial class VerifyAspose
 
             ShadeFormData = document.ShadeFormData,
             Fonts = fonts,
-            EmbeddedFonts = embeddedFonts,
-            Text = outputs.HasFlag(AsposeOutputs.Text) ? GetDocumentText(document) : null
+            EmbeddedFonts = embeddedFonts
         };
     }
 
@@ -170,35 +210,22 @@ public static partial class VerifyAspose
         return true;
     }
 
-    static IEnumerable<Target> GetWordStreams(string? name, Document document, IReadOnlyDictionary<string, object> settings)
+    static MemoryStream RenderWordPage(Document document, int number)
     {
-        if (settings.GetIncludeWordStyles())
+        var saveOptions = new ImageSaveOptions(SaveFormat.Png)
         {
-            yield return new("xml", GetStyles(document), name);
-        }
-
-        if (!outputs.HasFlag(AsposeOutputs.Png))
-        {
-            yield break;
-        }
-
-        var pagesToInclude = settings.GetPagesToInclude(document.PageCount);
-        for (var pageIndex = 0; pageIndex < pagesToInclude; pageIndex++)
-        {
-            var saveOptions = new ImageSaveOptions(SaveFormat.Png)
-            {
-                PageSet = [with(pageIndex)],
-                Resolution = 96,
-                Scale = 1.0f,
-                UseAntiAliasing = true,
-                UseHighQualityRendering = true,
-                HorizontalResolution = 96,
-                VerticalResolution = 96,
-            };
-            var stream = new MemoryStream();
-            document.Save(stream, saveOptions);
-            yield return new("png", stream, name);
-        }
+            // A PageSet is 0 based
+            PageSet = [with(number - 1)],
+            Resolution = 96,
+            Scale = 1.0f,
+            UseAntiAliasing = true,
+            UseHighQualityRendering = true,
+            HorizontalResolution = 96,
+            VerticalResolution = 96,
+        };
+        var stream = new MemoryStream();
+        document.Save(stream, saveOptions);
+        return stream;
     }
 
     static string GetDocumentText(Document document)

@@ -1,27 +1,34 @@
 ﻿{
+  Document: {
+    HasRevisions: False,
+    DefaultLocale: EnglishUS,
+    Properties: {
+      Comments: the comments,
+      HeadingPairs: [
+        Title,
+        1
+      ],
+      Lines: 1,
+      Pages: 1,
+      Paragraphs: 1,
+      RevisionNumber: 1
+    },
+    CustomProperties: {
+      key: value
+    },
+    ShadeFormData: true,
+    Fonts: [
+      Arial,
+      Symbol,
+      Times New Roman
+    ]
+  },
   PageCount: 1,
-  HasRevisions: False,
-  DefaultLocale: EnglishUS,
-  Properties: {
-    Comments: the comments,
-    HeadingPairs: [
-      Title,
-      1
-    ],
-    Lines: 1,
-    Pages: 1,
-    Paragraphs: 1,
-    RevisionNumber: 1
-  },
-  CustomProperties: {
-    key: value
-  },
-  ShadeFormData: true,
-  Fonts: [
-    Arial,
-    Symbol,
-    Times New Roman
-  ],
-  Text:
+  Pages: [
+    {
+      Number: 1,
+      Text:
 
+    }
+  ]
 }

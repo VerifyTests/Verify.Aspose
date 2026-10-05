@@ -9,6 +9,7 @@
 
 *.verified.csv text eol=lf working-tree-encoding=UTF-8
 *.verified.html text eol=lf working-tree-encoding=UTF-8
+*.verified.md text eol=lf working-tree-encoding=UTF-8
 *.verified.txt text eol=lf working-tree-encoding=UTF-8
 *.verified.xml text eol=lf working-tree-encoding=UTF-8
 

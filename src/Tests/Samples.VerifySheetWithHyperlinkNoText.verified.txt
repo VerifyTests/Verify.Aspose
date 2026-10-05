@@ -1,19 +1,27 @@
 ﻿{
-  Name: New Sheet,
-  Columns: [
+  PageCount: 1,
+  Pages: [
     {
-      Name: https://example.com
-    }
-  ],
-  Hyperlinks: [
-    {
-      Address: https://example.com,
-      Text: https://example.com,
-      Area: {
-        Column: 0,
-        Row: 0
-      },
-      LinkType: External
+      Number: 1,
+      Info: {
+        Name: New Sheet,
+        Columns: [
+          {
+            Name: https://example.com
+          }
+        ],
+        Hyperlinks: [
+          {
+            Address: https://example.com,
+            Text: https://example.com,
+            Area: {
+              Column: 0,
+              Row: 0
+            },
+            LinkType: External
+          }
+        ]
+      }
     }
   ]
 }

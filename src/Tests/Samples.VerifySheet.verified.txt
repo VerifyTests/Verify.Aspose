@@ -1,11 +1,19 @@
 ﻿{
-  Name: New Sheet,
-  Columns: [
+  PageCount: 1,
+  Pages: [
     {
-      Name: Some Text
+      Number: 1,
+      Info: {
+        Name: New Sheet,
+        Columns: [
+          {
+            Name: Some Text
+          }
+        ],
+        Properties: {
+          key: value
+        }
+      }
     }
-  ],
-  Properties: {
-    key: value
-  }
+  ]
 }
