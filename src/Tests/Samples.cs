@@ -168,6 +168,51 @@ public class Samples
             .ExcludeTargets("xlsx");
     }
 
+    // A hidden sheet is verified as any other: it is drawn, exported and described. What says it is
+    // hidden is HiddenSheets in the info file.
+    [Test]
+    public Task HiddenSheet()
+    {
+        var book = new Workbook();
+        book.Worksheets[0].Cells[0, 0].PutValue("First sheet");
+        var hidden = book.Worksheets.Add("Second");
+        hidden.Cells[0, 0].PutValue("Hidden sheet");
+        hidden.VisibilityType = VisibilityType.Hidden;
+
+        return Verify(book)
+            .ExcludeTargets("xlsx");
+    }
+
+    // A hidden sheet is counted as any other, so here it is the first page: it is the one that is
+    // drawn and exported, and the sheet that is shown is left out.
+    [Test]
+    public Task HiddenSheetIsCountedByPagesToInclude()
+    {
+        var book = new Workbook();
+        book.Worksheets[0].Cells[0, 0].PutValue("Hidden sheet");
+        book.Worksheets.Add("Second").Cells[0, 0].PutValue("Second sheet");
+        // Hidden once there is another sheet to show, since a workbook has to show one
+        book.Worksheets[0].VisibilityType = VisibilityType.Hidden;
+
+        return Verify(book)
+            .PagesToInclude(1)
+            .ExcludeTargets("xlsx");
+    }
+
+    // A sheet that only code can unhide is verified as one Excel can
+    [Test]
+    public Task VeryHiddenSheet()
+    {
+        var book = new Workbook();
+        book.Worksheets[0].Cells[0, 0].PutValue("First sheet");
+        var hidden = book.Worksheets.Add("Second");
+        hidden.Cells[0, 0].PutValue("Very hidden sheet");
+        hidden.VisibilityType = VisibilityType.VeryHidden;
+
+        return Verify(book)
+            .ExcludeTargets("xlsx");
+    }
+
     [Test]
     public async Task Cell()
     {

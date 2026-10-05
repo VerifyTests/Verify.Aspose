@@ -101,8 +101,26 @@ public static partial class VerifyAspose
             IsDigitallySigned = book.IsDigitallySigned.ToString(),
             Properties = GetProperties(book),
             CustomProperties = GetCustomProperties(book),
-            Fonts = GetFonts(book)
+            Fonts = GetFonts(book),
+            HiddenSheets = HiddenSheets(book.Worksheets)
         };
+
+    // The names of the sheets that are hidden, whether Excel can unhide them or only code can.
+    // Null, so left out, when there are none. A hidden sheet is a page as any other, so this is
+    // what says it is hidden.
+    static List<string>? HiddenSheets(IEnumerable<Worksheet> sheets)
+    {
+        var hidden = sheets
+            .Where(_ => _.VisibilityType != VisibilityType.Visible)
+            .Select(_ => _.Name)
+            .ToList();
+        if (hidden.Count == 0)
+        {
+            return null;
+        }
+
+        return hidden;
+    }
 
     static List<string> GetFonts(Workbook book)
     {
@@ -157,6 +175,16 @@ public static partial class VerifyAspose
         {
             PageCount = 1
         };
+
+        // There is nothing to say of the workbook here but that the sheet is hidden, when it is
+        if (HiddenSheets([sheet]) is { } hidden)
+        {
+            conversion.Info = new
+            {
+                HiddenSheets = hidden
+            };
+        }
+
         AddSheet(conversion, settings, 1, sheet);
         return conversion.Build();
     }
@@ -198,7 +226,28 @@ public static partial class VerifyAspose
         conversion.AddPage(number, image, info: info);
     }
 
+    // Aspose draws nothing for a hidden sheet, and every sheet is a page here. So a hidden one is
+    // shown for as long as it takes to draw it, and then is as it was.
     static MemoryStream? RenderSheet(Worksheet sheet)
+    {
+        var visibility = sheet.VisibilityType;
+        if (visibility == VisibilityType.Visible)
+        {
+            return RenderVisibleSheet(sheet);
+        }
+
+        sheet.VisibilityType = VisibilityType.Visible;
+        try
+        {
+            return RenderVisibleSheet(sheet);
+        }
+        finally
+        {
+            sheet.VisibilityType = visibility;
+        }
+    }
+
+    static MemoryStream? RenderVisibleSheet(Worksheet sheet)
     {
         var render = new SheetRender(sheet, options);
 

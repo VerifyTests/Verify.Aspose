@@ -1,0 +1,27 @@
+﻿{
+  Document: {
+    HasMacro: False,
+    HasRevisions: False,
+    IsDigitallySigned: False,
+    Fonts: [
+      Arial
+    ],
+    HiddenSheets: [
+      Sheet1
+    ]
+  },
+  PageCount: 2,
+  Pages: [
+    {
+      Number: 1,
+      Info: {
+        Name: Sheet1,
+        Columns: [
+          {
+            Name: Hidden sheet
+          }
+        ]
+      }
+    }
+  ]
+}

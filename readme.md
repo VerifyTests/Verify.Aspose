@@ -11,7 +11,7 @@ Verifying a document (pdf, docx, xlsx, or pptx) produces:
  * A `.verified.txt` info file with what Aspose reports of the document (its properties and fonts), the count of its pages, and the text of each page: read as markdown for a pdf or a Word document, and as plain text for the slides of a presentation.
  * The document itself as a `.verified.pdf`, `.verified.docx`, `.verified.xlsx` or `.verified.pptx`. It can be left out with [`ExcludeTargets`](#exclude-the-document).
  * A png of every page of a pdf or a Word document, every slide of a presentation, and every sheet of a workbook, as `#page_0001.verified.png`, `#page_0002.verified.png`, etc.
- * A csv of every sheet of a workbook, named by the sheet: `#Sheet1.verified.csv`.
+ * A csv of every sheet of a workbook, named by the sheet: `#Sheet1.verified.csv`. A hidden sheet is verified as any other: it is drawn, it has a csv, and it is named under `HiddenSheets` in the info file.
 
 The page files are named, and the text placed, by Verify's [paged documents](https://github.com/VerifyTests/Verify/blob/main/docs/paged-documents.md) support, which every Verify plugin that splits a document into pages shares. So do the settings that [choose what is verified](#choosing-what-is-verified).
 
@@ -70,7 +70,7 @@ public Task PageTextPerPage() =>
         .PageText(PageTextPlacement.PerPage)
         .ExcludeDerivedTargets("png");
 ```
-<sup><a href='/src/Tests/Samples.cs#L309-L317' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageTextPerPage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L354-L362' title='Snippet source file'>snippet source</a> | <a href='#snippet-PageTextPerPage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 `PagesToInclude` limits the pages that are drawn and read, to the first pages of a document or to those a delegate accepts. A slide of a presentation is a page, and so is a sheet of a workbook. The document itself is still verified whole, and `PageCount` in the info file is still the number of pages the document has:
@@ -101,7 +101,7 @@ public Task TextOnly() =>
     VerifyFile("sample.pdf")
         .ExcludeDerivedTargets("png");
 ```
-<sup><a href='/src/Tests/Samples.cs#L319-L326' title='Snippet source file'>snippet source</a> | <a href='#snippet-TextOnly' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L364-L371' title='Snippet source file'>snippet source</a> | <a href='#snippet-TextOnly' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Each can also be set for every test, on `VerifierSettings`:
@@ -291,7 +291,7 @@ public Task VerifyExcelStream()
     return Verify(stream, "xlsx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L182-L191' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L227-L236' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyExcelStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -401,7 +401,7 @@ The `Evaluation Warning` sheet is added by Aspose.Cells when it saves a workbook
 public Task VerifyWord() =>
     VerifyFile("sample.docx");
 ```
-<sup><a href='/src/Tests/Samples.cs#L239-L245' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L284-L290' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWord' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -417,7 +417,7 @@ public Task VerifyWordStream()
     return Verify(stream, "docx");
 }
 ```
-<sup><a href='/src/Tests/Samples.cs#L257-L266' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.cs#L302-L311' title='Snippet source file'>snippet source</a> | <a href='#snippet-VerifyWordStream' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
