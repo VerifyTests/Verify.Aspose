@@ -9,8 +9,7 @@
     HideWindowUI: False,
     IgnoreCorruptedObjects: True,
     Info: {
-      Creator: RAD PDF,
-      Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com
+      Creator: RAD PDF
     },
     IsEncrypted: False,
     IsLinearized: False,

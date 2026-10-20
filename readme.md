@@ -171,8 +171,7 @@ public Task VerifyPdfStream()
     HideWindowUI: False,
     IgnoreCorruptedObjects: True,
     Info: {
-      Creator: RAD PDF,
-      Producer: RAD PDF 3.9.0.0 - http://www.radpdf.com
+      Creator: RAD PDF
     },
     IsEncrypted: False,
     IsLinearized: False,
@@ -255,7 +254,7 @@ Boring. More, a little more text. The end, and just as well.
   ]
 }
 ```
-<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L94' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Samples.VerifyPdf.verified.txt#L1-L93' title='Snippet source file'>snippet source</a> | <a href='#snippet-Samples.VerifyPdf.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 [Samples.VerifyPdf#page_0001.verified.png](/src/Tests/Samples.VerifyPdf%23page_0001.verified.png):
