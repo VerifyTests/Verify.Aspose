@@ -205,6 +205,7 @@ public static partial class VerifyAspose
         document.Info
             .Where(_ => _.Value.HasValue() &&
                         !_.Key.Contains("Date") &&
+                        _.Key != "Producer" &&
                         !_.Value.Contains("Aspose"))
             .ToDictionary(_ => _.Key, _ => _.Value);
 

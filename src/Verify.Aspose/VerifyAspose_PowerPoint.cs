@@ -106,10 +106,45 @@ public static partial class VerifyAspose
     {
         using var source = new MemoryStream();
         document.Save(source, Aspose.Slides.Export.SaveFormat.Pptx);
+        RemoveAsposeTags(source);
         source.Position = 0;
         var resultStream = DeterministicPackage.Convert(source);
 
         return new("pptx", resultStream);
+    }
+
+    // On save Aspose.Slides stamps the presentation with tags describing what wrote it: its own
+    // version and release date, and the machine's .NET runtime and OS versions. Like a pdf's
+    // Producer, they change with the environment rather than the document, so they are removed.
+    static void RemoveAsposeTags(MemoryStream source)
+    {
+        source.Position = 0;
+        using var archive = new ZipArchive(source, ZipArchiveMode.Update, leaveOpen: true);
+        foreach (var entry in archive.Entries
+                     .Where(_ => _.FullName.StartsWith("ppt/tags/") &&
+                                 _.FullName.EndsWith(".xml"))
+                     .ToList())
+        {
+            XDocument xml;
+            using (var stream = entry.Open())
+            {
+                xml = XDocument.Load(stream);
+            }
+
+            var tags = xml.Descendants()
+                .Where(_ => _.Name.LocalName == "tag" &&
+                            ((string?) _.Attribute("name"))?.StartsWith("AS_") == true)
+                .ToList();
+            if (tags.Count == 0)
+            {
+                continue;
+            }
+
+            tags.Remove();
+            using var output = entry.Open();
+            output.SetLength(0);
+            xml.Save(output, SaveOptions.DisableFormatting);
+        }
     }
 
     static Lock powerPointRenderLock = new();
