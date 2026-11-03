@@ -247,7 +247,19 @@ public static partial class VerifyAspose
         }
     }
 
+    // Aspose.Cells drops words from a sheet's text when sheets render concurrently ("Some Text" draws
+    // as "Text"), so sheets render one at a time.
+    static Lock renderLock = new();
+
     static MemoryStream? RenderVisibleSheet(Worksheet sheet)
+    {
+        lock (renderLock)
+        {
+            return RenderVisibleSheetLocked(sheet);
+        }
+    }
+
+    static MemoryStream? RenderVisibleSheetLocked(Worksheet sheet)
     {
         var render = new SheetRender(sheet, options);
 
